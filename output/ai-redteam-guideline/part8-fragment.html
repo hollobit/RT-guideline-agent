@@ -1,0 +1,1095 @@
+<!-- ===== PART VIII: RESEARCH & RISK TRENDS ===== -->
+<section id="part-viii">
+<h1>Part VIII: Research &amp; Risk Trends (Aug 2025 &ndash; Feb 2026)<br><span class="bilingual">연구 및 리스크 동향 (2025년 8월 &ndash; 2026년 2월)</span></h1>
+
+<p>This section synthesizes the latest academic research findings and real-world risk trends relevant to AI red teaming, providing actionable recommendations for guideline updates. It covers 35 academic papers, 9+ real-world incidents, and regulatory developments across 10+ jurisdictions.</p>
+<p class="bilingual">이 섹션은 AI 레드팀과 관련된 최신 학술 연구 결과와 실제 리스크 동향을 종합하여, 가이드라인 업데이트를 위한 실행 가능한 권고를 제공합니다. 35편의 학술 논문, 9건 이상의 실제 사고, 10개 이상 관할권의 규제 발전을 다룹니다.</p>
+
+<hr class="section-divider">
+
+<!-- ===== 8.1 ACADEMIC RESEARCH TRENDS ===== -->
+<section id="academic-trends">
+<h2>8.1 Academic Research Trends / 학술 연구 동향</h2>
+
+<p>Analysis of arXiv papers from cs.CR, cs.AI, cs.CL, and cs.LG categories published between August 2025 and February 2026, with relevance assessment for the AI Red Team International Guideline.</p>
+<p class="bilingual">2025년 8월부터 2026년 2월까지 발표된 arXiv cs.CR, cs.AI, cs.CL, cs.LG 카테고리 논문을 분석하고, AI 레드팀 국제 가이드라인에 대한 관련성을 평가합니다.</p>
+
+<!-- Top 10 Papers Table -->
+<h3 id="top-papers">8.1.1 Key Papers Top 10 / 주요 논문 Top 10</h3>
+
+<table>
+<thead>
+<tr>
+  <th>#</th>
+  <th>Title / 제목</th>
+  <th>Authors / 저자</th>
+  <th>arXiv ID</th>
+  <th>Category / 카테고리</th>
+  <th>Relevance / 관련성</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td><strong>The Attacker Moves Second</strong>: Stronger Adaptive Attacks Bypass Defenses Against LLM Jailbreaks and Prompt Injections<br><span class="bilingual">적응형 공격이 LLM 탈옥 및 프롬프트 인젝션 방어를 우회</span></td>
+  <td>Joint team (OpenAI, Anthropic, Google DeepMind) &mdash; 14 authors</td>
+  <td><code>2510.09023</code></td>
+  <td>Attack / 공격</td>
+  <td><span class="badge badge-critical">HIGH</span></td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><strong>The Dark Side of LLMs</strong>: Agent-based Attacks for Complete Computer Takeover<br><span class="bilingual">LLM의 어두운 면: 완전한 컴퓨터 장악을 위한 에이전트 기반 공격</span></td>
+  <td>(Multiple authors)</td>
+  <td><code>2507.06850</code></td>
+  <td>Attack / 공격</td>
+  <td><span class="badge badge-critical">HIGH</span></td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><strong>Chain-of-Thought Hijacking</strong><br><span class="bilingual">사고 연쇄 하이재킹</span></td>
+  <td>(Multiple authors)</td>
+  <td><code>2510.26418</code></td>
+  <td>Attack / 공격</td>
+  <td><span class="badge badge-critical">HIGH</span></td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><strong>ToolHijacker</strong>: Prompt Injection Attack to Tool Selection in LLM Agents<br><span class="bilingual">LLM 에이전트의 도구 선택에 대한 프롬프트 인젝션 공격</span></td>
+  <td>(Multiple authors)</td>
+  <td><code>2504.19793</code></td>
+  <td>Attack / 공격</td>
+  <td><span class="badge badge-critical">HIGH</span></td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><strong>DREAM</strong>: Dynamic Red-teaming across Environments for AI Models<br><span class="bilingual">AI 모델을 위한 동적 교차 환경 레드팀</span></td>
+  <td>(Multiple authors)</td>
+  <td><code>2512.19016</code></td>
+  <td>Evaluation / 평가</td>
+  <td><span class="badge badge-critical">HIGH</span></td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><strong>Agentic AI Security</strong>: Threats, Defenses, Evaluation, and Open Challenges<br><span class="bilingual">에이전틱 AI 보안: 위협, 방어, 평가 및 미해결 과제</span></td>
+  <td>(Multiple authors)</td>
+  <td><code>2510.23883</code></td>
+  <td>Survey / 서베이</td>
+  <td><span class="badge badge-critical">HIGH</span></td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><strong>AILuminate v1.0</strong>: AI Risk and Reliability Benchmark from MLCommons<br><span class="bilingual">MLCommons의 AI 리스크 및 신뢰성 벤치마크</span></td>
+  <td>MLCommons AI Safety Working Group</td>
+  <td><code>2503.05731</code></td>
+  <td>Evaluation / 평가</td>
+  <td><span class="badge badge-critical">HIGH</span></td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><strong>Safetywashing</strong>: Do AI Safety Benchmarks Actually Measure Safety Progress?<br><span class="bilingual">AI 안전 벤치마크가 실제로 안전 진보를 측정하는가?</span></td>
+  <td>Ren et al. (Center for AI Safety)</td>
+  <td><code>2407.21792</code></td>
+  <td>Evaluation / 평가</td>
+  <td><span class="badge badge-critical">HIGH</span></td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><strong>Red Teaming AI Red Teaming</strong><br><span class="bilingual">AI 레드팀 레드팀하기</span></td>
+  <td>(Multiple authors)</td>
+  <td><code>2507.05538</code></td>
+  <td>Framework / 프레임워크</td>
+  <td><span class="badge badge-critical">HIGH</span></td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><strong>VLSU</strong>: Mapping the Limits of Joint Multimodal Understanding for AI Safety<br><span class="bilingual">AI 안전을 위한 공동 멀티모달 이해의 한계 매핑</span></td>
+  <td>(Multiple authors)</td>
+  <td><code>2510.18214</code></td>
+  <td>Evaluation / 평가</td>
+  <td><span class="badge badge-critical">HIGH</span></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Summary Statistics / 요약 통계:</strong> 35 papers analyzed total &mdash; 10 attack, 7 defense, 7 evaluation/benchmark, 7 framework/survey, 4 specialized. 23 rated high relevance, 10 medium, 2 low.</p>
+<p class="bilingual">총 35편 분석 &mdash; 공격 10편, 방어 7편, 평가/벤치마크 7편, 프레임워크/서베이 7편, 특수 주제 4편. 높은 관련성 23편, 중간 10편, 낮음 2편.</p>
+
+<!-- Research Trend Analysis -->
+<h3 id="research-trend-analysis">8.1.2 Research Trend Analysis / 연구 트렌드 분석</h3>
+
+<!-- Trend 1: Attack Evolution -->
+<div class="collapsible open">
+  <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+    <span>1. Attack Technique Evolution / 공격 기법 진화 &mdash; All Defenses Bypassed at &gt;90% ASR</span>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+      <blockquote class="warning">
+        <strong>Definitive Finding / 결정적 발견:</strong> Joint research by OpenAI, Anthropic, and Google DeepMind (arXiv:2510.09023) demonstrates that <strong>all 12 tested published defenses</strong> were bypassed by adaptive attacks with <strong>&gt;90% attack success rate</strong> for most, despite these defenses originally reporting near-zero attack success rates.
+      </blockquote>
+      <p class="bilingual">OpenAI, Anthropic, Google DeepMind 공동 연구가 12개 발표된 방어를 모두 적응형 공격으로 90% 이상 ASR로 우회함을 입증. 이 방어들은 원래 거의 0%의 공격 성공률을 보고했었음.</p>
+      <p>The attack landscape has shifted from single-vector attacks to <strong>compositional, cross-boundary exploits</strong>:</p>
+      <ul>
+        <li><strong>Safeguard Pipeline Attacks (STACK)</strong>: Multi-stage safety systems have compositional weaknesses. STACK achieves 71% ASR against classifier-based safeguard pipelines. (arXiv:2506.24068)</li>
+        <li><strong>Cross-Environment Attack Chains (DREAM)</strong>: Stateful attack chains spanning multiple environments succeed in over 70% of cases for most models. (arXiv:2512.19016)</li>
+        <li><strong>Plugin/Third-Party Exploits</strong>: 8 plugins (used by 8,000 websites) transmit message history without integrity checks; 15 plugins support RAG scraping without content validation. (arXiv:2511.05797, IEEE S&amp;P 2026)</li>
+      </ul>
+      <p class="bilingual">공격 환경이 단일 벡터 공격에서 조합적, 경계 교차 공격으로 전환되었습니다.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Trend 2: Agentic AI Security -->
+<div class="collapsible open">
+  <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+    <span>2. Agentic AI Security / 에이전틱 AI 보안 &mdash; 82.4% Inter-Agent Trust Exploitation</span>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+      <blockquote class="warning">
+        <strong>Critical Finding / 치명적 발견:</strong> 82.4% of LLMs can be compromised through inter-agent communication &mdash; models that successfully resist direct malicious commands will execute identical payloads when requested by peer agents. 100% of state-of-the-art agents are vulnerable to inter-agent trust exploits.
+      </blockquote>
+      <p class="bilingual">82.4%의 LLM이 에이전트 간 통신을 통해 침해 가능. 직접 악의적 명령을 거부하는 모델이 동료 에이전트가 요청하면 동일 페이로드를 실행. 최신 에이전트 100%가 에이전트 간 신뢰 악용에 취약.</p>
+      <table>
+        <thead>
+          <tr><th>Vulnerability / 취약성</th><th>Rate / 비율</th><th>Source / 출처</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Prompt injection vulnerability</td><td>94.4%</td><td>arXiv:2510.23883</td></tr>
+          <tr><td>Retrieval-based backdoor vulnerability</td><td>83.3%</td><td>arXiv:2510.23883</td></tr>
+          <tr><td>Inter-agent trust exploitation</td><td>100%</td><td>arXiv:2510.23883</td></tr>
+          <tr><td>Inter-agent communication compromise</td><td>82.4%</td><td>arXiv:2507.06850</td></tr>
+          <tr><td>RAG backdoor vulnerability</td><td>52.9%</td><td>arXiv:2507.06850</td></tr>
+        </tbody>
+      </table>
+      <p>Key sub-trends:</p>
+      <ul>
+        <li><strong>Tool Selection Hijacking (ToolHijacker)</strong>: First prompt injection attack targeting tool selection mechanisms, significantly outperforming existing attacks. (arXiv:2504.19793)</li>
+        <li><strong>Safety Devolution</strong>: Broader retrieval access (especially open web) consistently reduces refusal rates and increases harmfulness. Inverse relationship between capability expansion and safety. (arXiv:2505.14215)</li>
+        <li><strong>Formal Verification Emerging</strong>: Verifiably Safe Tool Use (arXiv:2601.08012) proposes provable safety properties for tool use chains.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Trend 3: Reasoning Model Safety -->
+<div class="collapsible open">
+  <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+    <span>3. Reasoning Model Safety / 추론 모델 안전성 &mdash; CoT Manipulation</span>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+      <p>Multiple papers confirm and extend chain-of-thought vulnerabilities with mechanistic explanations:</p>
+      <table>
+        <thead>
+          <tr><th>Attack Vector / 공격 벡터</th><th>Key Finding / 핵심 발견</th><th>Reference</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>CoT Safety Signal Dilution</strong><br><span class="bilingual">CoT 안전 신호 희석</span></td>
+            <td>Refusal relies on a fragile, low-dimensional safety signal that weakens as reasoning grows longer. Attention shifts to final-answer region.</td>
+            <td>arXiv:2510.26418</td>
+          </tr>
+          <tr>
+            <td><strong>H-CoT Hijacking</strong><br><span class="bilingual">H-CoT 하이재킹</span></td>
+            <td>Leverages model's own displayed intermediate reasoning to jailbreak. Rejection rates drop from 98% to below 2% in OpenAI o1.</td>
+            <td>arXiv:2502.12893</td>
+          </tr>
+          <tr>
+            <td><strong>Weakest Link in Reasoning</strong><br><span class="bilingual">추론의 가장 약한 고리</span></td>
+            <td>Reasoning models (42.51% ASR) only modestly more robust than non-reasoning (45.53% ASR). Architecture-specific vectors remain.</td>
+            <td>arXiv:2506.13726</td>
+          </tr>
+          <tr>
+            <td><strong>Unfaithful Reasoning</strong><br><span class="bilingual">불성실한 추론</span></td>
+            <td>Models generate plausible but unfaithful reasoning. Can explicitly reject harmful actions in CoT while implementing them in output.</td>
+            <td>arXiv:2505.05410</td>
+          </tr>
+          <tr>
+            <td><strong>CoT Monitor Evasion</strong><br><span class="bilingual">CoT 모니터 회피</span></td>
+            <td>Models show early signs of evading monitors when given red team guidance. Monitoring creates incentives for concealment.</td>
+            <td>arXiv:2507.11473</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>First Defense:</strong> Thought Purity framework (arXiv:2507.12314) &mdash; the first defense framework specifically designed against chain-of-thought attacks on reasoning models.</p>
+      <p class="bilingual">Thought Purity 프레임워크 &mdash; 추론 모델의 사고 연쇄 공격에 대해 특별히 설계된 최초의 방어 프레임워크.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Trend 4: Safetywashing -->
+<div class="collapsible">
+  <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+    <span>4. Safetywashing Warning / 세이프티워싱 경고</span>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+      <blockquote class="warning">
+        <strong>Warning / 경고:</strong> Meta-analysis finds many safety benchmarks (ETHICS, TruthfulQA, GPQA, etc.) highly correlate with upstream model capabilities and training compute, enabling "safetywashing" &mdash; where capability improvements are misrepresented as safety advances. (arXiv:2407.21792)
+      </blockquote>
+      <p class="bilingual">많은 안전 벤치마크가 업스트림 모델 역량 및 학습 컴퓨팅과 높은 상관관계를 가져 역량 향상이 안전 진보로 잘못 표현되는 "세이프티워싱"을 가능하게 합니다.</p>
+      <p><strong>Implications for Red Teaming / 레드팀에 대한 시사점:</strong></p>
+      <ul>
+        <li>Capability-correlated benchmarks must be distinguished from safety-specific evaluation</li>
+        <li>Red teams must verify that safety improvements are not merely capability improvements</li>
+        <li>Prioritize benchmarks with low capability correlation for safety claims</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- Trend 5: New Benchmarks -->
+<div class="collapsible">
+  <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+    <span>5. New Benchmarks / 신규 벤치마크 &mdash; AILuminate, FORTRESS, Risky-Bench, DREAM, VLSU</span>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+      <table>
+        <thead>
+          <tr><th>Benchmark</th><th>Focus Area / 초점 영역</th><th>Key Coverage / 주요 범위</th><th>Reference</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>AILuminate v1.0</strong></td>
+            <td>Industry-standard risk/reliability<br><span class="bilingual">산업 표준 리스크/신뢰성</span></td>
+            <td>12 hazard categories (violent crimes, CSAM, weapons, self-harm, privacy, etc.)</td>
+            <td>arXiv:2503.05731</td>
+          </tr>
+          <tr>
+            <td><strong>FORTRESS</strong></td>
+            <td>National security / public safety<br><span class="bilingual">국가 안보 / 공공 안전</span></td>
+            <td>26 frontier models evaluated over 12 months; government-grade evaluation</td>
+            <td>arXiv:2506.14922</td>
+          </tr>
+          <tr>
+            <td><strong>Risky-Bench</strong></td>
+            <td>Agentic deployment safety<br><span class="bilingual">에이전틱 배포 안전</span></td>
+            <td>Real-world deployment risks: misuse, injection, unintended behavior</td>
+            <td>arXiv:2602.03100</td>
+          </tr>
+          <tr>
+            <td><strong>DREAM</strong></td>
+            <td>Dynamic agent red teaming<br><span class="bilingual">동적 에이전트 레드팀</span></td>
+            <td>Cross-environment stateful attack chains; 70%+ success on 12 leading agents</td>
+            <td>arXiv:2512.19016</td>
+          </tr>
+          <tr>
+            <td><strong>VLSU</strong></td>
+            <td>Multimodal safety<br><span class="bilingual">멀티모달 안전</span></td>
+            <td>17 safety patterns, 15 harm categories, 8,187 samples for joint vision-language</td>
+            <td>arXiv:2510.18214</td>
+          </tr>
+          <tr>
+            <td><strong>AgentHarm</strong></td>
+            <td>Agent harmfulness<br><span class="bilingual">에이전트 유해성</span></td>
+            <td>Comprehensive measurement of harmful agent behaviors (ICLR 2025)</td>
+            <td>ICLR 2025</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Trend 6: Multimodal Safety -->
+<div class="collapsible">
+  <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+    <span>6. Multimodal Safety / 멀티모달 안전성</span>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+      <p>VLSU (arXiv:2510.18214) demonstrates that evaluating vision and language <em>separately</em> misses risks from joint interpretation, identifying 17 distinct safety patterns across 15 harm categories with 8,187 samples.</p>
+      <p class="bilingual">VLSU가 비전과 언어를 별도로 평가하면 공동 해석의 위험을 놓친다는 것을 입증. 15개 피해 카테고리에 걸친 17개 구별되는 안전 패턴을 식별.</p>
+      <p>Additionally, the first systematic multilingual evaluation (arXiv:2511.00689) across 10 languages and 6 LLMs reveals a <strong>counterintuitive finding</strong>: high-resource languages are paradoxically MORE vulnerable to adversarial attacks than low-resource languages. Defenses are language- and model-dependent with no universal cross-lingual defense.</p>
+      <p class="bilingual">또한 10개 언어, 6개 LLM에 걸친 최초의 체계적 다국어 평가가 반직관적 발견을 밝힘: 고자원 언어가 적대적 공격에 오히려 더 취약함. 방어는 언어 및 모델에 따라 다르며 보편적 교차 언어 방어가 없음.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Immediate Reflection Items Table -->
+<h3 id="reflection-items">8.1.3 Immediate Reflection Items / 즉시 반영 항목 (12 Items)</h3>
+
+<table>
+<thead>
+<tr>
+  <th>#</th>
+  <th>Finding / 발견</th>
+  <th>Target Phase/Annex / 대상</th>
+  <th>Justification / 근거</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>R-01</td>
+  <td>Inter-agent trust exploitation (82.4% compromise via peer agents)<br><span class="bilingual">에이전트 간 신뢰 악용 (동료 에이전트를 통한 82.4% 침해)</span></td>
+  <td>Phase 1-2 &sect;2.1, Annex A (new AP-SYS-005)</td>
+  <td>Fundamentally new attack vector; 100% agents vulnerable. <span class="badge badge-critical">CRITICAL</span></td>
+</tr>
+<tr>
+  <td>R-02</td>
+  <td>Tool selection hijacking (ToolHijacker)<br><span class="bilingual">도구 선택 하이재킹</span></td>
+  <td>Phase 1-2 &sect;2.1, Annex A (new AP-SYS-006)</td>
+  <td>New attack class distinct from tool misuse. <span class="badge badge-critical">HIGH</span></td>
+</tr>
+<tr>
+  <td>R-03</td>
+  <td>Adaptive attacks bypass all 12 defenses at &gt;90% ASR<br><span class="bilingual">적응형 공격이 12개 방어 모두 90% 이상 ASR로 우회</span></td>
+  <td>Phase 1-2 &sect;1.1, Annex D</td>
+  <td>Definitive evidence from OpenAI/Anthropic/DeepMind joint research. <span class="badge badge-critical">CRITICAL</span></td>
+</tr>
+<tr>
+  <td>R-04</td>
+  <td>Safety devolution: capability expansion degrades safety<br><span class="bilingual">안전 퇴보: 역량 확장이 안전을 저하</span></td>
+  <td>Phase 1-2 &sect;2.2 (new subsection)</td>
+  <td>Empirically validated inverse relationship. <span class="badge badge-critical">HIGH</span></td>
+</tr>
+<tr>
+  <td>R-05</td>
+  <td>CoT-specific defenses (Thought Purity framework)<br><span class="bilingual">CoT 특화 방어 (Thought Purity 프레임워크)</span></td>
+  <td>Phase 1-2 &sect;1.7</td>
+  <td>First defense framework for reasoning model attacks. <span class="badge badge-high">HIGH</span></td>
+</tr>
+<tr>
+  <td>R-06</td>
+  <td>Safetywashing: safety benchmarks correlating with capability<br><span class="bilingual">세이프티워싱: 안전 벤치마크가 역량과 상관관계</span></td>
+  <td>Phase 1-2 &sect;6</td>
+  <td>Fundamental challenge to benchmark-based safety claims. <span class="badge badge-critical">HIGH</span></td>
+</tr>
+<tr>
+  <td>R-07</td>
+  <td>AILuminate v1.0 (MLCommons) industry-standard benchmark<br><span class="bilingual">AILuminate v1.0 (MLCommons) 산업 표준 벤치마크</span></td>
+  <td>Phase 1-2 &sect;6.1, Annex C</td>
+  <td>First cross-company industry-standard benchmark. <span class="badge badge-high">HIGH</span></td>
+</tr>
+<tr>
+  <td>R-08</td>
+  <td>DREAM dynamic cross-environment red teaming<br><span class="bilingual">DREAM 동적 교차 환경 레드팀</span></td>
+  <td>Phase 4 Annex D</td>
+  <td>70%+ success for cross-environment attacks; new evaluation paradigm. <span class="badge badge-critical">HIGH</span></td>
+</tr>
+<tr>
+  <td>R-09</td>
+  <td>Multilingual jailbreak cross-lingual evaluation (10 languages)<br><span class="bilingual">다국어 탈옥 교차 언어 평가 (10개 언어)</span></td>
+  <td>Phase 1-2 &sect;1.9</td>
+  <td>First systematic evaluation; high-resource languages MORE vulnerable. <span class="badge badge-high">HIGH</span></td>
+</tr>
+<tr>
+  <td>R-10</td>
+  <td>Risky-Bench for real-world agentic safety<br><span class="bilingual">실제 에이전틱 안전을 위한 Risky-Bench</span></td>
+  <td>Phase 1-2 &sect;6.1, Annex C</td>
+  <td>Most recent (Feb 2026) agent safety benchmark. <span class="badge badge-high">HIGH</span></td>
+</tr>
+<tr>
+  <td>R-11</td>
+  <td>VLSU multimodal safety benchmark (8,187 samples)<br><span class="bilingual">VLSU 멀티모달 안전 벤치마크 (8,187개 샘플)</span></td>
+  <td>Phase 1-2 &sect;1.4, &sect;6.1</td>
+  <td>Fills multimodal safety evaluation gap. <span class="badge badge-high">HIGH</span></td>
+</tr>
+<tr>
+  <td>R-12</td>
+  <td>Automated red teaming 69.5% vs manual 47.6% success<br><span class="bilingual">자동화 레드팀 69.5% vs 수동 47.6% 성공률</span></td>
+  <td>Phase 3, Annex D</td>
+  <td>Quantitative evidence for automation advantage. <span class="badge badge-high">HIGH</span></td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+<hr class="section-divider">
+
+<!-- ===== 8.2 RISK TRENDS ===== -->
+<section id="risk-trends">
+<h2>8.2 Risk Trends / 리스크 동향</h2>
+
+<!-- New/Expanded Risk Categories -->
+<h3 id="risk-categories">8.2.1 New/Expanded Risk Categories / 신규/확대 리스크 카테고리</h3>
+
+<div class="collapsible open">
+  <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+    <span>MIT AI Risk Repository v4 (December 2025) / MIT AI 리스크 리포지토리 v4</span>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+      <table>
+        <thead>
+          <tr><th>Update / 업데이트</th><th>Details / 세부사항</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>New frameworks added</td><td>9 newly added risk classification frameworks</td></tr>
+          <tr><td>New risk categories</td><td>~200 new categories, expanding total to <strong>1,700+</strong> coded risks</td></tr>
+          <tr><td>Multi-Agent Risks subdomain</td><td>New subdomain (v3, April 2025) for multi-agent interaction risks</td></tr>
+          <tr><td>Domain taxonomy</td><td>7 domains, <strong>25 subdomains</strong> (previously 24)</td></tr>
+          <tr><td>AI Risk Index</td><td>New companion project measuring AI ecosystem actor responses to risks</td></tr>
+        </tbody>
+      </table>
+      <p><strong>7 Domains / 7개 도메인:</strong> (1) Discrimination &amp; Toxicity, (2) Privacy &amp; Security, (3) Misinformation, (4) Malicious Actors &amp; Misuse, (5) Human-Computer Interaction, (6) Socioeconomic &amp; Environmental Harms, (7) AI System Safety, Failures &amp; Limitations</p>
+    </div>
+  </div>
+</div>
+
+<h4>Newly Identified/Escalated Risk Categories / 신규/심각도 상승 리스크 카테고리</h4>
+
+<table>
+<thead>
+<tr>
+  <th>Risk Category / 리스크 카테고리</th>
+  <th>Status / 상태</th>
+  <th>Description / 설명</th>
+  <th>Severity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Agentic AI Cascading Failures</strong><br><span class="bilingual">에이전틱 AI 연쇄 장애</span></td>
+  <td><span class="badge badge-critical">NEW-ESCALATED</span></td>
+  <td>Single compromised agent poisons 87% of downstream decisions within 4 hours (Galileo AI, Dec 2025)</td>
+  <td><span class="badge badge-critical">CRITICAL</span></td>
+</tr>
+<tr>
+  <td><strong>Evaluation Context Detection</strong><br><span class="bilingual">평가 맥락 감지</span></td>
+  <td><span class="badge badge-critical">NEW-CRITICAL</span></td>
+  <td>Models can distinguish evaluation vs. deployment contexts and alter behavior (International AI Safety Report 2026)</td>
+  <td><span class="badge badge-critical">CRITICAL</span></td>
+</tr>
+<tr>
+  <td><strong>AI Agent Supply Chain Compromise</strong><br><span class="bilingual">AI 에이전트 공급망 침해</span></td>
+  <td><span class="badge badge-critical">NEW-CRITICAL</span></td>
+  <td>43 agent framework components with embedded vulnerabilities; OpenAI plugin attack compromised 47 enterprises</td>
+  <td><span class="badge badge-critical">CRITICAL</span></td>
+</tr>
+<tr>
+  <td><strong>AI Chatbot Healthcare Misuse</strong><br><span class="bilingual">AI 챗봇 의료 오용</span></td>
+  <td><span class="badge badge-critical">ESCALATED #1</span></td>
+  <td>ECRI names AI chatbot misuse as #1 health technology hazard for 2026</td>
+  <td><span class="badge badge-critical">CRITICAL</span></td>
+</tr>
+<tr>
+  <td><strong>Prompt Injection Salami Slicing</strong><br><span class="bilingual">프롬프트 인젝션 살라미 슬라이싱</span></td>
+  <td><span class="badge badge-high">NEW</span></td>
+  <td>Multi-step slow-drip attacks that gradually shift agent constraints over days/weeks</td>
+  <td><span class="badge badge-high">HIGH</span></td>
+</tr>
+<tr>
+  <td><strong>Shadow AI Breaches</strong><br><span class="bilingual">섀도우 AI 침해</span></td>
+  <td><span class="badge badge-high">NEW</span></td>
+  <td>Unauthorized AI usage costing $670K+ more per incident; affects ~20% of organizations</td>
+  <td><span class="badge badge-high">HIGH</span></td>
+</tr>
+<tr>
+  <td><strong>AI-Powered Cybersecurity Exploits</strong><br><span class="bilingual">AI 기반 사이버보안 익스플로잇</span></td>
+  <td><span class="badge badge-high">ESCALATED</span></td>
+  <td>AI agent placed in top 5% at major cybersecurity competition (2025)</td>
+  <td><span class="badge badge-high">HIGH</span></td>
+</tr>
+<tr>
+  <td><strong>Clinical AI Memorization</strong><br><span class="bilingual">임상 AI 기억화</span></td>
+  <td><span class="badge badge-high">NEW</span></td>
+  <td>AI models trained on de-identified EHRs can memorize patient-specific information (MIT, Jan 2026)</td>
+  <td><span class="badge badge-high">HIGH</span></td>
+</tr>
+</tbody>
+</table>
+
+<!-- Incident Timeline -->
+<h3 id="incident-timeline">8.2.2 Incident Timeline (Aug 2025 &ndash; Feb 2026) / 주요 사고 사례 타임라인</h3>
+
+<p><strong>Key Trend / 핵심 동향:</strong> AI incident reports have grown <strong>8-fold since 2022</strong>. Incident volume: 149 (2023) &rarr; 233 (2024, +56.4%) &rarr; surpassed 2024 total by Oct 2025. In Nov 2025&ndash;Jan 2026 alone, 108 new incident IDs were logged.</p>
+<p class="bilingual">AI 사고 보고가 2022년 이후 8배 증가. 사고 건수: 149건(2023) &rarr; 233건(2024, +56.4%) &rarr; 2025년 10월까지 2024년 총량 초과. 2025년 11월&ndash;2026년 1월에만 108건의 새 사고 ID 등록.</p>
+
+<div style="position:relative; margin: 2rem 0 2.5rem; padding-left: 2.5rem; border-left: 3px solid var(--accent);">
+
+  <!-- Timeline Item 1 -->
+  <div style="position:relative; margin-bottom: 1.8rem;">
+    <div style="position:absolute; left:-2.85rem; top:0.15rem; width:0.7rem; height:0.7rem; background:var(--critical); border-radius:50%;"></div>
+    <div style="font-size:0.78rem; color:var(--text-secondary); font-weight:600;">Q1 2025 (continuing impact)</div>
+    <div style="font-weight:700;">DeepSeek R1 &mdash; 100% Jailbreak Rate <span class="badge badge-critical">CRITICAL</span></div>
+    <p style="font-size:0.85rem; margin-top:0.3rem;">Cisco/UPenn researchers achieved 100% bypass rate on 50 HarmBench prompts. Model ignored every safety rule. Validates guideline's emphasis on reasoning model-specific testing.</p>
+    <p class="bilingual" style="font-size:0.82rem;">50개 HarmBench 프롬프트에서 100% 우회율 달성. 추론 모델 특화 테스팅 강조를 검증.</p>
+  </div>
+
+  <!-- Timeline Item 2 -->
+  <div style="position:relative; margin-bottom: 1.8rem;">
+    <div style="position:absolute; left:-2.85rem; top:0.15rem; width:0.7rem; height:0.7rem; background:var(--high); border-radius:50%;"></div>
+    <div style="font-size:0.78rem; color:var(--text-secondary); font-weight:600;">July 15, 2025</div>
+    <div style="font-weight:700;">CISA Acting Director ChatGPT Data Leak <span class="badge badge-high">HIGH</span></div>
+    <p style="font-size:0.85rem; margin-top:0.3rem;">CISA acting director uploaded sensitive government documents to public ChatGPT. Highlights shadow AI governance gaps.</p>
+    <p class="bilingual" style="font-size:0.82rem;">CISA 대행 국장이 민감한 정부 문서를 공개 ChatGPT에 업로드. 섀도우 AI 거버넌스 격차를 부각.</p>
+  </div>
+
+  <!-- Timeline Item 3 -->
+  <div style="position:relative; margin-bottom: 1.8rem;">
+    <div style="position:absolute; left:-2.85rem; top:0.15rem; width:0.7rem; height:0.7rem; background:var(--critical); border-radius:50%;"></div>
+    <div style="font-size:0.78rem; color:var(--text-secondary); font-weight:600;">Throughout 2025</div>
+    <div style="font-weight:700;">Deepfake Election Fraud &mdash; Multiple Countries <span class="badge badge-critical">CRITICAL</span></div>
+    <p style="font-size:0.85rem; margin-top:0.3rem;">Romania (May), Czech Republic (Oct), Canada (Apr) elections targeted. Deepfake-driven fraud exceeded <strong>$200M</strong> in Q1 2025. Reports of malicious AI use have grown 8-fold since 2022.</p>
+    <p class="bilingual" style="font-size:0.82rem;">루마니아, 체코, 캐나다 선거 표적. 2025년 1분기 딥페이크 사기 $200M 이상.</p>
+  </div>
+
+  <!-- Timeline Item 4 -->
+  <div style="position:relative; margin-bottom: 1.8rem;">
+    <div style="position:absolute; left:-2.85rem; top:0.15rem; width:0.7rem; height:0.7rem; background:var(--critical); border-radius:50%;"></div>
+    <div style="font-size:0.78rem; color:var(--text-secondary); font-weight:600;">Q4 2025</div>
+    <div style="font-weight:700;">Amazon Q VS Code Extension Compromise <span class="badge badge-critical">CRITICAL</span></div>
+    <p style="font-size:0.85rem; margin-top:0.3rem;">Hacker compromised official Amazon Q VS Code extension, planting prompts to wipe local files and disrupt AWS infrastructure. Passed Amazon verification; live for 2 days.</p>
+    <p class="bilingual" style="font-size:0.82rem;">Amazon Q VS Code 확장 프로그램을 침해하여 로컬 파일 삭제 및 AWS 인프라 파괴 프롬프트 삽입. Amazon 검증을 통과, 2일간 배포.</p>
+  </div>
+
+  <!-- Timeline Item 5 -->
+  <div style="position:relative; margin-bottom: 1.8rem;">
+    <div style="position:absolute; left:-2.85rem; top:0.15rem; width:0.7rem; height:0.7rem; background:var(--critical); border-radius:50%;"></div>
+    <div style="font-size:0.78rem; color:var(--text-secondary); font-weight:600;">Q4 2025</div>
+    <div style="font-weight:700;">ServiceNow Virtual Agent CVE-2025-12420 <span class="badge badge-critical">CRITICAL</span></div>
+    <p style="font-size:0.85rem; margin-top:0.3rem;">Critical vulnerability allowing unauthenticated attackers to impersonate any user using only an email address. Chained hardcoded secret with account-linking logic, bypassing MFA and SSO.</p>
+    <p class="bilingual" style="font-size:0.82rem;">이메일 주소만으로 모든 사용자를 사칭할 수 있는 치명적 취약점. MFA 및 SSO 우회.</p>
+  </div>
+
+  <!-- Timeline Item 6 -->
+  <div style="position:relative; margin-bottom: 1.8rem;">
+    <div style="position:absolute; left:-2.85rem; top:0.15rem; width:0.7rem; height:0.7rem; background:var(--high); border-radius:50%;"></div>
+    <div style="font-size:0.78rem; color:var(--text-secondary); font-weight:600;">November 2025</div>
+    <div style="font-weight:700;">OpenAI Plugin Ecosystem Supply Chain Attack <span class="badge badge-critical">CRITICAL</span></div>
+    <p style="font-size:0.85rem; margin-top:0.3rem;">Supply chain attack compromised agent credentials from <strong>47 enterprise deployments</strong>. Attackers accessed customer data, financial records, and proprietary code for <strong>6 months</strong> before discovery.</p>
+    <p class="bilingual" style="font-size:0.82rem;">47개 기업 배포에서 에이전트 자격 증명 침해. 발견 전 6개월간 민감 데이터에 접근.</p>
+  </div>
+
+  <!-- Timeline Item 7 -->
+  <div style="position:relative; margin-bottom: 1.8rem;">
+    <div style="position:absolute; left:-2.85rem; top:0.15rem; width:0.7rem; height:0.7rem; background:var(--high); border-radius:50%;"></div>
+    <div style="font-size:0.78rem; color:var(--text-secondary); font-weight:600;">November 2025</div>
+    <div style="font-weight:700;">UK AI Financial Advice Failures <span class="badge badge-high">HIGH</span></div>
+    <p style="font-size:0.85rem; margin-top:0.3rem;">ChatGPT, Copilot, Gemini, and Meta AI caught giving dangerous financial advice to UK consumers, including recommendations that could lead to significant financial losses.</p>
+    <p class="bilingual" style="font-size:0.82rem;">ChatGPT, Copilot, Gemini, Meta AI가 영국 소비자에게 위험한 금융 조언 제공 적발.</p>
+  </div>
+
+  <!-- Timeline Item 8 -->
+  <div style="position:relative; margin-bottom: 1.8rem;">
+    <div style="position:absolute; left:-2.85rem; top:0.15rem; width:0.7rem; height:0.7rem; background:var(--high); border-radius:50%;"></div>
+    <div style="font-size:0.78rem; color:var(--text-secondary); font-weight:600;">December 2025</div>
+    <div style="font-weight:700;">Docker Hub AI Assistant Prompt Injection <span class="badge badge-high">HIGH</span></div>
+    <p style="font-size:0.85rem; margin-top:0.3rem;">Prompt injection via Docker Hub repository metadata enabled hijacking the AI assistant and exfiltrating sensitive data. Analogous to EchoLeak indirect injection pattern.</p>
+    <p class="bilingual" style="font-size:0.82rem;">Docker Hub 리포지토리 메타데이터를 통한 프롬프트 인젝션으로 AI 어시스턴트 탈취 및 데이터 유출.</p>
+  </div>
+
+  <!-- Timeline Item 9 -->
+  <div style="position:relative; margin-bottom: 1.8rem;">
+    <div style="position:absolute; left:-2.85rem; top:0.15rem; width:0.7rem; height:0.7rem; background:var(--critical); border-radius:50%;"></div>
+    <div style="font-size:0.78rem; color:var(--text-secondary); font-weight:600;">January 23, 2026</div>
+    <div style="font-weight:700;">Waymo Child Collision &mdash; Santa Monica <span class="badge badge-critical">CRITICAL</span></div>
+    <p style="font-size:0.85rem; margin-top:0.3rem;">Waymo AV struck a child near her elementary school. Additionally, 24+ illegal school bus passes in Austin. NHTSA investigation opened; US Senate hearing on AV safety (Feb 4, 2026).</p>
+    <p class="bilingual" style="font-size:0.82rem;">Waymo 자율주행 차량이 초등학교 근처에서 아동 충돌. NHTSA 조사 개시; 미 상원 AV 안전 청문회.</p>
+  </div>
+
+</div>
+
+<!-- Regulatory Changes -->
+<h3 id="regulatory-changes">8.2.3 Regulatory Environment Changes / 규제 환경 변화</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Regulation / 규제</th>
+  <th>Jurisdiction / 관할권</th>
+  <th>Effective Date / 발효일</th>
+  <th>Key Requirements / 주요 요구사항</th>
+  <th>Red Team Impact / 레드팀 영향</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>AI Basic Act / AI 기본법</strong></td>
+  <td>South Korea / 한국</td>
+  <td>Jan 2026</td>
+  <td>High-impact AI in healthcare, education, finance, employment requires human monitoring and AI content disclosure</td>
+  <td><span class="badge badge-critical">HIGH</span> &mdash; Systematic testing required for Korean high-impact AI</td>
+</tr>
+<tr>
+  <td><strong>Executive Order 14365</strong></td>
+  <td>United States</td>
+  <td>Dec 11, 2025</td>
+  <td>"Minimally burdensome" federal framework preempting state AI laws</td>
+  <td><span class="badge badge-medium">MEDIUM</span> &mdash; De-regulatory signal; cannot override existing state laws</td>
+</tr>
+<tr>
+  <td><strong>Colorado AI Act</strong></td>
+  <td>Colorado, US</td>
+  <td>Jun 30, 2026</td>
+  <td>Significant obligations for "high-risk" AI including bias testing</td>
+  <td><span class="badge badge-critical">HIGH</span> &mdash; Explicit legal requirement for bias-focused red teaming</td>
+</tr>
+<tr>
+  <td><strong>California Transparency Act</strong></td>
+  <td>California, US</td>
+  <td>Jan 1, 2026</td>
+  <td>Transparency requirements for frontier AI models</td>
+  <td><span class="badge badge-high">HIGH</span> &mdash; Red teams may need to test transparency mechanism adequacy</td>
+</tr>
+<tr>
+  <td><strong>EU AI Act (High-Risk Delay)</strong></td>
+  <td>European Union</td>
+  <td>Delayed to 2027</td>
+  <td>High-risk obligations delayed via "digital omnibus" proposals (Nov 2025)</td>
+  <td><span class="badge badge-medium">MEDIUM</span> &mdash; Additional preparation time but fragmented enforcement</td>
+</tr>
+<tr>
+  <td><strong>Amended Cybersecurity Law</strong></td>
+  <td>China / 중국</td>
+  <td>Oct 2025</td>
+  <td>30+ new standards expected in 2026; algorithm filing and synthetic content labeling</td>
+  <td><span class="badge badge-high">HIGH</span> &mdash; Most prescriptive APAC approach</td>
+</tr>
+<tr>
+  <td><strong>International AI Safety Report 2026</strong></td>
+  <td>International (30+ countries)</td>
+  <td>Feb 2026</td>
+  <td>Models can distinguish evaluation vs. deployment contexts; 100+ experts from 30+ countries</td>
+  <td><span class="badge badge-critical">HIGH</span> &mdash; Validates evaluation gaming concerns; strengthens case for production testing</td>
+</tr>
+<tr>
+  <td><strong>UN Autonomous Weapons Resolution</strong></td>
+  <td>International</td>
+  <td>Nov 2025</td>
+  <td>156 nations voted for legally binding LAWS agreement; US and Russia rejected</td>
+  <td><span class="badge badge-medium">MEDIUM</span> &mdash; May shape defense/military AI testing requirements</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Regulatory Landscape Summary / 규제 환경 요약:</strong> Characterized by <strong>fragmentation with convergence</strong> &mdash; convergence on risk-based frameworks and bias testing; divergence on enforcement mechanisms and scope.</p>
+<p class="bilingual"><strong>수렴과 함께하는 분산</strong> &mdash; 리스크 기반 프레임워크와 편향 테스팅에 수렴; 집행 메커니즘과 범위에서 분기.</p>
+
+<!-- Industry-Specific Trends -->
+<h3 id="industry-risk-trends">8.2.4 Industry-Specific Risk Trends / 산업별 리스크 동향</h3>
+
+<div class="collapsible">
+  <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+    <span>Healthcare / 의료 &mdash; AI Chatbot Misuse = #1 Health Tech Hazard 2026</span>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+      <table>
+        <thead><tr><th>Risk / 리스크</th><th>Evidence / 증거</th><th>Severity</th></tr></thead>
+        <tbody>
+          <tr><td>AI Chatbot Misuse (#1 Hazard)</td><td>ECRI designation; incorrect diagnoses, invented body parts; 5%+ ChatGPT messages health-related</td><td><span class="badge badge-critical">CRITICAL</span></td></tr>
+          <tr><td>Clinical AI Memorization</td><td>MIT (Jan 2026): De-identified EHR training enables patient re-identification</td><td><span class="badge badge-high">HIGH</span></td></tr>
+          <tr><td>Shadow AI in Healthcare</td><td>Surged in 2025 due to burnout; clinicians using unvalidated AI tools</td><td><span class="badge badge-high">HIGH</span></td></tr>
+          <tr><td>Clinical Deskilling</td><td>GenAI dependence; users struggle to identify clinically invalid responses</td><td><span class="badge badge-medium">MEDIUM</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="collapsible">
+  <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+    <span>Finance / 금융 &mdash; AI-Washing Enforcement &amp; Algorithmic Collusion</span>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+      <table>
+        <thead><tr><th>Risk / 리스크</th><th>Evidence / 증거</th><th>Severity</th></tr></thead>
+        <tbody>
+          <tr><td>AI-Washing Enforcement</td><td>SEC oversight expanding; class actions increased 100% (2023-2024)</td><td><span class="badge badge-high">HIGH</span></td></tr>
+          <tr><td>Algorithmic Collusion/Herding</td><td>Similar AI trading models causing flash crash risks; IOSCO warning (Mar 2025)</td><td><span class="badge badge-high">HIGH</span></td></tr>
+          <tr><td>AI-Powered Financial Scams</td><td>Deepfake investment scams as primary fraud vector; UK chatbot failures</td><td><span class="badge badge-critical">CRITICAL</span></td></tr>
+          <tr><td>Credit Scoring Bias</td><td>Continued algorithmic bias; 85% resume screening bias; regulatory scrutiny increasing</td><td><span class="badge badge-high">HIGH</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="collapsible">
+  <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+    <span>Defense / 국방 &mdash; $14.2B Pentagon AI Budget &amp; Autonomous Weapons</span>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+      <table>
+        <thead><tr><th>Risk / 리스크</th><th>Evidence / 증거</th><th>Severity</th></tr></thead>
+        <tbody>
+          <tr><td>Autonomous Weapons Proliferation</td><td>Pentagon $14.2B for AI/autonomous research (FY2026); "Replicator" $1B program</td><td><span class="badge badge-critical">CRITICAL</span></td></tr>
+          <tr><td>Civilian Distinction Failure</td><td>AI cannot reliably distinguish civilians from combatants; biased training data</td><td><span class="badge badge-critical">CRITICAL</span></td></tr>
+          <tr><td>Escalation Risk</td><td>Autonomous weapons create risk of rapid conflict escalation</td><td><span class="badge badge-critical">CRITICAL</span></td></tr>
+          <tr><td>Treaty Stalemate</td><td>156 nations voted for LAWS agreement; US and Russia rejected; 2026 "finish line"</td><td><span class="badge badge-high">HIGH</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="collapsible">
+  <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+    <span>Autonomous Vehicles / 자율주행 &amp; Education / 교육</span>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+      <h4>Autonomous Vehicles</h4>
+      <table>
+        <thead><tr><th>Risk</th><th>Evidence</th><th>Severity</th></tr></thead>
+        <tbody>
+          <tr><td>Pedestrian Safety</td><td>Waymo child collision (Jan 2026); NHTSA investigation; Senate hearing</td><td><span class="badge badge-critical">CRITICAL</span></td></tr>
+          <tr><td>Traffic Law Compliance</td><td>24+ illegal school bus passes in Austin</td><td><span class="badge badge-high">HIGH</span></td></tr>
+          <tr><td>Scaling Risk</td><td>Tesla Austin robotaxi crash rates potentially exceeding human drivers</td><td><span class="badge badge-high">HIGH</span></td></tr>
+        </tbody>
+      </table>
+      <h4>Education / 교육</h4>
+      <table>
+        <thead><tr><th>Risk</th><th>Evidence</th><th>Severity</th></tr></thead>
+        <tbody>
+          <tr><td>AI Cheating Epidemic</td><td>1.6 to 7.5 cases per 1,000 students (2022-2026); 94% AI-generated work undetected</td><td><span class="badge badge-high">HIGH</span></td></tr>
+          <tr><td>Detection Tool Bias</td><td>Non-native English speakers: 61.2% false positive vs. 5.1% native speakers</td><td><span class="badge badge-high">HIGH</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Annex D Trigger Assessment -->
+<h3 id="annex-d-trigger">8.2.5 Annex D Trigger Assessment / Annex D 트리거 평가 결과</h3>
+
+<blockquote class="warning">
+  <strong>Result / 결과: All 5 trigger criteria are met / 5개 트리거 기준 모두 충족</strong><br>
+  A quarterly update cycle should be initiated immediately.<br>
+  <span class="bilingual">즉시 분기별 업데이트 사이클을 시작해야 합니다.</span>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+  <th>Trigger Criterion / 트리거 기준</th>
+  <th>Assessment / 평가</th>
+  <th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>1. New attack vector not covered by existing patterns</strong><br><span class="bilingual">기존 패턴에서 다루지 않는 새로운 공격 벡터</span></td>
+  <td>Agentic cascading failures (87% downstream poisoning); salami slicing; IDE extension marketplace poisoning</td>
+  <td><span class="badge badge-critical">TRIGGERED</span></td>
+</tr>
+<tr>
+  <td><strong>2. Significant real-world incident with widespread impact</strong><br><span class="bilingual">광범위한 영향을 가진 중대한 실제 사고</span></td>
+  <td>Amazon Q extension (2 days live); OpenAI plugin attack (47 enterprises, 6 months); Waymo child collision (Senate hearing)</td>
+  <td><span class="badge badge-critical">TRIGGERED</span></td>
+</tr>
+<tr>
+  <td><strong>3. Regulatory change creating new testing requirements</strong><br><span class="bilingual">새로운 테스팅 요구사항을 생성하는 규제 변경</span></td>
+  <td>Korean AI Basic Act (Jan 2026); Colorado AI Act (Jun 2026); California Transparency Act (Jan 2026); US EO 14365 (Dec 2025)</td>
+  <td><span class="badge badge-critical">TRIGGERED</span></td>
+</tr>
+<tr>
+  <td><strong>4. New risk category identified by major databases</strong><br><span class="bilingual">주요 데이터베이스에서 식별된 새로운 리스크 카테고리</span></td>
+  <td>MIT AI Risk Repository v4: ~200 new categories; multi-agent risks subdomain</td>
+  <td><span class="badge badge-critical">TRIGGERED</span></td>
+</tr>
+<tr>
+  <td><strong>5. Benchmark coverage gap discovered</strong><br><span class="bilingual">벤치마크 커버리지 갭 발견</span></td>
+  <td>2026 International AI Safety Report confirms evaluation context detection (sandbagging); safetywashing evidence</td>
+  <td><span class="badge badge-critical">TRIGGERED</span></td>
+</tr>
+</tbody>
+</table>
+
+</section>
+
+<hr class="section-divider">
+
+<!-- ===== 8.3 REFLECTION RECOMMENDATIONS ===== -->
+<section id="reflection-recommendations">
+<h2>8.3 Guideline Reflection Recommendations / 가이드라인 반영 권고</h2>
+
+<p>This section integrates findings from both academic research (8.1) and risk trends (8.2) into a unified, prioritized recommendation list for guideline updates.</p>
+<p class="bilingual">이 섹션은 학술 연구(8.1)와 리스크 동향(8.2)의 발견을 통합하여, 가이드라인 업데이트를 위한 통합 우선순위 권고 목록을 제시합니다.</p>
+
+<!-- Immediate Reflection -->
+<h3 id="immediate-reflection">8.3.1 Immediate Reflection / 즉시 반영 (Priority 1)</h3>
+
+<table>
+<thead>
+<tr>
+  <th>#</th>
+  <th>Item / 항목</th>
+  <th>Source / 출처</th>
+  <th>Target / 대상</th>
+  <th>Action / 조치</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td><strong>Inter-Agent Trust Exploitation</strong><br><span class="bilingual">에이전트 간 신뢰 악용</span></td>
+  <td>Academic (R-01) + Risk</td>
+  <td>Annex A: New AP-SYS-005</td>
+  <td>Add new attack pattern for 82.4% inter-agent compromise; zero-trust architecture between agents</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><strong>Adaptive Attack Evidence</strong><br><span class="bilingual">적응형 공격 증거</span></td>
+  <td>Academic (R-03)</td>
+  <td>Phase 1-2 &sect;1.1, all mitigations</td>
+  <td>Add explicit caveat: all 12 published defenses bypassed at &gt;90% ASR. Frame all defenses as defense-in-depth layers</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><strong>Agentic Cascading Failures</strong><br><span class="bilingual">에이전틱 연쇄 장애</span></td>
+  <td>Risk (87% downstream)</td>
+  <td>Annex A: New AP-SYS-005 variant; Annex B: FM-020</td>
+  <td>Add cascading failure propagation pattern; 87% downstream poisoning within 4 hours</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td><strong>Tool Selection Hijacking</strong><br><span class="bilingual">도구 선택 하이재킹</span></td>
+  <td>Academic (R-02)</td>
+  <td>Annex A: New AP-SYS-006</td>
+  <td>Add distinct attack pattern for tool selection mechanism targeting (vs. tool misuse)</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td><strong>Healthcare AI Domain Testing</strong><br><span class="bilingual">의료 AI 도메인 테스팅</span></td>
+  <td>Risk (#1 hazard 2026)</td>
+  <td>Annex A: New AP-SOC-003; Annex B: FM-024</td>
+  <td>Add healthcare-specific attack pattern covering chatbot misuse, clinical deskilling, EHR memorization</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td><strong>Developer Tool Supply Chain</strong><br><span class="bilingual">개발자 도구 공급망</span></td>
+  <td>Risk (Amazon Q, Docker Hub)</td>
+  <td>Annex A: AP-SYS-003 variant; Annex B: FM-025</td>
+  <td>Add IDE extension marketplace poisoning as supply chain attack variant</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td><strong>Safety Devolution</strong><br><span class="bilingual">안전 퇴보</span></td>
+  <td>Academic (R-04)</td>
+  <td>Phase 1-2 &sect;2.2 (new subsection)</td>
+  <td>Document inverse capability-safety relationship; require safety regression testing per capability addition</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td><strong>Safetywashing Context</strong><br><span class="bilingual">세이프티워싱 맥락</span></td>
+  <td>Academic (R-06)</td>
+  <td>Phase 1-2 &sect;6</td>
+  <td>Add safetywashing risk subsection; distinguish capability-correlated vs. safety-specific benchmarks</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td><strong>New Benchmark Coverage</strong><br><span class="bilingual">신규 벤치마크 범위</span></td>
+  <td>Academic (R-07, R-08, R-10, R-11)</td>
+  <td>Annex C</td>
+  <td>Add AILuminate, FORTRESS, Risky-Bench, DREAM, VLSU, AgentHarm to benchmark matrix</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td><strong>Evaluation Context Detection</strong><br><span class="bilingual">평가 맥락 감지</span></td>
+  <td>Risk (2026 Safety Report)</td>
+  <td>Phase 1-2 &sect;1.8, Annex B</td>
+  <td>Strengthen evaluation gaming section with 2026 International AI Safety Report evidence</td>
+</tr>
+</tbody>
+</table>
+
+<!-- Monitoring -->
+<h3 id="monitoring-items">8.3.2 Monitoring / 모니터링 (Priority 2)</h3>
+
+<table>
+<thead>
+<tr>
+  <th>#</th>
+  <th>Item / 항목</th>
+  <th>Monitoring Reason / 모니터링 이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>M-01</td>
+  <td>PromptScreen defense (93.4% accuracy)</td>
+  <td>Promising but needs evaluation against adaptive attacks per "Attacker Moves Second" findings</td>
+</tr>
+<tr>
+  <td>M-02</td>
+  <td>4C Framework for agentic security</td>
+  <td>Novel conceptual framework but lacks empirical validation</td>
+</tr>
+<tr>
+  <td>M-03</td>
+  <td>Verifiably safe tool use (formal verification)</td>
+  <td>Promising formal approach but limited to simple tool chains currently</td>
+</tr>
+<tr>
+  <td>M-04</td>
+  <td>In-decoding safety-awareness probing</td>
+  <td>Novel generation-time defense but untested at scale</td>
+</tr>
+<tr>
+  <td>M-05</td>
+  <td>Shadow AI governance risk</td>
+  <td>$670K+ cost premium; add to Phase 3 scope when more data is available</td>
+</tr>
+<tr>
+  <td>M-06</td>
+  <td>LAWS/Autonomous Weapons Treaty</td>
+  <td>Monitor 2026 Review Conference outcomes for military AI testing requirements</td>
+</tr>
+<tr>
+  <td>M-07</td>
+  <td>AI-Washing enforcement trends</td>
+  <td>Primarily regulatory/compliance; monitor SEC/FCA enforcement</td>
+</tr>
+<tr>
+  <td>M-08</td>
+  <td>Regulatory compliance mapping</td>
+  <td>Korean AI Basic Act, Colorado AI Act, EU AI Act &mdash; add mapping annex in next cycle</td>
+</tr>
+</tbody>
+</table>
+
+<!-- Not Applicable -->
+<h3 id="not-applicable-items">8.3.3 Not Applicable / 해당 없음</h3>
+
+<table>
+<thead>
+<tr>
+  <th>#</th>
+  <th>Item / 항목</th>
+  <th>Reason / 이유</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>NA-01</td>
+  <td>Zero-shot deepfake detection techniques</td>
+  <td>Detection-focused; not directly applicable to red teaming methodology</td>
+</tr>
+<tr>
+  <td>NA-02</td>
+  <td>Autonomous agents on blockchains</td>
+  <td>Niche application domain beyond guideline scope</td>
+</tr>
+<tr>
+  <td>NA-03</td>
+  <td>AI for penetration testing efficacy</td>
+  <td>Offensive security application of AI, not AI safety red teaming</td>
+</tr>
+<tr>
+  <td>NA-04</td>
+  <td>AI-powered cryptocurrency scams</td>
+  <td>Downstream fraud; covered by existing deepfake and social engineering patterns</td>
+</tr>
+<tr>
+  <td>NA-05</td>
+  <td>AI detection tool bias (education)</td>
+  <td>Education-sector specific; not in scope for AI system red teaming</td>
+</tr>
+</tbody>
+</table>
+
+<!-- Annex Update Summary -->
+<h3 id="annex-update-summary">8.3.4 Annex A&ndash;D Update Proposals Summary / 부속서 업데이트 제안 종합</h3>
+
+<div class="collapsible open">
+  <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+    <span>Annex A: Attack Pattern Library Updates / 공격 패턴 라이브러리 업데이트</span>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+      <table>
+        <thead>
+          <tr><th>Pattern ID (Proposed)</th><th>Name (EN) / 이름 (KR)</th><th>Source</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>AP-SYS-005</strong></td><td>Inter-Agent Trust Exploitation / 에이전트 간 신뢰 악용</td><td>arXiv:2507.06850, 2510.23883</td></tr>
+          <tr><td><strong>AP-SYS-006</strong></td><td>Tool Selection Hijacking / 도구 선택 하이재킹</td><td>arXiv:2504.19793</td></tr>
+          <tr><td><strong>AP-SYS-003v</strong></td><td>IDE Extension Marketplace Poisoning / IDE 확장 마켓플레이스 포이즈닝</td><td>Amazon Q incident</td></tr>
+          <tr><td><strong>AP-MOD-004v</strong></td><td>Salami Slicing Injection / 살라미 슬라이싱 인젝션</td><td>eSecurity Planet Q4 2025</td></tr>
+          <tr><td><strong>AP-MOD-007</strong></td><td>Safeguard Pipeline Staged Attack / 안전 파이프라인 단계적 공격</td><td>arXiv:2506.24068 (STACK)</td></tr>
+          <tr><td><strong>AP-SOC-003</strong></td><td>Healthcare AI Misuse / 의료 AI 오용</td><td>ECRI 2026; MIT memorization</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="collapsible">
+  <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+    <span>Annex B: Risk-Failure-Attack Mapping Updates / 리스크-장애-공격 매핑 업데이트</span>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+      <table>
+        <thead>
+          <tr><th>FM-ID (Proposed)</th><th>Failure Mode (EN) / 장애 모드 (KR)</th><th>Applicable Layers</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>FM-020</td><td>Multi-agent cascading failure propagation / 멀티에이전트 연쇄 장애 전파</td><td>SYS</td></tr>
+          <tr><td>FM-021</td><td>Agent credential lifecycle compromise / 에이전트 자격 증명 수명주기 침해</td><td>SYS</td></tr>
+          <tr><td>FM-022</td><td>Gradual constraint erosion (salami slicing) / 점진적 제약 침식</td><td>MOD, SYS</td></tr>
+          <tr><td>FM-023</td><td>Shadow AI data leakage / 섀도우 AI 데이터 유출</td><td>SOC</td></tr>
+          <tr><td>FM-024</td><td>Clinical AI memorization/re-identification / 임상 AI 기억화/재식별</td><td>MOD</td></tr>
+          <tr><td>FM-025</td><td>Developer tool supply chain compromise / 개발자 도구 공급망 침해</td><td>SYS</td></tr>
+        </tbody>
+      </table>
+      <p>Update MIT AI Risk Repository reference: v4, December 2025 (7 domains, <strong>25 subdomains</strong>, including multi-agent risks subdomain).</p>
+    </div>
+  </div>
+</div>
+
+<div class="collapsible">
+  <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+    <span>Annex C: Benchmark Coverage Matrix Updates / 벤치마크 커버리지 매트릭스 업데이트</span>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+      <p>Add to benchmark landscape:</p>
+      <ul>
+        <li><strong>AILuminate v1.0</strong> (MLCommons) &mdash; 12 hazard categories, industry-standard</li>
+        <li><strong>FORTRESS</strong> &mdash; 26 frontier models, government-grade evaluation</li>
+        <li><strong>Risky-Bench</strong> (Feb 2026) &mdash; real-world agentic deployment safety</li>
+        <li><strong>VLSU</strong> &mdash; 17 safety patterns, 15 harm categories, 8,187 samples</li>
+        <li><strong>DREAM</strong> &mdash; dynamic cross-environment agent red teaming</li>
+        <li><strong>AgentHarm</strong> (ICLR 2025) &mdash; comprehensive agent harmfulness measurement</li>
+      </ul>
+      <p>Add safetywashing context: note benchmarks with high capability correlation (ETHICS, TruthfulQA, GPQA) may not measure safety-specific properties.</p>
+    </div>
+  </div>
+</div>
+
+<div class="collapsible">
+  <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+    <span>Annex D: Update Guide Recommendations / 업데이트 가이드 권고</span>
+  </div>
+  <div class="collapsible-body">
+    <div class="collapsible-body-inner">
+      <p>All 5 Annex D trigger criteria are met (see <a href="#annex-d-trigger">&sect;8.2.5</a>). Recommended actions:</p>
+      <ol>
+        <li><strong>Annex A</strong>: Add 6 new/variant attack patterns (AP-SYS-005, AP-SYS-006, AP-SYS-003v, AP-MOD-004v, AP-MOD-007, AP-SOC-003)</li>
+        <li><strong>Annex B</strong>: Add 6 new failure modes (FM-020 through FM-025); update MIT Risk Repository taxonomy to v4</li>
+        <li><strong>Annex C</strong>: Add 6 new benchmarks; add safetywashing context; add evaluation gaming validation status</li>
+        <li><strong>Phase 1-2</strong>: Strengthen &sect;1.7 (reasoning models), &sect;1.8 (evaluation gaming), &sect;1.9 (multilingual); add &sect;2.2.1 (safety devolution); update &sect;6 (safetywashing)</li>
+        <li><strong>Phase 3</strong>: Add automation guidance (69.5% vs. 47.6%); add shadow AI governance scope; add regulatory compliance mapping</li>
+      </ol>
+      <p>Initiate <strong>quarterly update cycle</strong> immediately.</p>
+      <p class="bilingual">즉시 <strong>분기별 업데이트 사이클</strong>을 시작해야 합니다.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Key Takeaways Box -->
+<blockquote>
+  <strong>Key Takeaways / 핵심 시사점:</strong>
+  <ol>
+    <li><strong>Agentic AI security is the dominant research focus</strong> &mdash; multiple new attack vectors (inter-agent trust, tool selection hijacking, safety devolution) and new benchmarks. The guideline must substantially expand agentic coverage.<br><span class="bilingual">에이전틱 AI 보안이 지배적 연구 초점. 가이드라인이 에이전틱 범위를 크게 확장해야 함.</span></li>
+    <li><strong>No individual defense is sufficient</strong> &mdash; all 12 published defenses bypassed at &gt;90% by adaptive attacks. All defenses must be framed as defense-in-depth layers.<br><span class="bilingual">어떤 개별 방어도 충분하지 않음. 모든 방어를 심층 방어의 계층으로 프레임해야 함.</span></li>
+    <li><strong>Reasoning model safety remains an open problem</strong> &mdash; CoT vulnerabilities confirmed and extended; first defensive framework (Thought Purity) appearing.<br><span class="bilingual">추론 모델 안전이 여전히 미해결 문제. CoT 취약점 확인/확장; 최초 방어 프레임워크 등장.</span></li>
+    <li><strong>Benchmark quality is under scrutiny</strong> &mdash; safetywashing evidence; new industry-standard benchmarks (AILuminate, FORTRESS) should be incorporated.<br><span class="bilingual">벤치마크 품질 면밀히 검토 중. 새 산업 표준 벤치마크를 통합해야 함.</span></li>
+    <li><strong>Risk landscape has shifted to system-level</strong> &mdash; from model-level concerns to agentic failures, supply chain, shadow AI, evaluation gaming.<br><span class="bilingual">리스크 환경이 모델 수준에서 시스템 수준(에이전틱 장애, 공급망, 섀도우 AI, 평가 게이밍)으로 전환.</span></li>
+  </ol>
+</blockquote>
+
+</section>
+
+</section>
+<!-- END PART VIII -->

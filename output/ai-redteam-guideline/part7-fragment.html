@@ -1,0 +1,684 @@
+<!-- ===== PART VII: REFERENCE DOCUMENT ANALYSIS ===== -->
+<section id="part-vii">
+<h1>Part VII: Reference Document Analysis / 제7부: 참고 문서 분석</h1>
+<p class="bilingual">3개 핵심 참고 문서의 심층 분석, 19개 수정 제안, 통합 권고사항</p>
+
+<!-- 7.1 Analysis Overview -->
+<section id="ref-analysis-overview">
+<h2>7.1 Analysis Overview / 분석 개요</h2>
+<p>Three authoritative reference documents were analyzed in depth to identify gaps, complementary frameworks, and specific modification proposals for this guideline. Together, these documents cover the full spectrum from general LLM testing methodology through GenAI evaluation structure to agentic AI-specific threat patterns.</p>
+<p class="bilingual">본 가이드라인의 갭 식별, 보완적 프레임워크, 구체적 수정 제안을 도출하기 위해 3개의 권위 있는 참고 문서를 심층 분석하였습니다. 이 문서들은 일반 LLM 테스트 방법론부터 GenAI 평가 구조, 에이전틱 AI 특화 위협 패턴까지 전 범위를 포괄합니다.</p>
+
+<h3>Analyzed Documents / 분석 대상 문서</h3>
+<table>
+<thead><tr><th>#</th><th>Document / 문서</th><th>Publisher / 발행기관</th><th>Year</th><th>Pages</th><th>Focus / 초점</th><th>Primary Guideline Phase</th></tr></thead>
+<tbody>
+<tr>
+  <td>1</td>
+  <td><strong>Guide to Red Teaming Methodology on AI Safety v1.10</strong></td>
+  <td>Japan AI Safety Institute (AISI)</td>
+  <td>2025</td>
+  <td>67</td>
+  <td>LLM systems (incl. multimodal) -- 15-step process methodology</td>
+  <td>Phase 3 (Normative Core)</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td><strong>GenAI Red Teaming Guide v1.0</strong></td>
+  <td>OWASP Top 10 for LLMs Project</td>
+  <td>2025</td>
+  <td>77</td>
+  <td>LLMs &amp; GenAI broadly -- 4-phase evaluation blueprint</td>
+  <td>Phase 3 (Normative Core)</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td><strong>Agentic AI Red Teaming Guide</strong></td>
+  <td>CSA + OWASP AI Exchange</td>
+  <td>2025</td>
+  <td>62</td>
+  <td>Agentic AI systems -- 12-category threat taxonomy</td>
+  <td>Phase 1-2 (Attacks), Phase 4 (Annex)</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Complementary Coverage / 상호 보완적 범위</h3>
+<ul>
+  <li><strong>Japan AISI:</strong> Most process-detailed (15-step methodology), strongest on operational execution guidance, LLM-focused</li>
+  <li><strong>OWASP GenAI:</strong> Broadest evaluation structure (4-phase blueprint), strongest on organizational maturity and metrics, GenAI-focused</li>
+  <li><strong>CSA Agentic AI:</strong> Most specialized (12 threat categories), strongest on agentic-specific attack patterns, agentic-focused</li>
+</ul>
+
+<h3>Modification Proposal Summary / 수정 제안 요약</h3>
+<table>
+<thead><tr><th>Priority / 우선순위</th><th>Count / 수량</th><th>Description / 설명</th></tr></thead>
+<tbody>
+<tr><td><span class="badge badge-critical">Essential / 필수</span></td><td><strong>9</strong></td><td>Critical gaps that should be addressed for guideline completeness</td></tr>
+<tr><td><span class="badge badge-high">Recommended / 권장</span></td><td><strong>7</strong></td><td>Enhancements that improve quality and coverage</td></tr>
+<tr><td><span class="badge badge-medium">Reference / 참고</span></td><td><strong>3</strong></td><td>Useful additions as resources permit</td></tr>
+<tr><td style="font-weight:700;">Total / 합계</td><td style="font-weight:700;">19</td><td>Across 3 reference documents</td></tr>
+</tbody>
+</table>
+</section>
+
+<hr class="section-divider">
+
+<!-- 7.2 Japan AISI Guide Analysis -->
+<section id="ref-aisi-analysis">
+<h2>7.2 Japan AISI Guide Analysis / 일본 AISI 가이드 분석</h2>
+<p class="bilingual">AI 안전에 대한 레드티밍 방법론 가이드 v1.10 -- 일본 AI 안전연구소 (AISI), 2025년 3월</p>
+
+<h3>Document Summary / 문서 요약</h3>
+<p>The Japan AISI guide provides a comprehensive 15-step red teaming process lifecycle specifically targeting LLM systems including multimodal foundation models. It is one of the most process-detailed references available, offering unique operational guidance for planning, executing, and reporting AI red teaming engagements.</p>
+<p class="bilingual">일본 AISI 가이드는 멀티모달 파운데이션 모델을 포함한 LLM 시스템을 대상으로 한 포괄적인 15단계 레드팀 프로세스 라이프사이클을 제공합니다.</p>
+
+<h4>Key Contributions / 핵심 기여</h4>
+<ul>
+  <li><strong>15-Step Process:</strong> Planning &amp; Preparation (Steps 1-5) &rarr; Planning &amp; Conducting Attacks (Steps 6-10) &rarr; Reporting &amp; Improvement (Steps 11-15)</li>
+  <li><strong>6 AI Safety Perspectives:</strong> Human-Centric, Safety, Fairness, Privacy Protection, Ensuring Security, Transparency</li>
+  <li><strong>LLM Usage Pattern Classification:</strong> Output patterns, reference source patterns, LLM deployment type patterns</li>
+  <li><strong>Defense Mechanism Inventory:</strong> Structured catalog of pre-filtering, LLM internal, post-filtering, and RLHF-based protections</li>
+  <li><strong>Confirmation Levels:</strong> Graduated verification (possibility &rarr; evidence &rarr; confirmation)</li>
+  <li><strong>System Configuration Categories:</strong> 5-category LLM usage classification (self-developed, fine-tuned, OSS, OSS fine-tuned, external API)</li>
+</ul>
+
+<h3>Modification Proposals / 수정 제안 (6 proposals)</h3>
+<table>
+<thead><tr><th>#</th><th>Proposal / 제안</th><th>Priority / 우선순위</th><th>Target Phase</th><th>Description / 설명</th></tr></thead>
+<tbody>
+<tr>
+  <td>A-1</td>
+  <td><strong>AI Safety Perspectives Framework</strong></td>
+  <td><span class="badge badge-high">Recommended</span></td>
+  <td>Phase 0</td>
+  <td>Map Safety/Security/Alignment to AISI's 6-element framework (Human-Centric, Safety, Fairness, Privacy, Security, Transparency)</td>
+</tr>
+<tr>
+  <td>A-2</td>
+  <td><strong>Usage Pattern Analysis</strong></td>
+  <td><span class="badge badge-critical">Essential</span></td>
+  <td>Phase 3</td>
+  <td>Add LLM usage pattern classification (output, reference sources, deployment type) to threat modeling</td>
+</tr>
+<tr>
+  <td>A-3</td>
+  <td><strong>Defense Mechanism Inventory</strong></td>
+  <td><span class="badge badge-critical">Essential</span></td>
+  <td>Phase 3</td>
+  <td>Add structured defense mechanism catalog step (pre-filtering, LLM internal, post-filtering, RLHF) before execution</td>
+</tr>
+<tr>
+  <td>A-4</td>
+  <td><strong>Reproducibility &amp; Iteration Guidance</strong></td>
+  <td><span class="badge badge-high">Recommended</span></td>
+  <td>Phase 3</td>
+  <td>Add operational guidance for managing non-determinism: iteration counts, success criteria, execution condition logging</td>
+</tr>
+<tr>
+  <td>A-5</td>
+  <td><strong>Confirmation Level Framework</strong></td>
+  <td><span class="badge badge-high">Recommended</span></td>
+  <td>Phase 3</td>
+  <td>Add graduated verification levels: possibility indication &rarr; evidence of likelihood &rarr; actual confirmation</td>
+</tr>
+<tr>
+  <td>A-6</td>
+  <td><strong>SBOM/AIBOM Reference</strong></td>
+  <td><span class="badge badge-medium">Reference</span></td>
+  <td>Phase 3</td>
+  <td>Recommend SBOM/AIBOM for AI system component documentation during scoping</td>
+</tr>
+</tbody>
+</table>
+
+<div class="collapsible">
+<div class="collapsible-header">Details: AISI Proposal A-2 -- Usage Pattern Analysis / 상세: 사용 패턴 분석</div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+<p><strong>Target:</strong> Phase 3 (Normative Core), Stage 1 Planning, Activity P-2 (Threat Model Construction)</p>
+<p><strong>Proposed Change:</strong> Add a sub-activity for "LLM Usage Pattern Classification" following AISI's three-category framework:</p>
+<ol>
+  <li><strong>Output Patterns / 출력 패턴:</strong> Text generation, query generation, code generation -- each creates different risk profiles</li>
+  <li><strong>Reference Source Patterns / 참조 소스 패턴:</strong> Internal DB, internet search, RAG -- determines data poisoning attack surface</li>
+  <li><strong>LLM Deployment Patterns / 배포 패턴:</strong> Self-developed, fine-tuned, OSS, external API -- determines access level for testing</li>
+</ol>
+<p><strong>Rationale:</strong> This structured approach ensures threat modeling captures system-specific risks based on actual LLM usage, not just generic threat categories. Currently our guideline mentions deployment patterns informally but lacks AISI's systematic classification.</p>
+</div></div>
+</div>
+
+<div class="collapsible">
+<div class="collapsible-header">Details: AISI Proposal A-3 -- Defense Mechanism Inventory / 상세: 방어 메커니즘 인벤토리</div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+<p><strong>Target:</strong> Phase 3 (Normative Core), Stage 1 Planning, Activity P-2 (Threat Model Construction)</p>
+<p><strong>Proposed Change:</strong> Add explicit requirement to catalog existing defense mechanisms before red teaming execution:</p>
+<ul>
+  <li><strong>Pre-filtering:</strong> Input validation, content filters, rate limiting</li>
+  <li><strong>LLM Internal:</strong> RLHF alignment, safety training, constitutional AI constraints</li>
+  <li><strong>Post-filtering:</strong> Output classifiers, toxicity filters, PII redaction</li>
+  <li><strong>RLHF-based:</strong> Reinforcement learning from human feedback protections</li>
+</ul>
+<p><strong>Rationale:</strong> Knowing the defense stack is critical for designing bypass-focused tests. Our guideline mentions "existing mitigations" as a bullet point but lacks AISI's structured 4-layer defense categorization.</p>
+</div></div>
+</div>
+
+<div class="collapsible">
+<div class="collapsible-header">Details: AISI Proposal A-4 -- Reproducibility Guidance / 상세: 재현성 가이드</div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+<p><strong>Target:</strong> Phase 3, Stage 3 (Execution) or Section 9 (Test Design Principles)</p>
+<p><strong>Proposed Change:</strong> Add practical guidance for managing LLM non-determinism:</p>
+<ul>
+  <li>Setting clear attack success criteria before execution</li>
+  <li>Defining minimum iteration counts for non-deterministic tests (e.g., 10+ attempts per attack vector)</li>
+  <li>Logging full execution conditions (temperature, seed, model version) alongside results</li>
+  <li>Acknowledging that failed attacks may succeed with different random seeds (and vice versa)</li>
+  <li>Statistical significance thresholds for attack success rate claims</li>
+</ul>
+<p><strong>Rationale:</strong> AISI Section 2.5 explicitly discusses non-determinism challenges with practical guidance. Our guideline acknowledges this conceptually but lacks operational procedures.</p>
+</div></div>
+</div>
+
+<div class="collapsible">
+<div class="collapsible-header">Details: AISI Proposals A-1, A-5, A-6 / 상세: 추가 제안 (AI Safety Perspectives, Confirmation Levels, SBOM)</div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+<h4>A-1: AI Safety Perspectives Framework</h4>
+<p>Map our Safety/Security/Alignment framework to AISI's 6-element framework. This adds Fairness, Transparency, and Human-Centric as explicit evaluation perspectives in Phase 0 terminology. Enhances scope completeness and aligns with international frameworks.</p>
+
+<h4>A-5: Confirmation Level Framework</h4>
+<p>Add graduated confirmation levels to evaluation framework design (Phase 3, Stage 2):</p>
+<ul>
+  <li><strong>Level 1 -- Possibility:</strong> Indicate that a successful attack appears possible based on initial probing</li>
+  <li><strong>Level 2 -- Evidence:</strong> Provide evidence regarding likelihood of success through systematic testing</li>
+  <li><strong>Level 3 -- Confirmation:</strong> Confirm actual attack success with reproducible demonstration</li>
+</ul>
+<p>Helps organizations scale red teaming effort to available resources while maintaining transparency about verification depth.</p>
+
+<h4>A-6: SBOM/AIBOM Reference</h4>
+<p>Recommend use of Software Bill of Materials (SBOM) and AI Bill of Materials (AIBOM) for documenting AI system components during the scoping phase. Aligns with supply chain security concerns in Phase 1-2.</p>
+</div></div>
+</div>
+</section>
+
+<hr class="section-divider">
+
+<!-- 7.3 OWASP GenAI Red Teaming Guide Analysis -->
+<section id="ref-owasp-analysis">
+<h2>7.3 OWASP GenAI Red Teaming Guide Analysis / OWASP GenAI 레드팀 가이드 분석</h2>
+<p class="bilingual">GenAI Red Teaming Guide: A Practical Approach to Evaluating AI Vulnerabilities v1.0 -- OWASP, 2025년 1월</p>
+
+<h3>Document Summary / 문서 요약</h3>
+<p>The OWASP GenAI Red Teaming Guide provides the broadest evaluation structure among the three references, featuring a 4-phase evaluation blueprint, an 8-step PASTA-inspired strategy, a comprehensive metrics framework, and organizational maturity guidance. It is specifically designed for GenAI systems broadly, including early agentic considerations.</p>
+<p class="bilingual">OWASP GenAI 레드팀 가이드는 세 참고 문서 중 가장 넓은 평가 구조를 제공하며, 4단계 평가 블루프린트, 8단계 PASTA 기반 전략, 포괄적 메트릭 프레임워크, 조직 성숙도 지침을 포함합니다.</p>
+
+<h4>Key Contributions / 핵심 기여</h4>
+<ul>
+  <li><strong>4-Phase Evaluation Blueprint:</strong>
+    <ol>
+      <li>Phase 1: Model Evaluation (alignment, robustness, bias testing)</li>
+      <li>Phase 2: Implementation Evaluation (guardrails, RAG, control testing)</li>
+      <li>Phase 3: System Evaluation (infrastructure, integration, supply chain)</li>
+      <li>Phase 4: Runtime/Human &amp; Agentic Evaluation (human interaction, agent behavior, business impact)</li>
+    </ol>
+  </li>
+  <li><strong>Security/Safety/Trust Triad:</strong> Extends beyond safety/security to include trust (user confidence, partner confidence, organizational reputation)</li>
+  <li><strong>RAG Triad:</strong> Factuality / Relevance / Groundedness evaluation framework for RAG systems</li>
+  <li><strong>Metrics Framework (Appendix A):</strong> ASR, coverage metrics, time-to-bypass, defense efficacy</li>
+  <li><strong>8-Step PASTA-Inspired Strategy:</strong> Risk-based Scoping &rarr; Cross-functional Collaboration &rarr; Tailored Assessment &rarr; Clear Objectives &rarr; Threat Modeling &rarr; Model Reconnaissance &rarr; Attack Modelling &rarr; Risk Analysis</li>
+  <li><strong>Mature AI Red Teaming (Ch. 8):</strong> Organizational integration, team composition, engagement framework, ethical boundaries</li>
+</ul>
+
+<div class="collapsible">
+<div class="collapsible-header">4-Phase Blueprint Diagram / 4단계 블루프린트 다이어그램</div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+<div class="process-flow">
+  <div class="process-step">Phase 1<br><small>Model Evaluation<br>모델 평가</small></div>
+  <div class="process-arrow">&rarr;</div>
+  <div class="process-step">Phase 2<br><small>Implementation<br>구현 평가</small></div>
+  <div class="process-arrow">&rarr;</div>
+  <div class="process-step">Phase 3<br><small>System Evaluation<br>시스템 평가</small></div>
+  <div class="process-arrow">&rarr;</div>
+  <div class="process-step">Phase 4<br><small>Runtime &amp; Agentic<br>런타임/에이전틱</small></div>
+</div>
+<p style="text-align:center;font-size:0.85rem;color:var(--text-secondary);margin-top:0.5rem;">OWASP 4-Phase Evaluation Blueprint -- complements our 6-stage process lifecycle</p>
+</div></div>
+</div>
+
+<h3>Modification Proposals / 수정 제안 (6 proposals)</h3>
+<table>
+<thead><tr><th>#</th><th>Proposal / 제안</th><th>Priority / 우선순위</th><th>Target Phase</th><th>Description / 설명</th></tr></thead>
+<tbody>
+<tr>
+  <td>O-1</td>
+  <td><strong>4-Phase Evaluation Blueprint</strong></td>
+  <td><span class="badge badge-critical">Essential</span></td>
+  <td>Phase 3</td>
+  <td>Add Model&rarr;Implementation&rarr;System&rarr;Runtime evaluation structure as overlay to 6-stage lifecycle</td>
+</tr>
+<tr>
+  <td>O-2</td>
+  <td><strong>Metrics Framework</strong></td>
+  <td><span class="badge badge-critical">Essential</span></td>
+  <td>Phase 3</td>
+  <td>Add quantitative metrics (ASR, coverage, time-to-bypass, defense efficacy) to reporting guidance</td>
+</tr>
+<tr>
+  <td>O-3</td>
+  <td><strong>Blueprint Phase Checklists</strong></td>
+  <td><span class="badge badge-critical">Essential</span></td>
+  <td>Phase 4</td>
+  <td>Add evaluation checklists for each of 4 evaluation phases (Model, Implementation, System, Runtime)</td>
+</tr>
+<tr>
+  <td>O-4</td>
+  <td><strong>Trust Dimension</strong></td>
+  <td><span class="badge badge-high">Recommended</span></td>
+  <td>Phase 0</td>
+  <td>Expand Safety/Security/Alignment to include Trust dimension (user confidence, partner confidence, reputation)</td>
+</tr>
+<tr>
+  <td>O-5</td>
+  <td><strong>RAG Triad Evaluation</strong></td>
+  <td><span class="badge badge-high">Recommended</span></td>
+  <td>Phase 4</td>
+  <td>Add Factuality/Relevance/Groundedness framework for RAG system evaluation</td>
+</tr>
+<tr>
+  <td>O-6</td>
+  <td><strong>Model Reconnaissance Activity</strong></td>
+  <td><span class="badge badge-high">Recommended</span></td>
+  <td>Phase 3</td>
+  <td>Add systematic model probing step (API investigation, model card review, capability probing) before attack design</td>
+</tr>
+</tbody>
+</table>
+
+<div class="collapsible">
+<div class="collapsible-header">Details: OWASP Proposal O-1 -- 4-Phase Evaluation Blueprint / 상세: 4단계 평가 블루프린트</div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+<p><strong>Target:</strong> Phase 3 (Normative Core), Stage 2 Design, Activity D-1 (Attack Surface Mapping)</p>
+<p><strong>Proposed Change:</strong> Incorporate OWASP's 4-phase evaluation structure as the organizing principle for attack surface mapping and test case organization within our existing 6-stage lifecycle:</p>
+<table>
+<thead><tr><th>Blueprint Phase</th><th>Evaluation Focus</th><th>Key Test Areas</th></tr></thead>
+<tbody>
+<tr><td><strong>Phase 1: Model</strong></td><td>Core model behavior</td><td>Alignment testing, robustness, bias, toxicity, inference attacks</td></tr>
+<tr><td><strong>Phase 2: Implementation</strong></td><td>Application layer</td><td>Guardrails, RAG integrity, prompt controls, input/output validation</td></tr>
+<tr><td><strong>Phase 3: System</strong></td><td>Infrastructure &amp; integration</td><td>APIs, supply chain, access control, data pipelines, third-party components</td></tr>
+<tr><td><strong>Phase 4: Runtime</strong></td><td>Live behavior</td><td>Human interaction, agent autonomy, business impact, emergent behavior</td></tr>
+</tbody>
+</table>
+<p><strong>Rationale:</strong> Our 6-stage lifecycle answers "how to conduct" red teaming. OWASP's 4-phase blueprint answers "what to evaluate." Both are needed; combining them creates a comprehensive framework.</p>
+</div></div>
+</div>
+
+<div class="collapsible">
+<div class="collapsible-header">Details: OWASP Proposal O-2 -- Metrics Framework / 상세: 메트릭 프레임워크</div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+<p><strong>Target:</strong> Phase 3, Section 10 (Report Structure Template) or new subsection</p>
+<p><strong>Proposed Change:</strong> Add quantitative metrics that complement our qualitative evaluation framework:</p>
+<table>
+<thead><tr><th>Metric Category</th><th>Specific Metrics</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td><strong>Attack Success Rate (ASR)</strong></td><td>ASR per attack category, per model, per defense layer</td><td>Percentage of successful attacks out of total attempts</td></tr>
+<tr><td><strong>Coverage</strong></td><td>% of attack patterns tested, % of OWASP Top 10 covered</td><td>Breadth of testing performed</td></tr>
+<tr><td><strong>Time-to-Bypass</strong></td><td>Average time to first successful bypass per defense</td><td>Defense resilience indicator</td></tr>
+<tr><td><strong>Defense Efficacy</strong></td><td>Bypass rate per defense layer</td><td>Per-layer defense effectiveness</td></tr>
+</tbody>
+</table>
+<blockquote>
+<strong>Note:</strong> Consistent with our Principle 3 (Process Over Score), these are informational indicators for cross-engagement comparability, not certification criteria or pass/fail thresholds.
+</blockquote>
+</div></div>
+</div>
+
+<div class="collapsible">
+<div class="collapsible-header">Details: OWASP Proposals O-3 through O-6 / 상세: 체크리스트, Trust, RAG Triad, Model Recon</div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+<h4>O-3: Blueprint Phase Checklists</h4>
+<p>Add evaluation checklists for each blueprint phase to Phase 4 (Living Annex):</p>
+<ul>
+  <li><strong>Model Evaluation Checklist:</strong> Inference attacks, alignment testing, robustness, bias, toxicity</li>
+  <li><strong>Implementation Evaluation Checklist:</strong> Guardrails, RAG integrity, controls, prompts</li>
+  <li><strong>System Evaluation Checklist:</strong> Infrastructure, APIs, supply chain, access control</li>
+  <li><strong>Runtime/Agentic Evaluation Checklist:</strong> Human interaction, agent behavior, business impact</li>
+</ul>
+
+<h4>O-4: Trust Dimension</h4>
+<p>Expand Phase 0 Safety/Security/Alignment framework to include Trust dimension. Trust encompasses user confidence, partner confidence, and organizational reputation -- the business dimension that pure safety/security/alignment misses.</p>
+
+<h4>O-5: RAG Triad Evaluation</h4>
+<p>Add structured RAG evaluation criteria to Phase 4 attack pattern library:</p>
+<ul>
+  <li><strong>Factuality:</strong> Is the response factually correct?</li>
+  <li><strong>Relevance:</strong> Is the retrieved context relevant to the query?</li>
+  <li><strong>Groundedness:</strong> Is the response grounded in the retrieved context (vs. hallucinated)?</li>
+</ul>
+
+<h4>O-6: Model Reconnaissance Activity</h4>
+<p>Add formal "Model Reconnaissance" activity before attack design -- systematic probing of model architecture, capabilities, and behavior through API investigation, model card review, capability probing, and architecture inference.</p>
+</div></div>
+</div>
+</section>
+
+<hr class="section-divider">
+
+<!-- 7.4 CSA Agentic AI Red Teaming Guide Analysis -->
+<section id="ref-csa-analysis">
+<h2>7.4 CSA Agentic AI Red Teaming Guide Analysis / CSA 에이전틱 AI 레드팀 가이드 분석</h2>
+<p class="bilingual">Agentic AI Red Teaming Guide -- Cloud Security Alliance (CSA) + OWASP AI Exchange, 2025년</p>
+
+<h3>Document Summary / 문서 요약</h3>
+<p>The CSA Agentic AI Red Teaming Guide is the most specialized and detailed reference for agentic AI red teaming. Its 12-category threat framework with actionable test steps and example prompts represents the state of the art in agentic security testing guidance. Unlike the other two references, CSA focuses exclusively on agentic AI systems -- systems that autonomously plan, reason, act, and learn.</p>
+<p class="bilingual">CSA 에이전틱 AI 레드팀 가이드는 에이전틱 AI 레드팀을 위한 가장 전문적이고 상세한 참고 문서입니다. 실행 가능한 테스트 단계와 예시 프롬프트가 포함된 12개 카테고리 위협 프레임워크는 에이전틱 보안 테스트 지침의 최신 기술을 대표합니다.</p>
+
+<h4>12 Threat Categories / 12개 위협 범주</h4>
+<table>
+<thead><tr><th>#</th><th>Category / 범주</th><th>Key Tests / 핵심 테스트</th><th>Novelty Level</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>Agent Authorization &amp; Control Hijacking</strong></td><td>Direct control hijacking, permission escalation, MCP server cross-hijacking</td><td><span class="badge badge-high">High</span></td></tr>
+<tr><td>2</td><td><strong>Checker-Out-of-the-Loop</strong></td><td>Threshold breach alerts, failsafe validation, communication channel robustness</td><td><span class="badge badge-critical">Critical</span></td></tr>
+<tr><td>3</td><td><strong>Agent Critical System Interaction</strong></td><td>Physical system manipulation, IoT device interaction, safety system bypass</td><td><span class="badge badge-critical">Critical</span></td></tr>
+<tr><td>4</td><td><strong>Goal &amp; Instruction Manipulation</strong></td><td>Goal interpretation attacks, instruction poisoning, recursive goal subversion</td><td><span class="badge badge-critical">Critical</span></td></tr>
+<tr><td>5</td><td><strong>Agent Hallucination Exploitation</strong></td><td>Fabricated output testing, cascading hallucination analysis</td><td><span class="badge badge-medium">Medium</span></td></tr>
+<tr><td>6</td><td><strong>Agent Impact Chain &amp; Blast Radius</strong></td><td>Cascading failure analysis, containment testing, inter-agent trust</td><td><span class="badge badge-high">High</span></td></tr>
+<tr><td>7</td><td><strong>Agent Knowledge Base Poisoning</strong></td><td>Training data poisoning, external knowledge poisoning, rollback capability</td><td><span class="badge badge-medium">Medium</span></td></tr>
+<tr><td>8</td><td><strong>Agent Memory &amp; Context Manipulation</strong></td><td>State management vulnerabilities, session isolation, cross-session data leaks</td><td><span class="badge badge-high">High</span></td></tr>
+<tr><td>9</td><td><strong>Agent Orchestration &amp; Multi-Agent Exploitation</strong></td><td>Inter-agent communication interception, trust exploitation, feedback loop manipulation</td><td><span class="badge badge-high">High</span></td></tr>
+<tr><td>10</td><td><strong>Agent Resource &amp; Service Exhaustion</strong></td><td>Resource depletion, API quota exhaustion, denial-of-service via agents</td><td><span class="badge badge-medium">Medium</span></td></tr>
+<tr><td>11</td><td><strong>Supply Chain &amp; Dependency Attacks</strong></td><td>Tampered dependencies, compromised service simulation, pipeline security</td><td><span class="badge badge-medium">Medium</span></td></tr>
+<tr><td>12</td><td><strong>Agent Untraceability</strong></td><td>Logging suppression, forensic data obfuscation, traceability gap analysis</td><td><span class="badge badge-high">High</span></td></tr>
+</tbody>
+</table>
+
+<h4>Key Unique Concepts / 핵심 고유 개념</h4>
+<ul>
+  <li><strong>MCP Server Hijacking:</strong> Testing whether one MCP server's instructions can hijack control flow for another MCP server connected to the same agent</li>
+  <li><strong>A2A Protocol Security:</strong> Agent-to-agent protocol security testing for multi-agent communication</li>
+  <li><strong>Emergent Behavior:</strong> Unpredictable behaviors from planning + reasoning + acting + learning combination</li>
+  <li><strong>Sandbox Escape:</strong> Testing whether agents attempt to escape containment measures</li>
+  <li><strong>Recursive Goal Subversion:</strong> Progressive goal redefinition through intermediate instructions</li>
+</ul>
+
+<h3>Modification Proposals / 수정 제안 (7 proposals)</h3>
+<table>
+<thead><tr><th>#</th><th>Proposal / 제안</th><th>Priority / 우선순위</th><th>Target Phase</th><th>Description / 설명</th></tr></thead>
+<tbody>
+<tr>
+  <td>C-1</td>
+  <td><strong>Checker-Out-of-the-Loop Testing</strong></td>
+  <td><span class="badge badge-critical">Essential</span></td>
+  <td>Phase 1-2</td>
+  <td>Add human oversight failure as a system-level attack/failure category with threshold breach, alert suppression, and failsafe tests</td>
+</tr>
+<tr>
+  <td>C-2</td>
+  <td><strong>MCP/A2A Protocol Security Testing</strong></td>
+  <td><span class="badge badge-critical">Essential</span></td>
+  <td>Phase 4</td>
+  <td>Add attack patterns for MCP server cross-hijacking and A2A communication exploitation</td>
+</tr>
+<tr>
+  <td>C-3</td>
+  <td><strong>12-Category Agentic Threat Expansion</strong></td>
+  <td><span class="badge badge-critical">Essential</span></td>
+  <td>Phase 1-2</td>
+  <td>Systematically incorporate CSA's 12 threat categories not already covered in our attack taxonomy</td>
+</tr>
+<tr>
+  <td>C-4</td>
+  <td><strong>Goal/Instruction Manipulation Framework</strong></td>
+  <td><span class="badge badge-critical">Essential</span></td>
+  <td>Phase 4</td>
+  <td>Add attack patterns for goal interpretation attacks, instruction poisoning, recursive goal subversion</td>
+</tr>
+<tr>
+  <td>C-5</td>
+  <td><strong>Blast Radius &amp; Impact Chain Analysis</strong></td>
+  <td><span class="badge badge-high">Recommended</span></td>
+  <td>Phase 3</td>
+  <td>Extend attack chain analysis with cascading failure simulation for multi-agent systems</td>
+</tr>
+<tr>
+  <td>C-6</td>
+  <td><strong>Agent Untraceability / Forensic Readiness</strong></td>
+  <td><span class="badge badge-medium">Reference</span></td>
+  <td>Phase 1-2</td>
+  <td>Add agent untraceability (logging suppression, forensic data integrity) as test category</td>
+</tr>
+<tr>
+  <td>C-7</td>
+  <td><strong>Physical/IoT System Interaction</strong></td>
+  <td><span class="badge badge-medium">Reference</span></td>
+  <td>Phase 1-2</td>
+  <td>Add physical system manipulation and IoT device interaction testing for AI agents</td>
+</tr>
+</tbody>
+</table>
+
+<div class="collapsible">
+<div class="collapsible-header">Details: CSA Proposal C-1 -- Checker-Out-of-the-Loop / 상세: 검증자 루프 이탈 테스트</div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+<p><strong>Target:</strong> Phase 1-2 (Attacks), Section 2 (System-Level Attack Patterns), new subsection</p>
+<p><strong>Proposed Change:</strong> Add "Human Oversight Failure / Checker-Out-of-the-Loop" as a system-level attack/failure category:</p>
+<ul>
+  <li><strong>Threshold Breach Alert Testing:</strong> Verify that alerts are triggered when agent actions exceed predefined thresholds</li>
+  <li><strong>Alert Suppression Testing:</strong> Attempt to suppress or bypass alert mechanisms</li>
+  <li><strong>Failsafe Mechanism Validation:</strong> Test that failsafe mechanisms activate correctly under adversarial conditions</li>
+  <li><strong>Communication Channel Robustness:</strong> Test that human-agent communication channels cannot be disrupted</li>
+  <li><strong>Context-Aware Decision Analysis:</strong> Verify that checkers receive sufficient context for informed decisions</li>
+</ul>
+<p><strong>Rationale:</strong> EU AI Act requires human oversight for high-risk systems. Testing whether human oversight mechanisms actually work under adversarial conditions is essential and represents a critical gap in our current guideline.</p>
+</div></div>
+</div>
+
+<div class="collapsible">
+<div class="collapsible-header">Details: CSA Proposal C-2 -- MCP/A2A Protocol Security / 상세: MCP/A2A 프로토콜 보안</div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+<p><strong>Target:</strong> Phase 4 (Living Annex), Annex A System-Level Attack Patterns</p>
+<p><strong>Proposed Change:</strong> Add new attack patterns:</p>
+<table>
+<thead><tr><th>Pattern ID</th><th>Name</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>AP-SYS-005</td><td><strong>MCP Server Cross-Hijacking</strong></td><td>Test whether one MCP server's instructions can hijack control flow for another MCP server connected to the same agent. Includes: malicious tool description injection, cross-server instruction leakage, privilege escalation via MCP composition</td></tr>
+<tr><td>AP-SYS-006</td><td><strong>A2A Communication Exploitation</strong></td><td>Test agent-to-agent protocol security: inter-agent message interception, trust relationship exploitation, agent identity spoofing, coordination protocol manipulation</td></tr>
+</tbody>
+</table>
+<p><strong>Rationale:</strong> MCP (Model Context Protocol) and A2A (Agent-to-Agent) are emerging agent interoperability protocols being rapidly adopted. CSA is the first guide to address their security implications. These are critical for multi-agent systems and represent a forward-looking addition.</p>
+</div></div>
+</div>
+
+<div class="collapsible">
+<div class="collapsible-header">Details: CSA Proposal C-4 -- Goal/Instruction Manipulation / 상세: 목표/지시 조작 프레임워크</div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+<p><strong>Target:</strong> Phase 4 (Living Annex), Annex A, new category "SYS-GM: Goal Manipulation"</p>
+<p><strong>Proposed Change:</strong> Add attack patterns covering the full spectrum of goal manipulation attacks unique to agentic systems:</p>
+<table>
+<thead><tr><th>Attack Type</th><th>Description / 설명</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td><strong>Goal Interpretation</strong></td><td>Exploiting ambiguity in goal definitions to redirect agent behavior</td><td>Redefining "optimize cost" to mean "disable all safety checks"</td></tr>
+<tr><td><strong>Instruction Poisoning</strong></td><td>Injecting malicious instructions into agent's instruction set</td><td>Appending hidden instructions via tool outputs</td></tr>
+<tr><td><strong>Semantic Manipulation</strong></td><td>Using ambiguous or multi-interpretation instructions</td><td>Exploiting homonyms or context-dependent meanings</td></tr>
+<tr><td><strong>Recursive Goal Subversion</strong></td><td>Progressive goal redefinition through intermediate steps</td><td>Each sub-goal slightly shifts the overall objective</td></tr>
+<tr><td><strong>Hierarchical Goal Vulnerability</strong></td><td>Nested goal structures with malicious sub-goals</td><td>Legitimate top-level goal with poisoned sub-objectives</td></tr>
+<tr><td><strong>Goal Extraction</strong></td><td>Adversarial attempts to extract agent internal goals</td><td>Social engineering the agent to reveal its system prompt</td></tr>
+</tbody>
+</table>
+<p><strong>Rationale:</strong> Goal manipulation is qualitatively different from prompt injection -- it targets the agent's autonomous planning and reasoning capabilities rather than just its language processing. CSA Section 4.4 provides the most detailed treatment available.</p>
+</div></div>
+</div>
+
+<div class="collapsible">
+<div class="collapsible-header">Details: CSA Proposals C-3, C-5, C-6, C-7 / 상세: 12-Category 확장, Blast Radius, Untraceability, Physical/IoT</div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+<h4>C-3: 12-Category Agentic Threat Expansion</h4>
+<p>Systematically map and incorporate CSA's 12 threat categories into Phase 1-2. Categories not already covered include: Checker-Out-of-the-Loop, Critical System Interaction, Goal/Instruction Manipulation, Hallucination Exploitation, Impact Chain/Blast Radius, and Untraceability. Existing categories to enhance: Authorization/Control Hijacking, Supply Chain, Multi-Agent Exploitation.</p>
+
+<h4>C-5: Blast Radius &amp; Impact Chain Analysis</h4>
+<p>Extend Phase 3 attack chain analysis to include: cascading failure simulation for multi-agent systems, blast radius estimation for compromised agents, containment mechanism testing, and inter-agent trust relationship assessment. Critical for understanding the real-world impact of agentic AI compromises.</p>
+
+<h4>C-6: Agent Untraceability / Forensic Readiness</h4>
+<p>Add testing for: logging suppression (can agents disable their own logging?), audit trail completeness verification, forensic data integrity testing, and role inheritance audit testing. Without traceability, incident response for agentic AI failures is impossible.</p>
+
+<h4>C-7: Physical/IoT System Interaction</h4>
+<p>Add subsection on critical system interaction testing for AI agents that interact with physical infrastructure: physical system manipulation, IoT device interaction security, safety system bypass testing. Scope is deployment-dependent but increasingly relevant as agents control real-world systems.</p>
+</div></div>
+</div>
+</section>
+
+<hr class="section-divider">
+
+<!-- 7.5 Consolidated Recommendations -->
+<section id="ref-consolidated">
+<h2>7.5 Consolidated Recommendations / 통합 권고사항</h2>
+
+<h3>Top 3 Gaps Identified / 식별된 3대 갭</h3>
+
+<blockquote>
+<strong>Gap 1: Agentic AI Threat Coverage / 에이전틱 AI 위협 범위</strong><br>
+Our guideline covers agentic risks at a general level but lacks the depth of CSA's 12-category threat framework. Novel attack surfaces including MCP/A2A protocol security, goal manipulation, checker-out-of-the-loop, and agent untraceability are not addressed.<br>
+<em>Source: CSA Agentic AI Red Teaming Guide | Impact: Phase 1-2, Phase 4 | Priority: Essential</em>
+</blockquote>
+
+<blockquote>
+<strong>Gap 2: Evaluation Structure ("What to Test") / 평가 구조 ("무엇을 테스트할 것인가")</strong><br>
+Our 6-stage lifecycle answers "how to conduct" red teaming but lacks a structured "what to evaluate" overlay. OWASP's 4-phase blueprint (Model &rarr; Implementation &rarr; System &rarr; Runtime) provides the complementary evaluation structure needed.<br>
+<em>Source: OWASP GenAI Red Teaming Guide | Impact: Phase 3 | Priority: Essential</em>
+</blockquote>
+
+<blockquote>
+<strong>Gap 3: Operational Execution Guidance / 운영 실행 가이드</strong><br>
+Our guideline addresses process and methodology but lacks granular operational guidance for non-determinism management, defense mechanism inventory, usage pattern analysis, and graduated confirmation levels.<br>
+<em>Source: Japan AISI Guide | Impact: Phase 3 | Priority: Essential + Recommended</em>
+</blockquote>
+
+<h3>Cross-Document Common Themes / 교차 문서 공통 테마</h3>
+
+<table>
+<thead><tr><th>Theme / 테마</th><th>AISI</th><th>OWASP</th><th>CSA</th><th>Gap in Our Guideline</th></tr></thead>
+<tbody>
+<tr>
+  <td><strong>Structured Evaluation Frameworks</strong></td>
+  <td>15-step process</td>
+  <td>4-phase blueprint</td>
+  <td>12-category taxonomy</td>
+  <td>Need OWASP's "what to evaluate" overlay and CSA's threat depth</td>
+</tr>
+<tr>
+  <td><strong>Safety Beyond Security</strong></td>
+  <td>6 AI Safety perspectives</td>
+  <td>Security/Safety/Trust triad</td>
+  <td>Human oversight (Checker-Out-of-Loop)</td>
+  <td>Lacks explicit "Trust" and "Transparency" dimensions</td>
+</tr>
+<tr>
+  <td><strong>Non-Determinism &amp; Reproducibility</strong></td>
+  <td>Practical guidance (iteration counts, criteria)</td>
+  <td>Statistical approach (90%+ thresholds)</td>
+  <td>--</td>
+  <td>Conceptually acknowledged but lacks operational guidance</td>
+</tr>
+<tr>
+  <td><strong>Agentic AI as Distinct Challenge</strong></td>
+  <td>--</td>
+  <td>Appendix D (preliminary)</td>
+  <td>Entire document (12 categories)</td>
+  <td>Covered but not at CSA's level of detail</td>
+</tr>
+<tr>
+  <td><strong>Defense-Aware Testing</strong></td>
+  <td>Defense mechanism inventory</td>
+  <td>Guardrail testing in Phase 2</td>
+  <td>Per-category defense validation</td>
+  <td>Principle exists but lacks structured inventory methodology</td>
+</tr>
+<tr>
+  <td><strong>Organizational Maturity</strong></td>
+  <td>Team structure, escalation, budget</td>
+  <td>Mature AI RT chapter</td>
+  <td>Portfolio view of agents</td>
+  <td>Addresses roles/process but could benefit from maturity model</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Complete Modification Proposals by Priority / 우선순위별 전체 수정 제안</h3>
+
+<h4><span class="badge badge-critical">Essential / 필수 반영</span> (9 proposals)</h4>
+<table>
+<thead><tr><th>#</th><th>Proposal</th><th>Source</th><th>Target Phase</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>1</td><td><strong>4-Phase Evaluation Blueprint</strong></td><td>OWASP (O-1)</td><td>Phase 3</td><td>Add Model&rarr;Implementation&rarr;System&rarr;Runtime evaluation structure as overlay to 6-stage lifecycle</td></tr>
+<tr><td>2</td><td><strong>Metrics Framework</strong></td><td>OWASP (O-2)</td><td>Phase 3</td><td>Add quantitative metrics (ASR, coverage, time-to-bypass, defense efficacy) to reporting guidance</td></tr>
+<tr><td>3</td><td><strong>Blueprint Phase Checklists</strong></td><td>OWASP (O-3)</td><td>Phase 4</td><td>Add evaluation checklists for each of 4 evaluation phases</td></tr>
+<tr><td>4</td><td><strong>Usage Pattern Analysis</strong></td><td>AISI (A-2)</td><td>Phase 3</td><td>Add LLM usage pattern classification to threat modeling</td></tr>
+<tr><td>5</td><td><strong>Defense Mechanism Inventory</strong></td><td>AISI (A-3)</td><td>Phase 3</td><td>Add structured defense mechanism catalog step before execution</td></tr>
+<tr><td>6</td><td><strong>Checker-Out-of-the-Loop Testing</strong></td><td>CSA (C-1)</td><td>Phase 1-2</td><td>Add human oversight failure as system-level attack category</td></tr>
+<tr><td>7</td><td><strong>MCP/A2A Protocol Security Testing</strong></td><td>CSA (C-2)</td><td>Phase 4</td><td>Add MCP server cross-hijacking and A2A exploitation attack patterns</td></tr>
+<tr><td>8</td><td><strong>12-Category Agentic Threat Expansion</strong></td><td>CSA (C-3)</td><td>Phase 1-2</td><td>Systematically incorporate CSA's 12 threat categories</td></tr>
+<tr><td>9</td><td><strong>Goal/Instruction Manipulation Framework</strong></td><td>CSA (C-4)</td><td>Phase 4</td><td>Add goal interpretation, instruction poisoning, recursive goal subversion patterns</td></tr>
+</tbody>
+</table>
+
+<h4><span class="badge badge-high">Recommended / 권장 반영</span> (7 proposals)</h4>
+<table>
+<thead><tr><th>#</th><th>Proposal</th><th>Source</th><th>Target Phase</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>10</td><td><strong>Trust Dimension</strong></td><td>OWASP (O-4)</td><td>Phase 0</td><td>Expand Safety/Security/Alignment to include Trust dimension</td></tr>
+<tr><td>11</td><td><strong>RAG Triad Evaluation</strong></td><td>OWASP (O-5)</td><td>Phase 4</td><td>Add Factuality/Relevance/Groundedness framework for RAG systems</td></tr>
+<tr><td>12</td><td><strong>Model Reconnaissance Activity</strong></td><td>OWASP (O-6)</td><td>Phase 3</td><td>Add systematic model probing step before attack scenario design</td></tr>
+<tr><td>13</td><td><strong>AI Safety Perspectives Framework</strong></td><td>AISI (A-1)</td><td>Phase 0</td><td>Map to AISI's 6-element framework (Human-Centric, Safety, Fairness, Privacy, Security, Transparency)</td></tr>
+<tr><td>14</td><td><strong>Reproducibility &amp; Iteration Guidance</strong></td><td>AISI (A-4)</td><td>Phase 3</td><td>Add operational guidance for managing non-determinism during execution</td></tr>
+<tr><td>15</td><td><strong>Confirmation Level Framework</strong></td><td>AISI (A-5)</td><td>Phase 3</td><td>Add graduated verification levels (possibility &rarr; evidence &rarr; confirmation)</td></tr>
+<tr><td>16</td><td><strong>Blast Radius &amp; Impact Chain Analysis</strong></td><td>CSA (C-5)</td><td>Phase 3</td><td>Extend attack chain analysis with cascading failure simulation for multi-agent systems</td></tr>
+</tbody>
+</table>
+
+<h4><span class="badge badge-medium">Reference / 참고</span> (3 proposals)</h4>
+<table>
+<thead><tr><th>#</th><th>Proposal</th><th>Source</th><th>Target Phase</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>17</td><td><strong>SBOM/AIBOM Reference</strong></td><td>AISI (A-6)</td><td>Phase 3</td><td>Recommend SBOM/AIBOM for AI system component documentation</td></tr>
+<tr><td>18</td><td><strong>Agent Untraceability / Forensic Readiness</strong></td><td>CSA (C-6)</td><td>Phase 1-2</td><td>Add agent untraceability as attack/test category</td></tr>
+<tr><td>19</td><td><strong>Physical/IoT System Interaction</strong></td><td>CSA (C-7)</td><td>Phase 1-2</td><td>Add physical system manipulation testing for AI agents</td></tr>
+</tbody>
+</table>
+
+<h3>Implementation Roadmap / 구현 로드맵</h3>
+
+<h4>Immediate Actions / 즉시 조치 (High Impact, Low Effort)</h4>
+<ol>
+  <li>Add Checker-Out-of-the-Loop as a test category in Phase 1-2 (Proposal #6)</li>
+  <li>Add defense mechanism inventory step in Phase 3 (Proposal #5)</li>
+  <li>Add metrics framework to Phase 3 reporting section (Proposal #2)</li>
+</ol>
+
+<h4>Short-Term Actions / 단기 조치 (High Impact, Medium Effort)</h4>
+<ol start="4">
+  <li>Incorporate CSA's 12 threat categories into Phase 1-2 (Proposal #8)</li>
+  <li>Add 4-phase evaluation blueprint overlay to Phase 3 (Proposal #1)</li>
+  <li>Add MCP/A2A and goal manipulation attack patterns to Phase 4 (Proposals #7, #9)</li>
+  <li>Add usage pattern analysis to Phase 3 threat modeling (Proposal #4)</li>
+</ol>
+
+<h4>Medium-Term Actions / 중기 조치 (Medium Impact, Medium Effort)</h4>
+<ol start="8">
+  <li>Add blueprint phase checklists to Phase 4 (Proposal #3)</li>
+  <li>Add reproducibility guidance to Phase 3 (Proposal #14)</li>
+  <li>Add model reconnaissance activity to Phase 3 (Proposal #12)</li>
+  <li>Enhance Phase 0 with Trust dimension and AI Safety perspectives (Proposals #10, #13)</li>
+</ol>
+
+<h4>As Resources Permit / 자원 가용 시</h4>
+<ol start="12">
+  <li>Add RAG Triad, confirmation levels, blast radius analysis, SBOM/AIBOM, untraceability, physical/IoT as resources permit (Proposals #11, #15, #16, #17, #18, #19)</li>
+</ol>
+
+<blockquote>
+<strong>Impact by Phase / 단계별 영향:</strong><br>
+<strong>Phase 0 (Terminology):</strong> Proposals #10, #13 -- Enhance evaluation scope definitions<br>
+<strong>Phase 1-2 (Attacks):</strong> Proposals #6, #8, #18, #19 -- Largest content gap area; significant agentic taxonomy expansion<br>
+<strong>Phase 3 (Normative Core):</strong> Proposals #1, #2, #4, #5, #12, #14, #15, #16, #17 -- Most affected phase; enhances methodology and evaluation framework<br>
+<strong>Phase 4 (Living Annex):</strong> Proposals #3, #7, #9, #11 -- New attack patterns and evaluation checklists
+</blockquote>
+
+</section>
+
+</section><!-- end Part VII -->

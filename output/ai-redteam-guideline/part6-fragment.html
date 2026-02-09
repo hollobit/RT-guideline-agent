@@ -1,0 +1,542 @@
+<!-- ===== PART VI: STANDARDS ALIGNMENT / 표준 정합성 분석 ===== -->
+<section id="part-vi">
+<h1>Part VI: Standards Alignment / 표준 정합성 분석</h1>
+
+<p>This part provides a systematic analysis of how the AI Red Team International Guideline aligns with the two most relevant international standards: ISO/IEC AWI TS 42119-7 (AI Red Teaming) and ISO/IEC/IEEE 29119 (Software Testing). Clause-by-clause comparison, process mapping, and a conformance dashboard enable transparent traceability between this guideline and established ISO standards.</p>
+
+<p class="bilingual">이 파트는 AI 레드팀 국제 가이드라인이 가장 관련성 높은 두 개의 국제 표준인 ISO/IEC AWI TS 42119-7(AI 레드팀) 및 ISO/IEC/IEEE 29119(소프트웨어 테스팅)와 어떻게 정합되는지에 대한 체계적 분석을 제공합니다. 조항별 비교, 프로세스 매핑, 정합성 대시보드를 통해 본 가이드라인과 기존 ISO 표준 간의 투명한 추적성을 확보합니다.</p>
+
+<hr class="section-divider">
+
+<!-- ===== 6.1 42119-7 기준 문서 비교 분석 ===== -->
+<section id="standards-42119-7">
+<h2>6.1 42119-7 Base Standard Comparison / 42119-7 기준 문서 비교 분석</h2>
+
+<h3>6.1.1 Document Summary / 문서 요약</h3>
+
+<table>
+  <thead><tr><th>Field</th><th>Value</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Full Title</strong></td><td>ISO/IEC AWI TS 42119-7:2026(en) -- Artificial Intelligence -- Testing of AI -- Part 7: Red Teaming</td></tr>
+    <tr><td><strong>Committee</strong></td><td>ISO/IEC JTC 1/SC 42 (Artificial Intelligence)</td></tr>
+    <tr><td><strong>Status / 상태</strong></td><td>AWI (Approved Work Item) -- Working Draft stage</td></tr>
+    <tr><td><strong>Pages / 분량</strong></td><td>38 pages (including annexes / 부속서 포함)</td></tr>
+    <tr><td><strong>Series / 시리즈</strong></td><td>Part of ISO/IEC 42119 series on Testing of AI / AI 테스팅 시리즈의 일부</td></tr>
+    <tr><td><strong>Alignment / 연계</strong></td><td>Designed with ISO/IEC/IEEE 29119 software testing series / 29119 소프트웨어 테스팅 시리즈와 연계 설계</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Key Characteristics / 핵심 특성:</strong></p>
+<ul>
+  <li><strong>Three-Phase Process / 3단계 프로세스:</strong> Team Formation &amp; Preparation &rarr; Execution &rarr; Knowledge Sharing &amp; Reporting</li>
+  <li><strong>Multi-Dimensional Assessment / 다차원 평가:</strong> Security &amp; Safety (CBRN), Quality (Reliability &amp; Robustness), Performance (Efficiency under Attack)</li>
+  <li><strong>ISO 29119 Alignment / 29119 연계:</strong> Explicit mapping to ISO/IEC/IEEE 29119-2 test processes in Annex E</li>
+  <li><strong>Agentic AI Coverage / 에이전틱 AI:</strong> Includes terms and risk scenarios for agentic AI, multi-agent systems, indirect prompt injection</li>
+  <li><strong>Tester Wellbeing / 테스터 복지:</strong> Unique clause on psychological safety and opt-out mechanisms for red teamers</li>
+</ul>
+
+<h3>6.1.2 Clause-by-Clause Comparison / 조항별 비교 매핑</h3>
+
+<p>Legend / 범례: <span class="badge badge-low">Reflected / 반영됨</span> <span class="badge badge-medium">Partial / 부분반영</span> <span class="badge badge-critical">Not Reflected / 미반영</span></p>
+
+<div class="collapsible">
+  <div class="collapsible-header">Clause-by-Clause Mapping Table / 조항별 매핑 테이블 (click to expand)</div>
+  <div class="collapsible-body"><div class="collapsible-body-inner">
+    <table>
+      <thead>
+        <tr><th>42119-7 Clause</th><th>Content Summary / 내용 요약</th><th>Status / 반영상태</th><th>Guideline Location</th><th>Gap / 갭</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>1 Scope</strong></td><td>Technology-agnostic guidance for AI red teaming</td><td><span class="badge badge-low">Reflected</span></td><td>Phase 0 &sect;2.1</td><td>Guideline scope is broader (socio-technical), well aligned</td></tr>
+        <tr><td><strong>3.1.1-3.1.5</strong></td><td>Core definitions: red team, AI red team, adversarial attack, data poisoning, hallucination</td><td><span class="badge badge-medium">Partial</span></td><td>Phase 0 &sect;1.2-1.6</td><td>42119-7 defines "red team" (group) separately from "AI red team" -- guideline merges these</td></tr>
+        <tr><td><strong>3.1.6-3.1.15</strong></td><td>29119-1 test terminology (10 terms)</td><td><span class="badge badge-critical">Not Reflected</span></td><td>--</td><td>Guideline does not define: test specification, test case, expected result, test procedure, test item, test objective, test plan</td></tr>
+        <tr><td><strong>3.1.16</strong></td><td>Red teaming: "benign or adversarial perspective"</td><td><span class="badge badge-medium">Partial</span></td><td>Phase 0 &sect;1.2</td><td>Guideline focuses on adversarial only; 42119-7 includes benign perspective</td></tr>
+        <tr><td><strong>3.1.18-3.1.20</strong></td><td>Agentic AI, Multi-agent, Indirect prompt injection</td><td><span class="badge badge-medium">Partial</span></td><td>Phase 0 &sect;1.5-1.6</td><td>Multi-agent system lacks formal definition entry</td></tr>
+        <tr><td><strong>3.2</strong></td><td>Abbreviations (FM, LLM, MMLM, VLA, VLM)</td><td><span class="badge badge-critical">Not Reflected</span></td><td>--</td><td>No abbreviation section in guideline</td></tr>
+        <tr><td><strong>4.2</strong></td><td>Traditional vs AI RT comparison table</td><td><span class="badge badge-low">Reflected</span></td><td>Phase 0 &sect;4</td><td>Guideline has more comprehensive differentiation matrix</td></tr>
+        <tr><td><strong>4.3</strong></td><td>Multi-dimensional approaches (Security/Safety, Quality, Performance)</td><td><span class="badge badge-medium">Partial</span></td><td>Phase 3 &sect;9.3</td><td>Lacks explicit Performance dimension and CBRN-specific dimension</td></tr>
+        <tr><td><strong>4.4</strong></td><td>Relationship with other standards (ISO 5338, 16085, 25059, 29147)</td><td><span class="badge badge-medium">Partial</span></td><td>Phase R</td><td>Lacks explicit mapping to ISO 5338, 16085, 25059, 25058, 29147, 20246</td></tr>
+        <tr><td><strong>5.1</strong></td><td>Three-phase approach</td><td><span class="badge badge-low">Reflected</span></td><td>Phase 3 &sect;1.1</td><td>Guideline has 6 stages (more granular); conceptually well aligned</td></tr>
+        <tr><td><strong>5.2.1.2.4.1</strong></td><td>Competence &amp; Training requirements</td><td><span class="badge badge-medium">Partial</span></td><td>Phase 0 &sect;3.4, Phase 3 &sect;2.3</td><td>Lacks formal training requirements specification</td></tr>
+        <tr><td><strong>5.2.1.2.4.3</strong></td><td>Tester Safety &amp; Psychological Support</td><td><span class="badge badge-critical">Not Reflected</span></td><td>--</td><td><strong>Critical gap:</strong> No provision for red teamer psychological wellbeing</td></tr>
+        <tr><td><strong>5.2.2.2.3</strong></td><td>Quantitative success criteria (ASR &lt;1%, latency)</td><td><span class="badge badge-medium">Partial</span></td><td>Phase 3 &sect;3.3 (D-4)</td><td><strong>Philosophical tension:</strong> Guideline prohibits numeric pass/fail thresholds</td></tr>
+        <tr><td><strong>5.2.2.3</strong></td><td>Scope definition with SBOM/AIBOM</td><td><span class="badge badge-medium">Partial</span></td><td>Phase 3 &sect;2.3 (P-1)</td><td>Lacks SBOM/AIBOM reference</td></tr>
+        <tr><td><strong>5.2.3.1.1</strong></td><td>Rules of Engagement (RoE)</td><td><span class="badge badge-medium">Partial</span></td><td>Phase 3 &sect;2.3 (P-4)</td><td>Lacks formal RoE terminology and structure</td></tr>
+        <tr><td><strong>5.2.3.1.2</strong></td><td>Domain-specific team missions (CBRN, Quality, Performance)</td><td><span class="badge badge-critical">Not Reflected</span></td><td>--</td><td>No domain-specific team mission assignments</td></tr>
+        <tr><td><strong>5.3.6.3</strong></td><td>Root cause analysis</td><td><span class="badge badge-medium">Partial</span></td><td>Phase 3 &sect;5.3 (A-1, A-2)</td><td>Lacks explicit root cause analysis step</td></tr>
+        <tr><td><strong>5.4.2</strong></td><td>Translation to regression test cases</td><td><span class="badge badge-medium">Partial</span></td><td>Phase 3 &sect;6.4, &sect;11.3</td><td>Regression test case translation not explicitly mandated</td></tr>
+        <tr><td><strong>5.4.4.1</strong></td><td>Attack Signature Library, mitigation design patterns</td><td><span class="badge badge-medium">Partial</span></td><td>Phase 3 &sect;7.3 (F-3)</td><td>Lacks formalized attack signature and mitigation pattern sharing</td></tr>
+        <tr><td><strong>5.4.4.3</strong></td><td>Controlled dissemination (CBRN/Safety sensitive findings)</td><td><span class="badge badge-critical">Not Reflected</span></td><td>--</td><td><strong>Critical gap:</strong> No access-controlled dissemination protocol</td></tr>
+        <tr><td><strong>6.1.2</strong></td><td>Three-perspective attack scenario framework</td><td><span class="badge badge-medium">Partial</span></td><td>Phase 1-2 &sect;1-2</td><td>Not organized in the three-perspective framework</td></tr>
+        <tr><td><strong>Annex C</strong></td><td>Document templates (test plan, communication plan)</td><td><span class="badge badge-medium">Partial</span></td><td>Phase 3 &sect;10</td><td>Lacks standalone test plan and communication plan templates</td></tr>
+        <tr><td><strong>Annex E</strong></td><td>ISO 29119-2 process mapping</td><td><span class="badge badge-medium">Partial</span></td><td>Phase 3 References</td><td>Lacks explicit process mapping table</td></tr>
+      </tbody>
+    </table>
+  </div></div>
+</div>
+
+<h3>6.1.3 Mandatory Reflection Items (M-01 ~ M-08) / 필수 반영 사항</h3>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Recommendation / 권고사항</th><th>Target / 대상</th><th>Rationale / 근거</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>M-01</strong></td><td>Add ISO/IEC 29119-series test terminology to Phase 0<br><span class="bilingual">Phase 0에 29119 시리즈 테스트 용어 추가</span></td><td>Phase 0 &sect;1.11</td><td>42119-7 Clause 3.1.6-3.1.15 defines 10 foundational test terms</td></tr>
+    <tr><td><strong>M-02</strong></td><td>Add "Multi-agent system" formal definition<br><span class="bilingual">"다중 에이전트 시스템" 공식 정의 추가</span></td><td>Phase 0 &sect;1.6</td><td>42119-7 defines multi-agent system (3.1.19); guideline lacks formal definition</td></tr>
+    <tr><td><strong>M-03</strong></td><td>Add formal Abbreviations section<br><span class="bilingual">공식 약어 섹션 추가</span></td><td>Phase 0 &sect;1.12</td><td>42119-7 Clause 3.2 defines FM, LLM, MMLM, VLA, VLM</td></tr>
+    <tr><td><strong>M-04</strong></td><td>Add explicit ISO standards relationship mapping<br><span class="bilingual">명시적 ISO 표준 관계 매핑 추가</span></td><td>Phase R</td><td>42119-7 Clause 4.4 maps to ISO 5338, 16085, 25059/25058, 29147, 20246</td></tr>
+    <tr><td><strong>M-05</strong></td><td>Add "Rules of Engagement (RoE)" as formal concept<br><span class="bilingual">"교전 규칙(RoE)" 공식 개념 추가</span></td><td>Phase 3 &sect;2.3 (P-4)</td><td>42119-7 &sect;5.2.3.1.1 defines RoE with forbidden targets, authorized techniques, stop conditions</td></tr>
+    <tr><td><strong>M-06</strong></td><td>Add SBOM/AIBOM reference to scope definition<br><span class="bilingual">범위 정의에 SBOM/AIBOM 참조 추가</span></td><td>Phase 3 &sect;2.3 (P-1)</td><td>42119-7 &sect;5.2.2.3 recommends SBOM/AIBOM for component identification</td></tr>
+    <tr><td><strong>M-07</strong></td><td>Add explicit root cause analysis step<br><span class="bilingual">명시적 근본 원인 분석 단계 추가</span></td><td>Phase 3 &sect;5.3 (new A-6)</td><td>42119-7 &sect;5.3.6.3 mandates root cause analysis</td></tr>
+    <tr><td><strong>M-08</strong></td><td>Add ISO/IEC 29119-2 process mapping table<br><span class="bilingual">29119-2 프로세스 매핑 테이블 추가</span></td><td>Phase 3 Appendix</td><td>42119-7 Annex E provides explicit phase-to-29119-2 mapping</td></tr>
+  </tbody>
+</table>
+
+<h3>6.1.4 Critical Gaps / 핵심 갭 상세</h3>
+
+<h4>Critical Gap 1: Tester Psychological Safety / 테스터 심리적 안전</h4>
+
+<blockquote class="warning">
+  <strong>42119-7 &sect;5.2.1.2.4.3</strong> requires psychological support, rotation schedules, and opt-out mechanisms for red teamers exposed to harmful content (hate speech, CSAM-adjacent content, self-harm descriptions, CBRN material).<br><br>
+  <span class="bilingual"><strong>42119-7 &sect;5.2.1.2.4.3</strong>은 유해 콘텐츠(혐오 발언, CSAM 관련 콘텐츠, 자해 설명, CBRN 자료)에 노출되는 레드티머를 위한 심리적 지원, 순환 일정, 거부 메커니즘을 요구합니다.</span>
+</blockquote>
+
+<p><strong>Required provisions / 필수 조치:</strong></p>
+<ul>
+  <li><strong>Psychological support / 심리적 지원:</strong> Access to counseling or psychological support services</li>
+  <li><strong>Rotation schedules / 순환 일정:</strong> Rotation of personnel across high-risk testing categories to minimize prolonged exposure</li>
+  <li><strong>Opt-out mechanisms / 거부 메커니즘:</strong> Team members may opt out of specific high-risk categories without professional penalty</li>
+  <li><strong>Content exposure protocols / 콘텐츠 노출 프로토콜:</strong> Maximum daily exposure limits for categories of harmful content</li>
+</ul>
+
+<h4>Critical Gap 2: Controlled Dissemination of CBRN/Sensitive Findings / CBRN 민감정보 통제된 배포</h4>
+
+<blockquote class="warning">
+  <strong>42119-7 &sect;5.4.4.3</strong> mandates need-to-know basis and sanitized reporting for CBRN/Safety findings. The guideline currently has no provision for access-controlled dissemination of high-risk findings.<br><br>
+  <span class="bilingual"><strong>42119-7 &sect;5.4.4.3</strong>은 CBRN/안전 발견사항에 대한 알 필요성 기반 및 살균된 보고를 의무화합니다. 가이드라인에는 현재 고위험 발견사항의 접근 통제된 배포에 대한 조항이 없습니다.</span>
+</blockquote>
+
+<p><strong>Required provisions / 필수 조치:</strong></p>
+<ul>
+  <li><strong>Need-to-know access / 알 필요성 기반 접근:</strong> Detailed attack vectors restricted to security team and authorized developers only</li>
+  <li><strong>Sanitized reporting / 살균된 보고:</strong> Reports for wider audiences must remove actionable harmful information</li>
+  <li><strong>Retention controls / 보존 통제:</strong> Harmful content securely stored with time-limited retention and destroyed after remediation verification</li>
+</ul>
+
+<h3>6.1.5 Philosophical Tension / 철학적 긴장점</h3>
+
+<blockquote>
+  <strong>Quantitative Criteria vs. Score Prohibition / 정량적 기준 vs. 점수 금지</strong><br><br>
+  42119-7 &sect;5.2.2.2.3 and &sect;6.1.3 define quantitative success criteria (ASR &lt;1%, latency thresholds, CBRN zero-tolerance). The guideline's Phase 3 &sect;3.3 (D-4) explicitly <strong>prohibits numeric pass/fail thresholds</strong>.<br><br>
+  <span class="bilingual">42119-7은 정량적 성공 기준(ASR &lt;1%, 지연시간 임계값, CBRN 무관용)을 정의합니다. 가이드라인의 Phase 3 &sect;3.3 (D-4)는 <strong>숫자 합격/불합격 임계값을 명시적으로 금지</strong>합니다.</span><br><br>
+  <strong>Resolution / 해결:</strong> Maintain the guideline's qualitative approach as primary methodology, while acknowledging that organizations may define quantitative thresholds per 42119-7 for specific domains (CBRN zero-tolerance, performance SLAs) as complementary criteria.
+  <br><span class="bilingual"><strong>해결:</strong> 가이드라인의 정성적 접근을 주요 방법론으로 유지하면서, 조직이 특정 도메인(CBRN 무관용, 성능 SLA)에 대해 42119-7에 따른 정량적 임계값을 보완적 기준으로 정의할 수 있음을 인정합니다.</span>
+</blockquote>
+
+</section>
+
+<hr class="section-divider">
+
+<!-- ===== 6.2 ISO/IEC 29119 연계 분석 ===== -->
+<section id="standards-29119">
+<h2>6.2 ISO/IEC 29119 SW Testing Standards Alignment / SW 테스팅 표준 연계 분석</h2>
+
+<h3>6.2.1 29119 Series Overview / 29119 시리즈 개요</h3>
+
+<table>
+  <thead>
+    <tr><th>Part / 파트</th><th>Title / 제목</th><th>Edition / 판</th><th>Pages / 분량</th><th>Key Content / 핵심 내용</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Part 1</strong></td>
+      <td>General Concepts<br><span class="bilingual">일반 개념</span></td>
+      <td>2022</td>
+      <td>60p</td>
+      <td>133+ terms; AI-specific terms (AI-based system, neural network, neuron coverage, metamorphic testing, fuzz testing); 3-level process hierarchy; testing roles</td>
+    </tr>
+    <tr>
+      <td><strong>Part 2</strong></td>
+      <td>Test Processes<br><span class="bilingual">테스트 프로세스</span></td>
+      <td>2021</td>
+      <td>64p</td>
+      <td>3-layer model: Organizational (OT), Management (TM), Dynamic (DT); risk-based testing; entry/exit criteria; traceability (TP7)</td>
+    </tr>
+    <tr>
+      <td><strong>Part 3</strong></td>
+      <td>Test Documentation<br><span class="bilingual">테스트 문서</span></td>
+      <td>2021</td>
+      <td>98p</td>
+      <td>Templates: Test Policy, Test Plan (15+ subsections), Status/Completion Reports, Test Case/Procedure Specifications, Incident Reports</td>
+    </tr>
+    <tr>
+      <td><strong>Part 4</strong></td>
+      <td>Test Techniques<br><span class="bilingual">테스트 기법</span></td>
+      <td>2021</td>
+      <td>148p</td>
+      <td>20 techniques: 12 specification-based, 7 structure-based, 1 experience-based; formal coverage measurement; AI-relevant: metamorphic &amp; fuzz testing</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>6.2.2 Process Mapping: 29119-2 &harr; Phase 3 / 프로세스 매핑</h3>
+
+<div class="collapsible">
+  <div class="collapsible-header">Detailed Process Mapping Table / 상세 프로세스 매핑 테이블 (click to expand)</div>
+  <div class="collapsible-body"><div class="collapsible-body-inner">
+    <table>
+      <thead>
+        <tr><th>Phase 3 Stage / 단계</th><th>Phase 3 Activities</th><th>29119-2 Process</th><th>29119-2 Codes</th><th>Alignment / 정렬</th></tr>
+      </thead>
+      <tbody>
+        <tr><td rowspan="4"><strong>Stage 1: Planning / 계획</strong></td><td>P-1: Define scope &amp; objective</td><td>Strategy &amp; Planning</td><td>TP1, TP2</td><td><span class="badge badge-low">Strong</span></td></tr>
+        <tr><td>P-2: Identify threat model &amp; risk tiers</td><td>Risk Analysis</td><td>TP4, TP5</td><td><span class="badge badge-low">Strong</span></td></tr>
+        <tr><td>P-3: Determine resource &amp; tooling</td><td>Resource Acquisition</td><td>TP8</td><td><span class="badge badge-low">Strong</span></td></tr>
+        <tr><td>P-5: Define rules of engagement</td><td>Strategy scope/constraints</td><td>TP1</td><td><span class="badge badge-medium">Moderate</span></td></tr>
+        <tr><td rowspan="3"><strong>Stage 2: Design / 설계</strong></td><td>D-1: Select attack categories per risk tier</td><td>Design &amp; Implementation</td><td>TD1</td><td><span class="badge badge-low">Strong</span></td></tr>
+        <tr><td>D-2: Develop test cases per attack pattern</td><td>Test Case Design</td><td>TD2</td><td><span class="badge badge-low">Strong</span></td></tr>
+        <tr><td>D-3: Build prompt/payload libraries</td><td>Test Procedures</td><td>TD3</td><td><span class="badge badge-low">Strong</span></td></tr>
+        <tr><td rowspan="3"><strong>Stage 3: Execution / 실행</strong></td><td>E-1, E-2: Execute manual &amp; automated tests</td><td>Test Execution</td><td>TE1</td><td><span class="badge badge-low">Strong</span></td></tr>
+        <tr><td>E-3: Record all outputs &amp; observations</td><td>Outcome Recording</td><td>TE3, IR1-IR2</td><td><span class="badge badge-low">Strong</span></td></tr>
+        <tr><td>E-4: Perform real-time triage</td><td>Monitoring &amp; Control</td><td>TMC1-TMC2</td><td><span class="badge badge-medium">Moderate</span></td></tr>
+        <tr><td rowspan="3"><strong>Stage 4: Analysis / 분석</strong></td><td>A-1: Classify findings by severity</td><td>Monitor/Evaluate</td><td>TMC1</td><td><span class="badge badge-medium">Moderate</span></td></tr>
+        <tr><td>A-2: Map to failure modes &amp; risks</td><td>--</td><td>--</td><td><span class="badge badge-high">Weak</span></td></tr>
+        <tr><td>A-4: Determine root causes</td><td>Incident Analysis</td><td>IR1-IR2</td><td><span class="badge badge-medium">Moderate</span></td></tr>
+        <tr><td rowspan="2"><strong>Stage 5: Reporting / 보고</strong></td><td>R-1: Executive summary</td><td>Test Completion</td><td>TC4</td><td><span class="badge badge-low">Strong</span></td></tr>
+        <tr><td>R-4: Evidence artifacts</td><td>Archive artifacts</td><td>TC2</td><td><span class="badge badge-low">Strong</span></td></tr>
+        <tr><td rowspan="2"><strong>Stage 6: Follow-up / 후속조치</strong></td><td>F-2: Conduct verification re-testing</td><td>Re-execute</td><td>TE1</td><td><span class="badge badge-low">Strong</span></td></tr>
+        <tr><td>F-3, F-4: Update library &amp; feed back</td><td>Process Improvement</td><td>OT3</td><td><span class="badge badge-low">Strong</span></td></tr>
+      </tbody>
+    </table>
+  </div></div>
+</div>
+
+<h3>6.2.3 Documentation Mapping: 29119-3 &harr; Reports / 문서 매핑</h3>
+
+<div class="collapsible">
+  <div class="collapsible-header">Documentation Mapping Table / 문서 매핑 테이블 (click to expand)</div>
+  <div class="collapsible-body"><div class="collapsible-body-inner">
+    <table>
+      <thead>
+        <tr><th>29119-3 Document</th><th>29119-3 Clause</th><th>Guideline Equivalent / 가이드라인 대응</th><th>Alignment / 정렬</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Test Policy</strong></td><td>6.2</td><td>Continuous Operating Model (Layer 1: Strategic Governance)</td><td><span class="badge badge-medium">Moderate</span></td></tr>
+        <tr><td><strong>Organizational Practices</strong></td><td>6.3</td><td>No explicit document</td><td><span class="badge badge-high">Weak</span></td></tr>
+        <tr><td><strong>Test Plan</strong></td><td>7.2</td><td>Phase 3 Stage 1 outputs (P-1 ~ P-5)</td><td><span class="badge badge-low">Strong</span></td></tr>
+        <tr><td><strong>Test Status Report</strong></td><td>7.3</td><td>Real-time triage outputs (E-4)</td><td><span class="badge badge-medium">Moderate</span></td></tr>
+        <tr><td><strong>Test Completion Report</strong></td><td>7.4</td><td>Red Team Report (R-1 ~ R-4)</td><td><span class="badge badge-low">Strong</span></td></tr>
+        <tr><td><strong>Test Model Specification</strong></td><td>8.2</td><td>Attack Pattern Schema (Annex A.1)</td><td><span class="badge badge-low">Strong</span></td></tr>
+        <tr><td><strong>Test Case Specification</strong></td><td>8.3</td><td>Individual Attack Patterns (AP-MOD-001 etc.)</td><td><span class="badge badge-low">Strong</span></td></tr>
+        <tr><td><strong>Test Procedure Specification</strong></td><td>8.4</td><td>Attack Pattern Procedure field</td><td><span class="badge badge-low">Strong</span></td></tr>
+        <tr><td><strong>Test Data Requirements</strong></td><td>8.5</td><td>Attack Pattern Prerequisites field</td><td><span class="badge badge-medium">Moderate</span></td></tr>
+        <tr><td><strong>Test Readiness Report</strong></td><td>8.7</td><td>No equivalent</td><td><span class="badge badge-critical">Gap</span></td></tr>
+        <tr><td><strong>Actual Results</strong></td><td>8.8</td><td>Execution outputs (E-3)</td><td><span class="badge badge-low">Strong</span></td></tr>
+        <tr><td><strong>Test Execution Log</strong></td><td>8.9</td><td>Evidence artifacts (R-4)</td><td><span class="badge badge-low">Strong</span></td></tr>
+        <tr><td><strong>Incident Report</strong></td><td>8.10</td><td>Finding classification (A-1), Technical findings (R-2)</td><td><span class="badge badge-low">Strong</span></td></tr>
+      </tbody>
+    </table>
+  </div></div>
+</div>
+
+<h3>6.2.4 Test Technique Mapping: 29119-4 &harr; Annex A / 테스트 기법 매핑</h3>
+
+<div class="collapsible">
+  <div class="collapsible-header">Technique Mapping Table / 기법 매핑 테이블 (click to expand)</div>
+  <div class="collapsible-body"><div class="collapsible-body-inner">
+    <table>
+      <thead>
+        <tr><th>29119-4 Technique</th><th>Attack Category</th><th>Application to AI Red Teaming / AI 레드팀 적용</th><th>Relevance / 관련성</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Equivalence Partitioning</strong> (5.2.1)</td><td>MOD-JB, MOD-PI</td><td>Partition input space: safe/unsafe/boundary/encoded prompts</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td><strong>Boundary Value Analysis</strong> (5.2.3)</td><td>MOD-JB, MOD-AE</td><td>Test at safety filter boundaries: refusal thresholds, token limits</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td><strong>Combinatorial Testing</strong> (5.2.4)</td><td>MOD-JB, MOD-PI, MOD-MM</td><td>Pair-wise testing of attack parameters (technique x encoding x language x model)</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td><strong>Decision Table Testing</strong> (5.2.6)</td><td>SYS-TM, SYS-PE</td><td>Model agent decision logic: tool access + permission level + instruction type</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td><strong>State Transition Testing</strong> (5.2.8)</td><td>SYS-AD, SYS-MC</td><td>Model agent state transitions: safe &rarr; compromised &rarr; escalated</td><td><span class="badge badge-high">High</span></td></tr>
+        <tr><td><strong>Scenario Testing</strong> (5.2.9)</td><td>All categories</td><td>End-to-end attack scenarios covering the full kill chain</td><td><span class="badge badge-critical">Critical</span></td></tr>
+        <tr><td><strong>Random/Fuzz Testing</strong> (5.2.10)</td><td>MOD-JB (BoN), MOD-AE</td><td>Aligns with Best-of-N automated jailbreaking (AP-MOD-003)</td><td><span class="badge badge-critical">Critical</span></td></tr>
+        <tr><td><strong>Metamorphic Testing</strong> (5.2.11)</td><td>MOD-JB, MOD-HL, SOC-BA</td><td>Semantic-preserving transforms; non-deterministic AI testing</td><td><span class="badge badge-critical">Critical</span></td></tr>
+        <tr><td><strong>Data Flow Testing</strong> (5.3.7)</td><td>SYS-RP, SYS-MC, MOD-PI</td><td>Track tainted data from untrusted sources through safety-critical decisions</td><td><span class="badge badge-critical">Critical</span></td></tr>
+        <tr><td><strong>Error Guessing</strong> (5.4.1)</td><td>All categories</td><td>Expert-driven manual red teaming leveraging intuition about failure points</td><td><span class="badge badge-critical">Critical</span></td></tr>
+      </tbody>
+    </table>
+  </div></div>
+</div>
+
+<h3>6.2.5 Recommendations Summary / 권고사항 요약 (21 items)</h3>
+
+<table>
+  <thead>
+    <tr><th>Classification / 분류</th><th>Count / 개수</th><th>Key Themes / 핵심 주제</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><span class="badge badge-critical">Mandatory / 필수</span></td><td><strong>5</strong></td><td>Entry/exit criteria (P-01), Coverage metrics (P-02, T-01), Deviations documentation (P-03), Normative reference (P-10), Entry/exit terminology (T-02)</td></tr>
+    <tr><td><span class="badge badge-medium">Recommended / 권장</span></td><td><strong>12</strong></td><td>Test readiness (P-04), Status reporting (P-05), Traceability (P-06), Approval workflow (P-07), Technique integration (P-08, A-01, A-03, AT-01, AT-02), Terminology (T-03~T-05), Coverage quantification (A-02)</td></tr>
+    <tr><td><span class="badge badge-low">Optional / 선택</span></td><td><strong>4</strong></td><td>Terminology cross-reference (T-06), Process alignment (P-09), Incident format (A-05), Traceability IDs (AT-03)</td></tr>
+  </tbody>
+</table>
+
+</section>
+
+<hr class="section-divider">
+
+<!-- ===== 6.3 정합성 점검 현황 ===== -->
+<section id="conformance-dashboard">
+<h2>6.3 Conformance Dashboard / 정합성 점검 현황</h2>
+
+<h3>6.3.1 Overall Conformance Summary / 전체 정합성 요약</h3>
+
+<p>The guideline's overall conformance rate against ISO/IEC/IEEE 29119 stands at <strong>33%</strong>. While process and documentation alignment are moderate, test technique references and terminology adoption remain the weakest areas.</p>
+
+<p class="bilingual">ISO/IEC/IEEE 29119에 대한 가이드라인의 전체 정합률은 <strong>33%</strong>입니다. 프로세스와 문서 정합은 중간 수준이지만, 테스트 기법 참조 및 용어 채택이 가장 취약한 영역입니다.</p>
+
+<table>
+  <thead>
+    <tr><th>Category / 카테고리</th><th>Total Items / 총 항목</th><th style="color:#16a34a;">Conformant / 적합</th><th style="color:#ca8a04;">Partial / 부분적합</th><th style="color:#dc2626;">Non-conformant / 미적합</th><th>Rate / 정합률</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Process / 프로세스</strong></td>
+      <td>19</td>
+      <td>9 (47%)</td>
+      <td>6 (32%)</td>
+      <td>4 (21%)</td>
+      <td>
+        <div style="background:var(--progress-bg);border-radius:3px;height:14px;width:100%;position:relative;">
+          <div style="background:#16a34a;height:100%;width:47%;border-radius:3px 0 0 3px;"></div>
+        </div>
+        <strong>47%</strong>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Documentation / 문서</strong></td>
+      <td>14</td>
+      <td>7 (50%)</td>
+      <td>4 (29%)</td>
+      <td>3 (21%)</td>
+      <td>
+        <div style="background:var(--progress-bg);border-radius:3px;height:14px;width:100%;position:relative;">
+          <div style="background:#16a34a;height:100%;width:50%;border-radius:3px 0 0 3px;"></div>
+        </div>
+        <strong>50%</strong>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Test Techniques / 기법</strong></td>
+      <td>16</td>
+      <td>3 (19%)</td>
+      <td>3 (19%)</td>
+      <td>10 (62%)</td>
+      <td>
+        <div style="background:var(--progress-bg);border-radius:3px;height:14px;width:100%;position:relative;">
+          <div style="background:#dc2626;height:100%;width:19%;border-radius:3px 0 0 3px;"></div>
+        </div>
+        <strong>19%</strong>
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Terminology / 용어</strong></td>
+      <td>14</td>
+      <td>2 (14%)</td>
+      <td>5 (36%)</td>
+      <td>7 (50%)</td>
+      <td>
+        <div style="background:var(--progress-bg);border-radius:3px;height:14px;width:100%;position:relative;">
+          <div style="background:#dc2626;height:100%;width:14%;border-radius:3px 0 0 3px;"></div>
+        </div>
+        <strong>14%</strong>
+      </td>
+    </tr>
+    <tr style="font-weight:700;border-top:2px solid var(--border);">
+      <td><strong>Overall / 전체</strong></td>
+      <td><strong>63</strong></td>
+      <td><strong>21 (33%)</strong></td>
+      <td><strong>18 (29%)</strong></td>
+      <td><strong>21 (33%)</strong></td>
+      <td>
+        <div style="background:var(--progress-bg);border-radius:3px;height:14px;width:100%;position:relative;">
+          <div style="background:#ca8a04;height:100%;width:33%;border-radius:3px 0 0 3px;"></div>
+        </div>
+        <strong>33%</strong>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>6.3.2 Domain-Specific Conformance / 영역별 정합성</h3>
+
+<div class="collapsible">
+  <div class="collapsible-header">Process Conformance Details (19 items) / 프로세스 정합성 상세 (click to expand)</div>
+  <div class="collapsible-body"><div class="collapsible-body-inner">
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Checklist Item / 점검 항목</th><th>29119 Ref</th><th>Status / 상태</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>PC-01</td><td>Organizational red team policy defined / 레드팀 정책 정의</td><td>OT1</td><td><span class="badge badge-medium">Partial</span></td></tr>
+        <tr><td>PC-02</td><td>Standard operating procedures documented / 표준 운영 절차 문서화</td><td>OT1</td><td><span class="badge badge-critical">Non-conformant</span></td></tr>
+        <tr><td>PC-03</td><td>Organizational monitoring defined / 조직 수준 모니터링 정의</td><td>OT2</td><td><span class="badge badge-medium">Partial</span></td></tr>
+        <tr><td>PC-04</td><td>Process improvement mechanism / 프로세스 개선 메커니즘</td><td>OT3</td><td><span class="badge badge-low">Conformant</span></td></tr>
+        <tr><td>PC-05</td><td>Risk-based test strategy / 위험 기반 테스트 전략</td><td>TP1</td><td><span class="badge badge-low">Conformant</span></td></tr>
+        <tr><td>PC-06</td><td>Test plan covers required elements / 테스트 계획 필수 요소 포함</td><td>TP2</td><td><span class="badge badge-medium">Partial</span></td></tr>
+        <tr><td>PC-07</td><td>Entry criteria defined per stage / 단계별 진입 기준</td><td>TP2</td><td><span class="badge badge-critical">Non-conformant</span></td></tr>
+        <tr><td>PC-08</td><td>Exit criteria defined per stage / 단계별 종료 기준</td><td>TP2</td><td><span class="badge badge-critical">Non-conformant</span></td></tr>
+        <tr><td>PC-09</td><td>Risk-driven test design / 위험 주도 테스트 설계</td><td>TP4-5</td><td><span class="badge badge-low">Conformant</span></td></tr>
+        <tr><td>PC-10</td><td>Traceability maintained / 추적성 유지</td><td>TP7</td><td><span class="badge badge-medium">Partial</span></td></tr>
+        <tr><td>PC-11</td><td>Resources identified / 자원 식별</td><td>TP8</td><td><span class="badge badge-low">Conformant</span></td></tr>
+        <tr><td>PC-12</td><td>Progress monitoring defined / 진행 모니터링 정의</td><td>TMC1-4</td><td><span class="badge badge-medium">Partial</span></td></tr>
+        <tr><td>PC-13</td><td>Completion activities defined / 완료 활동 정의</td><td>TC1-4</td><td><span class="badge badge-low">Conformant</span></td></tr>
+        <tr><td>PC-14</td><td>Test conditions from test basis / 테스트 베이시스에서 조건 도출</td><td>TD1</td><td><span class="badge badge-low">Conformant</span></td></tr>
+        <tr><td>PC-15</td><td>Test cases with recognized techniques / 인정된 기법으로 설계</td><td>TD2</td><td><span class="badge badge-medium">Partial</span></td></tr>
+        <tr><td>PC-16</td><td>Test procedures documented / 테스트 절차 문서화</td><td>TD3</td><td><span class="badge badge-low">Conformant</span></td></tr>
+        <tr><td>PC-17</td><td>Environment &amp; data requirements / 환경 및 데이터 요구사항</td><td>TD4, ED</td><td><span class="badge badge-medium">Partial</span></td></tr>
+        <tr><td>PC-18</td><td>Execution records actual results / 실제 결과 기록</td><td>TE1-3</td><td><span class="badge badge-low">Conformant</span></td></tr>
+        <tr><td>PC-19</td><td>Incidents reported with detail / 인시던트 상세 보고</td><td>IR1-2</td><td><span class="badge badge-low">Conformant</span></td></tr>
+      </tbody>
+    </table>
+  </div></div>
+</div>
+
+<div class="collapsible">
+  <div class="collapsible-header">Documentation Conformance Details (14 items) / 문서 정합성 상세 (click to expand)</div>
+  <div class="collapsible-body"><div class="collapsible-body-inner">
+    <table>
+      <thead>
+        <tr><th>ID</th><th>29119-3 Document</th><th>Status / 상태</th><th>Gap / 갭</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>DC-01</td><td>Test Policy</td><td><span class="badge badge-critical">Non-conformant</span></td><td>No Red Team Policy template</td></tr>
+        <tr><td>DC-02</td><td>Organizational Practices</td><td><span class="badge badge-critical">Non-conformant</span></td><td>No SOP document</td></tr>
+        <tr><td>DC-03</td><td>Test Plan</td><td><span class="badge badge-medium">Partial</span></td><td>Missing entry/exit criteria, schedule, deviation handling</td></tr>
+        <tr><td>DC-04</td><td>Test Status Report</td><td><span class="badge badge-critical">Non-conformant</span></td><td>No interim status report template</td></tr>
+        <tr><td>DC-05</td><td>Test Completion Report</td><td><span class="badge badge-medium">Partial</span></td><td>Missing deviations, coverage metrics, approval fields</td></tr>
+        <tr><td>DC-06</td><td>Test Model Specification</td><td><span class="badge badge-low">Conformant</span></td><td>Annex A.1 exceeds requirements</td></tr>
+        <tr><td>DC-07</td><td>Test Case Specification</td><td><span class="badge badge-low">Conformant</span></td><td>Attack patterns serve as test cases</td></tr>
+        <tr><td>DC-08</td><td>Test Procedure Specification</td><td><span class="badge badge-low">Conformant</span></td><td>Step-by-step procedures provided</td></tr>
+        <tr><td>DC-09</td><td>Test Data Requirements</td><td><span class="badge badge-medium">Partial</span></td><td>Prerequisites partial coverage</td></tr>
+        <tr><td>DC-10</td><td>Test Environment Requirements</td><td><span class="badge badge-medium">Partial</span></td><td>No standalone env specification</td></tr>
+        <tr><td>DC-11</td><td>Test Readiness Report</td><td><span class="badge badge-critical">Non-conformant</span></td><td>No readiness assessment</td></tr>
+        <tr><td>DC-12</td><td>Actual Results</td><td><span class="badge badge-low">Conformant</span></td><td>E-3 requires recording all outputs</td></tr>
+        <tr><td>DC-13</td><td>Test Execution Log</td><td><span class="badge badge-low">Conformant</span></td><td>Evidence artifacts (R-4)</td></tr>
+        <tr><td>DC-14</td><td>Incident Report</td><td><span class="badge badge-low">Conformant</span></td><td>Exceeds 29119-3 8.10</td></tr>
+      </tbody>
+    </table>
+  </div></div>
+</div>
+
+<div class="collapsible">
+  <div class="collapsible-header">Test Technique Conformance Details (16 items) / 기법 정합성 상세 (click to expand)</div>
+  <div class="collapsible-body"><div class="collapsible-body-inner">
+    <table>
+      <thead>
+        <tr><th>ID</th><th>29119-4 Technique / 기법</th><th>Status / 상태</th><th>Finding / 발견사항</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>TC-01</td><td>Equivalence Partitioning</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Not referenced despite high relevance to input space partitioning</td></tr>
+        <tr><td>TC-02</td><td>Boundary Value Analysis</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Critical for safety filter boundary testing</td></tr>
+        <tr><td>TC-03</td><td>Classification Tree Method</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Useful for systematic attack dimension classification</td></tr>
+        <tr><td>TC-04</td><td>Combinatorial Testing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Essential for managing combinatorial explosion of attack parameters</td></tr>
+        <tr><td>TC-05</td><td>Decision Table Testing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Critical for agent decision logic modeling</td></tr>
+        <tr><td>TC-06</td><td>State Transition Testing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Essential for multi-turn escalation attacks</td></tr>
+        <tr><td>TC-07</td><td>Scenario Testing</td><td><span class="badge badge-medium">Partial</span></td><td>Attack patterns are scenarios, but 29119-4 link not explicit</td></tr>
+        <tr><td>TC-08</td><td>Random / Fuzz Testing</td><td><span class="badge badge-low">Conformant</span></td><td>Best-of-N jailbreaking directly implements this</td></tr>
+        <tr><td>TC-09</td><td>Metamorphic Testing</td><td><span class="badge badge-low">Conformant</span></td><td>Explicitly recognized for AI testing</td></tr>
+        <tr><td>TC-10</td><td>Syntax Testing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Applicable to encoding-based jailbreaks</td></tr>
+        <tr><td>TC-11</td><td>Cause-Effect Graphing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Useful for RAG poisoning causal chains</td></tr>
+        <tr><td>TC-12</td><td>Requirements-Based Testing</td><td><span class="badge badge-medium">Partial</span></td><td>Implicit (testing against safety policies)</td></tr>
+        <tr><td>TC-13</td><td>Data Flow Testing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Critical gap for indirect prompt injection testing</td></tr>
+        <tr><td>TC-14</td><td>MC/DC Testing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Applicable to safety-critical agent decisions</td></tr>
+        <tr><td>TC-15</td><td>Error Guessing</td><td><span class="badge badge-low">Conformant</span></td><td>Manual red teaming is expert-driven error guessing</td></tr>
+        <tr><td>TC-16</td><td>Coverage Measurement</td><td><span class="badge badge-medium">Partial</span></td><td>Annex C uses qualitative; quantitative formulas needed</td></tr>
+      </tbody>
+    </table>
+  </div></div>
+</div>
+
+<div class="collapsible">
+  <div class="collapsible-header">Terminology Conformance Details (14 items) / 용어 정합성 상세 (click to expand)</div>
+  <div class="collapsible-body"><div class="collapsible-body-inner">
+    <table>
+      <thead>
+        <tr><th>ID</th><th>Item / 항목</th><th>Type / 유형</th><th>Status / 상태</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>TM-01</td><td>Test/Test Case vs Attack Pattern</td><td>Semantic overlap</td><td><span class="badge badge-medium">Partial</span></td></tr>
+        <tr><td>TM-02</td><td>Incident vs Finding/Vulnerability</td><td>Scope difference</td><td><span class="badge badge-medium">Partial</span></td></tr>
+        <tr><td>TM-03</td><td>Defect vs Vulnerability/Failure Mode</td><td>Granularity difference</td><td><span class="badge badge-medium">Partial</span></td></tr>
+        <tr><td>TM-04</td><td>Risk</td><td>Compatible definitions</td><td><span class="badge badge-low">Conformant</span></td></tr>
+        <tr><td>TM-05</td><td>Test Technique vs Attack Technique</td><td>Naming collision</td><td><span class="badge badge-critical">Non-conformant</span></td></tr>
+        <tr><td>TM-06</td><td>Test Environment vs Red Team Environment</td><td>Scope extension</td><td><span class="badge badge-medium">Partial</span></td></tr>
+        <tr><td>TM-07</td><td>Tester vs Red Team Operator</td><td>Role specialization</td><td><span class="badge badge-low">Conformant</span></td></tr>
+        <tr><td>TA-01</td><td>Test Coverage definition missing</td><td>Missing term</td><td><span class="badge badge-critical">Non-conformant</span></td></tr>
+        <tr><td>TA-02</td><td>Entry Criteria missing</td><td>Missing term</td><td><span class="badge badge-critical">Non-conformant</span></td></tr>
+        <tr><td>TA-03</td><td>Exit Criteria missing</td><td>Missing term</td><td><span class="badge badge-critical">Non-conformant</span></td></tr>
+        <tr><td>TA-04</td><td>Test Oracle missing</td><td>Missing term</td><td><span class="badge badge-critical">Non-conformant</span></td></tr>
+        <tr><td>TA-05</td><td>Test Basis missing</td><td>Missing term</td><td><span class="badge badge-critical">Non-conformant</span></td></tr>
+        <tr><td>TA-06</td><td>Traceability missing</td><td>Missing term</td><td><span class="badge badge-critical">Non-conformant</span></td></tr>
+        <tr><td>TA-07</td><td>Neuron Coverage missing</td><td>Missing term</td><td><span class="badge badge-critical">Non-conformant</span></td></tr>
+      </tbody>
+    </table>
+  </div></div>
+</div>
+
+<h3>6.3.3 Top 5 Critical Action Items / 상위 5개 긴급 조치 항목</h3>
+
+<table>
+  <thead>
+    <tr><th>Priority / 우선순위</th><th>Item IDs</th><th>Action / 조치</th><th>Impact / 영향</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="badge badge-critical">1</span></td>
+      <td>PC-07, PC-08</td>
+      <td>Define entry/exit criteria for all 6 stages<br><span class="bilingual">모든 6단계의 진입/종료 기준 정의</span></td>
+      <td>Enables objective stage-gate governance; prevents premature transitions</td>
+    </tr>
+    <tr>
+      <td><span class="badge badge-critical">2</span></td>
+      <td>TA-01, TC-16</td>
+      <td>Adopt test coverage definition and quantitative metrics<br><span class="bilingual">테스트 커버리지 정의 및 정량적 메트릭 채택</span></td>
+      <td>Enables objective measurement of test completeness</td>
+    </tr>
+    <tr>
+      <td><span class="badge badge-critical">3</span></td>
+      <td>DG-05, DG-06</td>
+      <td>Complete test plan and report templates with missing elements<br><span class="bilingual">누락된 요소로 테스트 계획 및 보고서 템플릿 완성</span></td>
+      <td>Standards compliance for audit and governance</td>
+    </tr>
+    <tr>
+      <td><span class="badge badge-critical">4</span></td>
+      <td>TC-13</td>
+      <td>Adopt data flow testing for system-level attacks<br><span class="bilingual">시스템 수준 공격에 데이터 흐름 테스팅 채택</span></td>
+      <td>Critical for indirect prompt injection and RAG poisoning testing</td>
+    </tr>
+    <tr>
+      <td><span class="badge badge-high">5</span></td>
+      <td>TM-05</td>
+      <td>Resolve "test technique" vs "attack technique" naming collision<br><span class="bilingual">"테스트 기법" vs "공격 기법" 이름 충돌 해결</span></td>
+      <td>Eliminates terminology ambiguity across standards</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>6.3.4 Periodic Review Schedule / 지속적 점검 일정</h3>
+
+<table>
+  <thead>
+    <tr><th>Cycle / 주기</th><th>Scope / 범위</th><th>Responsible / 담당</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Every guideline update / 가이드라인 업데이트 시</strong></td><td>Run checklist items (PC, DC, TC, TM, TA) for affected sections only / 영향받는 섹션의 점검 항목 실행</td><td>Document author + Standards expert</td></tr>
+    <tr><td><strong>Quarterly / 분기별</strong></td><td>Review ongoing review items (OR-01 ~ OR-10); check for 29119 revision announcements (ISO/IEC JTC 1/SC 7/WG 26) / 지속적 검토 항목 확인; 29119 개정 공고 확인</td><td>Standards liaison</td></tr>
+    <tr><td><strong>Annually / 연례</strong></td><td>Full conformance review against all 63 checklist items; update this section; reassess priorities / 전체 63개 점검 항목에 대한 정합성 전체 검토; 본 섹션 업데이트</td><td>Standards expert + Guideline editor</td></tr>
+    <tr><td><strong>Upon 29119 revision / 29119 개정 시</strong></td><td>Full re-mapping of affected process, documentation, technique, and terminology sections / 영향받는 프로세스, 문서, 기법, 용어 섹션의 전체 재매핑</td><td>Standards expert (dedicated effort)</td></tr>
+  </tbody>
+</table>
+
+</section>
+
+</section>
+<!-- ===== END PART VI ===== -->
