@@ -24,7 +24,8 @@
 8. [Risk-Based Test Scope Determination / 리스크 기반 테스트 범위 결정](#8-risk-based-test-scope-determination--리스크-기반-테스트-범위-결정)
 9. [Test Design Principles / 테스트 설계 원칙](#9-test-design-principles--테스트-설계-원칙)
 10. [Report Structure Template / 보고서 구조 템플릿](#10-report-structure-template--보고서-구조-템플릿)
-11. [Continuous Red Team Operating Model / 지속적 레드팀 운영 모델](#11-continuous-red-team-operating-model--지속적-레드팀-운영-모델)
+11. [Organizational Test Policy and Practices / 조직적 테스트 정책 및 실무](#11-organizational-test-policy-and-practices--조직적-테스트-정책-및-실무)
+12. [Continuous Red Team Operating Model / 지속적 레드팀 운영 모델](#12-continuous-red-team-operating-model--지속적-레드팀-운영-모델)
 
 ---
 
@@ -145,14 +146,115 @@ Determine the risk tier of the target system to calibrate testing depth (see Sec
 
 테스트 깊이를 조정하기 위해 대상 시스템의 리스크 등급을 결정한다 (전체 방법론은 섹션 8 참조). 이 결정은 후속 각 단계에서의 최소 필수 활동을 결정한다.
 
+**P-6. Schedule and Timeline Planning / 일정 및 타임라인 계획**
+
+Define the engagement schedule with clear milestones and deliverable dates:
+
+명확한 마일스톤 및 산출물 날짜를 포함한 참여 일정을 정의한다:
+
+- **Engagement duration / 참여 기간**: Total calendar time allocated for the engagement, from kickoff to final report delivery.
+- **Stage milestones / 단계 마일스톤**: Target completion dates for each of the 6 stages (Planning, Design, Execution, Analysis, Reporting, Follow-up).
+- **Interim deliverables / 중간 산출물**: Scheduled intermediate deliverables such as design review, mid-engagement status report, draft report review.
+- **Availability constraints / 가용성 제약**: Documented restrictions on testing windows (e.g., no testing during production peak hours, holidays, maintenance windows).
+- **Contingency buffer / 비상 버퍼**: Reserved time for addressing unexpected findings, scope adjustments, or schedule delays (recommended: 15-20% of total engagement time for high-risk systems).
+
+**P-7. Test Environment Specification / 테스트 환경 명세**
+
+Specify the test environment requirements to ensure safe and effective testing:
+
+안전하고 효과적인 테스트를 보장하기 위해 테스트 환경 요구사항을 명시한다:
+
+- **Infrastructure requirements / 인프라 요구사항**:
+  - Computing resources (CPU, GPU, memory for running attacks)
+  - Network requirements (bandwidth, isolation, external access)
+  - Storage requirements (evidence artifacts, logs, conversation histories)
+
+- **Access requirements / 접근 요구사항**:
+  - API keys, credentials, access levels
+  - Sandboxed vs. production environment access
+  - Rate limits and quotas
+  - Permission scopes (read-only, user-level, admin-level)
+
+- **Safety controls / 안전 통제**:
+  - Sandboxing mechanisms to prevent unintended harm
+  - Kill switches or emergency stop procedures
+  - Rate limiting to prevent resource exhaustion
+  - Data isolation to protect PII and sensitive information
+  - Rollback capabilities for reversible testing
+
+- **Tooling environment / 도구 환경**:
+  - Required software tools and versions
+  - Automation frameworks and testing platforms
+  - Evidence collection and documentation tools
+
+**P-8. Deviation Handling Procedure / 편차 처리 절차**
+
+Define how deviations from the original plan will be managed during the engagement:
+
+참여 중 원래 계획과의 편차가 어떻게 관리될지를 정의한다:
+
+- **Deviation classification / 편차 분류**:
+
+  | Deviation Type / 편차 유형 | Definition / 정의 | Approval Required / 승인 필요 |
+  |---|---|---|
+  | **Minor deviation / 경미한 편차** | Changes to individual test cases, tool selection, or minor schedule adjustments (≤3 days delay) | RTL approval |
+  | **Moderate deviation / 중간 편차** | Scope expansion/reduction, testing approach changes, stage re-ordering, schedule delays (3-7 days) | RTL + SO approval |
+  | **Major deviation / 주요 편차** | Fundamental scope changes, risk tier re-assessment, budget/resource changes, schedule delays (>7 days) | RTL + SO + PS approval |
+
+- **Deviation documentation / 편차 문서화**: All deviations shall be documented in the engagement log with: deviation description, rationale, approval authority, date, and impact assessment.
+
+- **Deviation triggers / 편차 트리거**: Common scenarios requiring deviation handling:
+  - Discovery of out-of-scope vulnerabilities requiring investigation
+  - Unexpected critical findings requiring immediate escalation and scope adjustment
+  - Testing blocked by technical issues, access problems, or safety concerns
+  - Resource constraints (time, budget, team availability)
+  - Regulatory or legal concerns emerging during testing
+
+**P-9. Approval Workflow / 승인 워크플로우**
+
+Establish the approval process for plan acceptance before proceeding to Design stage:
+
+설계 단계로 진행하기 전 계획 수용을 위한 승인 프로세스를 수립한다:
+
+1. **Internal Review / 내부 검토**: RTL conducts internal review of all Planning stage deliverables for completeness and quality.
+2. **Stakeholder Review / 이해관계자 검토**: Red Team Engagement Plan, Threat Model, and Risk Tier Classification are circulated to PS, SO, EA, and LC for review (minimum 3 business days review period for high-risk systems).
+3. **Review Meeting / 검토 회의**: RTL presents the plan in a review meeting with all stakeholders to address questions and concerns.
+4. **Approval Documentation / 승인 문서화**: Formal sign-off is obtained from PS and SO, documented in the Authorization Agreement or separate approval record.
+5. **Contingency for non-approval / 미승인 시 대응**: If approval is not obtained, RTL documents objections, revises plan, and re-submits for approval. Engagement does not proceed to Design stage without formal approval.
+
 ### 2.4 Outputs / 산출물
 
 | Output | Owner | Description / 설명 |
 |--------|-------|---------------------|
-| **Red Team Engagement Plan** | RTL | Comprehensive plan covering scope, access model, schedule, team composition, success criteria, and constraints / 범위, 접근 모델, 일정, 팀 구성, 성공 기준 및 제약을 포함하는 종합 계획 |
+| **Red Team Engagement Plan** | RTL | Comprehensive plan covering scope, access model, schedule, team composition, success criteria, constraints, test environment specification, deviation handling procedure, and approval workflow / 범위, 접근 모델, 일정, 팀 구성, 성공 기준, 제약, 테스트 환경 명세, 편차 처리 절차 및 승인 워크플로우를 포함하는 종합 계획 |
 | **Threat Model Document** | RTL | Documented threat model with identified assets, actors, surfaces, and existing mitigations / 식별된 자산, 행위자, 표면 및 기존 완화 조치가 포함된 위협 모델 문서 |
 | **Authorization Agreement** | PS / SO / LC | Signed legal authorization covering scope, permitted activities, and data handling / 범위, 허용 활동 및 데이터 처리를 포함하는 서명된 법적 승인 |
 | **Risk Tier Classification** | RTL / SO | Documented risk tier with rationale and corresponding testing depth requirements / 근거 및 해당 테스트 깊이 요구사항이 포함된 위험 등급 분류 |
+| **Engagement Schedule** | RTL | Detailed timeline with stage milestones, interim deliverables, and contingency buffers / 단계 마일스톤, 중간 산출물 및 비상 버퍼가 포함된 상세 타임라인 |
+
+### 2.5 Entry and Exit Criteria / 진입 및 종료 기준
+
+**Entry Criteria / 진입 기준:**
+
+The Planning stage may begin when the following conditions are satisfied:
+
+계획 단계는 다음 조건이 충족될 때 시작할 수 있다:
+
+1. **Engagement request received** / 참여 요청 접수: Formal request from Project Sponsor or System Owner has been documented.
+2. **Stakeholder availability confirmed** / 이해관계자 가용성 확인: Key stakeholders (PS, SO, RTL, LC, EA) are identified and available for consultation.
+3. **Initial system documentation provided** / 초기 시스템 문서 제공: Minimum system documentation (model card, deployment context, or API documentation) is available.
+
+**Exit Criteria / 종료 기준:**
+
+The Planning stage is complete when all of the following deliverables are approved:
+
+계획 단계는 다음 모든 산출물이 승인될 때 완료된다:
+
+1. **Red Team Engagement Plan approved** / 레드팀 참여 계획 승인: Scope, access model, schedule, team composition, and success criteria are documented and approved by PS and SO.
+2. **Threat Model documented** / 위협 모델 문서화: Assets, threat actors, attack surfaces, and existing mitigations are identified and reviewed by RTL and SO.
+3. **Authorization Agreement signed** / 승인 계약 서명: Legal and ethical boundaries are defined, and written authorization is signed by authorized representatives.
+4. **Risk Tier Classification confirmed** / 위험 등급 분류 확인: Risk tier is determined and accepted by all stakeholders.
+5. **No unresolved blockers** / 미해결 차단 요소 없음: All planning-stage issues (access provisioning timelines, resource constraints, ethical concerns) have been addressed or deferred with documented acceptance.
 
 ---
 
@@ -204,6 +306,53 @@ Select test strategies based on the threat model. The strategy must address:
 - **Which attack surfaces to prioritize / 우선순위를 두 공격 표면**: Based on threat model and risk tier. Not all surfaces need equal coverage; prioritize based on assessed risk.
 - **Balance of manual vs. automated testing / 수동 vs. 자동화 테스트의 균형**: Manual creative probing discovers novel vulnerabilities; automated testing provides coverage at scale. Both are necessary; neither is sufficient alone.
 - **Balance of breadth vs. depth / 폭 vs. 깊이의 균형**: Breadth scanning identifies the range of vulnerabilities; depth probing validates severity and exploitability of specific findings.
+
+**D-2.5. Test Design Technique Selection (ISO/IEC 29119-4 Alignment) / 테스트 설계 기법 선정 (ISO/IEC 29119-4 정렬)**
+
+Select appropriate test design techniques from ISO/IEC/IEEE 29119-4 (Test Techniques) to complement AI red team-specific attack patterns. While attack patterns provide domain-specific adversarial scenarios, systematic test design techniques ensure comprehensive coverage and rigor.
+
+ISO/IEC/IEEE 29119-4(테스트 기법)에서 AI 레드팀 특화 공격 패턴을 보완하는 적절한 테스트 설계 기법을 선정한다. 공격 패턴이 도메인별 적대적 시나리오를 제공하는 동안, 체계적 테스트 설계 기법은 포괄적 커버리지와 엄격성을 보장한다.
+
+**Recommended 29119-4 techniques by attack category:**
+
+**공격 카테고리별 권장 29119-4 기법:**
+
+| Attack Category / 공격 카테고리 | Applicable 29119-4 Techniques / 적용 가능 29119-4 기법 | Rationale / 근거 |
+|---|---|---|
+| **Model-level attacks (Jailbreak, Prompt Injection)** | • Equivalence Partitioning (5.2.1)<br>• Boundary Value Analysis (5.2.3)<br>• Syntax Testing (5.2.4)<br>• Random/Fuzz Testing (5.2.10)<br>• Metamorphic Testing (5.2.11) | Partition prompt space into safety classes (benign, boundary, harmful); test safety filter thresholds; exploit encoding variations; automated jailbreak search; test semantic invariance under paraphrase |
+| **System-level attacks (RAG Poisoning, Indirect Injection)** | • Data Flow Testing (5.3.7)<br>• State Transition Testing (5.2.8)<br>• Combinatorial Testing (5.2.4)<br>• Decision Table Testing (5.2.6) | Track data flow from untrusted sources to safety-critical decisions; model multi-turn conversation state transitions; test combinations of attack parameters; model tool access decision logic |
+| **Agentic attacks (Autonomous Drift, Tool Misuse)** | • State Transition Testing (5.2.8)<br>• Decision Table Testing (5.2.6)<br>• Scenario Testing (5.2.9)<br>• Cause-Effect Graphing (5.2.7) | Model agent state evolution over time; test permission check decision tables; test realistic multi-step attack chains; model causal dependencies in complex agent workflows |
+| **Bias, Fairness, Toxicity** | • Equivalence Partitioning (5.2.1)<br>• Combinatorial Testing (5.2.4)<br>• Metamorphic Testing (5.2.11)<br>• Requirements-Based Testing (5.2.12) | Partition demographic groups and test for differential behavior; test combinations of sensitive attributes; verify semantic-preserving transformations yield consistent outputs; test against fairness requirements |
+| **All attack categories** | • Error Guessing (5.4.1)<br>• Scenario Testing (5.2.9) | Leverage expert intuition for creative attack discovery; test realistic end-to-end attack scenarios |
+
+**AI red team-specific techniques beyond 29119-4 scope:**
+
+**29119-4 범위를 넘는 AI 레드팀 특화 기법:**
+
+The following techniques are unique to AI adversarial testing and extend ISO/IEC 29119-4:
+
+다음 기법은 AI 적대적 테스팅에 고유하며 ISO/IEC 29119-4를 확장한다:
+
+- **Adaptive/Iterative Red Teaming**: Dynamically adjusting attacks based on model responses in real-time
+- **Multi-Turn Escalation Testing**: Gradually escalating from benign to harmful across conversation turns
+- **Cross-Modal Attack Testing**: Exploiting inconsistencies between different input modalities (text, image, audio)
+- **Chain-of-Thought Faithfulness Testing**: Testing whether reasoning model CoT accurately reflects decision process (for o1/o3-class models)
+- **Evaluation Gaming Detection**: Testing whether models behave differently when they detect evaluation context
+- **Multilingual Safety Testing**: Testing safety effectiveness across languages, especially low-resource languages
+- **Benchmark Validity Testing**: Meta-evaluation of whether benchmarks measure what they claim
+
+**Technique application guidance:**
+
+**기법 적용 가이드:**
+
+For each selected attack category from the threat model:
+
+위협 모델에서 선정된 각 공격 카테고리에 대해:
+
+1. Select applicable 29119-4 techniques from the table above / 위 표에서 적용 가능한 29119-4 기법을 선정
+2. Document how each technique will be applied to the specific target system / 각 기법이 특정 대상 시스템에 어떻게 적용될지를 문서화
+3. Define coverage criteria for each technique (e.g., equivalence partitions to test, boundary values to probe) / 각 기법에 대한 커버리지 기준 정의
+4. Combine systematic techniques with creative AI red team-specific techniques for comprehensive coverage / 포괄적 커버리지를 위해 체계적 기법과 창의적 AI 레드팀 특화 기법을 결합
 
 **D-3. Test Case Design / 테스트 케이스 설계**
 
@@ -258,6 +407,30 @@ Define how findings will be characterized. The evaluation framework shall includ
 |--------|-------|---------------------|
 | **Test Design Specification** | RTL | Attack surface map, selected test strategies, test case inventory organized by threat actor and attack surface, evaluation framework / 공격 표면 맵, 선정된 테스트 전략, 위협 행위자 및 공격 표면별 테스트 케이스 목록, 평가 프레임워크 |
 | **Test Environment Requirements** | RTL / RTO | Required access, infrastructure, tooling environment, and safety controls for test execution / 테스트 실행에 필요한 접근, 인프라, 도구 환경 및 안전 통제 |
+
+### 3.5 Entry and Exit Criteria / 진입 및 종료 기준
+
+**Entry Criteria / 진입 기준:**
+
+The Design stage may begin when the Planning stage exit criteria are satisfied, specifically:
+
+설계 단계는 계획 단계의 종료 기준이 충족될 때 시작할 수 있다. 구체적으로:
+
+1. **Red Team Engagement Plan approved** / 레드팀 참여 계획 승인: Scope, threat model, and risk tier are documented and approved.
+2. **Attack Pattern Library accessible** / 공격 패턴 라이브러리 접근 가능: Phase 1-2 attack patterns and risk mappings are available to the design team.
+3. **Red Team Lead assigned** / 레드팀 리더 배정: RTL has confirmed availability and accepted responsibility for design quality.
+
+**Exit Criteria / 종료 기준:**
+
+The Design stage is complete when all of the following are achieved:
+
+설계 단계는 다음 모든 조건이 달성될 때 완료된다:
+
+1. **Test Design Specification approved** / 테스트 설계 명세 승인: Attack surface map, test strategies, test case inventory, and evaluation framework are documented and reviewed by RTL and SO.
+2. **Test coverage rationale documented** / 테스트 커버리지 근거 문서화: Explicit rationale for coverage decisions (which surfaces prioritized, which deprioritized, and why) is documented with reference to threat model and risk tier.
+3. **Test Environment Requirements defined** / 테스트 환경 요구사항 정의: Required access, infrastructure, tooling, and safety controls are specified and feasibility is confirmed by SO.
+4. **Evaluation framework validated** / 평가 프레임워크 검증: Finding characterization dimensions and severity framework are reviewed and accepted by PS and SO.
+5. **Design review conducted** / 설계 검토 수행: Design has been reviewed for completeness (all threat actors covered), feasibility (test cases are executable), and ethics (no prohibited techniques).
 
 ---
 
@@ -335,6 +508,101 @@ Define and follow escalation procedures:
 | Ethical concern about test activity / 테스트 활동에 대한 윤리적 우려 | Pause and consult EA / 중지하고 EA 상담 | RTO -> EA |
 | System instability or production impact / 시스템 불안정 또는 프로덕션 영향 | Halt testing; notify SO / 테스트 중단; SO에 알림 | RTO -> SO |
 
+**E-6. Progress Monitoring and Control / 진행 모니터링 및 통제**
+
+Establish and maintain structured monitoring of engagement progress throughout the Execution stage to enable proactive risk management and stakeholder communication.
+
+실행 단계 전반에 걸쳐 참여 진행의 구조화된 모니터링을 수립하고 유지하여 사전적 위험 관리 및 이해관계자 커뮤니케이션을 가능하게 한다.
+
+**Monitoring metrics / 모니터링 메트릭:**
+
+Track the following metrics at regular intervals (daily for high-risk systems, weekly for standard-risk systems):
+
+정기적으로 다음 메트릭을 추적한다 (고위험 시스템은 일일, 표준 위험 시스템은 주간):
+
+| Metric / 메트릭 | Formula / 공식 | Purpose / 목적 |
+|---|---|---|
+| **Test Execution Progress** / 테스트 실행 진행률 | (Test cases executed / Total test cases planned) × 100% | Track progress against plan; identify schedule risks early |
+| **Attack Surface Coverage** / 공격 표면 커버리지 | Qualitative assessment (Full/Partial/None) per attack surface category | Verify balanced coverage across model, system, and socio-technical levels |
+| **Findings by Severity** / 심각도별 발견사항 | Count of findings: Critical, High, Medium, Low | Monitor finding trends; identify emerging risk patterns |
+| **Finding Discovery Rate** / 발견사항 발견율 | Findings discovered / Time elapsed (or test cases executed) | Assess testing effectiveness; flat rate may indicate saturation |
+| **Blockers and Risks** / 차단 요소 및 위험 | Count of active blockers (access issues, environment problems, safety concerns) | Identify impediments requiring escalation or mitigation |
+| **Schedule Variance** / 일정 편차 | (Actual elapsed time - Planned elapsed time) / Planned total time | Track schedule adherence; forecast completion date |
+| **Scope Changes** / 범위 변경 | Count of approved scope expansions/reductions since plan baseline | Monitor scope creep or contraction |
+
+**Progress comparison checkpoints / 진행 비교 체크포인트:**
+
+At defined milestones (e.g., 25%, 50%, 75% planned duration), conduct formal progress reviews comparing actual progress against plan:
+
+정의된 마일스톤(예: 계획된 기간의 25%, 50%, 75%)에서 계획 대비 실제 진행을 비교하는 공식 진행 검토를 수행한다:
+
+1. **Compare test execution progress** / 테스트 실행 진행 비교: Are we on track to complete all planned test cases?
+2. **Review coverage balance** / 커버리지 균형 검토: Are all attack surfaces receiving appropriate attention, or is effort skewed?
+3. **Assess finding trends** / 발견사항 추세 평가: Is finding discovery rate declining (indicating coverage saturation) or accelerating (indicating rich vulnerability area)?
+4. **Identify deviations** / 편차 식별: What deviations from plan have occurred, and do they require corrective action?
+5. **Forecast completion** / 완료 예측: Based on current progress, when will execution complete? Is schedule adjustment needed?
+6. **Decide on corrective actions** / 시정 조치 결정: Reallocate resources, adjust scope, extend timeline, or escalate risks.
+
+**Interim status reporting / 중간 상태 보고:**
+
+For engagements longer than 2 weeks, provide interim status reports to PS and SO at regular intervals (weekly for high-risk systems):
+
+2주 이상 소요되는 참여의 경우, PS와 SO에게 정기적으로 중간 상태 보고서를 제공한다 (고위험 시스템은 주간):
+
+**Engagement Status Report Template / 참여 상태 보고서 템플릿:**
+
+```
+Engagement Status Report / 참여 상태 보고서
+Report Date / 보고일: [Date]
+Engagement / 참여: [System Name]
+Reporting Period / 보고 기간: [Start Date] - [End Date]
+
+1. Executive Summary / 임원 요약
+   - Overall progress: [X%] complete
+   - Findings to date: [Critical: X, High: X, Medium: X, Low: X]
+   - Schedule status: [On track / At risk / Delayed]
+   - Key risks: [Brief description of top 1-3 risks]
+
+2. Progress vs. Plan / 계획 대비 진행
+   - Test cases executed: [X / Y] ([Z%])
+   - Attack surfaces covered: [List with coverage status]
+   - Threat actors emulated: [List]
+   - Schedule variance: [+/- X days]
+
+3. Findings Summary / 발견사항 요약
+   - Total findings: [X]
+   - By severity: [Critical: X, High: X, Medium: X, Low: X]
+   - By attack category: [Brief breakdown]
+   - Notable findings requiring immediate attention: [List if any]
+
+4. Blockers and Risks / 차단 요소 및 위험
+   - Active blockers: [Description, impact, mitigation plan]
+   - Emerging risks: [Description, likelihood, mitigation plan]
+
+5. Scope and Schedule Changes / 범위 및 일정 변경
+   - Approved scope changes since last report: [List]
+   - Schedule adjustments: [Description and rationale]
+
+6. Projected Completion / 예상 완료
+   - Estimated completion date: [Date]
+   - Confidence level: [High / Medium / Low]
+   - Assumptions: [Key assumptions affecting forecast]
+
+7. Actions Required / 필요 조치
+   - From SO: [List any needed support or decisions]
+   - From PS: [List any needed approvals or resources]
+```
+
+**Deviation handling during execution / 실행 중 편차 처리:**
+
+When deviations from plan occur during execution, follow the deviation classification and approval process defined in Stage 1 (P-8):
+
+실행 중 계획 편차가 발생하면, Stage 1 (P-8)에서 정의된 편차 분류 및 승인 프로세스를 따른다:
+
+- **Minor deviations** (individual test case changes, ≤3 days delay): RTL approval, document in engagement log
+- **Moderate deviations** (approach changes, 3-7 days delay): RTL + SO approval, update stakeholders via status report
+- **Major deviations** (fundamental scope/budget changes, >7 days delay): RTL + SO + PS approval, formal plan revision, stakeholder meeting
+
 ### 4.4 Outputs / 산출물
 
 | Output | Owner | Description / 설명 |
@@ -342,6 +610,34 @@ Define and follow escalation procedures:
 | **Raw Finding Log** | RTO | Chronological record of all test cases executed, inputs provided, outputs received, and observations made / 실행된 모든 테스트 케이스, 제공된 입력, 수신된 출력 및 관찰의 시간순 기록 |
 | **Evidence Artifacts** | RTO | Screenshots, logs, conversation transcripts, API responses, and any other evidence supporting findings / 스크린샷, 로그, 대화 기록, API 응답 및 발견사항을 뒷받침하는 기타 증거 |
 | **Exploratory Testing Notes** | RTO | Documentation of creative/exploratory probing paths and results / 창의적/탐색적 탐색 경로 및 결과의 문서화 |
+| **Engagement Status Reports** | RTL | Interim progress reports for engagements >2 weeks, documenting progress vs. plan, findings summary, blockers, and projected completion / 2주 이상 참여에 대한 중간 진행 보고서, 계획 대비 진행, 발견사항 요약, 차단 요소 및 예상 완료 문서화 |
+| **Progress Monitoring Log** | RTL | Record of monitoring metrics tracked throughout execution (test execution progress, coverage status, finding trends, schedule variance) / 실행 전반에 걸쳐 추적된 모니터링 메트릭 기록 (테스트 실행 진행, 커버리지 상태, 발견사항 추세, 일정 편차) |
+
+### 4.5 Entry and Exit Criteria / 진입 및 종료 기준
+
+**Entry Criteria / 진입 기준:**
+
+The Execution stage may begin when the Design stage exit criteria are satisfied, specifically:
+
+실행 단계는 설계 단계의 종료 기준이 충족될 때 시작할 수 있다. 구체적으로:
+
+1. **Test Design Specification approved** / 테스트 설계 명세 승인: Test cases, attack surfaces, and evaluation framework are documented and approved.
+2. **Test environment provisioned** / 테스트 환경 제공: Required access, infrastructure, and tooling are available and verified functional.
+3. **Safety controls confirmed** / 안전 통제 확인: Safeguards to prevent unintended harm during testing (sandboxing, rate limiting, kill switches) are in place and tested.
+4. **Red Team Operators trained** / 레드팀 운영자 교육: RTOs are briefed on scope, constraints, ethical boundaries, evidence collection procedures, and incident escalation paths.
+5. **Test Readiness Review passed** / 테스트 준비 검토 통과: Pre-execution readiness checklist confirms all preconditions are met (see Section 8.7 Test Readiness Report requirements).
+
+**Exit Criteria / 종료 기준:**
+
+The Execution stage is complete when all of the following are achieved:
+
+실행 단계는 다음 모든 조건이 달성될 때 완료된다:
+
+1. **Planned test cases executed** / 계획된 테스트 케이스 실행: All test cases in the Test Design Specification have been executed, or conscious decisions to skip specific cases have been documented with rationale.
+2. **Coverage goals met or justified** / 커버리지 목표 달성 또는 정당화: Test coverage aligns with the risk tier and threat model, or deviations are documented and approved by RTL.
+3. **All findings documented** / 모든 발견사항 문서화: Every observation, successful attack, and unexpected system behavior is recorded in the Raw Finding Log with supporting evidence.
+4. **No critical unresolved incidents** / 중대한 미해결 인시던트 없음: Any critical findings discovered during execution have been escalated and initial response actions are underway (containment, stakeholder notification).
+5. **Evidence artifacts secured** / 증거 산출물 보안: All screenshots, logs, transcripts, and evidence are securely stored and backed up per data handling plan.
 
 ---
 
@@ -426,6 +722,31 @@ Synthesize findings, attack chains, and coverage analysis into a coherent risk n
 | **Coverage Analysis** | RTL | Assessment of testing coverage, gaps, and limitations / 테스트 커버리지, 갭 및 한계 평가 |
 | **Risk Narrative Draft** | RTL | Synthesized risk narrative for review before final reporting / 최종 보고 전 검토를 위한 종합 위험 서사 초안 |
 
+### 5.5 Entry and Exit Criteria / 진입 및 종료 기준
+
+**Entry Criteria / 진입 기준:**
+
+The Analysis stage may begin when the Execution stage exit criteria are satisfied, specifically:
+
+분석 단계는 실행 단계의 종료 기준이 충족될 때 시작할 수 있다. 구체적으로:
+
+1. **Execution complete** / 실행 완료: All planned test cases have been executed or justified exclusions are documented.
+2. **Raw Finding Log complete** / 원시 발견사항 로그 완료: All observations and findings from execution are documented with timestamps and evidence references.
+3. **Evidence artifacts secured** / 증거 산출물 보안: All supporting evidence (screenshots, logs, transcripts) is collected and accessible to analysis team.
+
+**Exit Criteria / 종료 기준:**
+
+The Analysis stage is complete when all of the following are achieved:
+
+분석 단계는 다음 모든 조건이 달성될 때 완료된다:
+
+1. **All findings characterized** / 모든 발견사항 특성화: Every finding has been evaluated across all defined characterization dimensions (reproducibility, exploitability, impact, context sensitivity).
+2. **Severity assessments justified** / 심각도 평가 정당화: Severity characterizations are documented with explicit rationale referencing impact, exploitability, and deployment context.
+3. **Attack chains documented** / 공격 체인 문서화: Multi-step attack scenarios and compound risks are identified and documented.
+4. **Coverage analysis complete** / 커버리지 분석 완료: Test coverage is assessed against the threat model, and gaps or limitations are explicitly acknowledged.
+5. **False positives filtered** / 거짓 긍정 필터링: Edge cases and false positives are distinguished from actionable findings, with documented rationale.
+6. **Risk narrative reviewed** / 위험 서사 검토: Draft risk narrative has been reviewed internally by RTL and DE for accuracy and completeness before proceeding to formal reporting.
+
 ---
 
 ## 6. Stage 5: Reporting / 보고
@@ -497,14 +818,100 @@ Deliver findings through appropriate channels to each stakeholder group (see Pha
 - Executive leadership receives a risk posture summary with strategic implications.
 - Regulators receive compliance-relevant findings (subject to disclosure terms in the authorization agreement).
 
+**R-5. Plan Deviations and Coverage Metrics Documentation / 계획 편차 및 커버리지 메트릭 문서화**
+
+Document all deviations from the original Test Design Specification and provide quantitative coverage metrics:
+
+원래 테스트 설계 명세와의 모든 편차를 문서화하고 정량적 커버리지 메트릭을 제공한다:
+
+- **Deviations from plan / 계획 편차**:
+
+  | Deviation / 편차 | Original Plan / 원래 계획 | Actual Execution / 실제 실행 | Rationale / 근거 | Impact / 영향 |
+  |---|---|---|---|---|
+  | Scope changes | Attack surfaces or threat actors originally planned | Attack surfaces or threat actors actually tested | Why the change occurred | Effect on coverage completeness |
+  | Excluded test cases | Test cases designed but not executed | Rationale for exclusion | Impact on threat model coverage |
+  | Schedule deviations | Planned vs. actual timeline | Reasons for delay or acceleration | Effect on testing depth |
+  | Resource deviations | Planned vs. actual team, budget, tooling | Reasons for changes | Impact on engagement quality |
+
+- **Coverage metrics / 커버리지 메트릭**:
+
+  Provide quantitative or qualitative metrics demonstrating testing completeness:
+
+  테스트 완전성을 보여주는 정량적 또는 정성적 메트릭을 제공한다:
+
+  | Metric / 메트릭 | Formula / 공식 | Interpretation / 해석 |
+  |---|---|---|
+  | **Attack Category Coverage** | (Attack categories tested / Total attack categories in scope) × 100% | Percentage of planned attack categories executed |
+  | **Threat Actor Coverage** | (Threat actors emulated / Threat actors identified in threat model) × 100% | Percentage of identified threat actors addressed |
+  | **Attack Surface Coverage** | Qualitative assessment (Full/Partial/None) per surface | Depth of testing across model, system, and socio-technical levels |
+  | **Test Case Execution Rate** | (Test cases executed / Test cases designed) × 100% | Percentage of designed test cases actually executed |
+  | **Finding Density** | Findings discovered / Test cases executed | Average discovery rate (higher density may indicate higher vulnerability or more effective testing) |
+  | **Residual Coverage Gaps** | Documented list of untested or under-tested areas | Explicit acknowledgment of coverage limitations |
+
+- **Coverage rationale / 커버리지 근거**: Explain why coverage metrics are at their achieved levels, especially if below 100%. Reference risk tier, resource constraints, and conscious prioritization decisions.
+
+**R-6. Report Approval and Sign-off / 보고서 승인 및 서명**
+
+Establish formal approval process for report acceptance:
+
+보고서 수용을 위한 공식 승인 프로세스를 수립한다:
+
+- **Internal quality review / 내부 품질 검토**: RTL conducts internal review of report for accuracy, completeness, clarity, and alignment with evidence.
+- **Technical accuracy review / 기술적 정확성 검토**: Domain Experts and Ethics Advisors review findings for technical accuracy and ethical implications.
+- **Stakeholder review period / 이해관계자 검토 기간**: PS and SO are given review period (minimum 5 business days for high-risk systems) to review draft report and provide feedback.
+- **Factual accuracy correction / 사실적 정확성 수정**: SO may request corrections to factual inaccuracies (system descriptions, deployment context) but may not request removal of valid findings.
+- **Final sign-off / 최종 서명**: Report includes formal sign-off section:
+
+```
+Report Acceptance / 보고서 수용
+
+Red Team Lead: ________________  Date: ________
+(Report accuracy and completeness confirmed)
+
+System Owner: ________________  Date: ________
+(Report received and findings acknowledged)
+
+Project Sponsor: ________________  Date: ________
+(Report accepted for remediation planning)
+```
+
 ### 6.4 Outputs / 산출물
 
 | Output | Owner | Description / 설명 |
 |--------|-------|---------------------|
-| **Formal Red Team Report** | RTL | Complete report following the structure in Section 10 / 섹션 10의 구조를 따르는 완전한 보고서 |
+| **Formal Red Team Report** | RTL | Complete report following the structure in Section 10, including deviations from plan, coverage metrics, and approval sign-off fields / 계획 편차, 커버리지 메트릭 및 승인 서명 필드를 포함하여 섹션 10의 구조를 따르는 완전한 보고서 |
 | **Executive Summary** | RTL | Standalone summary for leadership audience / 경영진 대상 독립 요약 |
 | **Technical Finding Details** | RTL / RTO | Detailed reproduction steps and evidence for each finding / 각 발견사항의 상세 재현 단계 및 증거 |
 | **Remediation Roadmap** | RTL | Prioritized list of recommended actions with estimated effort and impact / 예상 노력 및 영향이 포함된 우선순위 권고 조치 목록 |
+| **Coverage Analysis Report** | RTL | Quantitative coverage metrics, deviations from plan, and residual coverage gaps / 정량적 커버리지 메트릭, 계획 편차 및 잔여 커버리지 갭 |
+| **Residual Risk Summary** | RTL | Summary of risks that remain after identified findings, including untested areas, coverage limitations, and acknowledged unknowns / 식별된 발견사항 이후 남은 위험의 요약, 미테스트 영역, 커버리지 한계 및 인정된 미지 사항 포함 |
+
+### 6.5 Entry and Exit Criteria / 진입 및 종료 기준
+
+**Entry Criteria / 진입 기준:**
+
+The Reporting stage may begin when the Analysis stage exit criteria are satisfied, specifically:
+
+보고 단계는 분석 단계의 종료 기준이 충족될 때 시작할 수 있다. 구체적으로:
+
+1. **Characterized Finding Set complete** / 특성화된 발견사항 세트 완료: All findings are fully characterized and severity-assessed.
+2. **Attack chain analysis complete** / 공격 체인 분석 완료: Multi-step scenarios and compound risks are documented.
+3. **Coverage analysis complete** / 커버리지 분석 완료: Test coverage and limitations are assessed.
+4. **Risk narrative reviewed** / 위험 서사 검토: Draft narrative has passed internal review.
+
+**Exit Criteria / 종료 기준:**
+
+The Reporting stage is complete when all of the following deliverables are accepted:
+
+보고 단계는 다음 모든 산출물이 수용될 때 완료된다:
+
+1. **Formal Red Team Report delivered** / 공식 레드팀 보고서 전달: Complete report conforming to Section 10 template is delivered to PS and SO.
+2. **Executive Summary delivered** / 임원 요약 전달: Standalone summary suitable for leadership audience is provided.
+3. **Technical findings documented** / 기술적 발견사항 문서화: Each finding includes reproduction steps, evidence artifacts, severity characterization, and recommended remediation.
+4. **Remediation Roadmap delivered** / 교정 로드맵 전달: Prioritized, actionable recommendations with effort estimates and impact projections are provided.
+5. **Deviations from plan documented** / 계획 편차 문서화: Any deviations from the original Test Design Specification (scope changes, excluded test cases, coverage gaps) are explicitly documented with rationale.
+6. **Coverage metrics reported** / 커버리지 메트릭 보고: Quantitative or qualitative coverage metrics demonstrating testing completeness are included (e.g., percentage of attack categories tested, threat actor coverage).
+7. **Stakeholder acceptance obtained** / 이해관계자 수용 확보: PS and SO have formally accepted the report deliverables, or any objections are documented for resolution in follow-up stage.
 
 ---
 
@@ -580,6 +987,30 @@ Formally close the engagement:
 | **Verification Report** | RTL | Results of re-testing remediated findings / 교정된 발견사항 재테스트 결과 |
 | **Lessons Learned Document** | RTL | Methodological improvements and organizational recommendations / 방법론적 개선사항 및 조직적 권고사항 |
 | **Engagement Closure Notice** | RTL | Formal closure documentation / 공식 종료 문서 |
+
+### 7.5 Entry and Exit Criteria / 진입 및 종료 기준
+
+**Entry Criteria / 진입 기준:**
+
+The Follow-up stage may begin when the Reporting stage exit criteria are satisfied, specifically:
+
+후속조치 단계는 보고 단계의 종료 기준이 충족될 때 시작할 수 있다. 구체적으로:
+
+1. **Formal Red Team Report delivered** / 공식 레드팀 보고서 전달: Report and all deliverables are accepted by PS and SO.
+2. **Remediation responsibilities assigned** / 교정 책임 배정: SO has assigned ownership of each finding to responsible teams or individuals.
+3. **Follow-up scope agreed** / 후속조치 범위 합의: RTL and SO have agreed on follow-up activities (verification testing timeline, lessons learned review, closure criteria).
+
+**Exit Criteria / 종료 기준:**
+
+The Follow-up stage (and the entire engagement) is complete when all of the following are achieved:
+
+후속조치 단계(및 전체 참여)는 다음 모든 조건이 달성될 때 완료된다:
+
+1. **Remediation status tracked** / 교정 상태 추적: All findings have documented remediation status (remediated, mitigated, accepted as residual risk, or deferred with justification).
+2. **High/Critical findings verified** / 높음/중대 발견사항 검증: All high and critical severity findings that were remediated have been re-tested and verified resolved, or explicit acceptance of unverified remediation is documented.
+3. **Lessons learned documented** / 교훈 문서화: Methodological improvements, organizational recommendations, and process feedback are documented.
+4. **Engagement closure confirmed** / 참여 종료 확인: PS, SO, and RTL have formally agreed that engagement objectives are met and no further follow-up is required, or next engagement cycle is scheduled.
+5. **Knowledge transfer complete** / 지식 전이 완료: Findings, methodologies, and lessons learned have been incorporated into organizational knowledge base (attack pattern library updates, organizational test practices, continuous operating model improvements).
 
 ---
 
@@ -797,7 +1228,217 @@ Appendix D: Glossary (referencing Phase 0) / 용어집 (제0단계 참조)
 
 ---
 
-## 11. Continuous Red Team Operating Model / 지속적 레드팀 운영 모델
+## 11. Organizational Test Policy and Practices / 조직적 테스트 정책 및 실무
+
+### 11.1 Purpose / 목적
+
+This section defines the organizational-level governance framework for AI red teaming, providing templates and guidance for establishing consistent, auditable, and ethically grounded red team programs aligned with ISO/IEC/IEEE 29119-3 Section 6.2 (Test Policy) and 6.3 (Organizational Test Practices).
+
+이 섹션은 AI 레드팀을 위한 조직 수준 거버넌스 프레임워크를 정의하며, ISO/IEC/IEEE 29119-3 Section 6.2 (테스트 정책) 및 6.3 (조직적 테스트 실무)과 정렬된 일관되고 감사 가능하며 윤리적으로 근거한 레드팀 프로그램 수립을 위한 템플릿과 가이드를 제공한다.
+
+### 11.2 AI Red Team Policy Template / AI 레드팀 정책 템플릿
+
+**[Organization Name] AI Red Team Policy**
+**[조직명] AI 레드팀 정책**
+
+**Document Version / 문서 버전:** 1.0
+**Effective Date / 시행일:** [Date]
+**Review Cycle / 검토 주기:** Annual / 연간
+**Approval Authority / 승인 권한:** [Chief Information Security Officer / Chief AI Officer / equivalent]
+
+---
+
+#### 11.2.1 Policy Statement and Objectives / 정책 성명 및 목표
+
+**Policy Statement / 정책 성명:**
+
+[Organization Name] is committed to responsible AI development and deployment. This AI Red Team Policy establishes the framework for systematic adversarial testing of AI systems to identify, assess, and mitigate risks before they cause harm to individuals, organizations, or society.
+
+[조직명]은 책임 있는 AI 개발 및 배포에 전념한다. 이 AI 레드팀 정책은 개인, 조직 또는 사회에 피해를 야기하기 전에 위험을 식별, 평가 및 완화하기 위한 AI 시스템의 체계적 적대적 테스트를 위한 프레임워크를 수립한다.
+
+**Objectives / 목표:**
+
+1. **Risk Discovery / 위험 발견**: Proactively discover vulnerabilities, failure modes, and unintended behaviors in AI systems before deployment or after significant changes.
+2. **Risk Transparency / 위험 투명성**: Provide stakeholders with evidence-based understanding of AI system risks and limitations.
+3. **Continuous Improvement / 지속적 개선**: Feed findings back into model development, system design, and organizational practices to reduce risks over time.
+4. **Regulatory Readiness / 규제 준비**: Ensure AI systems meet applicable regulatory requirements (EU AI Act, NIST AI RMF, sector-specific regulations).
+5. **Ethical Alignment / 윤리적 정렬**: Conduct red teaming in a manner consistent with organizational values and societal expectations.
+
+#### 11.2.2 Scope and Applicability / 범위 및 적용 가능성
+
+**In Scope / 범위 내:**
+
+This policy applies to:
+
+이 정책은 다음에 적용된다:
+
+- All AI systems classified as **High-Risk** per the organization's AI risk classification framework
+- All AI systems intended for deployment in production environments serving external users
+- All AI systems with access to sensitive data (PII, PHI, financial, proprietary)
+- All AI systems with autonomous decision-making or action-taking capabilities (agentic systems)
+- Significant updates to existing AI systems (major model version changes, deployment context changes)
+
+**Exclusions / 제외사항:**
+
+The following are excluded from mandatory red teaming unless specifically requested:
+
+다음은 특별히 요청되지 않는 한 필수 레드팀에서 제외된다:
+
+- Internal research prototypes not intended for deployment
+- Low-risk AI systems with limited potential for harm (as defined in risk classification framework)
+- Third-party AI systems where contractual terms prohibit testing (subject to legal review)
+
+#### 11.2.3 Roles and Responsibilities / 역할 및 책임
+
+| Role / 역할 | Responsibilities / 책임 |
+|---|---|
+| **AI System Owner** / AI 시스템 소유자 | Requests red team engagement; provides access and documentation; owns remediation; accepts residual risk |
+| **Red Team Lead** / 레드팀 리더 | Plans and executes engagements per this policy and Phase 3 process; owns deliverable quality; escalates critical findings |
+| **Red Team Operator** / 레드팀 운영자 | Executes test cases; documents findings; adheres to ethical boundaries and scope constraints |
+| **Ethics Advisory Board** / 윤리 자문 위원회 | Reviews engagement plans for ethical implications; approves high-sensitivity engagements; investigates ethical concerns |
+| **Legal Counsel** / 법률 자문 | Reviews authorization agreements; ensures legal compliance; advises on disclosure obligations |
+| **Chief AI Officer / CISO** / 최고 AI 책임자 / 최고 정보보안 책임자 | Approves this policy; allocates resources for red team program; receives critical findings; drives remediation |
+| **Regulatory Compliance Officer** / 규제 준수 책임자 | Maps red team findings to regulatory requirements; ensures documentation meets compliance needs |
+
+#### 11.2.4 Red Team Engagement Criteria / 레드팀 참여 기준
+
+Red team engagements **shall** be conducted:
+
+레드팀 참여는 다음 경우에 **수행되어야 한다**:
+
+1. **Pre-deployment / 배포 전**: Before initial deployment of any high-risk AI system to production
+2. **Post-major-update / 주요 업데이트 후**: After major model updates, significant architecture changes, or new integrations
+3. **Post-incident / 사고 후**: After any incident involving the AI system that resulted in harm or potential harm
+4. **Regulatory trigger / 규제 트리거**: When required by regulatory obligations (e.g., EU AI Act conformity assessment)
+5. **Periodic review / 정기 검토**: Annually for critical-tier systems, biannually for high-tier systems (per continuous operating model in Section 12)
+
+Red team engagements **may** be conducted:
+
+레드팀 참여는 다음 경우에 **수행될 수 있다**:
+
+- At the request of system owners for medium or low-risk systems
+- When new threat intelligence indicates emerging attack vectors relevant to deployed systems
+- As part of security research or capability development activities
+
+#### 11.2.5 Ethical Principles and Constraints / 윤리적 원칙 및 제약
+
+All red team activities shall adhere to the following ethical principles:
+
+모든 레드팀 활동은 다음 윤리적 원칙을 준수한다:
+
+1. **Do No Harm / 해를 끼치지 않음**: Red teaming shall not intentionally cause harm to individuals, organizations, or the public. Testing shall be conducted in isolated environments when testing potentially harmful behaviors.
+2. **Respect for Persons / 개인 존중**: Testing shall not involve deception, manipulation, or exploitation of vulnerable populations without explicit informed consent and ethics board approval.
+3. **Confidentiality / 기밀성**: Sensitive data encountered during testing (PII, harmful content, model outputs) shall be handled per data protection policies and disposed of securely.
+4. **Transparency / 투명성**: Findings shall be reported honestly and completely, without concealment of risks or exaggeration of capabilities.
+5. **Proportionality / 비례성**: Testing intensity and invasiveness shall be proportionate to system risk tier and potential harm.
+
+**Prohibited activities / 금지된 활동:**
+
+The following activities are **prohibited** under all circumstances:
+
+다음 활동은 모든 상황에서 **금지된다**:
+
+- Generating, distributing, or possessing child sexual abuse material (CSAM), even for testing purposes (use synthetic datasets or documented attack patterns only)
+- Testing on actual vulnerable populations (children, elderly, disabled, marginalized communities) without ethics board approval and informed consent
+- Attempting attacks on production systems serving critical functions (healthcare, emergency services, safety-critical infrastructure) without isolation and SO approval
+- Disclosing vulnerabilities publicly or to unauthorized parties before responsible disclosure process completes
+- Using findings for personal gain, competitive advantage, or purposes outside the scope of the engagement
+
+#### 11.2.6 Deviation and Exception Process / 편차 및 예외 프로세스
+
+Deviations from this policy require formal approval:
+
+이 정책과의 편차는 공식 승인을 요구한다:
+
+| Deviation Type / 편차 유형 | Examples / 예시 | Approval Authority / 승인 권한 |
+|---|---|---|
+| **Minor / 경미** | Adjusting engagement timeline by <1 week; changing individual test techniques | Red Team Lead |
+| **Moderate / 중간** | Reducing scope for resource constraints; abbreviated process for low-risk systems | AI System Owner + Red Team Lead |
+| **Major / 주요** | Skipping mandatory engagement; testing prohibited content; disclosure timeline changes | Chief AI Officer / CISO + Ethics Board + Legal |
+
+All approved deviations shall be documented in the engagement record with rationale and compensating controls.
+
+모든 승인된 편차는 근거 및 보완 통제와 함께 참여 기록에 문서화되어야 한다.
+
+#### 11.2.7 Finding Escalation and Remediation / 발견사항 에스컬레이션 및 교정
+
+**Critical findings / 중대한 발견사항:**
+
+Findings meeting any of the following criteria shall be escalated to Chief AI Officer / CISO within **24 hours**:
+
+다음 기준 중 하나라도 충족하는 발견사항은 **24시간 내**에 최고 AI 책임자 / 최고 정보보안 책임자에게 에스컬레이션되어야 한다:
+
+- Potential for immediate harm to individuals or public safety
+- Unauthorized data access or exfiltration
+- Complete bypass of safety mechanisms
+- Regulatory non-compliance with potential for enforcement action
+- Widespread exploitability by unsophisticated actors
+
+**Remediation timelines / 교정 타임라인:**
+
+| Severity / 심각도 | Target Remediation Timeline / 목표 교정 타임라인 | Approval for Deferral / 연기 승인 |
+|---|---|---|
+| **Critical / 중대** | 30 days | Chief AI Officer + Risk Committee |
+| **High / 높음** | 90 days | AI System Owner + Red Team Lead |
+| **Medium / 중간** | 180 days | AI System Owner |
+| **Low / 낮음** | Next major release or 365 days | AI System Owner |
+
+If remediation cannot be completed within target timeline, a formal risk acceptance or mitigation plan must be approved by the designated authority.
+
+목표 타임라인 내에 교정이 완료될 수 없는 경우, 공식 위험 수용 또는 완화 계획이 지정된 권한에 의해 승인되어야 한다.
+
+#### 11.2.8 Documentation and Reporting / 문서화 및 보고
+
+All red team engagements shall produce:
+
+모든 레드팀 참여는 다음을 생성한다:
+
+1. **Red Team Engagement Plan** (per Phase 3, Stage 1)
+2. **Formal Red Team Report** (per Phase 3, Stage 5)
+3. **Remediation Status Tracker** (per Phase 3, Stage 6)
+4. **Engagement Record** for compliance audit trail, including:
+   - Engagement request and authorization
+   - Scope and constraints
+   - Red team composition
+   - All findings with severity classifications
+   - Remediation actions and timelines
+   - Approvals and sign-offs
+
+Records shall be retained for **7 years** or per regulatory requirements, whichever is longer.
+
+기록은 **7년** 또는 규제 요구사항에 따라, 더 긴 기간 동안 보존되어야 한다.
+
+#### 11.2.9 Program Improvement / 프로그램 개선
+
+This policy and the red team program shall be reviewed **annually** and updated based on:
+
+이 정책과 레드팀 프로그램은 **연간** 검토되고 다음에 기반하여 업데이트되어야 한다:
+
+- Lessons learned from completed engagements (per Phase 3, Stage 6)
+- Emerging AI risks and attack techniques
+- Regulatory changes and compliance requirements
+- Industry best practices and standards evolution (ISO/IEC 29119, NIST AI RMF updates)
+
+### 11.3 Organizational Test Practices Document / 조직적 테스트 실무 문서
+
+**Purpose / 목적:** Complement the policy with operational procedures for consistent engagement execution.
+
+**목적:** 일관된 참여 실행을 위한 운영 절차로 정책을 보완한다.
+
+**Contents / 내용:**
+
+1. **Engagement Initiation Workflow / 참여 시작 워크플로우**: Step-by-step process for requesting, scoping, and approving red team engagements
+2. **Team Composition Standards / 팀 구성 표준**: Required competencies, diversity requirements, training and certification requirements for Red Team Leads and Operators
+3. **Tool Qualification Criteria / 도구 자격 기준**: Standards for selecting and validating testing tools (security, reliability, licensing)
+4. **Evidence Handling Procedures / 증거 처리 절차**: Secure collection, storage, transmission, and disposal of test artifacts and sensitive data
+5. **Confidentiality Requirements / 기밀 요구사항**: NDA templates, data classification, need-to-know access controls
+6. **Communication Protocols / 커뮤니케이션 프로토콜**: Escalation paths, status reporting cadence, stakeholder notification procedures
+7. **Quality Assurance / 품질 보증**: Peer review requirements for reports, independent validation of critical findings
+8. **Continuous Learning / 지속적 학습**: Procedures for updating attack pattern library (Phase 4 Annex A), incorporating lessons learned, and sharing knowledge across engagements
+
+---
+
+## 12. Continuous Red Team Operating Model / 지속적 레드팀 운영 모델
 
 ### 11.1 Rationale / 근거
 
