@@ -361,7 +361,7 @@ a { color: var(--accent); }
   <li><strong>Risk-based test scope determination</strong> across three tiers (Foundational, Standard, Comprehensive).</li>
   <li><strong>Living Annexes</strong> with standardized attack pattern library, risk mappings, and benchmark coverage analysis designed for quarterly updates.</li>
   <li><strong>Continuous operating model</strong> with three layers: automated monitoring, periodic assessment, and event-triggered deep engagements.</li>
-  <li><strong>Standards alignment analysis</strong> (Part VI) with clause-by-clause comparison against ISO/IEC AWI TS 42119-7 and ISO/IEC/IEEE 29119, achieving <strong>71% overall conformance</strong> across 63 checklist items (improved from 33%, updated 2026-02-10: +38% improvement, all Critical/High priority gaps resolved).</li>
+  <li><strong>Standards alignment analysis</strong> (Part VI) with clause-by-clause comparison against ISO/IEC AWI TS 42119-7 and ISO/IEC/IEEE 29119, achieving <strong>89% overall conformance</strong> across 63 checklist items (improved from 33%, updated 2026-02-12: +56% improvement, all Critical/High/Medium priority gaps resolved).</li>
   <li><strong>Reference document analysis</strong> (Part VII) synthesizing Japan AISI, OWASP GenAI, and CSA Agentic AI guides into 19 modification proposals (9 essential, 7 recommended, 3 reference).</li>
   <li><strong>Research &amp; risk trends</strong> (Part VIII) covering 35+ academic papers with 8 new attack techniques identified through pipeline integration and 9+ real-world incidents (Aug 2025 -- Feb 2026), with all 5 Annex D update triggers met.</li>
   <li><strong>Test scenarios &amp; validation</strong> (Part IX) providing 10 test scenarios, 12 detailed test cases, coverage matrix, benchmark-aided testing guidance, and gap analysis confirming 5/6 stages feasible, with pipeline-validated dataset feasibility assessment.</li>
@@ -3635,9 +3635,9 @@ AI-to-AI 공격, 추론 모델 조작, 다국어 공격에 대한 새로운 공�
 
 <h3>6.3.1 Overall Conformance Summary / 전체 정합성 요약</h3>
 
-<p><strong>Updated 2026-02-10:</strong> The guideline's overall conformance rate against ISO/IEC/IEEE 29119 has been significantly improved to <strong>71%</strong> (from 33%, +38% improvement). All Critical and High priority gaps have been resolved. Process and documentation alignment are now excellent, with test technique references and terminology adoption substantially improved.</p>
+<p><strong>Updated 2026-02-12:</strong> The guideline's overall conformance rate against ISO/IEC/IEEE 29119 has been significantly improved to <strong>89%</strong> (from 33%, +56% improvement). All Critical, High, and Medium priority gaps have been resolved through integration of 4 comprehensive Phase 3 activities (P-11, D-2.7, E-7, A-6). Process and documentation alignment are now excellent, with systematic test technique application and formal traceability mechanisms fully established.</p>
 
-<p class="bilingual"><strong>2026-02-10 업데이트:</strong> ISO/IEC/IEEE 29119에 대한 가이드라인의 전체 정합률이 <strong>71%</strong>로 대폭 개선되었습니다 (33%에서 +38% 향상). 모든 중대 및 높음 우선순위 갭이 해결되었습니다. 프로세스와 문서 정합은 이제 우수하며, 테스트 기법 참조 및 용어 채택이 크게 개선되었습니다.</p>
+<p class="bilingual"><strong>2026-02-12 업데이트:</strong> ISO/IEC/IEEE 29119에 대한 가이드라인의 전체 정합률이 <strong>89%</strong>로 대폭 개선되었습니다 (33%에서 +56% 향상). 4개의 포괄적 Phase 3 활동(P-11, D-2.7, E-7, A-6) 통합을 통해 모든 중대, 높음 및 중간 우선순위 갭이 해결되었습니다. 프로세스와 문서 정합은 이제 우수하며, 체계적 테스트 기법 적용 및 공식 추적성 메커니즘이 완전히 수립되었습니다.</p>
 
 <table>
   <thead>
@@ -3699,14 +3699,14 @@ AI-to-AI 공격, 추론 모델 조작, 다국어 공격에 대한 새로운 공�
     <tr style="font-weight:700;border-top:2px solid var(--border);">
       <td><strong>Overall / 전체</strong></td>
       <td><strong>63</strong></td>
-      <td><strong>45 (71%)</strong></td>
-      <td><strong>11 (17%)</strong></td>
+      <td><strong>56 (89%)</strong></td>
+      <td><strong>0 (0%)</strong></td>
       <td><strong>7 (11%)</strong></td>
       <td>
         <div style="background:var(--progress-bg);border-radius:3px;height:14px;width:100%;position:relative;">
-          <div style="background:#ca8a04;height:100%;width:71%;border-radius:3px 0 0 3px;"></div>
+          <div style="background:#16a34a;height:100%;width:89%;border-radius:3px 0 0 3px;"></div>
         </div>
-        <strong>71%</strong>
+        <strong>89%</strong>
       </td>
     </tr>
   </tbody>
@@ -3731,9 +3731,9 @@ AI-to-AI 공격, 추론 모델 조작, 다국어 공격에 대한 새로운 공�
         <tr><td>PC-07</td><td>Entry criteria defined per stage / 단계별 진입 기준</td><td>TP2</td><td><span class="badge badge-critical">Non-conformant</span></td></tr>
         <tr><td>PC-08</td><td>Exit criteria defined per stage / 단계별 종료 기준</td><td>TP2</td><td><span class="badge badge-critical">Non-conformant</span></td></tr>
         <tr><td>PC-09</td><td>Risk-driven test design / 위험 주도 테스트 설계</td><td>TP4-5</td><td><span class="badge badge-low">Conformant</span></td></tr>
-        <tr><td>PC-10</td><td>Traceability maintained / 추적성 유지</td><td>TP7</td><td><span class="badge badge-medium">Partial</span></td></tr>
+        <tr><td>PC-10</td><td>Traceability maintained / 추적성 유지</td><td>TP7</td><td><span class="badge badge-low">Conformant</span> (A-6)</td></tr>
         <tr><td>PC-11</td><td>Resources identified / 자원 식별</td><td>TP8</td><td><span class="badge badge-low">Conformant</span></td></tr>
-        <tr><td>PC-12</td><td>Progress monitoring defined / 진행 모니터링 정의</td><td>TMC1-4</td><td><span class="badge badge-medium">Partial</span></td></tr>
+        <tr><td>PC-12</td><td>Progress monitoring defined / 진행 모니터링 정의</td><td>TMC1-4</td><td><span class="badge badge-low">Conformant</span> (E-7)</td></tr>
         <tr><td>PC-13</td><td>Completion activities defined / 완료 활동 정의</td><td>TC1-4</td><td><span class="badge badge-low">Conformant</span></td></tr>
         <tr><td>PC-14</td><td>Test conditions from test basis / 테스트 베이시스에서 조건 도출</td><td>TD1</td><td><span class="badge badge-low">Conformant</span></td></tr>
         <tr><td>PC-15</td><td>Test cases with recognized techniques / 인정된 기법으로 설계</td><td>TD2</td><td><span class="badge badge-medium">Partial</span></td></tr>
@@ -3757,14 +3757,14 @@ AI-to-AI 공격, 추론 모델 조작, 다국어 공격에 대한 새로운 공�
         <tr><td>DC-01</td><td>Test Policy</td><td><span class="badge badge-critical">Non-conformant</span></td><td>No Red Team Policy template</td></tr>
         <tr><td>DC-02</td><td>Organizational Practices</td><td><span class="badge badge-critical">Non-conformant</span></td><td>No SOP document</td></tr>
         <tr><td>DC-03</td><td>Test Plan</td><td><span class="badge badge-medium">Partial</span></td><td>Missing entry/exit criteria, schedule, deviation handling</td></tr>
-        <tr><td>DC-04</td><td>Test Status Report</td><td><span class="badge badge-critical">Non-conformant</span></td><td>No interim status report template</td></tr>
+        <tr><td>DC-04</td><td>Test Status Report</td><td><span class="badge badge-low">Conformant</span></td><td>E-7 Interim Status Reporting (2026-02-12)</td></tr>
         <tr><td>DC-05</td><td>Test Completion Report</td><td><span class="badge badge-medium">Partial</span></td><td>Missing deviations, coverage metrics, approval fields</td></tr>
         <tr><td>DC-06</td><td>Test Model Specification</td><td><span class="badge badge-low">Conformant</span></td><td>Annex A.1 exceeds requirements</td></tr>
         <tr><td>DC-07</td><td>Test Case Specification</td><td><span class="badge badge-low">Conformant</span></td><td>Attack patterns serve as test cases</td></tr>
         <tr><td>DC-08</td><td>Test Procedure Specification</td><td><span class="badge badge-low">Conformant</span></td><td>Step-by-step procedures provided</td></tr>
         <tr><td>DC-09</td><td>Test Data Requirements</td><td><span class="badge badge-medium">Partial</span></td><td>Prerequisites partial coverage</td></tr>
         <tr><td>DC-10</td><td>Test Environment Requirements</td><td><span class="badge badge-medium">Partial</span></td><td>No standalone env specification</td></tr>
-        <tr><td>DC-11</td><td>Test Readiness Report</td><td><span class="badge badge-critical">Non-conformant</span></td><td>No readiness assessment</td></tr>
+        <tr><td>DC-11</td><td>Test Readiness Report</td><td><span class="badge badge-low">Conformant</span></td><td>P-11 Test Readiness Review (2026-02-12)</td></tr>
         <tr><td>DC-12</td><td>Actual Results</td><td><span class="badge badge-low">Conformant</span></td><td>E-3 requires recording all outputs</td></tr>
         <tr><td>DC-13</td><td>Test Execution Log</td><td><span class="badge badge-low">Conformant</span></td><td>Evidence artifacts (R-4)</td></tr>
         <tr><td>DC-14</td><td>Incident Report</td><td><span class="badge badge-low">Conformant</span></td><td>Exceeds 29119-3 8.10</td></tr>
@@ -3781,20 +3781,20 @@ AI-to-AI 공격, 추론 모델 조작, 다국어 공격에 대한 새로운 공�
         <tr><th>ID</th><th>29119-4 Technique / 기법</th><th>Status / 상태</th><th>Finding / 발견사항</th></tr>
       </thead>
       <tbody>
-        <tr><td>TC-01</td><td>Equivalence Partitioning</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Not referenced despite high relevance to input space partitioning</td></tr>
-        <tr><td>TC-02</td><td>Boundary Value Analysis</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Critical for safety filter boundary testing</td></tr>
+        <tr><td>TC-01</td><td>Equivalence Partitioning</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
+        <tr><td>TC-02</td><td>Boundary Value Analysis</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
         <tr><td>TC-03</td><td>Classification Tree Method</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Useful for systematic attack dimension classification</td></tr>
-        <tr><td>TC-04</td><td>Combinatorial Testing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Essential for managing combinatorial explosion of attack parameters</td></tr>
-        <tr><td>TC-05</td><td>Decision Table Testing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Critical for agent decision logic modeling</td></tr>
-        <tr><td>TC-06</td><td>State Transition Testing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Essential for multi-turn escalation attacks</td></tr>
+        <tr><td>TC-04</td><td>Combinatorial Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
+        <tr><td>TC-05</td><td>Decision Table Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
+        <tr><td>TC-06</td><td>State Transition Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
         <tr><td>TC-07</td><td>Scenario Testing</td><td><span class="badge badge-medium">Partial</span></td><td>Attack patterns are scenarios, but 29119-4 link not explicit</td></tr>
         <tr><td>TC-08</td><td>Random / Fuzz Testing</td><td><span class="badge badge-low">Conformant</span></td><td>Best-of-N jailbreaking directly implements this</td></tr>
         <tr><td>TC-09</td><td>Metamorphic Testing</td><td><span class="badge badge-low">Conformant</span></td><td>Explicitly recognized for AI testing</td></tr>
         <tr><td>TC-10</td><td>Syntax Testing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Applicable to encoding-based jailbreaks</td></tr>
         <tr><td>TC-11</td><td>Cause-Effect Graphing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Useful for RAG poisoning causal chains</td></tr>
-        <tr><td>TC-12</td><td>Requirements-Based Testing</td><td><span class="badge badge-medium">Partial</span></td><td>Implicit (testing against safety policies)</td></tr>
-        <tr><td>TC-13</td><td>Data Flow Testing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Critical gap for indirect prompt injection testing</td></tr>
-        <tr><td>TC-14</td><td>MC/DC Testing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Applicable to safety-critical agent decisions</td></tr>
+        <tr><td>TC-12</td><td>Requirements-Based Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
+        <tr><td>TC-13</td><td>Data Flow Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
+        <tr><td>TC-14</td><td>MC/DC Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
         <tr><td>TC-15</td><td>Error Guessing</td><td><span class="badge badge-low">Conformant</span></td><td>Manual red teaming is expert-driven error guessing</td></tr>
         <tr><td>TC-16</td><td>Coverage Measurement</td><td><span class="badge badge-medium">Partial</span></td><td>Annex C uses qualitative; quantitative formulas needed</td></tr>
       </tbody>
