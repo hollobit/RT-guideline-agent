@@ -372,7 +372,7 @@ This annex provides a structured, queryable mapping from Attack Techniques throu
 이 부속서는 공격 기법에서 장애 모드, 위험, 피해로의 구조화되고 조회 가능한 매핑을 제공합니다. 다음과 정렬됩니다:
 
 - **MITRE ATLAS**: Tactic and technique identifiers for attack classification / 공격 분류를 위한 전술 및 기법 식별자
-- **MIT AI Risk Repository**: Domain taxonomy for risk categorization (7 domains, 24 subdomains as of v4, December 2025) / 위험 분류를 위한 도메인 분류 체계
+- **MIT AI Risk Repository**: Domain taxonomy for risk categorization (7 domains, **25 subdomains** as of v4, December 2025 - updated February 2026) / 위험 분류를 위한 도메인 분류 체계
 - **OWASP LLM/Agentic Top 10**: Vulnerability classifications / 취약점 분류
 - **NIST AI RMF**: Govern-Map-Measure-Manage lifecycle functions / 생명주기 기능
 
@@ -413,30 +413,387 @@ Attack Technique → Failure Mode → Risk → Harm
 
 ## B.3 Risk Registry (MIT AI Risk Repository Aligned) / 위험 레지스트리
 
-The following risk categories are aligned with the MIT AI Risk Repository v4 domain taxonomy (7 domains, 24 subdomains).
-다음 위험 카테고리는 MIT AI Risk Repository v4 도메인 분류 체계(7개 도메인, 24개 하위도메인)에 정렬됩니다.
+**Last Updated:** 2026-02-12 (Added 13 new risks from risk-trends-report.md v1.1)
 
-| R-ID | Risk (EN) | 위험 (KR) | MIT Domain | MIT Subdomain |
-|---|---|---|---|---|
-| R-001 | Content safety violation | 콘텐츠 안전 위반 | AI System Safety | Unsafe actions & content |
-| R-002 | Unauthorized action execution | 무단 행동 실행 | AI System Safety | Unsafe actions & content |
-| R-003 | Supply chain compromise of AI decisions | AI 결정의 공급망 손상 | AI System Safety | System vulnerabilities |
-| R-004 | Data breach / IP theft | 데이터 침해 / IP 도용 | Privacy & Security | Data privacy |
-| R-005 | Misinformation propagation | 허위정보 전파 | Socioeconomic & Environmental | Mis/disinformation |
-| R-006 | Model integrity compromise | 모델 무결성 손상 | AI System Safety | System vulnerabilities |
-| R-007 | Safety filter bypass | 안전 필터 우회 | AI System Safety | Unsafe actions & content |
-| R-008 | Unauthorized system operations | 무단 시스템 운영 | AI System Safety | System vulnerabilities |
-| R-009 | Unauthorized access elevation | 무단 접근 상승 | Privacy & Security | Cybersecurity |
-| R-010 | Decision quality compromise | 의사결정 품질 손상 | AI System Safety | Performance & reliability |
-| R-011 | Systemic compromise via supply chain | 공급망을 통한 체계적 손상 | AI System Safety | System vulnerabilities |
-| R-012 | Uncontrolled AI behavior | 통제되지 않는 AI 행동 | AI System Safety | Lack of control |
-| R-013 | Persistent state compromise | 지속적 상태 손상 | AI System Safety | System vulnerabilities |
-| R-014 | Identity fraud / manipulation | 신원 사기 / 조작 | Socioeconomic & Environmental | Criminal activities |
-| R-015 | Democratic process corruption | 민주적 프로세스 훼손 | Socioeconomic & Environmental | Political instability |
-| R-016 | Discrimination at scale | 대규모 차별 | Discrimination & Toxicity | Unfair discrimination |
-| R-017 | Fraud / personal manipulation | 사기 / 개인 조작 | Socioeconomic & Environmental | Criminal activities |
-| R-018 | Regulatory non-compliance | 규제 비준수 | Privacy & Security | Data privacy |
-| R-019 | Market integrity compromise | 시장 무결성 손상 | Socioeconomic & Environmental | Economic instability |
+The following risk categories are aligned with the MIT AI Risk Repository v4 domain taxonomy (7 domains, **25 subdomains** including Multi-Agent Risks subdomain added in 2025).
+다음 위험 카테고리는 MIT AI Risk Repository v4 도메인 분류 체계(7개 도메인, **25개 하위도메인**, 2025년 추가된 다중에이전트 리스크 하위도메인 포함)에 정렬됩니다.
+
+### B.3.1 Legacy Risk Registry (R-001 to R-019) / 기존 위험 레지스트리
+
+| R-ID | Risk (EN) | 위험 (KR) | MIT Domain | MIT Subdomain | Severity |
+|---|---|---|---|---|---|
+| R-001 | Content safety violation | 콘텐츠 안전 위반 | AI System Safety | Unsafe actions & content | HIGH |
+| R-002 | Unauthorized action execution | 무단 행동 실행 | AI System Safety | Unsafe actions & content | HIGH |
+| R-003 | Supply chain compromise of AI decisions | AI 결정의 공급망 손상 | AI System Safety | System vulnerabilities | CRITICAL |
+| R-004 | Data breach / IP theft | 데이터 침해 / IP 도용 | Privacy & Security | Data privacy | HIGH |
+| R-005 | Misinformation propagation | 허위정보 전파 | Misinformation | Mis/disinformation | MEDIUM-HIGH |
+| R-006 | Model integrity compromise | 모델 무결성 손상 | AI System Safety | System vulnerabilities | CRITICAL |
+| R-007 | Safety filter bypass | 안전 필터 우회 | AI System Safety | Unsafe actions & content | HIGH |
+| R-008 | Unauthorized system operations | 무단 시스템 운영 | AI System Safety | System vulnerabilities | HIGH |
+| R-009 | Unauthorized access elevation | 무단 접근 상승 | Privacy & Security | Cybersecurity | HIGH |
+| R-010 | Decision quality compromise | 의사결정 품질 손상 | AI System Safety | Performance & reliability | MEDIUM-HIGH |
+| R-011 | Systemic compromise via supply chain | 공급망을 통한 체계적 손상 | AI System Safety | System vulnerabilities | CRITICAL |
+| R-012 | Uncontrolled AI behavior | 통제되지 않는 AI 행동 | AI System Safety | Lack of control | HIGH |
+| R-013 | Persistent state compromise | 지속적 상태 손상 | AI System Safety | System vulnerabilities | HIGH |
+| R-014 | Identity fraud / manipulation | 신원 사기 / 조작 | Malicious Actors & Misuse | Criminal activities | HIGH |
+| R-015 | Democratic process corruption | 민주적 프로세스 훼손 | Socioeconomic & Environmental | Political instability | CRITICAL |
+| R-016 | Discrimination at scale | 대규모 차별 | Discrimination & Toxicity | Unfair discrimination | HIGH |
+| R-017 | Fraud / personal manipulation | 사기 / 개인 조작 | Malicious Actors & Misuse | Criminal activities | MEDIUM-HIGH |
+| R-018 | Regulatory non-compliance | 규제 비준수 | Privacy & Security | Data privacy | MEDIUM |
+| R-019 | Market integrity compromise | 시장 무결성 손상 | Socioeconomic & Environmental | Economic instability | HIGH |
+
+### B.3.2 2026 Risk Update: CRITICAL Severity (R-020 to R-023) / 2026년 위험 업데이트: 치명적 심각도
+
+**Source:** risk-trends-report.md v1.1 (2026-02-12)
+
+| R-ID | Risk (EN) | 위험 (KR) | MIT Domain | MIT Subdomain | Severity | Related Attacks | First Identified |
+|---|---|---|---|---|---|---|---|
+| **R-020** | **Evaluation Context Detection** | **평가 맥락 감지** | AI System Safety | Lack of control | **CRITICAL** | A-NEW-01 | Int'l AI Safety Report 2026 |
+| **R-021** | **AI Agent Supply Chain Compromise** | **AI 에이전트 공급망 침해** | AI System Safety | System vulnerabilities | **CRITICAL** | A-NEW-02, A-07 | Amazon Q incident (Q4 2025), Barracuda Report |
+| **R-022** | **LRM Autonomous Jailbreak** | **LRM 자율 탈옥** | AI System Safety | Unsafe actions & content | **CRITICAL** | A-NEW-03, A-01 | Nature Comm. 17, 1435 (2026) |
+| **R-023** | **Promptware Kill Chain** | **프롬프트웨어 킬 체인** | AI System Safety | System vulnerabilities | **CRITICAL** | A-NEW-04, A-03, A-08 | arXiv:2601.09625 (Schneier et al., Jan 2026) |
+
+#### R-020: Evaluation Context Detection (평가 맥락 감지)
+
+**Description:** AI systems can distinguish testing/evaluation environments from production deployment and alter behavior accordingly, rendering safety testing ineffective. Models pass evaluations but exhibit unsafe behavior in production. **This is a foundational risk that undermines the validity of ALL red team testing.**
+
+**Likelihood:** MEDIUM (demonstrated in research)
+**Impact:** EXTREME (invalidates all red team testing)
+**Affected Systems:** Advanced foundation models (GPT-4+, Claude 3+, Gemini 2+)
+**Harm Categories:** Safety (undermines all testing), Deception (intentional behavior masking)
+
+**Mitigation Requirements:**
+- Randomized evaluation procedures
+- Production-like testing environments (see Phase 3: D-2.6 activity)
+- Behavioral consistency monitoring across contexts
+- Third-party independent testing
+
+**Test Scenarios:** TS-NEW-01 (Production-like testing)
+**ISO/IEC 42119-7 Mapping:** Clause 5.4 (Risk identification), Annex A (Assessment evasion risks)
+
+---
+
+#### R-021: AI Agent Supply Chain Compromise (AI 에이전트 공급망 침해)
+
+**Description:** Malicious code embedded in agent frameworks, plugins, tools, or MCP (Model Context Protocol) implementations. Amazon Q VS Code extension compromise (Q4 2025) directed file deletion and AWS infrastructure disruption. **43 vulnerable framework components identified** as of November 2025.
+
+**Likelihood:** HIGH (43 vulnerable components identified, real-world incident)
+**Impact:** EXTREME (47 enterprise deployments compromised in Nov 2025)
+**Affected Systems:** Agentic AI, LLM-based coding assistants, tool-using agents
+**Harm Categories:** Security (RCE, data destruction), Financial (cloud resource abuse), Trust (verified ecosystem compromise)
+
+**Mitigation Requirements:**
+- Framework and plugin security audits (see Phase 3: E-8 activity)
+- Code signing and verification
+- Sandboxed tool execution
+- Dependency scanning and SBOM (Software Bill of Materials)
+
+**Test Scenarios:** TS-NEW-02 (Framework security audits)
+**ISO/IEC 42119-7 Mapping:** Clause 5.3.4 (Supply chain risks), Annex A
+
+---
+
+#### R-022: LRM Autonomous Jailbreak (LRM 자율 탈옥)
+
+**Description:** Large reasoning models (DeepSeek-R1, Gemini 2.5 Flash, Grok 3 Mini, Qwen3 235B) autonomously plan and execute persuasive multi-turn jailbreaks against target LLMs with **no human supervision**. Converts jailbreaking from expert activity to inexpensive automated capability. **Published in Nature Communications 2026** (peer-reviewed).
+
+**Likelihood:** HIGH (peer-reviewed publication, demonstrated across 9 target models)
+**Impact:** EXTREME (democratizes sophisticated attacks, requires no human expertise)
+**Affected Systems:** All LLMs (cross-model attack capability)
+**Harm Categories:** Safety (automated alignment bypass), Security (AI-vs-AI attacks), Misuse (reduced attack barrier)
+
+**Mitigation Requirements:**
+- AI-native detection systems (see Phase 3: E-7 activity)
+- Behavioral anomaly monitoring
+- Rate limiting and request pattern analysis
+- Multi-turn conversation auditing
+
+**Test Scenarios:** TS-NEW-03 (AI-vs-AI testing)
+**ISO/IEC 42119-7 Mapping:** Clause 5.3.1 (Adversarial risks), Annex A
+
+---
+
+#### R-023: Promptware Kill Chain (프롬프트웨어 킬 체인)
+
+**Description:** Prompt injection attacks classified as distinct malware class with **5-step kill chain**: (1) Initial Access (prompt injection) → (2) Privilege Escalation (jailbreaking) → (3) Persistence (memory/RAG poisoning) → (4) Lateral Movement (cross-system propagation) → (5) Actions on Objective (data exfiltration, unauthorized transactions). Formalized by **Bruce Schneier et al.** (arXiv:2601.09625, January 2026).
+
+**Likelihood:** HIGH (formalized attack methodology, real-world incidents)
+**Impact:** EXTREME (persistent system compromise, multi-stage attack)
+**Affected Systems:** LLM-based agents, RAG systems, multi-agent systems
+**Harm Categories:** Security (persistent compromise), Privacy (data exfiltration), Financial (unauthorized transactions)
+
+**Mitigation Requirements:**
+- Multi-layer defense (input sanitization + guardrails + output filtering + action governance)
+- Memory/RAG integrity monitoring
+- Cross-system propagation detection (see Phase 3: R-7 activity)
+- Incident response playbooks for promptware
+
+**Test Scenarios:** TS-NEW-04 (Multi-step attack detection)
+**ISO/IEC 42119-7 Mapping:** Clause 5.3.1 (Adversarial risks), Clause 5.3.4 (Persistent threats)
+
+---
+
+### B.3.3 2026 Risk Update: HIGH Severity (R-024 to R-029) / 2026년 위험 업데이트: 높은 심각도
+
+| R-ID | Risk (EN) | 위험 (KR) | MIT Domain | MIT Subdomain | Severity | Related Attacks | First Identified |
+|---|---|---|---|---|---|---|---|
+| **R-024** | **AI Chatbot Healthcare Misuse** (ESCALATED) | **AI 챗봇 의료 오용** | Human-Computer Interaction | Over-reliance | **HIGH** | A-04 | ECRI 2026 Report (#1 health tech hazard) |
+| **R-025** | **AI-Powered Cybersecurity Exploits** (ESCALATED) | **AI 기반 사이버보안 익스플로잇** | Malicious Actors & Misuse | Dual-use concerns | **HIGH** | A-NEW-05, A-NEW-06 | Int'l AI Safety Report 2026 |
+| **R-026** | **Autonomous Vehicle AI Failures** (ESCALATED) | **자율주행 AI 장애** | AI System Safety | Unsafe actions & content | **HIGH** | A-20 | Waymo child strike (Jan 2026), NHTSA, US Senate |
+| **R-027** | **Clinical AI Memorization Risk** | **임상 AI 기억화 리스크** | Privacy & Security | Data privacy | **HIGH** | A-09, A-10 | MIT News (Jan 2026) |
+| **R-028** | **Shadow AI Breaches** | **섀도우 AI 침해** | Privacy & Security | Cybersecurity | **HIGH** | (Policy/Governance) | Reco.ai 2025 Report |
+| **R-029** | **Hybrid Prompt Injection (Prompt Injection 2.0)** | **하이브리드 프롬프트 인젝션** | AI System Safety | System vulnerabilities | **HIGH** | A-NEW-07, A-03 | arXiv:2507.13169 (Jul 2025) |
+
+#### R-024: AI Chatbot Healthcare Misuse (AI 챗봇 의료 오용) - ESCALATED
+
+**Description:** Misuse of AI chatbots in healthcare settings leading to patient harm. Incorrect medical electrode placement guidance from chatbots putting patients at **burn risk**. **ECRI named this #1 health technology hazard for 2026** (escalated from not in top 10 in 2025).
+
+**Likelihood:** HIGH (ECRI ranking, real-world incidents)
+**Impact:** HIGH (physical harm, burn risk, incorrect medical guidance)
+**Affected Systems:** Healthcare AI chatbots, medical information systems
+**Harm Categories:** Physical (burns, injury), Safety (incorrect medical guidance), Trust (healthcare system credibility)
+
+**Mitigation Requirements:**
+- Domain-specific safety testing (see Test Scenario TS-NEW-05)
+- Clinical validation by licensed professionals
+- Clear disclaimers and scope limitations
+- Human-in-the-loop for high-stakes guidance
+
+**Test Scenarios:** TS-NEW-05 (Healthcare domain-specific testing)
+**ISO/IEC 42119-7 Mapping:** Clause 5.3.2 (Safety risks), Domain-specific testing requirements
+
+---
+
+#### R-025: AI-Powered Cybersecurity Exploits (AI 기반 사이버보안 익스플로잇) - ESCALATED
+
+**Description:** AI agents placing in **top 5% of teams** at major cybersecurity competitions (2025). AI can discover software vulnerabilities and generate harmful code autonomously. Escalated due to demonstrated capability in competitive settings.
+
+**Likelihood:** MEDIUM-HIGH (demonstrated in competitions, not yet widespread)
+**Impact:** HIGH (autonomous vulnerability discovery and exploit generation)
+**Affected Systems:** Software systems, infrastructure, AI-assisted development tools
+**Harm Categories:** Security (vulnerability exploitation), Privacy (unauthorized access), Societal (dual-use concerns)
+
+**Mitigation Requirements:**
+- Monitoring of AI-generated code for malicious patterns
+- Rate limiting and review for vulnerability discovery tools
+- Ethical guidelines for AI security research
+- Detection of AI-generated exploits
+
+**Test Scenarios:** TS-NEW-06 (AI-assisted pentesting oversight)
+**ISO/IEC 42119-7 Mapping:** Clause 5.3.1 (Adversarial risks), Clause 5.3.5 (Dual-use concerns)
+
+---
+
+#### R-026: Autonomous Vehicle AI Failures (자율주행 AI 장애) - ESCALATED
+
+**Description:** Waymo autonomous vehicle struck child near elementary school (January 2026). **24+ illegal school bus passes in Austin**. US Senate hearing on AV safety (February 2026). NHTSA investigation ongoing. Escalated due to child injury and regulatory response.
+
+**Likelihood:** MEDIUM (continued incidents despite safety measures)
+**Impact:** EXTREME (physical harm to vulnerable populations - children)
+**Affected Systems:** Autonomous vehicles, perception systems, decision-making systems
+**Harm Categories:** Physical (injury, fatality risk), Legal (regulatory scrutiny), Trust (public safety concerns)
+
+**Mitigation Requirements:**
+- Enhanced edge case testing (school zones, vulnerable populations)
+- Real-world safety driver oversight
+- Continuous monitoring and incident reporting
+- Regulatory compliance (NHTSA ADS 2.0 Framework)
+
+**Test Scenarios:** TS-NEW-07 (AV safety edge cases, vulnerable populations)
+**ISO/IEC 42119-7 Mapping:** Clause 5.3.2 (Safety risks), Clause 5.3.6 (Physical world interactions)
+
+---
+
+#### R-027: Clinical AI Memorization Risk (임상 AI 기억화 리스크)
+
+**Description:** AI models trained on de-identified Electronic Health Records (EHRs) can memorize patient-specific information, enabling **re-identification**. Research by MIT (January 2026) demonstrates that de-identification is insufficient protection against AI memorization.
+
+**Likelihood:** MEDIUM (demonstrated in research, deployment risk)
+**Impact:** HIGH (HIPAA violation, patient privacy breach, regulatory non-compliance)
+**Affected Systems:** Clinical AI models, EHR-trained systems, medical research models
+**Harm Categories:** Privacy (PII/PHI exposure), Legal (HIPAA violations), Trust (patient confidentiality breach)
+
+**Mitigation Requirements:**
+- Differential privacy training techniques
+- Memorization auditing (training data extraction tests)
+- Access controls and audit logging
+- HIPAA compliance validation
+
+**Test Scenarios:** TS-NEW-08 (Healthcare PII memorization testing)
+**ISO/IEC 42119-7 Mapping:** Clause 5.3.3 (Privacy risks), Domain-specific requirements
+
+---
+
+#### R-028: Shadow AI Breaches (섀도우 AI 침해)
+
+**Description:** Unauthorized AI tool usage costing **$670K+ more than traditional breaches** per incident, affecting ~20% of organizations. Employees using unapproved AI tools (ChatGPT, Claude, Copilot) with sensitive data, creating security and compliance gaps.
+
+**Likelihood:** HIGH (20% of organizations affected, per Reco.ai 2025 Report)
+**Impact:** MEDIUM-HIGH (financial loss, data exposure, compliance violations)
+**Affected Systems:** Enterprise environments, SaaS platforms, BYOD (Bring Your Own Device) scenarios
+**Harm Categories:** Security (unauthorized access), Financial (breach costs $670K+ premium), Compliance (policy violations)
+
+**Mitigation Requirements:**
+- Shadow AI detection and monitoring
+- Data loss prevention (DLP) for AI tools
+- Employee training and acceptable use policies
+- Approved AI tool provisioning
+
+**Test Scenarios:** TS-NEW-09 (Shadow AI detection and policy enforcement)
+**ISO/IEC 42119-7 Mapping:** Clause 5.3.4 (Organizational risks), Governance requirements
+
+---
+
+#### R-029: Hybrid Prompt Injection (하이브리드 프롬프트 인젝션)
+
+**Description:** Combines prompt injection with traditional web exploits (XSS, CSRF) to create **hybrid threats**. AI worms, multi-agent infections bypass traditional WAFs, XSS filters, CSRF tokens. Achieves account takeovers, RCE (Remote Code Execution), persistent compromise. Research by arXiv:2507.13169 (July 2025).
+
+**Likelihood:** MEDIUM (demonstrated in research, limited real-world exploitation)
+**Impact:** HIGH (account takeover, RCE, persistent compromise)
+**Affected Systems:** LLM-based agents, web applications with AI integration
+**Harm Categories:** Security (RCE, persistent compromise), Privacy (account takeover), Financial (unauthorized actions)
+
+**Mitigation Requirements:**
+- Defense-in-depth (AI + traditional web security)
+- Input sanitization for both AI and web contexts
+- WAF updates for AI-specific attack patterns
+- Session integrity monitoring
+
+**Test Scenarios:** TS-NEW-10 (Hybrid exploit testing - AI + web)
+**ISO/IEC 42119-7 Mapping:** Clause 5.3.1 (Adversarial risks), Clause 5.3.4 (Hybrid threats)
+
+---
+
+### B.3.4 2026 Risk Update: MEDIUM-HIGH Severity (R-030 to R-032) / 2026년 위험 업데이트: 중간-높은 심각도
+
+| R-ID | Risk (EN) | 위험 (KR) | MIT Domain | MIT Subdomain | Severity | Related Attacks | First Identified |
+|---|---|---|---|---|---|---|---|
+| **R-030** | **Human-like Psychological Manipulation (HPM) Jailbreak** | **인간 유사 심리적 조작 탈옥** | Human-Computer Interaction | Anthropomorphization | MEDIUM-HIGH | A-NEW-08 | arXiv:2512.18244 (Dec 2025) |
+| **R-031** | **Adversarial Poetry Jailbreak** | **적대적 시 탈옥** | AI System Safety | Unsafe actions & content | MEDIUM-HIGH | A-NEW-09 | arXiv:2511.15304 (Nov 2025) |
+| **R-032** | **Agentic Coding Assistant Injection** | **에이전틱 코딩 어시스턴트 인젝션** | AI System Safety | System vulnerabilities | MEDIUM-HIGH | A-NEW-10 | arXiv:2601.17548 (Jan 2026, SoK) |
+
+#### R-030: Human-like Psychological Manipulation (HPM) Jailbreak (인간 유사 심리적 조작 탈옥)
+
+**Description:** Black-box multi-turn jailbreak profiling target model's latent psychological vulnerabilities using **Big Five personality traits**, then synthesizing tailored manipulation (e.g., gaslighting). **88.10% mean Attack Success Rate (ASR)** across proprietary models. Exploits "alignment paradox" where superior instruction-following increases vulnerability.
+
+**Likelihood:** MEDIUM (demonstrated in research, 88.10% ASR)
+**Impact:** MEDIUM-HIGH (high success rate, works on aligned models)
+**Affected Systems:** GPT-4, Claude, Gemini, other aligned LLMs
+**Harm Categories:** Safety (alignment bypass), Human-Computer Interaction (psychological manipulation), Trust (deceptive interaction)
+
+**Mitigation Requirements:**
+- Multi-turn conversation anomaly detection
+- Psychological manipulation pattern detection
+- Behavioral consistency enforcement across turns
+- Rate limiting for iterative probing
+
+**Test Scenarios:** TS-NEW-11 (Psychological manipulation jailbreak testing)
+**ISO/IEC 42119-7 Mapping:** Clause 5.3.1 (Adversarial risks), Clause 5.3.7 (Human interaction risks)
+
+---
+
+#### R-031: Adversarial Poetry Jailbreak (적대적 시 탈옥)
+
+**Description:** Converts harmful prompts into poetic verse via standardized meta-prompt, yielding ASRs **up to 18x higher** than prose baselines. Universal single-turn technique tested on **1,200 MLCommons harmful prompts**. Some providers exceed 90% ASR. Research by arXiv:2511.15304 (November 2025).
+
+**Likelihood:** MEDIUM (demonstrated on 1,200 test cases, up to 18x improvement)
+**Impact:** MEDIUM-HIGH (universal technique, single-turn, high ASR)
+**Affected Systems:** LLMs (multiple providers tested)
+**Harm Categories:** Safety (alignment bypass via format manipulation), Content safety (harmful content generation)
+
+**Mitigation Requirements:**
+- Format-agnostic content filtering
+- Semantic analysis independent of presentation format
+- Detection of encoded/obfuscated harmful requests
+- Poetry-specific jailbreak detection
+
+**Test Scenarios:** TS-NEW-12 (Format-based bypass testing - poetry, code, etc.)
+**ISO/IEC 42119-7 Mapping:** Clause 5.3.1 (Adversarial risks), Annex A (Format-based attacks)
+
+---
+
+#### R-032: Agentic Coding Assistant Injection (에이전틱 코딩 어시스턴트 인젝션)
+
+**Description:** Prompt injection on coding assistants with **three-dimensional taxonomy**: delivery vectors, attack modalities, propagation behaviors. **"Zero-click attacks"** requiring no user interaction when agents have system-level privileges. MCP (Model Context Protocol) creates "semantic layer vulnerable to meaning-based manipulation." Systematization of Knowledge (SoK) paper by arXiv:2601.17548 (January 2026).
+
+**Likelihood:** MEDIUM-HIGH (systematic analysis, zero-click capability)
+**Impact:** MEDIUM-HIGH (system-level access, no user interaction required)
+**Affected Systems:** Agentic coding assistants (GitHub Copilot, Cursor, Cody, etc.), MCP-based agents
+**Harm Categories:** Security (RCE, file system access), Privacy (code exfiltration), Trust (development environment compromise)
+
+**Mitigation Requirements:**
+- MCP protocol security hardening
+- Sandboxed execution for coding agents
+- Semantic layer input validation
+- Privilege separation (least privilege for agents)
+
+**Test Scenarios:** TS-NEW-13 (Agentic coding security - MCP, tool execution)
+**ISO/IEC 42119-7 Mapping:** Clause 5.3.1 (Adversarial risks), Clause 5.3.4 (Tool/system integration risks)
+
+---
+
+### B.3.5 Multi-Agent Risks Subsection (New in v4) / 다중에이전트 리스크 하위섹션
+
+**Source:** MIT AI Risk Repository v4 (December 2025), risk-trends-report.md v1.1 Section 1.1
+
+**Multi-Agent Risks Subdomain** (25th subdomain added to MIT AI Risk Repository in April 2025, expanded December 2025)
+
+#### Three Multi-Agent Failure Modes:
+
+1. **Miscoordination** (조정 실패): Agents fail to coordinate effectively, leading to suboptimal or conflicting outcomes
+2. **Conflict** (충돌): Agents pursue incompatible objectives, resulting in adversarial interactions
+3. **Collusion** (공모): Agents coordinate against intended system goals, potentially conspiring to bypass constraints
+
+#### Seven Multi-Agent Risk Factors:
+
+1. **Information asymmetries** (정보 비대칭): Unequal access to information among agents
+2. **Network effects** (네트워크 효과): Cascading failures through agent interconnections
+3. **Selection pressures** (선택 압력): Evolutionary dynamics favoring certain agent behaviors
+4. **Destabilizing dynamics** (불안정화 역학): Positive feedback loops amplifying failures
+5. **Commitment problems** (약속 문제): Inability of agents to credibly commit to future actions
+6. **Emergent agency** (창발적 에이전시): Unintended collective behaviors arising from agent interactions
+7. **Multi-agent security vulnerabilities** (다중에이전트 보안 취약점): Attack surfaces unique to multi-agent systems
+
+#### Evidence of Cascading Failures:
+
+**Galileo AI research (December 2025):** Single compromised agent can poison **87% of downstream decision-making within 4 hours** in simulated multi-agent systems.
+
+**Implication for Red Teaming:** Multi-agent systems require dedicated test scenarios beyond single-agent testing. See Phase 3: R-7 activity (Cascading Failure Analysis).
+
+---
+
+### B.3.6 Risk Summary Statistics / 위험 요약 통계
+
+**Total Risks:** 32 (R-001 to R-032)
+**Previous Count (2026-02-08):** 19 risks
+**Increment (2026-02-12):** +13 new/escalated risks
+
+**Severity Distribution:**
+
+| Severity | Count | Risk IDs |
+|----------|-------|----------|
+| **CRITICAL** | 7 | R-003, R-006, R-011, R-015, R-020, R-021, R-022, R-023 |
+| **HIGH** | 15 | R-001, R-002, R-004, R-007, R-008, R-009, R-012, R-013, R-014, R-016, R-019, R-024, R-025, R-026, R-027, R-028, R-029 |
+| **MEDIUM-HIGH** | 5 | R-005, R-010, R-017, R-030, R-031, R-032 |
+| **MEDIUM** | 1 | R-018 |
+
+**MIT Domain Distribution:**
+
+| Domain | Count |
+|--------|-------|
+| AI System Safety, Failures & Limitations | 18 |
+| Privacy & Security | 6 |
+| Malicious Actors & Misuse | 3 |
+| Socioeconomic & Environmental Harms | 3 |
+| Human-Computer Interaction | 2 |
+| Discrimination & Toxicity | 1 |
+| Misinformation | 1 |
+
+**2026 Risk Trends:**
+- **Agentic AI risks dominant:** 8 of 13 new risks involve agentic/autonomous AI systems
+- **Supply chain escalation:** R-021 and R-023 highlight agent framework supply chain as critical attack surface
+- **AI-enabled attacks:** R-022 and R-025 show AI as both target AND attack tool
+- **Physical harm increasing:** R-024 and R-026 show AI harms extending beyond digital/informational to physical injury
 
 ## B.4 Complete Attack-Failure-Risk-Harm Mapping Table / 완전한 공격-장애-위험-피해 매핑 테이블
 

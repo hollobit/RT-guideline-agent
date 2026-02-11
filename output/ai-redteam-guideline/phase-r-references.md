@@ -249,6 +249,39 @@
 
 ---
 
+### RC-14: ISO/IEC 29119-3:2021 & ISO/IEC 29119-4:2021
+**소프트웨어 테스트 문서화 및 기법 표준**
+
+| Field | Description |
+|-------|-------------|
+| **Intent/Purpose** | Part 3 defines test documentation structures (test plans, scenarios, cases, procedures). Part 4 defines test design techniques (specification-based, structure-based, experience-based). Together they provide comprehensive guidance for systematic test design and documentation. / Part 3은 테스트 문서화 구조(테스트 계획, 시나리오, 케이스, 절차) 정의. Part 4는 테스트 설계 기법(명세 기반, 구조 기반, 경험 기반) 정의. 체계적 테스트 설계 및 문서화를 위한 포괄적 가이드 제공 |
+| **Scope & Target** | All software and system testing. Applicable to traditional software, embedded systems, and AI/ML systems. Part 3 targets test managers and testers. Part 4 targets test designers and test analysts. / 모든 소프트웨어 및 시스템 테스팅. 전통적 소프트웨어, 임베디드 시스템, AI/ML 시스템에 적용 가능. Part 3은 테스트 관리자 및 테스터 대상. Part 4는 테스트 설계자 및 분석가 대상 |
+| **Key Red Teaming Requirements** | **Part 3 Documentation Requirements:** Section 6.2 (Organizational Test Policy), Section 7.2 (Test Plan structure and content - 17 required fields), Section 8.3 (Test Scenario documentation), Section 8.4 (Test Case specification), Section 8.5 (Test Procedure detail). **Part 4 Technique Requirements:** Section 5.2 (Experience-based techniques including Error Guessing, Exploratory Testing - critical for adversarial red teaming), Section 5.2.1 (Equivalence Partitioning), Section 5.2.3 (Boundary Value Analysis), Section 5.2.9 (Scenario Testing), Section 5.2.11 (Metamorphic Testing - especially relevant for non-deterministic AI systems). / Part 3: 조직적 테스트 정책, 테스트 계획 구조(17개 필수 필드), 테스트 시나리오/케이스 문서화. Part 4: 경험 기반 기법(오류 추측, 탐색적 테스팅), 동등 분할, 경계값 분석, 시나리오 테스팅, 변형 테스팅(비결정적 AI 시스템에 특히 관련) |
+| **Guideline Implementation** | **Part 3 Implementation:** `integrated-risk-attack-test-plan.md` fully implements Section 7.2 (Test Plan) with all 17 required fields adapted for AI red teaming context. `iso-29119-test-scenarios-and-cases.md` fully implements Sections 8.3-8.5 (Test Scenarios, Cases, Procedures) with 50+ detailed test case specifications. Phase 3 Section 11 (Organizational Test Policy) implements Section 6.2 policy framework. **Part 4 Implementation:** `iso-29119-test-scenarios-and-cases.md` Section 1.3 explicitly maps each test scenario to applicable Part 4 techniques. Experience-based techniques (Error Guessing, Exploratory Testing) are primary methods for creative adversarial probing in Phase 3 Section 4.3 (E-3 activity). / Part 3: integrated-risk-attack-test-plan.md가 Section 7.2 완전 구현, iso-29119-test-scenarios-and-cases.md가 Section 8.3-8.5 완전 구현. Part 4: 각 테스트 시나리오가 Part 4 기법에 매핑됨 |
+| **Limitations** | Generic software testing standard - does not address AI-specific challenges such as non-determinism, emergent behaviors, or adversarial testing as distinct from quality assurance testing. Red teaming requires adaptation of these standards beyond traditional QA context. / 범용 소프트웨어 테스팅 표준 - 비결정성, 창발적 행동, QA 테스팅과 구별되는 적대적 테스팅 등 AI 특화 과제 미포함. 레드티밍은 전통적 QA 맥락을 넘어선 표준 적용 필요 |
+| **Conformance Impact** | Adding RC-14 formally recognizes the ISO/IEC 29119-3/4 conformance achieved in 2026-02-10 update (71% overall, 93% documentation, 63% techniques). Provides normative foundation for test documentation artifacts. Critical for claiming ISO/IEC 29119 family compliance. / RC-14 추가는 2026-02-10 업데이트에서 달성한 ISO/IEC 29119-3/4 적합성 공식 인정(전체 71%, 문서화 93%, 기법 63%). 테스트 문서화 산출물의 규범적 기반 제공 |
+| **Update Cycle** | Part 3 published 2021 (revision of 2013 edition). Part 4 published 2021 (revision of 2015 edition). ISO systematic review cycle (~5 years). Next review expected 2026. / Part 3: 2021년 출판(2013년판 개정). Part 4: 2021년 출판(2015년판 개정). ISO 체계적 검토 주기(약 5년). 차기 검토 2026년 예상 |
+| **Standard URLs** | ISO/IEC 29119-3:2021: https://www.iso.org/standard/81291.html <br> ISO/IEC 29119-4:2021: https://www.iso.org/standard/81292.html |
+
+---
+
+### RC-15: Non-Western AI Governance Frameworks
+**비서양 AI 거버넌스 프레임워크**
+
+| Field | Description |
+|-------|-------------|
+| **Intent/Purpose** | Ensure international representativeness of the AI Red Team International Guideline by incorporating AI governance frameworks, standards, and ethical guidelines from non-Western jurisdictions. Address Phase 5 Meta-Review finding MR-03 (FAIL verdict for vendor/model bias due to Western-centric reference inventory). / AI Red Team International Guideline의 국제적 대표성을 보장하기 위해 비서양 관할권의 AI 거버넌스 프레임워크, 표준, 윤리 가이드라인 통합. Phase 5 메타 리뷰 MR-03 발견사항(서양 중심 참조 목록으로 인한 벤더/모델 편향 실패 판정) 해결 |
+| **Scope & Target** | Organizations operating AI systems globally, particularly those deploying in or exporting to Asia-Pacific, Middle East, Africa, and South America. Relevant for multinational corporations, international standards bodies, and policy makers. / 전 세계적으로 AI 시스템을 운영하는 조직, 특히 아시아태평양, 중동, 아프리카, 남미에 배포하거나 수출하는 조직. 다국적 기업, 국제 표준 기구, 정책 입안자에 관련 |
+| **Key Frameworks** | **China:** GB/T 43725-2024 (Information Security Technology - AI Security Framework), TC260 AI Security Standards, Cybersecurity Law requirements for AI systems. **Japan:** AI Society Principles (2019), AI Strategy 2022 (Cabinet Office), AI Governance Guidelines (METI). **Korea (South):** National AI Ethics Standards (국가 AI 윤리기준, 2020), AI Basic Act (proposed 2024), Personal Information Protection Act AI provisions. **Singapore:** Model AI Governance Framework (2nd Edition, 2020), AI Verify Foundation, Compendium of Use Cases (2022). **India:** NITI Aayog National AI Strategy (2018), Digital India Corporation AI Guidelines, Draft Digital Personal Data Protection Act AI provisions. **Additional Regions:** UAE AI Ethics Framework, Saudi Arabia SDAIA AI Principles, Brazil AI Strategy, African Union Continental AI Strategy. / 중국: GB/T 43725-2024(정보보안기술 - AI 보안 프레임워크), TC260 AI 보안 표준. 일본: AI 사회 원칙, AI 전략 2022. 한국: 국가 AI 윤리기준(2020), AI 기본법(2024년 제안). 싱가포르: Model AI Governance Framework (2판, 2020), AI Verify. 인도: NITI Aayog 국가 AI 전략. 추가 지역: UAE AI 윤리 프레임워크, 사우디 SDAIA AI 원칙, 브라질 AI 전략, 아프리카 연합 대륙 AI 전략 |
+| **Key Red Teaming Relevance** | **China GB/T 43725-2024:** Mandates security testing including adversarial robustness testing for AI systems. Specifies risk assessment, vulnerability scanning, and penetration testing requirements. **Singapore AI Verify:** Provides testing methodologies and benchmarks for AI governance metrics. Foundation model testing toolkit available. **Korea Ethics Standards:** Defines harm categories specific to Korean cultural context (privacy, fairness in hierarchical relationships, social harmony). Red teams must test for culturally-specific harms. **Japan AI Principles:** Emphasis on human-centric AI and societal co-creation requires red teaming for social impact assessment beyond Western individualistic harm models. / 중국 GB/T 43725-2024: 적대적 견고성 테스팅 포함 보안 테스팅 의무화. 싱가포르 AI Verify: AI 거버넌스 메트릭을 위한 테스팅 방법론 및 벤치마크 제공. 한국 윤리 기준: 한국 문화적 맥락 특화 피해 범주 정의(프라이버시, 위계 관계의 공정성, 사회적 조화). 일본 AI 원칙: 인간 중심 AI 및 사회적 공동 창조 강조로 서양 개인주의적 피해 모델을 넘어선 사회적 영향 평가 필요 |
+| **Guideline Integration Points** | **Phase 0 (Terminology):** Cultural context for harm definitions (individualistic vs. collectivist societies). **Phase R (References):** Add frameworks to Section 1 inventory. **Phase 1-2 (Attack Patterns):** Culturally-specific attack scenarios (e.g., undermining social harmony in collectivist cultures, exploiting hierarchical power dynamics). **Phase 3 (Normative Core):** Regional regulatory compliance requirements in Section 2.3 (Planning - P-2 Regulatory Requirements). **Phase 4 (Living Annex):** Regional case studies and incident examples. **Phase 5 (Meta-Review):** Diverse cultural perspectives in evaluation criteria. / Phase 0: 피해 정의의 문화적 맥락. Phase R: Section 1 목록에 프레임워크 추가. Phase 1-2: 문화 특화 공격 시나리오. Phase 3: Section 2.3의 지역별 규제 준수 요구사항. Phase 4: 지역별 사례 연구. Phase 5: 평가 기준의 다양한 문화적 관점 |
+| **Limitations** | Information availability varies by region. Many frameworks available only in local languages (Mandarin, Japanese, Korean, Arabic). Some frameworks are principles-based rather than technically prescriptive. Rapid evolution of regulations means frameworks may have changed since documentation. Translation accuracy and cultural nuance interpretation require subject matter experts from respective regions. / 지역별 정보 가용성 차이. 많은 프레임워크가 현지 언어로만 제공(중국어, 일본어, 한국어, 아랍어). 일부 프레임워크는 기술적 규정보다는 원칙 기반. 규제의 빠른 진화로 문서화 이후 프레임워크 변경 가능. 번역 정확성 및 문화적 뉘앙스 해석에 해당 지역 전문가 필요 |
+| **Why This Matters** | **Legal/Regulatory:** Organizations operating in these jurisdictions must comply with local AI governance requirements. Red teaming that ignores local regulations provides incomplete risk assessment. **Cultural Harm Prevention:** Harm taxonomies derived solely from Western contexts miss culturally-specific harms. Example: Loss of "face" (mianzi/체면) in East Asian contexts vs. individual reputation in Western contexts. **Market Adoption:** An "International Guideline" that reflects only Western perspectives limits adoption in regions representing >60% of global AI deployment. **Benchmark Validity:** AI safety benchmarks developed from Western-only frameworks may not detect harms relevant to non-Western user populations. / 법적/규제적: 해당 관할권에서 운영하는 조직은 현지 AI 거버넌스 요구사항 준수 필요. 문화적 피해 예방: 서양 맥락에서만 도출된 피해 분류 체계는 문화 특화 피해 누락. 시장 채택: 서양 관점만 반영하는 "국제 가이드라인"은 전 세계 AI 배포의 60% 이상을 차지하는 지역에서 채택 제한. 벤치마크 타당성: 서양 전용 프레임워크에서 개발된 AI 안전 벤치마크는 비서양 사용자 인구와 관련된 피해 감지 불가 |
+| **Update Cycle** | Continuous monitoring required due to rapid AI governance evolution globally. Quarterly review recommended for major jurisdictions (China, EU, US). Annual review for emerging frameworks. / 전 세계 AI 거버넌스의 빠른 진화로 인한 지속적 모니터링 필요. 주요 관할권(중국, EU, 미국)에 대해 분기별 검토 권장. 신흥 프레임워크에 대해 연간 검토 |
+| **Reference URLs** | **China:** http://www.tc260.org.cn/ (TC260 committee) <br> **Japan:** https://www8.cao.go.jp/cstp/ai/ (Cabinet Office AI Strategy) <br> **Korea:** https://www.msit.go.kr/ (Ministry of Science and ICT AI Ethics) <br> **Singapore:** https://www.pdpc.gov.sg/help-and-resources/2020/01/model-ai-governance-framework <br> **India:** https://www.niti.gov.in/national-strategy-artificial-intelligence <br> **International:** https://oecd.ai/en/dashboards/policy-initiatives (OECD AI Policy Observatory - tracks 800+ global AI policies) |
+
+---
+
 ## 3. Consistency & Conflict Analysis
 
 ### 3.1 Score-Based vs Risk-Learning Approaches
@@ -358,24 +391,29 @@ The new AI Red Teaming International Guideline should differentiate itself by:
 ### 5.1 Proposed Guideline Structure to Existing Standards Mapping
 **제안된 가이드라인 구조와 기존 표준 매핑**
 
-| Guideline Section (Proposed) | ISO 22989 | ISO 29119/TR-11 | NIST AI RMF | NIST 600-1 | EU AI Act | MITRE ATLAS | OWASP LLM | UK AISI | FMF | CSA Guide |
-|------------------------------|-----------|-----------------|-------------|------------|-----------|-------------|-----------|---------|-----|-----------|
-| **S1: Scope & Definitions** | **PRIMARY** | Partial | Partial | Partial | Art. 3 | -- | -- | -- | Partial | -- |
-| **S2: Normative References** | Ref | Ref | Ref | Ref | Ref | Ref | Ref | Ref | Ref | Ref |
-| **S3: Terms & Concepts** | **PRIMARY** | Partial | Partial | Partial | Art. 3 | Partial | Partial | -- | Partial | Partial |
-| **S4: Red Teaming Lifecycle** | -- | **PRIMARY** | Measure/Manage | Partial | Art. 9, 55 | -- | -- | Partial | -- | -- |
-| **S5: Risk Assessment** | Properties | Risk-based test | **PRIMARY** | **PRIMARY** | Art. 9 | Threat model | Top 10 | -- | Thresholds | Partial |
-| **S6: Attack Pattern Library** | -- | -- | -- | Partial | -- | **PRIMARY** | **PRIMARY** | Partial | -- | **PRIMARY** (Agentic) |
-| **S7: Model-Level Testing** | -- | White-box (Part 11) | Measure | Partial | Art. 55 | Techniques | Partial | **PRIMARY** | **PRIMARY** | -- |
-| **S8: System-Level Testing** | -- | **PRIMARY** | Manage | Partial | Art. 9-15 | Tactics | Partial | Partial | -- | **PRIMARY** |
-| **S9: Agentic AI Testing** | -- | -- | -- | -- | -- | Partial (Oct 2025) | Agentic Top 10 | Partial | -- | **PRIMARY** |
-| **S10: Reporting & Scoring** | -- | Documentation | Govern | -- | Art. 72 | -- | -- | -- | -- | Deliverables |
-| **S11: Competency Framework** | Roles | -- | Govern | -- | -- | -- | -- | Implicit | -- | -- |
-| **S12: Legal & Ethical** | -- | -- | Govern | -- | **PRIMARY** | -- | -- | -- | -- | -- |
-| **S13: Continuous Red Teaming** | -- | -- | Manage | -- | Art. 72 | -- | -- | Iterative | -- | -- |
-| **Annex A: Attack Catalog** | -- | -- | -- | -- | -- | **PRIMARY** | **PRIMARY** | Case studies | -- | Scenarios |
-| **Annex B: Tools & Automation** | -- | -- | Dioptra | -- | -- | -- | -- | -- | -- | -- |
-| **Annex C: Case Studies** | -- | -- | ARIA (700-2) | -- | -- | 33 cases | -- | Reports | -- | -- |
+| Guideline Section (Proposed/Actual) | ISO 22989 | ISO 29119-3 | ISO 29119-4 | ISO 29119-11 | NIST AI RMF | NIST 600-1 | EU AI Act | MITRE ATLAS | OWASP LLM | UK AISI | Non-Western |
+|-------------------------------------|-----------|-------------|-------------|--------------|-------------|------------|-----------|-------------|-----------|---------|-------------|
+| **S1: Scope & Definitions / Phase 0 Section 2** | **PRIMARY** | -- | -- | Partial | Partial | Partial | Art. 3 | -- | -- | -- | Partial |
+| **S2: Normative References / Phase R** | Ref | Ref | Ref | Ref | Ref | Ref | Ref | Ref | Ref | Ref | Ref (RC-15) |
+| **S3: Terms & Concepts / Phase 0 Section 1** | **PRIMARY** | -- | -- | Partial | Partial | Partial | Art. 3 | Partial | Partial | -- | Partial |
+| **S4: Red Teaming Lifecycle / Phase 3 Sections 1-7** | -- | **PRIMARY** (lifecycle) | -- | **PRIMARY** | Measure/Manage | Partial | Art. 9, 55 | -- | -- | Partial | -- |
+| **Phase 3 Section 3.5: Entry/Exit Criteria** | -- | **PRIMARY** (7.2.3) | -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| **S5: Risk Assessment / Phase 3 Section 8** | Properties | Partial | -- | Risk-based | **PRIMARY** | **PRIMARY** | Art. 9 | Threat model | Top 10 | -- | Partial |
+| **S6: Attack Pattern Library / Phase 1-2, Phase 4 Annex A** | -- | -- | Partial | -- | -- | Partial | -- | **PRIMARY** | **PRIMARY** | Partial | -- |
+| **S7: Model-Level Testing / Phase 3 Section 4** | -- | -- | Partial | White-box | Measure | Partial | Art. 55 | Techniques | Partial | **PRIMARY** | -- |
+| **S8: System-Level Testing / Phase 3 Section 4** | -- | **PRIMARY** | Partial | **PRIMARY** | Manage | Partial | Art. 9-15 | Tactics | Partial | Partial | -- |
+| **S9: Agentic AI Testing / Phase 4 Annex A (SYS)** | -- | -- | Partial | -- | -- | -- | -- | Partial (Oct 2025) | Agentic Top 10 | Partial | -- |
+| **S10: Reporting & Scoring / Phase 3 Section 10** | -- | **PRIMARY** (8.6) | -- | Documentation | Govern | -- | Art. 72 | -- | -- | -- | -- |
+| **Phase 3 Section 11: Organizational Test Policy** | -- | **PRIMARY** (6.2) | -- | Partial | Govern | -- | Art. 9 | -- | -- | -- | Partial |
+| **Phase 3 Section 12: Continuous Red Team Model** | -- | Partial (6.3) | -- | -- | Manage | -- | Art. 72 | -- | -- | Iterative | -- |
+| **S11: Competency Framework** | Roles | -- | -- | -- | Govern | -- | -- | -- | -- | Implicit | -- |
+| **S12: Legal & Ethical** | -- | -- | -- | -- | Govern | -- | **PRIMARY** | -- | -- | -- | Partial |
+| **S13: Continuous Red Teaming** | -- | Partial (6.3) | -- | -- | Manage | -- | Art. 72 | -- | -- | Iterative | -- |
+| **iso-29119-test-scenarios-and-cases.md** | -- | **PRIMARY** (8.3-8.5) | **PRIMARY** (5.2) | -- | -- | -- | -- | Techniques | Partial | -- | -- |
+| **integrated-risk-attack-test-plan.md** | -- | **PRIMARY** (7.2) | -- | -- | **PRIMARY** | -- | Art. 9 | Threat model | Top 10 | -- | -- |
+| **Annex A: Attack Catalog / Phase 4** | -- | -- | Partial | -- | -- | -- | -- | **PRIMARY** | **PRIMARY** | Case studies | -- |
+| **Annex B: Tools & Automation** | -- | -- | -- | -- | Dioptra | -- | -- | -- | -- | -- | -- |
+| **Annex C: Case Studies** | -- | -- | -- | -- | ARIA (700-2) | -- | -- | 33 cases | -- | Reports | -- |
 
 ### 5.2 Legend / 범례
 
