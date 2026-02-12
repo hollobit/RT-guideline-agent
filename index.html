@@ -323,7 +323,7 @@ a { color: var(--accent); }
   <div class="subtitle">AI 레드팀 국제 가이드라인</div>
   <div class="meta">
     Document ID: AIRTG-v1.6-DRAFT<br>
-    Version: 1.6 Draft &nbsp;|&nbsp; Date: 2026-02-12<br>
+    Version: 1.6 Draft &nbsp;|&nbsp; Date: 2026-02-13<br>
     Status: Draft for Public Review<br>
     Classification: Public<br>
     Author: Jonghong Jeon (hollobit@etri.re.kr)
@@ -363,7 +363,7 @@ a { color: var(--accent); }
   <li><strong>Risk-based test scope determination</strong> across three tiers (Foundational, Standard, Comprehensive).</li>
   <li><strong>Living Annexes</strong> with standardized attack pattern library, risk mappings, and benchmark coverage analysis designed for quarterly updates.</li>
   <li><strong>Continuous operating model</strong> with three layers: automated monitoring, periodic assessment, and event-triggered deep engagements.</li>
-  <li><strong>Standards alignment analysis</strong> (Part VI) with clause-by-clause comparison against ISO/IEC AWI TS 42119-7 and ISO/IEC/IEEE 29119, achieving <strong>92% overall conformance</strong> across 63 checklist items (improved from 33%, updated 2026-02-13: +59% improvement, all Critical/High/Medium priority gaps resolved).</li>
+  <li><strong>Standards alignment analysis</strong> (Part VI) with clause-by-clause comparison against ISO/IEC TS 42119-2:2025 (AI Testing) and ISO/IEC/IEEE 29119 (Software Testing), achieving <strong>79.7% ISO/IEC TS 42119-2:2025 conformance</strong> (baseline 20.3% → Phase A 60.8% → Phase B 74.3% → Phase C 79.7%, 27 gaps resolved) and <strong>92% ISO 29119 overall conformance</strong> across 63 checklist items (improved from 33%, updated 2026-02-13: +59pp improvement, all Critical/High/Medium priority gaps resolved).</li>
   <li><strong>Reference document analysis</strong> (Part VII) synthesizing Japan AISI, OWASP GenAI, and CSA Agentic AI guides into 19 modification proposals (9 essential, 7 recommended, 3 reference).</li>
   <li><strong>Research &amp; risk trends</strong> (Part VIII) covering 35+ academic papers with 8 new attack techniques identified through pipeline integration and 9+ real-world incidents (Aug 2025 -- Feb 2026), with all 5 Annex D update triggers met.</li>
   <li><strong>Test scenarios &amp; validation</strong> (Part IX) providing <strong>26 ISO/IEC 29119-compliant test scenarios</strong> achieving <strong>100% attack pattern reference accuracy</strong> (improved from 35%), 12 detailed test cases, coverage matrix, benchmark-aided testing guidance (2,375 benchmarks analyzed), and gap analysis confirming 5/6 stages feasible (updated 2026-02-12).</li>
@@ -4315,35 +4315,40 @@ AI-to-AI 공격, 추론 모델 조작, 다국어 공격에 대한 새로운 공�
 <section id="iso-42119-2-conformance">
 <h3>6.3.3 ISO/IEC TS 42119-2:2025 AI Testing Conformance / AI 테스팅 표준 정합성</h3>
 
-<p class="bilingual"><strong>NEW 2026-02-12:</strong> Comprehensive analysis of ISO/IEC TS 42119-2:2025 "Artificial intelligence — Testing of AI — Part 2: Overview of testing AI systems" conformance, with Phase A/B/C roadmap to achieve 100% alignment.<br>
-<strong>신규 2026-02-12:</strong> ISO/IEC TS 42119-2:2025 "인공지능 — AI 테스팅 — 파트 2: AI 시스템 테스팅 개요" 정합성에 대한 포괄적 분석, 100% 정렬 달성을 위한 Phase A/B/C 로드맵 포함.</p>
+<p class="bilingual"><strong>Updated 2026-02-13:</strong> Comprehensive analysis and implementation of ISO/IEC TS 42119-2:2025 "Artificial intelligence — Testing of AI — Part 2: Overview of testing AI systems" conformance. <strong>Phase A/B/C completed</strong>, achieving <strong>79.7% conformance</strong> (baseline 20.3% → 79.7%, 27 gaps resolved). Substantially conformant with AI testing standard.<br>
+<strong>업데이트 2026-02-13:</strong> ISO/IEC TS 42119-2:2025 "인공지능 — AI 테스팅 — 파트 2: AI 시스템 테스팅 개요" 정합성에 대한 포괄적 분석 및 구현. <strong>Phase A/B/C 완료</strong>, <strong>79.7% 정합성</strong> 달성 (기준선 20.3% → 79.7%, 27개 갭 해결). AI 테스팅 표준과 실질적 정합.</p>
 
 <h4>Current Status / 현재 상태</h4>
 
 <table>
   <thead>
-    <tr><th>Metric / 지표</th><th>Value / 값</th><th>Details / 상세</th></tr>
+    <tr><th>Milestone / 마일스톤</th><th>Conformance / 정합성</th><th>Details / 상세</th></tr>
   </thead>
   <tbody>
     <tr>
-      <td><strong>Current Conformance / 현재 정합성</strong></td>
-      <td><strong>60%</strong> (22/37 items)</td>
-      <td>Baseline before Phase A implementation<br>Phase A 구현 전 기준선</td>
+      <td><strong>Baseline / 기준선</strong></td>
+      <td>20.3% (7.5/37 weighted)</td>
+      <td>Before Phase A implementation<br>Phase A 구현 전 (3 RESOLVED + 9 PARTIAL)</td>
     </tr>
     <tr>
-      <td><strong>Phase A Target / Phase A 목표</strong></td>
-      <td><strong>87%</strong> (32/37 items)</td>
-      <td>After R-1 ~ R-4 implementation<br>R-1 ~ R-4 구현 후 (8 HIGH gaps resolved)</td>
+      <td><strong>Phase A Completed / 완료</strong></td>
+      <td><strong>60.8%</strong> (22.5/37 weighted)</td>
+      <td>R-1 ~ R-5 implementation (2026-02-12)<br>15 gaps resolved, 18 total RESOLVED</td>
     </tr>
     <tr>
-      <td><strong>Phase B Target / Phase B 목표</strong></td>
-      <td><strong>95%</strong> (35/37 items)</td>
-      <td>After MEDIUM priority gaps resolved<br>MEDIUM 우선순위 갭 해결 후</td>
+      <td><strong>Phase B Completed / 완료</strong></td>
+      <td><strong>74.3%</strong> (27.5/37 weighted)</td>
+      <td>R-6 ~ R-10 implementation (2026-02-13)<br>5 gaps resolved, 23 total RESOLVED</td>
     </tr>
     <tr>
-      <td><strong>Phase C Target / Phase C 목표</strong></td>
-      <td><strong>100%</strong> (37/37 items)</td>
-      <td>Full conformance with all LOW priority gaps resolved<br>모든 LOW 우선순위 갭 해결로 완전 정합</td>
+      <td><strong>Phase C Completed / 완료</strong></td>
+      <td><strong style="color: var(--accent);">79.7%</strong> (29.5/37 weighted)</td>
+      <td><strong>C-1 ~ C-3 implementation (2026-02-13)</strong><br>4 PARTIAL gaps elevated to RESOLVED, 27 total RESOLVED</td>
+    </tr>
+    <tr>
+      <td><strong>Future Target / 향후 목표</strong></td>
+      <td>86.5% - 93.2%</td>
+      <td>Optional Phase D (remaining 5 PARTIAL + 5 NOT COVERED gaps)<br>선택적 Phase D (남은 5 PARTIAL + 5 NOT COVERED 갭)</td>
     </tr>
   </tbody>
 </table>
@@ -4389,40 +4394,122 @@ AI-to-AI 공격, 추론 모델 조작, 다국어 공격에 대한 새로운 공�
   </tbody>
 </table>
 
+<h4>Phase B Implementation (R-6 ~ R-10) ✅ COMPLETED / 완료</h4>
+
+<p class="bilingual"><strong>Phase B focuses on remaining HIGH priority gaps and critical MEDIUM priority gaps from ISO/IEC TS 42119-2:2025.</strong><br>
+<strong>Phase B는 ISO/IEC TS 42119-2:2025의 남은 HIGH 우선순위 갭과 중요 MEDIUM 우선순위 갭에 집중합니다.</strong></p>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Implementation / 구현 항목</th><th>ISO 42119-2 Reference</th><th>Phase 3 Location</th><th>Impact / 영향</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>R-6</strong></td>
+      <td><strong>Risk Calculation Methodology</strong><br>위험 계산 방법론</td>
+      <td>Section 6.3<br>Risk Assessment</td>
+      <td>P-2 Section 7bis</td>
+      <td>Formal risk scoring: Likelihood (1-5) × Impact (1-5) with priority matrix (Critical 20-25, High 12-19, Medium 6-11, Low 1-5)<br>공식적 위험 점수 계산 방법론 추가</td>
+    </tr>
+    <tr>
+      <td><strong>R-7</strong></td>
+      <td><strong>Differential Testing</strong><br>차등 테스팅</td>
+      <td>Section 7.4.4.2<br>Differential Testing Technique</td>
+      <td>D-2.6 (Activity)</td>
+      <td>5 differential strategies: Multi-Model Comparison, Multi-Version, Framework Consistency, Quantization Validation, Architecture Variant. 4 oracle types with coverage metric<br>5개 차등 전략 + 4개 Oracle 타입 추가</td>
+    </tr>
+    <tr>
+      <td><strong>R-8</strong></td>
+      <td><strong>Deployment Testing</strong><br>배포 테스팅</td>
+      <td>Section 5.2.4<br>Deployment Phase</td>
+      <td>E-10 (Activity)</td>
+      <td>7 deployment test types: Environment Validation, Production Data Pipeline, Model Serving Infrastructure, Performance Benchmarking, Canary Deployment, Rollback Validation, Monitoring Verification<br>7개 배포 테스트 유형 추가</td>
+    </tr>
+    <tr>
+      <td><strong>R-9</strong></td>
+      <td><strong>AI Test Plan Requirements</strong><br>AI 테스트 계획 요구사항</td>
+      <td>Annex A<br>Test Plan Template</td>
+      <td>P-1bis (Activity)</td>
+      <td>9 AI-specific Test Plan sections extending ISO 29119-2 Annex A: Data Quality Strategy, Model Testing, Test Oracle Strategy, Non-Determinism Handling, High-Dimensional Input Testing, AI Risks, Metamorphic Testing, Deployment/Re-evaluation, Interpretability<br>9개 AI 전용 테스트 계획 섹션 추가</td>
+    </tr>
+    <tr>
+      <td><strong>R-10</strong></td>
+      <td><strong>Lifecycle Phase Coverage</strong><br>라이프사이클 단계 커버리지</td>
+      <td>Section 5.2.1, 5.2.4, 5.2.6<br>Inception, Deployment, Re-evaluation</td>
+      <td>Section 1.1.5 + E-6, E-10</td>
+      <td>Explicit coverage documentation for ISO 42119-2 7 lifecycle phases, addressing Inception (out-of-scope), Deployment (E-10), and Re-evaluation (E-6, E-10)<br>ISO 42119-2 7개 라이프사이클 단계 명시적 커버리지 문서화</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Phase C Implementation (C-1 ~ C-3) ✅ COMPLETED / 완료</h4>
+
+<p class="bilingual"><strong>Phase C elevates 4 PARTIAL gaps to RESOLVED by enhancing existing P-1bis sections with systematic methodologies.</strong><br>
+<strong>Phase C는 기존 P-1bis 섹션을 체계적 방법론으로 강화하여 4개 PARTIAL 갭을 RESOLVED로 상향합니다.</strong></p>
+
+<table>
+  <thead>
+    <tr><th>ID</th><th>Enhancement / 강화 항목</th><th>ISO 42119-2 Reference</th><th>Phase 3 Location</th><th>Impact / 영향</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>C-1</strong></td>
+      <td><strong>Non-Determinism Statistical Methodology</strong><br>비결정성 통계 방법론</td>
+      <td>Annex B.2<br>Non-Determinism Characteristics</td>
+      <td>P-1bis Section 4 Enhancement</td>
+      <td>Statistical sampling methodology: Sample size formula N = ceiling(Z² × P × (1-P) / E²), variance threshold CV > 0.33, 95% confidence interval calculation, decision tree for oracle selection, metamorphic integration<br>통계 샘플링 방법론: 표본 크기 공식, 분산 임계값, 신뢰구간 계산 추가</td>
+    </tr>
+    <tr>
+      <td><strong>C-2</strong></td>
+      <td><strong>High-Dimensional Partitioning Algorithm</strong><br>고차원 분할 알고리즘</td>
+      <td>Section 7.4.1<br>Equivalence Partitioning</td>
+      <td>P-1bis Section 5 Enhancement</td>
+      <td>5-step systematic partitioning procedure: Dimension Identification, Equivalence Class Definition (D-2.5), Boundary Values, Combinatorial Coverage (D-2.7: full factorial, pairwise, stratified), Coverage Metric. Dimensionality reduction heuristic for >1000, >100, ≤100 combinations<br>5단계 체계적 분할 절차 + 차원축소 휴리스틱 추가</td>
+    </tr>
+    <tr>
+      <td><strong>C-3</strong></td>
+      <td><strong>Interpretability & Opacity Testing</strong><br>해석가능성 및 불투명성 테스팅</td>
+      <td>Section 7.3.4, Annex B.5<br>Interpretability, Opacity</td>
+      <td>P-1bis Section 9 Expansion<br>(9.1 + 9.2 subsections)</td>
+      <td><strong>9.1 Explanation Testing Methodology:</strong> 4-step procedure (Input Selection, Generate Explanations, Validate Fidelity ≥90%, Test Consistency ≥67%), 3 oracle types, coverage metric<br><strong>9.2 Opacity Testing Framework:</strong> 3-level classification (White-Box 100%, Gray-Box 85-90%, Black-Box 70-80%), 3 compensatory strategies (Metamorphic D-2.5.2, Differential D-2.6, Behavioral Boundary D-2.5)<br>설명 테스팅 + 불투명성 프레임워크 추가</td>
+    </tr>
+  </tbody>
+</table>
+
 <h4>Gap Analysis Summary / 갭 분석 요약</h4>
 
 <table>
   <thead>
-    <tr><th>Priority / 우선순위</th><th>Total Gaps / 총 갭</th><th>Phase A Resolved / 해결</th><th>Remaining / 남은 갭</th><th>Target Phase</th></tr>
+    <tr><th>Status / 상태</th><th>Count / 개수</th><th>Weighted / 가중치</th><th>Percentage / 비율</th><th>Details / 상세</th></tr>
   </thead>
   <tbody>
     <tr>
-      <td><span class="badge badge-high">HIGH</span></td>
-      <td>10</td>
-      <td><strong>8</strong> ✅</td>
-      <td>2</td>
-      <td>Phase B</td>
+      <td><span class="badge badge-low">✅ RESOLVED</span></td>
+      <td><strong>27</strong></td>
+      <td>27.0 points</td>
+      <td><strong>73.0%</strong></td>
+      <td>Phase A: 18 gaps | Phase B: +5 gaps | Phase C: +4 gaps<br>Phase A: 18개 | Phase B: +5개 | Phase C: +4개</td>
     </tr>
     <tr>
-      <td><span class="badge badge-medium">MEDIUM</span></td>
-      <td>19</td>
-      <td>0</td>
-      <td>19</td>
-      <td>Phase B/C</td>
+      <td><span class="badge badge-medium">⚠️ PARTIAL</span></td>
+      <td><strong>5</strong></td>
+      <td>2.5 points (×0.5)</td>
+      <td><strong>13.5%</strong></td>
+      <td>G-6, G-11, G-15, G-20, G-37 (require major changes)<br>주요 아키텍처 변경 필요</td>
     </tr>
     <tr>
-      <td><span class="badge badge-low">LOW</span></td>
-      <td>8</td>
-      <td>0</td>
-      <td>8</td>
-      <td>Phase C (v2.0+)</td>
+      <td><span class="badge badge-critical">❌ NOT COVERED</span></td>
+      <td><strong>5</strong></td>
+      <td>0.0 points</td>
+      <td><strong>13.5%</strong></td>
+      <td>G-9, G-14, G-24, G-26, G-27 (low-priority or out-of-scope)<br>낮은 우선순위 또는 범위 외</td>
     </tr>
-    <tr style="font-weight:700;border-top:2px solid var(--border);">
-      <td><strong>Total / 합계</strong></td>
-      <td><strong>37</strong></td>
-      <td><strong>8</strong></td>
-      <td><strong>29</strong></td>
-      <td>—</td>
+    <tr style="font-weight:700;border-top:2px solid var(--border);background:var(--accent-light);">
+      <td><strong>Total Conformance / 총 정합성</strong></td>
+      <td><strong>37 total gaps</strong></td>
+      <td><strong>29.5 / 37</strong></td>
+      <td><strong style="color:var(--accent);font-size:1.1em;">79.7%</strong></td>
+      <td><strong>Substantially Conformant / 실질적 정합</strong><br>Baseline 20.3% → Phase C 79.7% (+59.4pp improvement)</td>
     </tr>
   </tbody>
 </table>
@@ -6909,8 +6996,8 @@ Test Case ID(s) → Test Evidence → Findings → Residual Risk Assessment
 
 <footer style="text-align:center; padding: 2rem 0; color: var(--text-secondary); font-size: 0.82rem;">
   <p><strong>AI Red Team International Guideline</strong> | AIRTG-v1.6-DRAFT</p>
-  <p>Version 1.6 Draft | 2026-02-12 | Status: Draft for Public Review</p>
-  <p style="margin-top:0.5rem;"><strong>Phase A Implementation (2026-02-12):</strong> ISO/IEC TS 42119-2 alignment (60% → 87%), 5-Standard Terminology Framework (172 ISO terms, v0.5.3), Data Quality Testing (9 types), Model Testing (6 types), Metamorphic Testing, Test Oracle Strategy. ISO 29119 conformance: 92% (Process 100%, Documentation 100%, Test Techniques 88%, Terminology 100%).</p>
+  <p>Version 1.6 Draft | 2026-02-13 | Status: Draft for Public Review</p>
+  <p style="margin-top:0.5rem;"><strong>Phase A/B/C Implementation (2026-02-13):</strong> ISO/IEC TS 42119-2:2025 conformance achieved <strong>79.7%</strong> (baseline 20.3% → Phase A 60.8% → Phase B 74.3% → Phase C 79.7%), 27 gaps resolved. <strong>Phase A:</strong> Data Quality Testing (D-2.8, 9 types), Model Testing (D-2.5.1, 6 types), Metamorphic Testing (D-2.5.2, 5 relations), Test Oracle Strategy (P-1, 5 types). <strong>Phase B:</strong> Risk Calculation (P-2 Section 7bis), Differential Testing (D-2.6), Deployment Testing (E-10, 7 types), AI Test Plan Requirements (P-1bis, 9 sections), Lifecycle Coverage. <strong>Phase C:</strong> Non-Determinism Statistical Methodology (P-1bis Section 4), High-Dimensional Partitioning Algorithm (P-1bis Section 5), Interpretability & Opacity Testing (P-1bis Section 9). 5-Standard Terminology Framework (177 ISO terms, v0.5.3). ISO 29119 conformance: 92% (Process 100%, Documentation 100%, Test Techniques 88%, Terminology 100%).</p>
   <p style="margin-top:0.5rem;">This document is designed as a living standard. Normative Core is stable; Living Annexes update quarterly.</p>
 </footer>
 
