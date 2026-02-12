@@ -711,6 +711,302 @@ ISO/IEC 29119와 정렬된 테스트 관리 및 문서화 용어:</p>
 <p class="bilingual"><strong>For complete definitions and cross-references, consult:</strong> <a href="phase-0-terminology.md">phase-0-terminology.md</a><br>
 <strong>전체 정의 및 상호 참조는 다음 문서를 참조하세요:</strong> <a href="phase-0-terminology.md">phase-0-terminology.md</a></p>
 
+<h4>Complete Terminology Catalog (155 Terms) / 전체 용어 카탈로그 (155개 용어)</h4>
+
+<p class="bilingual"><strong>Comprehensive 5-Standard ISO Terminology:</strong> Click each category to expand and view detailed term definitions from ISO/IEC TS 42119-2:2025, 29119-1:2022, DIS 27090, 22989:2022/AMD 1:2025, and 22989:2022.<br>
+<strong>포괄적 5개 표준 ISO 용어:</strong> 각 카테고리를 클릭하여 ISO/IEC TS 42119-2:2025, 29119-1:2022, DIS 27090, 22989:2022/AMD 1:2025, 22989:2022의 상세 용어 정의를 확인하세요.</p>
+
+<!-- AI Testing Terminology (ISO 42119-2) -->
+<div class="collapsible">
+  <div class="collapsible-header">3.11 AI Testing Terminology (23 terms from ISO/IEC TS 42119-2:2025)</div>
+  <div class="collapsible-body"><div class="collapsible-body-inner">
+
+    <h5>3.11.1 AI Test Levels (2 terms)</h5>
+    <table style="font-size: 0.82rem;">
+      <thead><tr><th>Term / 용어</th><th>Definition / 정의</th><th>ISO Reference</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Data Quality Testing</strong><br>데이터 품질 테스팅</td>
+          <td>Test level focused specifically on the data being used to produce the AI model, typically using a range of data quality test types to reduce the risk of a poor-quality model being derived from the data. Occurs after unit testing and before integration testing.<br>AI 모델을 생성하는 데 사용되는 데이터에 특별히 초점을 맞춘 테스트 수준</td>
+          <td>ISO/IEC TS 42119-2:2025, Section 7.2</td>
+        </tr>
+        <tr>
+          <td><strong>Model Testing</strong><br>모델 테스팅</td>
+          <td>Test level focused specifically on the AI model as the test item, typically using one or more specialist AI model test types to check that the model performs acceptably within the intended context of use.<br>테스트 항목으로서 AI 모델에 특별히 초점을 맞춘 테스트 수준</td>
+          <td>ISO/IEC TS 42119-2:2025, Section 7.2</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h5>3.11.2 Specialist Data Quality Test Types (6 terms)</h5>
+    <table style="font-size: 0.82rem;">
+      <thead><tr><th>Term / 용어</th><th>Definition / 정의</th><th>ISO Reference</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Data Governance Testing</strong><br>데이터 거버넌스 테스팅</td>
+          <td>Testing concerned with policies related to the management of data. Determines whether organizational or project policies, standards, rules or regulations have been broken.<br>데이터 관리와 관련된 정책에 관한 테스팅</td>
+          <td>ISO/IEC TS 42119-2:2025, Section 7.3.3.2</td>
+        </tr>
+        <tr>
+          <td><strong>Data Provenance Testing</strong><br>데이터 출처 테스팅</td>
+          <td>Testing that determines whether the sources providing data to the datasets are trustworthy, well-managed and whether the data communication channels are secure.<br>데이터셋에 데이터를 제공하는 소스가 신뢰할 수 있고 잘 관리되는지 판단하는 테스팅</td>
+          <td>ISO/IEC TS 42119-2:2025, Section 7.3.3.3</td>
+        </tr>
+        <tr>
+          <td><strong>Data Representativeness Testing</strong><br>데이터 대표성 테스팅</td>
+          <td>Testing concerned with determining whether the datasets used for training, validation and testing are fair representations of the data expected to be encountered by the operational AI model.<br>훈련, 검증 및 테스트에 사용되는 데이터셋이 운영 AI 모델이 마주칠 것으로 예상되는 데이터의 공정한 표현인지 판단하는 테스팅</td>
+          <td>ISO/IEC TS 42119-2:2025, Section 7.3.3.4</td>
+        </tr>
+        <tr>
+          <td><strong>Data Sufficiency Testing</strong><br>데이터 충분성 테스팅</td>
+          <td>Testing concerned with determining that sufficient data are used for training, validation and testing.<br>훈련, 검증 및 테스트에 충분한 데이터가 사용되는지 판단하는 테스팅</td>
+          <td>ISO/IEC TS 42119-2:2025, Section 7.3.3.5</td>
+        </tr>
+        <tr>
+          <td><strong>Label Correctness Testing</strong><br>레이블 정확성 테스팅</td>
+          <td>Testing to provide confidence that labels in datasets are correct. For supervised machine learning, each training dataset sample is labelled with a target class.<br>데이터셋의 레이블이 정확하다는 확신을 제공하는 테스팅</td>
+          <td>ISO/IEC TS 42119-2:2025, Section 7.3.3.8</td>
+        </tr>
+        <tr>
+          <td><strong>Unwanted Bias Testing</strong><br>원치 않는 편향 테스팅</td>
+          <td>Testing concerned with checking that datasets do not include unwanted bias. Includes counterfactual fairness testing and demographic parity testing.<br>데이터셋에 원치 않는 편향이 포함되어 있지 않은지 확인하는 테스팅</td>
+          <td>ISO/IEC TS 42119-2:2025, Section 7.3.3.9</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h5>3.11.3 Specialist AI Model Test Types (4 terms)</h5>
+    <table style="font-size: 0.82rem;">
+      <thead><tr><th>Term / 용어</th><th>Definition / 정의</th><th>ISO Reference</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Model Performance Testing</strong><br>모델 성능 테스팅</td>
+          <td>Testing used to measure an AI model's performance (e.g., accuracy) against specified acceptance criteria. Typically defined using model performance measures such as accuracy, recall, precision and F1 score.<br>지정된 허용 기준에 대해 AI 모델의 성능을 측정하는 테스팅</td>
+          <td>ISO/IEC TS 42119-2:2025, Section 7.3.4.3</td>
+        </tr>
+        <tr>
+          <td><strong>Adversarial Testing</strong><br>적대적 테스팅</td>
+          <td>Testing typically focused on ML models, involving perturbing inputs to the model with the aim of identifying adversarial examples, which are specific inputs not handled as expected by the model.<br>모델에 대한 입력을 교란하여 적대적 예제를 식별하는 테스팅</td>
+          <td>ISO/IEC TS 42119-2:2025, Section 7.3.4.4</td>
+        </tr>
+        <tr>
+          <td><strong>Drift Testing</strong><br>드리프트 테스팅</td>
+          <td>A form of regression testing focused on measuring model performance metrics for an operational model to identify if concept drift has exceeded a threshold value.<br>개념 드리프트가 임계값을 초과했는지 식별하는 회귀 테스팅</td>
+          <td>ISO/IEC TS 42119-2:2025, Section 7.3.4.5</td>
+        </tr>
+        <tr>
+          <td><strong>AI Model Explainability Testing</strong><br>AI 모델 설명 가능성 테스팅</td>
+          <td>Testing that aims at confirming whether the factors influencing an AI model's output can be expressed in a way that humans can interpret and align with human decision-making processes.<br>AI 모델의 출력에 영향을 미치는 요인이 인간이 해석할 수 있는지 확인하는 테스팅</td>
+          <td>ISO/IEC TS 42119-2:2025, Section 7.3.4.7</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h5>3.11.4 Neural Network Coverage Measures (3 terms)</h5>
+    <table style="font-size: 0.82rem;">
+      <thead><tr><th>Term / 용어</th><th>Definition / 정의</th><th>ISO Reference</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Neuron Coverage</strong><br>뉴런 커버리지</td>
+          <td>Test coverage measure defined as the proportion of activated neurons divided by the total number of neurons in the neural network (expressed as percentage).<br>신경망에서 활성화된 뉴런의 비율을 전체 뉴런 수로 나눈 테스트 커버리지 측정</td>
+          <td>ISO/IEC TS 42119-2:2025, Section 7.4.4.2.2</td>
+        </tr>
+        <tr>
+          <td><strong>Threshold Coverage</strong><br>임계값 커버리지</td>
+          <td>Test coverage measure for neural networks defined as the proportion of neurons exceeding a threshold activation value divided by the total number of neurons.<br>임계값 활성화 값을 초과하는 뉴런의 비율을 전체 뉴런 수로 나눈 커버리지 측정</td>
+          <td>ISO/IEC TS 42119-2:2025, Section 7.4.4.2.3</td>
+        </tr>
+        <tr>
+          <td><strong>Sign Change Coverage</strong><br>부호 변경 커버리지</td>
+          <td>Test coverage measure for neural networks defined as the proportion of neurons activated with both positive and negative activation values divided by the total number of neurons.<br>양수 및 음수 활성화 값 모두로 활성화된 뉴런의 비율을 전체 뉴런 수로 나눈 측정</td>
+          <td>ISO/IEC TS 42119-2:2025, Section 7.4.4.2.4</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top: 1rem; font-size: 0.85rem; font-style: italic;">
+      <strong>Additional AI Testing Terms:</strong> Concept Drift, Explainability, Robustness, Transparency, Intervenability (see Cross-Standard Term Index below)
+    </p>
+
+  </div></div>
+</div>
+
+<!-- Software Testing Terminology (ISO 29119-1) -->
+<div class="collapsible">
+  <div class="collapsible-header">3.12 Software Testing Terminology (10 core terms from ISO/IEC 29119-1:2022)</div>
+  <div class="collapsible-body"><div class="collapsible-body-inner">
+
+    <table style="font-size: 0.82rem;">
+      <thead><tr><th>Term / 용어</th><th>Definition / 정의</th><th>ISO Reference</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Testing</strong><br>테스팅</td>
+          <td>Set of activities conducted to facilitate discovery or evaluation of properties of one or more test items.<br>하나 이상의 테스트 항목의 속성을 발견하거나 평가하는 활동의 집합</td>
+          <td>ISO/IEC 29119-1:2022, Section 3.131</td>
+        </tr>
+        <tr>
+          <td><strong>Test Item</strong><br>테스트 항목</td>
+          <td>Work product that is the subject of testing. Examples: module, component, system, document, dataset, AI model.<br>테스팅의 대상이 되는 작업 산출물</td>
+          <td>ISO/IEC 29119-1:2022, Section 3.104</td>
+        </tr>
+        <tr>
+          <td><strong>Test Case</strong><br>테스트 케이스</td>
+          <td>Set of preconditions, inputs, actions (where applicable), expected results and postconditions, developed based on test conditions.<br>테스트 조건을 기반으로 개발된 전제 조건, 입력, 동작, 예상 결과 및 사후 조건의 집합</td>
+          <td>ISO/IEC 29119-1:2022, Section 3.85</td>
+        </tr>
+        <tr>
+          <td><strong>Test Oracle</strong><br>테스트 오라클</td>
+          <td>Source to determine expected results for comparison with actual results of the test item. In AI systems context, the test oracle problem is particularly challenging due to non-deterministic outputs.<br>테스트 항목의 실제 결과와 비교하기 위한 예상 결과를 결정하는 소스</td>
+          <td>ISO/IEC 29119-1:2022, Section 3.114</td>
+        </tr>
+        <tr>
+          <td><strong>Test Coverage</strong><br>테스트 커버리지</td>
+          <td>Degree to which specified coverage items are exercised by a test suite as determined by test coverage measurement criteria.<br>테스트 커버리지 측정 기준에 의해 결정된 테스트 스위트에 의해 지정된 커버리지 항목이 실행되는 정도</td>
+          <td>ISO/IEC 29119-1:2022, Section 3.89</td>
+        </tr>
+        <tr>
+          <td><strong>Risk-Based Testing</strong><br>위험 기반 테스팅</td>
+          <td>Testing in which the management, selection, prioritization, and use of testing activities and resources are consciously based on corresponding types and levels of analyzed risk.<br>분석된 위험의 해당 유형 및 수준을 의식적으로 기반으로 하는 테스팅</td>
+          <td>ISO/IEC 29119-1:2022, Section 3.138</td>
+        </tr>
+        <tr>
+          <td><strong>Test Design Technique</strong><br>테스트 설계 기법</td>
+          <td>Procedure used to create or select a test model, identify test coverage items, and derive corresponding test cases.<br>테스트 모델을 생성하거나 선택하고 테스트 케이스를 도출하는 절차</td>
+          <td>ISO/IEC 29119-1:2022, Section 3.94</td>
+        </tr>
+        <tr>
+          <td><strong>Equivalence Partitioning</strong><br>동등 분할</td>
+          <td>Specification-based test design technique in which test cases are designed to exercise equivalence partitions by using one or more representative members of each partition.<br>각 파티션의 대표 멤버를 사용하여 테스트 케이스가 설계되는 기법</td>
+          <td>ISO/IEC 29119-1:2022, Section 3.45</td>
+        </tr>
+        <tr>
+          <td><strong>Boundary Value Analysis</strong><br>경계값 분석</td>
+          <td>Specification-based test design technique in which test cases are designed using values at the boundaries of equivalence partitions or other boundaries in the input or output domain.<br>동등 파티션의 경계 또는 입력/출력 도메인의 경계에 있는 값을 사용하는 기법</td>
+          <td>ISO/IEC 29119-1:2022, Section 3.11</td>
+        </tr>
+        <tr>
+          <td><strong>Fuzz Testing / Fuzzing</strong><br>퍼즈 테스팅 / 퍼징</td>
+          <td>Testing by providing random or invalid inputs to a software interface to detect failures or to identify potential vulnerabilities.<br>장애를 감지하거나 잠재적 취약점을 식별하기 위해 무작위 또는 잘못된 입력을 제공하는 테스팅</td>
+          <td>ISO/IEC 29119-1:2022, Section 3.52</td>
+        </tr>
+        <tr>
+          <td><strong>Metamorphic Testing</strong><br>메타모픽 테스팅</td>
+          <td>Test design technique that uses metamorphic relations between inputs and outputs to derive test cases and evaluate results. Particularly useful for AI systems where the test oracle problem makes it difficult to determine expected outputs.<br>입력과 출력 간의 메타모픽 관계를 사용하는 테스트 설계 기법</td>
+          <td>ISO/IEC 29119-4:2021; ISO/IEC TS 42119-2:2025, Section 7.4.2</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top: 1rem; font-size: 0.85rem; font-style: italic;">
+      <strong>Additional Testing Terms:</strong> Test Level, Test Plan, Test Procedure, Test Suite, Test Type, Static Testing, Regression Testing (see Cross-Standard Term Index below)
+    </p>
+
+  </div></div>
+</div>
+
+<!-- Cross-Standard Term Index (Alphabetical) -->
+<div class="collapsible">
+  <div class="collapsible-header">3.13 Cross-Standard Term Index (50+ key terms, alphabetically organized)</div>
+  <div class="collapsible-body"><div class="collapsible-body-inner">
+
+    <p class="bilingual"><strong>Quick Reference:</strong> Alphabetically organized index of key terms across all 5 ISO standards with primary source citations.<br>
+    <strong>빠른 참조:</strong> 모든 5개 ISO 표준에 걸친 주요 용어의 알파벳순 색인 및 주요 출처 인용</p>
+
+    <h5>A-D</h5>
+    <table style="font-size: 0.80rem;">
+      <thead><tr><th>Term</th><th>Primary Source</th><th>Section Reference</th><th>Also Referenced In</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Adversarial Testing</strong></td><td>ISO/IEC TS 42119-2:2025</td><td>7.3.4.4</td><td>ISO/IEC DIS 27090 (security context)</td></tr>
+        <tr><td><strong>AI Model</strong></td><td>ISO/IEC 22989:2022/AMD 1:2025</td><td>3.1.36</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>AI System</strong></td><td>ISO/IEC 22989:2022</td><td>3.1.4</td><td>All standards</td></tr>
+        <tr><td><strong>Bias</strong></td><td>ISO/IEC 22989:2022</td><td>3.4 (TR 24027)</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Boundary Value Analysis</strong></td><td>ISO/IEC 29119-1:2022</td><td>3.11</td><td>ISO/IEC 29119-4:2021</td></tr>
+        <tr><td><strong>Concept Drift</strong></td><td>ISO/IEC TS 42119-2:2025</td><td>3.6</td><td>—</td></tr>
+        <tr><td><strong>Data Quality</strong></td><td>ISO/IEC 5259-1:2024</td><td>3.5</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Data Quality Testing</strong></td><td>ISO/IEC TS 42119-2:2025</td><td>7.2</td><td>—</td></tr>
+        <tr><td><strong>Data Representativeness Testing</strong></td><td>ISO/IEC TS 42119-2:2025</td><td>7.3.3.4</td><td>—</td></tr>
+        <tr><td><strong>Dataset</strong></td><td>ISO/IEC 22989:2022</td><td>3.2.5</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Drift Testing</strong></td><td>ISO/IEC TS 42119-2:2025</td><td>7.3.4.5</td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    <h5>E-L</h5>
+    <table style="font-size: 0.80rem;">
+      <thead><tr><th>Term</th><th>Primary Source</th><th>Section Reference</th><th>Also Referenced In</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Equivalence Partitioning</strong></td><td>ISO/IEC 29119-1:2022</td><td>3.45</td><td>ISO/IEC 29119-4:2021</td></tr>
+        <tr><td><strong>Explainability</strong></td><td>ISO/IEC 22989:2022</td><td>3.5.7</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Feature</strong></td><td>ISO/IEC 22989:2022</td><td>3.3.3 (23053)</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Foundation Model</strong></td><td>ISO/IEC 22989:2022/AMD 1:2025</td><td>3.3.19</td><td>—</td></tr>
+        <tr><td><strong>Fuzz Testing</strong></td><td>ISO/IEC 29119-1:2022</td><td>3.52</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Generative AI</strong></td><td>ISO/IEC 22989:2022/AMD 1:2025</td><td>3.1.37</td><td>—</td></tr>
+        <tr><td><strong>Ground Truth</strong></td><td>ISO/IEC 22989:2022</td><td>3.2.7</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Hallucination</strong></td><td>ISO/IEC 22989:2022/AMD 1:2025</td><td>5.20.2</td><td>—</td></tr>
+        <tr><td><strong>Hyperparameter</strong></td><td>ISO/IEC 22989:2022</td><td>3.3.4</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Jailbreak</strong></td><td>ISO/IEC 22989:2022/AMD 1:2025</td><td>5.20.3</td><td>—</td></tr>
+        <tr><td><strong>Label</strong></td><td>ISO/IEC 22989:2022</td><td>3.2.10</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Label Correctness Testing</strong></td><td>ISO/IEC TS 42119-2:2025</td><td>7.3.3.8</td><td>—</td></tr>
+        <tr><td><strong>Large Language Model (LLM)</strong></td><td>ISO/IEC 22989:2022/AMD 1:2025</td><td>3.3.20</td><td>—</td></tr>
+      </tbody>
+    </table>
+
+    <h5>M-R</h5>
+    <table style="font-size: 0.80rem;">
+      <thead><tr><th>Term</th><th>Primary Source</th><th>Section Reference</th><th>Also Referenced In</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Machine Learning (ML)</strong></td><td>ISO/IEC 22989:2022</td><td>3.3.5</td><td>All testing standards</td></tr>
+        <tr><td><strong>Metamorphic Testing</strong></td><td>ISO/IEC 29119-4:2021</td><td>—</td><td>ISO/IEC TS 42119-2:2025 (7.4.2)</td></tr>
+        <tr><td><strong>ML Model</strong></td><td>ISO/IEC 22989:2022</td><td>3.3.7</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Model</strong></td><td>ISO/IEC 22989:2022</td><td>3.1.23</td><td>All standards</td></tr>
+        <tr><td><strong>Model Performance Testing</strong></td><td>ISO/IEC TS 42119-2:2025</td><td>7.3.4.3</td><td>ISO/IEC TS 4213 (metrics)</td></tr>
+        <tr><td><strong>Model Testing</strong></td><td>ISO/IEC TS 42119-2:2025</td><td>7.2</td><td>—</td></tr>
+        <tr><td><strong>Neural Network</strong></td><td>ISO/IEC 22989:2022</td><td>3.4.8</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Neuron Coverage</strong></td><td>ISO/IEC TS 42119-2:2025</td><td>7.4.4.2.2</td><td>—</td></tr>
+        <tr><td><strong>Parameter</strong></td><td>ISO/IEC 22989:2022</td><td>3.3.8</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Prediction</strong></td><td>ISO/IEC 22989:2022</td><td>3.1.27</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Prompt</strong></td><td>ISO/IEC 22989:2022/AMD 1:2025</td><td>3.6.19</td><td>—</td></tr>
+        <tr><td><strong>RAG System</strong></td><td>ISO/IEC 22989:2022/AMD 1:2025</td><td>3.1.40</td><td>—</td></tr>
+        <tr><td><strong>Risk-Based Testing</strong></td><td>ISO/IEC 29119-1:2022</td><td>3.138</td><td>ISO/IEC TS 42119-2:2025 (5.4)</td></tr>
+        <tr><td><strong>Robustness</strong></td><td>ISO/IEC 25059:2023</td><td>5.5</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+      </tbody>
+    </table>
+
+    <h5>S-Z</h5>
+    <table style="font-size: 0.80rem;">
+      <thead><tr><th>Term</th><th>Primary Source</th><th>Section Reference</th><th>Also Referenced In</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Static Testing</strong></td><td>ISO/IEC 29119-1:2022</td><td>3.78</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Supervised Machine Learning</strong></td><td>ISO/IEC 22989:2022</td><td>3.3.12</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Test Case</strong></td><td>ISO/IEC 29119-1:2022</td><td>3.85</td><td>All testing standards</td></tr>
+        <tr><td><strong>Test Coverage</strong></td><td>ISO/IEC 29119-1:2022</td><td>3.89</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Test Data</strong></td><td>ISO/IEC 22989:2022</td><td>3.2.14 (ML context)</td><td>ISO/IEC 29119-1:2022 (general)</td></tr>
+        <tr><td><strong>Test Design Technique</strong></td><td>ISO/IEC 29119-1:2022</td><td>3.94</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Test Item</strong></td><td>ISO/IEC 29119-1:2022</td><td>3.104</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Test Level</strong></td><td>ISO/IEC 29119-1:2022</td><td>3.108</td><td>ISO/IEC TS 42119-2:2025 (7.2)</td></tr>
+        <tr><td><strong>Test Oracle</strong></td><td>ISO/IEC 29119-1:2022</td><td>3.114</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Testing</strong></td><td>ISO/IEC 29119-1:2022</td><td>3.131</td><td>All testing standards</td></tr>
+        <tr><td><strong>Threshold Coverage</strong></td><td>ISO/IEC TS 42119-2:2025</td><td>7.4.4.2.3</td><td>—</td></tr>
+        <tr><td><strong>Token</strong></td><td>ISO/IEC 22989:2022/AMD 1:2025</td><td>3.1.41</td><td>—</td></tr>
+        <tr><td><strong>Trained Model</strong></td><td>ISO/IEC 22989:2022</td><td>3.3.14</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Training</strong></td><td>ISO/IEC 22989:2022</td><td>3.3.15</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Training Data</strong></td><td>ISO/IEC 22989:2022</td><td>3.3.16</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Transparency</strong></td><td>ISO/IEC 22989:2022</td><td>3.5.6</td><td>ISO/IEC 25059:2023, TS 42119-2</td></tr>
+        <tr><td><strong>Unwanted Bias Testing</strong></td><td>ISO/IEC TS 42119-2:2025</td><td>7.3.3.9</td><td>ISO/IEC TR 24027, TS 12791</td></tr>
+        <tr><td><strong>Validation</strong></td><td>ISO/IEC 25000:2014</td><td>4.41</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Validation Data</strong></td><td>ISO/IEC 22989:2022</td><td>3.2.15</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+        <tr><td><strong>Verification</strong></td><td>ISO/IEC 25000:2014</td><td>4.43</td><td>ISO/IEC TS 42119-2:2025</td></tr>
+      </tbody>
+    </table>
+
+    <blockquote style="margin-top: 1rem;">
+      <strong>Term Precedence Rule:</strong> For AI testing contexts, terms are applied in order: <strong>ISO/IEC TS 42119-2:2025 &gt; 29119-1:2022 &gt; DIS 27090 &gt; 22989 AMD1:2025 &gt; 22989:2022</strong>. When a term appears in multiple standards with different definitions, the higher-precedence standard's definition is used.<br><br>
+      <strong>Total Unique Terms:</strong> ~155 terms across 5 ISO standards<br>
+      <strong>Coverage:</strong> AI concepts, GenAI, AI security, software testing, AI-specific testing
+    </blockquote>
+
+  </div></div>
+</div>
+
 </section>
 
 <!-- Scope -->
