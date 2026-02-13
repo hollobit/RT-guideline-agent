@@ -289,6 +289,7 @@ a { color: var(--accent); }
     <a href="#risk-tiers">Risk-Based Scope</a>
     <a href="#design-principles">Test Design Principles</a>
     <a href="#report-template">Report Template</a>
+    <a href="#organizational-policy">Organizational Test Policy</a>
     <a href="#continuous-model">Continuous Model</a>
     <a href="#appendix-f">Appendix F: Test Case Examples</a>
     <a href="#part-iv" class="nav-part">Part IV: Living Annexes</a>
@@ -2575,9 +2576,51 @@ Appendices: Methodology, Tools, Evidence, Glossary</code></pre>
 </blockquote>
 </section>
 
+<!-- Organizational Test Policy -->
+<section id="organizational-policy">
+<h2>11. Organizational Test Policy and Practices / 조직적 테스트 정책 및 실무</h2>
+
+<p><strong>Purpose / 목적:</strong> Define organizational-level requirements for AI red team quality management (aligned with ISO/IEC 29119-2 TP5 - Test Policy).</p>
+
+<h3>11.1 Test Policy Requirements / 테스트 정책 요구사항</h3>
+<p>The organization SHALL establish a documented AI Red Team Test Policy covering:</p>
+<ul>
+  <li>Roles and responsibilities (Red Team Lead, Operators, Ethics Advisor, Legal Counsel)</li>
+  <li>Entry/exit criteria for all 6 stages</li>
+  <li>Resource allocation and budget authority</li>
+  <li>Quality gates and approval workflows</li>
+  <li>Ethical review processes</li>
+  <li>Data handling and confidentiality requirements</li>
+  <li>Incident escalation procedures</li>
+  <li>Continuous improvement processes</li>
+</ul>
+
+<h3>11.2 Quality Gates / 품질 게이트</h3>
+<p>Organizational quality gates at stage transitions:</p>
+<ul>
+  <li>Planning → Design: Threat Model and Authorization Agreement approval</li>
+  <li>Design → Execution: Test Design Specification and Evaluation Framework approval</li>
+  <li>Execution → Analysis: Test execution completeness and finding documentation verification</li>
+  <li>Analysis → Reporting: Finding characterization and coverage analysis completion</li>
+  <li>Reporting → Follow-up: Red Team Report approval and stakeholder acceptance</li>
+  <li>Follow-up closure: Remediation verification and lessons learned documentation</li>
+</ul>
+
+<h3>11.3 ISO/IEC 29119-2 TP5 Alignment / 정렬</h3>
+<p>This section implements ISO/IEC 29119-2:2021 TP5 (Test Policy) requirements:</p>
+<ul>
+  <li>Documented test policy (TP5.1)</li>
+  <li>Defined test responsibilities (TP5.2)</li>
+  <li>Test resource management (TP5.3)</li>
+  <li>Quality assurance processes (TP5.4)</li>
+</ul>
+
+<p><strong>Reference / 참조:</strong> See <code>phase-3-normative-core.md</code> Section 11 for complete policy specification.</p>
+</section>
+
 <!-- Continuous Model -->
 <section id="continuous-model">
-<h2>11. Continuous Red Team Operating Model / 지속적 레드팀 운영 모델</h2>
+<h2>12. Continuous Red Team Operating Model / 지속적 레드팀 운영 모델</h2>
 
 <h3>Three-Layer Model / 3계층 모델</h3>
 <table>
