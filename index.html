@@ -279,19 +279,20 @@ a { color: var(--accent); }
     <a href="#benchmark-gaps">Benchmark Gaps</a>
     <a href="#pipeline-attacks">  7. Pipeline: New Attacks</a>
     <a href="#part-iii" class="nav-part">Part III: Normative Core</a>
-    <a href="#process-overview">Process Overview</a>
-    <a href="#stage-planning">Stage 1: Planning</a>
-    <a href="#stage-design">Stage 2: Design</a>
-    <a href="#stage-execution">Stage 3: Execution</a>
-    <a href="#stage-analysis">Stage 4: Analysis</a>
-    <a href="#stage-reporting">Stage 5: Reporting</a>
-    <a href="#stage-followup">Stage 6: Follow-up</a>
-    <a href="#risk-tiers">Risk-Based Scope</a>
-    <a href="#design-principles">Test Design Principles</a>
-    <a href="#report-template">Report Template</a>
-    <a href="#organizational-policy">Organizational Test Policy</a>
-    <a href="#continuous-model">Continuous Model</a>
-    <a href="#appendix-f">Appendix F: Test Case Examples</a>
+    <a href="phase-3-normative-core.md" target="_blank">Phase 3: Normative Core</a>
+    <a href="phase-3-normative-core.md#1-process-overview" target="_blank">1. Process Overview</a>
+    <a href="phase-3-normative-core.md#2-stage-1-planning" target="_blank">2. Stage 1: Planning</a>
+    <a href="phase-3-normative-core.md#3-stage-2-design" target="_blank">3. Stage 2: Design</a>
+    <a href="phase-3-normative-core.md#4-stage-3-execution" target="_blank">4. Stage 3: Execution</a>
+    <a href="phase-3-normative-core.md#5-stage-4-analysis" target="_blank">5. Stage 4: Analysis</a>
+    <a href="phase-3-normative-core.md#6-stage-5-reporting" target="_blank">6. Stage 5: Reporting</a>
+    <a href="phase-3-normative-core.md#7-stage-6-follow-up" target="_blank">7. Stage 6: Follow-up</a>
+    <a href="phase-3-normative-core.md#8-risk-based-test-scope-determination" target="_blank">8. Risk-Based Test Scope Determination</a>
+    <a href="phase-3-normative-core.md#9-test-design-principles" target="_blank">9. Test Design Principles</a>
+    <a href="phase-3-normative-core.md#10-report-structure-template" target="_blank">10. Report Structure Template</a>
+    <a href="phase-3-normative-core.md#11-organizational-test-policy-and-practices" target="_blank">11. Organizational Test Policy and Practices</a>
+    <a href="phase-3-normative-core.md#12-continuous-red-team-operating-model" target="_blank">12. Continuous Red Team Operating Model</a>
+    <a href="phase-3-normative-core.md#appendix-f-worked-test-case-examples" target="_blank">Appendix F: Test Case Examples</a>
     <a href="#part-iv" class="nav-part">Part IV: Living Annexes</a>
     <a href="#annex-a">Annex A: Attack Patterns</a>
     <a href="#annex-b">Annex B: Risk Mapping</a>
@@ -367,7 +368,7 @@ a { color: var(--accent); }
   <li><strong>Living Annexes</strong> with standardized attack pattern library, risk mappings, and benchmark coverage analysis designed for quarterly updates.</li>
   <li><strong>Continuous operating model</strong> with three layers: automated monitoring, periodic assessment, and event-triggered deep engagements.</li>
   <li><strong>Standards alignment analysis</strong> (Part VI) with clause-by-clause comparison against ISO/IEC TS 42119-2:2025 (AI Testing) and ISO/IEC/IEEE 29119 (Software Testing), achieving <strong>79.7% ISO/IEC TS 42119-2:2025 conformance</strong> (baseline 20.3% → Phase A 60.8% → Phase B 74.3% → Phase C 79.7%, 27 gaps resolved) and <strong>92% ISO 29119 overall conformance</strong> across 63 checklist items (improved from 33%, updated 2026-02-13: +59pp improvement, all Critical/High/Medium priority gaps resolved).</li>
-  <li><strong>Reference document analysis</strong> (Part VII) synthesizing Japan AISI, OWASP GenAI, and CSA Agentic AI guides into 19 modification proposals (9 essential, 7 recommended, 3 reference).</li>
+  <li><strong>Reference document analysis</strong> (Part VII) synthesizing Japan AISI, OWASP GenAI, and CSA Agentic AI guides into 19 modification proposals (9 essential, 7 recommended, 3 reference), achieving <strong>100% OWASP Agentic AI Top 10 coverage</strong> (all ASI01-ASI10 security issues addressed in Phase 1-2 attack patterns).</li>
   <li><strong>Research &amp; risk trends</strong> (Part VIII) covering 35+ academic papers with 8 new attack techniques identified through pipeline integration and 9+ real-world incidents (Aug 2025 -- Feb 2026), with all 5 Annex D update triggers met.</li>
   <li><strong>Test scenarios &amp; validation</strong> (Part IX) providing <strong>26 ISO/IEC 29119-compliant test scenarios</strong> achieving <strong>100% attack pattern reference accuracy</strong> (improved from 35%), 12 detailed test cases, coverage matrix, benchmark-aided testing guidance (2,375 benchmarks analyzed), and gap analysis confirming 5/6 stages feasible (updated 2026-02-12).</li>
   <li><strong>Collaboration pipeline validation</strong> (v1.6) demonstrating end-to-end agent collaboration: academic research → risk analysis + attack analysis → benchmark dataset matching → testing feasibility assessment, with 29119 conformance monitoring and <strong>5-Standard ISO Terminology Framework</strong> (177 unique terms from 5 ISO standards).</li>
@@ -561,7 +562,7 @@ While drafting a test report, if you need to introduce a new concept "adaptive a
 <h3>3.6 Complete Terminology Reference / 완전한 용어 참조</h3>
 
 <div class="info-box" style="background: var(--accent-light); border-left: 4px solid var(--accent); padding: 1rem; margin: 1rem 0;">
-<p><strong>📚 Complete Terminology Document:</strong> <a href="phase-0-terminology.md" style="color: var(--accent); font-weight: 600;">phase-0-terminology.md</a> (v0.5.3) <span class="badge badge-new">5-STANDARD FRAMEWORK</span></p>
+<p><strong>📚 Complete Terminology Document:</strong> <a href="phase-0-terminology.md" style="color: var(--accent); font-weight: 600;">phase-0-terminology.md</a> (v0.5.6) <span class="badge badge-new">5-STANDARD FRAMEWORK</span></p>
 <p class="bilingual"><strong>Total Terms Defined:</strong> 177 unique terms across 13 specialized sections (5-Standard ISO Framework)<br>
 <strong>정의된 총 용어 수:</strong> 13개 전문 섹션에 걸쳐 172개 고유 용어 (5개 ISO 표준 기반)</p>
 <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.9;">
@@ -615,9 +616,9 @@ While drafting a test report, if you need to introduce a new concept "adaptive a
 </tbody>
 </table>
 
-<h4>5-Standard ISO Terminology Framework (v0.5.3) / 5개 표준 ISO 용어 프레임워크</h4>
+<h4>5-Standard ISO Terminology Framework (v0.5.6) / 5개 표준 ISO 용어 프레임워크</h4>
 
-<p class="bilingual"><strong>Updated 2026-02-12:</strong> World's first AI Red Team terminology framework based on 5 international ISO standards, ensuring 100% ISO conformance and international interoperability.<br>
+<p class="bilingual"><strong>Updated 2026-02-13:</strong> World's first AI Red Team terminology framework based on 5 international ISO standards, ensuring 100% ISO conformance and international interoperability.<br>
 <strong>2026-02-12 업데이트:</strong> 5개 국제 ISO 표준 기반의 세계 최초 AI Red Team 용어 프레임워크, 100% ISO 정합성 및 국제 상호운용성 보장.</p>
 
 <table>
@@ -2875,20 +2876,25 @@ A: [Standard tier information]</code></pre>
 <table>
 <thead><tr><th>ID</th><th>Name</th><th>Layer</th><th>Category</th><th>Severity</th></tr></thead>
 <tbody>
-<tr><td>AP-MOD-001</td><td>Role-Play / Persona Hijack Jailbreak</td><td>MOD</td><td>MOD-JB</td><td><span class="badge badge-high">High</span></td></tr>
-<tr><td>AP-MOD-002</td><td>Encoding / Obfuscation Jailbreak</td><td>MOD</td><td>MOD-JB</td><td><span class="badge badge-high">High</span></td></tr>
-<tr><td>AP-MOD-003</td><td>Best-of-N Automated Jailbreak</td><td>MOD</td><td>MOD-JB</td><td><span class="badge badge-high">High</span></td></tr>
-<tr><td>AP-MOD-004</td><td>Indirect Prompt Injection via Data Channel</td><td>MOD</td><td>MOD-PI</td><td><span class="badge badge-critical">Critical</span></td></tr>
-<tr><td>AP-MOD-005</td><td>Training Data Extraction</td><td>MOD</td><td>MOD-DE</td><td><span class="badge badge-critical">Critical</span></td></tr>
-<tr><td>AP-MOD-006</td><td>Multimodal Typographic Injection</td><td>MOD</td><td>MOD-MM</td><td><span class="badge badge-high">High</span></td></tr>
-<tr><td>AP-SYS-001</td><td>Agentic Tool Misuse via Prompt Manipulation</td><td>SYS</td><td>SYS-TM</td><td><span class="badge badge-critical">Critical</span></td></tr>
-<tr><td>AP-SYS-002</td><td>RAG Corpus Poisoning</td><td>SYS</td><td>SYS-RP</td><td><span class="badge badge-high">High</span></td></tr>
-<tr><td>AP-SYS-003</td><td>Supply Chain Model Poisoning</td><td>SYS</td><td>SYS-SC</td><td><span class="badge badge-critical">Critical</span></td></tr>
-<tr><td>AP-SYS-004</td><td>Privilege Escalation via Agent Identity Abuse</td><td>SYS</td><td>SYS-PE</td><td><span class="badge badge-critical">Critical</span></td></tr>
-<tr><td>AP-SOC-001</td><td>AI-Powered Deepfake Fraud</td><td>SOC</td><td>SOC-DF</td><td><span class="badge badge-critical">Critical</span></td></tr>
-<tr><td>AP-SOC-002</td><td>Algorithmic Bias Amplification</td><td>SOC</td><td>SOC-BA</td><td><span class="badge badge-high">High</span></td></tr>
+<tr id="ap-mod-001"><td>AP-MOD-001</td><td>Role-Play / Persona Hijack Jailbreak</td><td>MOD</td><td>MOD-JB</td><td><span class="badge badge-high">High</span></td></tr>
+<tr id="ap-mod-002"><td>AP-MOD-002</td><td>Encoding / Obfuscation Jailbreak</td><td>MOD</td><td>MOD-JB</td><td><span class="badge badge-high">High</span></td></tr>
+<tr id="ap-mod-003"><td>AP-MOD-003</td><td>Best-of-N Automated Jailbreak</td><td>MOD</td><td>MOD-JB</td><td><span class="badge badge-high">High</span></td></tr>
+<tr id="ap-mod-004"><td>AP-MOD-004</td><td>Indirect Prompt Injection via Data Channel</td><td>MOD</td><td>MOD-PI</td><td><span class="badge badge-critical">Critical</span></td></tr>
+<tr id="ap-mod-005"><td>AP-MOD-005</td><td>Training Data Extraction</td><td>MOD</td><td>MOD-DE</td><td><span class="badge badge-critical">Critical</span></td></tr>
+<tr id="ap-mod-006"><td>AP-MOD-006</td><td>Multimodal Typographic Injection</td><td>MOD</td><td>MOD-MM</td><td><span class="badge badge-high">High</span></td></tr>
+<tr id="ap-sys-001"><td>AP-SYS-001</td><td>Agentic Tool Misuse via Prompt Manipulation</td><td>SYS</td><td>SYS-TM</td><td><span class="badge badge-critical">Critical</span></td></tr>
+<tr id="ap-sys-002"><td>AP-SYS-002</td><td>RAG Corpus Poisoning</td><td>SYS</td><td>SYS-RP</td><td><span class="badge badge-high">High</span></td></tr>
+<tr id="ap-sys-003"><td>AP-SYS-003</td><td>Supply Chain Model Poisoning</td><td>SYS</td><td>SYS-SC</td><td><span class="badge badge-critical">Critical</span></td></tr>
+<tr id="ap-sys-004"><td>AP-SYS-004</td><td>Privilege Escalation via Agent Identity Abuse</td><td>SYS</td><td>SYS-PE</td><td><span class="badge badge-critical">Critical</span></td></tr>
+<tr id="ap-soc-001"><td>AP-SOC-001</td><td>AI-Powered Deepfake Fraud</td><td>SOC</td><td>SOC-DF</td><td><span class="badge badge-critical">Critical</span></td></tr>
+<tr id="ap-soc-002"><td>AP-SOC-002</td><td>Algorithmic Bias Amplification</td><td>SOC</td><td>SOC-BA</td><td><span class="badge badge-high">High</span></td></tr>
 </tbody>
 </table>
+
+<p class="info-box" style="background: var(--accent-light); border-left: 4px solid var(--accent); padding: 1rem; margin: 1rem 0;">
+<strong>Note:</strong> This Pattern Library Index contains a representative subset of attack patterns. For the complete catalog with detailed descriptions, see <a href="phase-12-attacks.md" target="_blank">phase-12-attacks.md v1.2</a> (30+ patterns across model, system, and socio-technical layers).<br>
+<strong>참고:</strong> 이 패턴 라이브러리 인덱스는 대표적인 공격 패턴의 하위 집합을 포함합니다. 상세한 설명이 포함된 전체 카탈로그는 <a href="phase-12-attacks.md" target="_blank">phase-12-attacks.md v1.2</a>을 참조하세요 (모델, 시스템, 사회기술적 계층의 30개 이상 패턴).
+</p>
 </section>
 
 <!-- Annex B -->
@@ -2899,16 +2905,16 @@ A: [Standard tier information]</code></pre>
 <table>
 <thead><tr><th>FM-ID</th><th>Failure Mode</th><th>장애 모드</th><th>Layer</th></tr></thead>
 <tbody>
-<tr><td>FM-001</td><td>Safety alignment bypass</td><td>안전 정렬 우회</td><td>MOD</td></tr>
-<tr><td>FM-002</td><td>Instruction boundary violation</td><td>지시 경계 위반</td><td>MOD, SYS</td></tr>
-<tr><td>FM-003</td><td>Input trust boundary failure</td><td>입력 신뢰 경계 실패</td><td>MOD, SYS</td></tr>
-<tr><td>FM-004</td><td>Privacy boundary violation</td><td>프라이버시 경계 위반</td><td>MOD</td></tr>
-<tr><td>FM-008</td><td>Capability boundary violation</td><td>역량 경계 위반</td><td>SYS</td></tr>
-<tr><td>FM-009</td><td>Access control failure</td><td>접근 제어 실패</td><td>SYS</td></tr>
-<tr><td>FM-010</td><td>Knowledge integrity failure</td><td>지식 무결성 실패</td><td>SYS</td></tr>
-<tr><td>FM-011</td><td>Model integrity failure</td><td>모델 무결성 실패</td><td>SYS</td></tr>
-<tr><td>FM-014</td><td>Synthetic media trust failure</td><td>합성 미디어 신뢰 실패</td><td>SOC</td></tr>
-<tr><td>FM-016</td><td>Fairness constraint failure</td><td>공정성 제약 실패</td><td>SOC</td></tr>
+<tr id="fm-001"><td>FM-001</td><td>Safety alignment bypass</td><td>안전 정렬 우회</td><td>MOD</td></tr>
+<tr id="fm-002"><td>FM-002</td><td>Instruction boundary violation</td><td>지시 경계 위반</td><td>MOD, SYS</td></tr>
+<tr id="fm-003"><td>FM-003</td><td>Input trust boundary failure</td><td>입력 신뢰 경계 실패</td><td>MOD, SYS</td></tr>
+<tr id="fm-004"><td>FM-004</td><td>Privacy boundary violation</td><td>프라이버시 경계 위반</td><td>MOD</td></tr>
+<tr id="fm-008"><td>FM-008</td><td>Capability boundary violation</td><td>역량 경계 위반</td><td>SYS</td></tr>
+<tr id="fm-009"><td>FM-009</td><td>Access control failure</td><td>접근 제어 실패</td><td>SYS</td></tr>
+<tr id="fm-010"><td>FM-010</td><td>Knowledge integrity failure</td><td>지식 무결성 실패</td><td>SYS</td></tr>
+<tr id="fm-011"><td>FM-011</td><td>Model integrity failure</td><td>모델 무결성 실패</td><td>SYS</td></tr>
+<tr id="fm-014"><td>FM-014</td><td>Synthetic media trust failure</td><td>합성 미디어 신뢰 실패</td><td>SOC</td></tr>
+<tr id="fm-016"><td>FM-016</td><td>Fairness constraint failure</td><td>공정성 제약 실패</td><td>SOC</td></tr>
 </tbody>
 </table>
 
@@ -4252,22 +4258,22 @@ AI-to-AI 공격, 추론 모델 조작, 다국어 공격에 대한 새로운 공�
         <tr><th>ID</th><th>29119-4 Technique / 기법</th><th>Status / 상태</th><th>Finding / 발견사항</th></tr>
       </thead>
       <tbody>
-        <tr><td>TC-01</td><td>Equivalence Partitioning</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
-        <tr><td>TC-02</td><td>Boundary Value Analysis</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
-        <tr><td>TC-03</td><td>Classification Tree Method</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Useful for systematic attack dimension classification</td></tr>
-        <tr><td>TC-04</td><td>Combinatorial Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
-        <tr><td>TC-05</td><td>Decision Table Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
-        <tr><td>TC-06</td><td>State Transition Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
-        <tr><td>TC-07</td><td>Scenario Testing</td><td><span class="badge badge-medium">Partial</span></td><td>Attack patterns are scenarios, but 29119-4 link not explicit</td></tr>
-        <tr><td>TC-08</td><td>Random / Fuzz Testing</td><td><span class="badge badge-low">Conformant</span></td><td>Best-of-N jailbreaking directly implements this</td></tr>
-        <tr><td>TC-09</td><td>Metamorphic Testing</td><td><span class="badge badge-low">Conformant</span></td><td>Explicitly recognized for AI testing</td></tr>
-        <tr><td>TC-10</td><td>Syntax Testing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Applicable to encoding-based jailbreaks</td></tr>
-        <tr><td>TC-11</td><td>Cause-Effect Graphing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Useful for RAG poisoning causal chains</td></tr>
-        <tr><td>TC-12</td><td>Requirements-Based Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
-        <tr><td>TC-13</td><td>Data Flow Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
-        <tr><td>TC-14</td><td>MC/DC Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
-        <tr><td>TC-15</td><td>Error Guessing</td><td><span class="badge badge-low">Conformant</span></td><td>Manual red teaming is expert-driven error guessing</td></tr>
-        <tr><td>TC-16</td><td>Coverage Measurement</td><td><span class="badge badge-medium">Partial</span></td><td>Annex C uses qualitative; quantitative formulas needed</td></tr>
+        <tr id="tc-01"><td>TC-01</td><td>Equivalence Partitioning</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
+        <tr id="tc-02"><td>TC-02</td><td>Boundary Value Analysis</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
+        <tr id="tc-03"><td>TC-03</td><td>Classification Tree Method</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Useful for systematic attack dimension classification</td></tr>
+        <tr id="tc-04"><td>TC-04</td><td>Combinatorial Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
+        <tr id="tc-05"><td>TC-05</td><td>Decision Table Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
+        <tr id="tc-06"><td>TC-06</td><td>State Transition Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
+        <tr id="tc-07"><td>TC-07</td><td>Scenario Testing</td><td><span class="badge badge-medium">Partial</span></td><td>Attack patterns are scenarios, but 29119-4 link not explicit</td></tr>
+        <tr id="tc-08"><td>TC-08</td><td>Random / Fuzz Testing</td><td><span class="badge badge-low">Conformant</span></td><td>Best-of-N jailbreaking directly implements this</td></tr>
+        <tr id="tc-09"><td>TC-09</td><td>Metamorphic Testing</td><td><span class="badge badge-low">Conformant</span></td><td>Explicitly recognized for AI testing</td></tr>
+        <tr id="tc-10"><td>TC-10</td><td>Syntax Testing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Applicable to encoding-based jailbreaks</td></tr>
+        <tr id="tc-11"><td>TC-11</td><td>Cause-Effect Graphing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Useful for RAG poisoning causal chains</td></tr>
+        <tr id="tc-12"><td>TC-12</td><td>Requirements-Based Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
+        <tr id="tc-13"><td>TC-13</td><td>Data Flow Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
+        <tr id="tc-14"><td>TC-14</td><td>MC/DC Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
+        <tr id="tc-15"><td>TC-15</td><td>Error Guessing</td><td><span class="badge badge-low">Conformant</span></td><td>Manual red teaming is expert-driven error guessing</td></tr>
+        <tr id="tc-16"><td>TC-16</td><td>Coverage Measurement</td><td><span class="badge badge-medium">Partial</span></td><td>Annex C uses qualitative; quantitative formulas needed</td></tr>
       </tbody>
     </table>
   </div></div>
@@ -5372,23 +5378,23 @@ Our guideline addresses process and methodology but lacks granular operational g
 
 <!-- 9.2 Test Scenarios -->
 <h2 id="test-scenarios">9.2 Test Scenarios / 테스트 시나리오</h2>
-<p><strong>Updated 2026-02-12:</strong> Twenty-six ISO/IEC 29119-compliant test scenarios organized across three layers: Model-Level (17 scenarios), System-Level (5 scenarios), and Socio-Technical (4 scenarios). All scenarios achieve <strong>100% attack pattern reference accuracy</strong> with full traceability to phase-12-attacks.md.</p>
+<p><strong>Updated 2026-02-13:</strong> Twenty-six ISO/IEC 29119-compliant test scenarios organized across three layers: Model-Level (17 scenarios), System-Level (5 scenarios), and Socio-Technical (4 scenarios). All scenarios achieve <strong>100% attack pattern reference accuracy</strong> with full traceability to phase-12-attacks.md v1.2.</p>
 
-<h3>9.2.1 Model-Level Scenarios (TS-MOD-001 ~ TS-MOD-017)</h3>
+<h3>9.2.1 Model-Level Scenarios (<a href="#ts-mod-001">TS-MOD-001</a> ~ TS-MOD-017)</h3>
 <ul>
-  <li><strong>TS-MOD-001:</strong> Direct Prompt Injection - System Prompt Extraction (AP-MOD-002)</li>
-  <li><strong>TS-MOD-002:</strong> Jailbreak - Refusal Bypass via Role-Play (AP-MOD-001)</li>
-  <li><strong>TS-MOD-003:</strong> Jailbreak - Encoding-Based Safety Bypass (AP-MOD-001)</li>
-  <li><strong>TS-MOD-004:</strong> Jailbreak - Multi-Turn Escalation (Crescendo) (AP-MOD-001)</li>
-  <li><strong>TS-MOD-005:</strong> Indirect Prompt Injection via Data Channel (AP-MOD-003)</li>
-  <li><strong>TS-MOD-006:</strong> Training Data Extraction (AP-MOD-005)</li>
-  <li><strong>TS-MOD-007:</strong> Multimodal Attack - Image-Based Jailbreak (AP-MOD-008)</li>
-  <li><strong>TS-MOD-008:</strong> Hallucination Exploitation in High-Stakes Domains (AP-MOD-011)</li>
-  <li><strong>TS-MOD-009:</strong> Reasoning Model H-CoT Attack (AP-MOD-012/013/014/015)</li>
-  <li><strong>TS-MOD-010:</strong> Multilingual Attack - Cross-Lingual Injection (AP-MOD-019/020)</li>
-  <li><strong>TS-MOD-011:</strong> Evaluation Gaming and Sandbagging Detection (AP-MOD-016/017/018)</li>
-  <li><strong>TS-MOD-012:</strong> Membership Inference Attack (AP-MOD-006) <span class="badge badge-new">NEW 2026-02-12</span></li>
-  <li><strong>TS-MOD-013:</strong> Model Inversion Attack (AP-MOD-007) <span class="badge badge-new">NEW 2026-02-12</span></li>
+  <li><strong><a href="#ts-mod-001">TS-MOD-001</a>:</strong> Direct Prompt Injection - System Prompt Extraction (<a href="#ap-mod-002">AP-MOD-002</a>)</li>
+  <li><strong><a href="#ts-mod-002">TS-MOD-002</a>:</strong> Jailbreak - Refusal Bypass via Role-Play (<a href="#ap-mod-001">AP-MOD-001</a>)</li>
+  <li><strong><a href="#ts-mod-003">TS-MOD-003</a>:</strong> Jailbreak - Encoding-Based Safety Bypass (<a href="#ap-mod-001">AP-MOD-001</a>)</li>
+  <li><strong><a href="#ts-mod-004">TS-MOD-004</a>:</strong> Jailbreak - Multi-Turn Escalation (Crescendo) (<a href="#ap-mod-001">AP-MOD-001</a>)</li>
+  <li><strong><a href="#ts-mod-005">TS-MOD-005</a>:</strong> Indirect Prompt Injection via Data Channel (<a href="#ap-mod-003">AP-MOD-003</a>)</li>
+  <li><strong><a href="#ts-mod-006">TS-MOD-006</a>:</strong> Training Data Extraction (<a href="#ap-mod-005">AP-MOD-005</a>)</li>
+  <li><strong><a href="#ts-mod-007">TS-MOD-007</a>:</strong> Multimodal Attack - Image-Based Jailbreak (<a href="phase-12-attacks.md#ap-mod-008" target="_blank">AP-MOD-008</a>)</li>
+  <li><strong><a href="#ts-mod-008">TS-MOD-008</a>:</strong> Hallucination Exploitation in High-Stakes Domains (<a href="phase-12-attacks.md#ap-mod-011" target="_blank">AP-MOD-011</a>)</li>
+  <li><strong><a href="#ts-mod-009">TS-MOD-009</a>:</strong> Reasoning Model H-CoT Attack (<a href="phase-12-attacks.md#ap-mod-012" target="_blank">AP-MOD-012</a>/<a href="phase-12-attacks.md#ap-mod-013" target="_blank">013</a>/<a href="phase-12-attacks.md#ap-mod-014" target="_blank">014</a>/<a href="phase-12-attacks.md#ap-mod-015" target="_blank">015</a>)</li>
+  <li><strong><a href="#ts-mod-010">TS-MOD-010</a>:</strong> Multilingual Attack - Cross-Lingual Injection (<a href="phase-12-attacks.md#ap-mod-019" target="_blank">AP-MOD-019</a>/020)</li>
+  <li><strong><a href="#ts-mod-011">TS-MOD-011</a>:</strong> Evaluation Gaming and Sandbagging Detection (<a href="phase-12-attacks.md#ap-mod-016" target="_blank">AP-MOD-016</a>/017/018)</li>
+  <li><strong><a href="#ts-mod-012">TS-MOD-012</a>:</strong> Membership Inference Attack (<a href="#ap-mod-006">AP-MOD-006</a>) <span class="badge badge-new">NEW 2026-02-12</span></li>
+  <li><strong><a href="#ts-mod-013">TS-MOD-013</a>:</strong> Model Inversion Attack (<a href="phase-12-attacks.md#ap-mod-007" target="_blank">AP-MOD-007</a>) <span class="badge badge-new">NEW 2026-02-12</span></li>
   <li><strong>TS-MOD-014:</strong> Gradient-Based Adversarial Attack (GCG) (AP-MOD-009) <span class="badge badge-new">NEW 2026-02-12</span></li>
   <li><strong>TS-MOD-015:</strong> Transfer Attack Validation (AP-MOD-010) <span class="badge badge-new">NEW 2026-02-12</span></li>
   <li><strong>TS-MOD-016:</strong> CoT Verification Gaming (AP-MOD-015/014) <span class="badge badge-new">NEW 2026-02-12</span></li>
@@ -5397,19 +5403,19 @@ Our guideline addresses process and methodology but lacks granular operational g
 
 <h3>9.2.2 System-Level Scenarios (TS-SYS-001 ~ TS-SYS-005)</h3>
 <ul>
-  <li><strong>TS-SYS-001:</strong> Tool Misuse in Agentic Systems (AP-SYS-001/002)</li>
-  <li><strong>TS-SYS-002:</strong> RAG Corpus Poisoning (AP-SYS-005)</li>
-  <li><strong>TS-SYS-003:</strong> Privilege Escalation & Confused Deputy (AP-SYS-002)</li>
-  <li><strong>TS-SYS-004:</strong> Autonomous Drift and Goal Misalignment (AP-SYS-003)</li>
-  <li><strong>TS-SYS-005:</strong> Model Poisoning & Supply Chain Attacks (AP-SYS-004)</li>
+  <li><strong>TS-SYS-001:</strong> Tool Misuse in Agentic Systems (<a href="#ap-sys-001">AP-SYS-001</a>/<a href="#ap-sys-002">002</a>)</li>
+  <li><strong>TS-SYS-002:</strong> RAG Corpus Poisoning (<a href="phase-12-attacks.md#ap-sys-005" target="_blank">AP-SYS-005</a>)</li>
+  <li><strong>TS-SYS-003:</strong> Privilege Escalation & Confused Deputy (<a href="#ap-sys-002">AP-SYS-002</a>)</li>
+  <li><strong>TS-SYS-004:</strong> Autonomous Drift and Goal Misalignment (<a href="#ap-sys-003">AP-SYS-003</a>)</li>
+  <li><strong>TS-SYS-005:</strong> Model Poisoning & Supply Chain Attacks (<a href="#ap-sys-004">AP-SYS-004</a>)</li>
 </ul>
 
 <h3>9.2.3 Socio-Technical Scenarios (TS-SOC-001 ~ TS-SOC-004)</h3>
 <ul>
-  <li><strong>TS-SOC-001:</strong> Bias Amplification & Discrimination Testing (AP-SOC-004)</li>
-  <li><strong>TS-SOC-002:</strong> Deepfake & Synthetic Media Generation (AP-SOC-002)</li>
-  <li><strong>TS-SOC-003:</strong> Disinformation at Scale (AP-SOC-003)</li>
-  <li><strong>TS-SOC-004:</strong> Privacy Violations & Data Leakage (AP-SOC-005)</li>
+  <li><strong>TS-SOC-001:</strong> Bias Amplification & Discrimination Testing (<a href="phase-12-attacks.md#ap-soc-004" target="_blank">AP-SOC-004</a>)</li>
+  <li><strong>TS-SOC-002:</strong> Deepfake & Synthetic Media Generation (<a href="#ap-soc-002">AP-SOC-002</a>)</li>
+  <li><strong>TS-SOC-003:</strong> Disinformation at Scale (<a href="phase-12-attacks.md#ap-soc-003" target="_blank">AP-SOC-003</a>)</li>
+  <li><strong>TS-SOC-004:</strong> Privacy Violations & Data Leakage (<a href="phase-12-attacks.md#ap-soc-005" target="_blank">AP-SOC-005</a>)</li>
 </ul>
 
 <!-- 9.3 Test Cases Summary -->
@@ -6298,38 +6304,38 @@ Our guideline addresses process and methodology but lacks granular operational g
 
 <h3>International Standards / 국제 표준</h3>
 <ul>
-  <li>ISO/IEC 22989:2022 -- AI Concepts and Terminology</li>
-  <li>ISO/IEC/IEEE 29119 Series -- Software Testing (Parts 1-5, 2013/2022)</li>
-  <li>ISO/IEC TR 29119-11:2020 -- Testing of AI-Based Systems</li>
-  <li>ISO/IEC TS 42119-2:2025 -- Testing of AI Systems Overview</li>
-  <li>ISO/IEC 42001:2023 -- AI Management System</li>
+  <li><a href="https://www.iso.org/standard/74296.html" target="_blank">ISO/IEC 22989:2022 -- AI Concepts and Terminology</a></li>
+  <li><a href="https://www.iso.org/standard/81291.html" target="_blank">ISO/IEC/IEEE 29119 Series -- Software Testing (Parts 1-5, 2013/2022)</a></li>
+  <li><a href="https://www.iso.org/standard/79016.html" target="_blank">ISO/IEC TR 29119-11:2020 -- Testing of AI-Based Systems</a></li>
+  <li><a href="https://www.iso.org/standard/79973.html" target="_blank">ISO/IEC TS 42119-2:2025 -- Testing of AI Systems Overview</a></li>
+  <li><a href="https://www.iso.org/standard/81230.html" target="_blank">ISO/IEC 42001:2023 -- AI Management System</a></li>
 </ul>
 
 <h3>Government Frameworks / 정부 프레임워크</h3>
 <ul>
-  <li>NIST AI RMF 1.0 (AI 100-1), January 2023</li>
-  <li>NIST AI 600-1 -- Generative AI Profile, July 2024</li>
-  <li>NIST AI 700-2 -- ARIA Pilot Evaluation Report, 2025</li>
-  <li>EU AI Act (Regulation 2024/1689)</li>
-  <li>UK AI Security Institute Red Teaming Publications, 2024-2025</li>
+  <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank">NIST AI RMF 1.0 (AI 100-1), January 2023</a></li>
+  <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" target="_blank">NIST AI 600-1 -- Generative AI Profile, July 2024</a></li>
+  <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.700-2.pdf" target="_blank">NIST AI 700-2 -- ARIA Pilot Evaluation Report, 2025</a></li>
+  <li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank">EU AI Act (Regulation 2024/1689)</a></li>
+  <li><a href="https://www.aisi.gov.uk/research" target="_blank">UK AI Security Institute Red Teaming Publications, 2024-2025</a></li>
 </ul>
 
 <h3>Industry Frameworks / 산업 프레임워크</h3>
 <ul>
-  <li>OWASP Top 10 for LLM Applications 2025</li>
-  <li>OWASP Top 10 for Agentic Applications, December 2025</li>
-  <li>MITRE ATLAS (15 tactics, 66 techniques, October 2025 update)</li>
-  <li>MIT AI Risk Repository v4, December 2025</li>
-  <li>CSA Agentic AI Red Teaming Guide, May 2025</li>
-  <li>Frontier Model Forum Red Teaming Guidance, 2023-2025</li>
+  <li><a href="https://genai.owasp.org/llm-top-10/" target="_blank">OWASP Top 10 for LLM Applications 2025</a></li>
+  <li><a href="https://owasp.org/www-project-top-10-for-large-language-model-applications/" target="_blank">OWASP Top 10 for Agentic Applications, December 2025</a></li>
+  <li><a href="https://atlas.mitre.org/" target="_blank">MITRE ATLAS (15 tactics, 66 techniques, October 2025 update)</a></li>
+  <li><a href="https://airisk.mit.edu/" target="_blank">MIT AI Risk Repository v4, December 2025</a></li>
+  <li><a href="https://cloudsecurityalliance.org/artifacts/agentic-ai-red-teaming-guide" target="_blank">CSA Agentic AI Red Teaming Guide, May 2025</a></li>
+  <li><a href="https://www.frontiermodelforum.org/publications/" target="_blank">Frontier Model Forum Red Teaming Guidance, 2023-2025</a></li>
 </ul>
 
 <h3>Company Methodologies / 기업 방법론</h3>
 <ul>
-  <li>Microsoft -- "Lessons from Red Teaming 100 Generative AI Products" + PyRIT, 2025</li>
-  <li>Anthropic -- Automated Red Teaming, Constitutional Classifiers, Frontier Red Team Reports, 2024-2025</li>
-  <li>OpenAI -- External Red Teaming Approach Paper, CoT Monitoring, 2024</li>
-  <li>Google DeepMind -- ShieldGemma, Collaborative Red Teaming Research, 2024-2025</li>
+  <li>Microsoft -- "Lessons from Red Teaming 100 Generative AI Products" + <a href="https://github.com/Azure/PyRIT" target="_blank">PyRIT</a>, 2025</li>
+  <li>Anthropic -- Automated Red Teaming, Constitutional Classifiers, <a href="https://www.anthropic.com/news/strategic-warning-for-ai-risk-progress-and-insights-from-our-frontier-red-team" target="_blank">Frontier Red Team Reports</a>, 2024-2025</li>
+  <li>OpenAI -- <a href="https://cdn.openai.com/papers/openais-approach-to-external-red-teaming.pdf" target="_blank">External Red Teaming Approach Paper</a>, CoT Monitoring, 2024</li>
+  <li>Google DeepMind -- <a href="https://deepmind.google/technologies/shieldgemma/" target="_blank">ShieldGemma</a>, Collaborative Red Teaming Research, 2024-2025</li>
 </ul>
 
 <h3>Research / 연구</h3>
@@ -6398,7 +6404,7 @@ Our guideline addresses process and methodology but lacks granular operational g
 <h3>A.3 Mandatory Test Scenarios (Model-Level) / 필수 테스트 시나리오 (모델 수준)</h3>
 
 <div class="collapsible open">
-<div class="collapsible-header">TS-MOD-001: Direct Prompt Injection - System Prompt Extraction</div>
+<div class="collapsible-header" id="ts-mod-001">TS-MOD-001: Direct Prompt Injection - System Prompt Extraction</div>
 <div class="collapsible-body">
 <div class="collapsible-body-inner">
 
@@ -6462,7 +6468,7 @@ Our guideline addresses process and methodology but lacks granular operational g
 </div>
 
 <div class="collapsible">
-<div class="collapsible-header">TS-MOD-002: Jailbreak - Refusal Bypass via Role-Play</div>
+<div class="collapsible-header" id="ts-mod-002">TS-MOD-002: Jailbreak - Refusal Bypass via Role-Play</div>
 <div class="collapsible-body">
 <div class="collapsible-body-inner">
 
@@ -6519,7 +6525,7 @@ Our guideline addresses process and methodology but lacks granular operational g
 </div>
 
 <div class="collapsible">
-<div class="collapsible-header">TS-MOD-003: Jailbreak - Encoding-Based Safety Bypass</div>
+<div class="collapsible-header" id="ts-mod-003">TS-MOD-003: Jailbreak - Encoding-Based Safety Bypass</div>
 <div class="collapsible-body">
 <div class="collapsible-body-inner">
 
@@ -6554,7 +6560,7 @@ Our guideline addresses process and methodology but lacks granular operational g
 
 <!-- NEW SCENARIOS 2026-02-12 -->
 <div class="collapsible">
-<div class="collapsible-header">TS-MOD-012: Membership Inference Attack</div>
+<div class="collapsible-header" id="ts-mod-012">TS-MOD-012: Membership Inference Attack</div>
 <div class="collapsible-body">
 <div class="collapsible-body-inner">
 
@@ -6633,7 +6639,7 @@ Our guideline addresses process and methodology but lacks granular operational g
 </div>
 
 <div class="collapsible">
-<div class="collapsible-header">TS-MOD-013: Model Inversion Attack</div>
+<div class="collapsible-header" id="ts-mod-013">TS-MOD-013: Model Inversion Attack</div>
 <div class="collapsible-body">
 <div class="collapsible-body-inner">
 
@@ -6713,7 +6719,7 @@ Our guideline addresses process and methodology but lacks granular operational g
 </div>
 
 <div class="collapsible">
-<div class="collapsible-header">TS-MOD-014: Gradient-Based Adversarial Attack (GCG)</div>
+<div class="collapsible-header" id="ts-mod-014">TS-MOD-014: Gradient-Based Adversarial Attack (GCG)</div>
 <div class="collapsible-body">
 <div class="collapsible-body-inner">
 
@@ -6803,7 +6809,7 @@ Our guideline addresses process and methodology but lacks granular operational g
 </div>
 
 <div class="collapsible">
-<div class="collapsible-header">TS-MOD-015: Transfer Attack Validation</div>
+<div class="collapsible-header" id="ts-mod-015">TS-MOD-015: Transfer Attack Validation</div>
 <div class="collapsible-body">
 <div class="collapsible-body-inner">
 
@@ -6890,7 +6896,7 @@ Our guideline addresses process and methodology but lacks granular operational g
 </div>
 
 <div class="collapsible">
-<div class="collapsible-header">TS-MOD-016: CoT Verification Gaming</div>
+<div class="collapsible-header" id="ts-mod-016">TS-MOD-016: CoT Verification Gaming</div>
 <div class="collapsible-body">
 <div class="collapsible-body-inner">
 
@@ -6975,7 +6981,7 @@ Our guideline addresses process and methodology but lacks granular operational g
 <!-- Generated 6 scenarios -->
 
 <div class="collapsible">
-<div class="collapsible-header">TS-MOD-017: Fake CoT Injection</div>
+<div class="collapsible-header" id="ts-mod-017">TS-MOD-017: Fake CoT Injection</div>
 <div class="collapsible-body">
 <div class="collapsible-body-inner">
 
@@ -7308,7 +7314,7 @@ Test Case ID(s) → Test Evidence → Findings → Residual Risk Assessment
 <footer style="text-align:center; padding: 2rem 0; color: var(--text-secondary); font-size: 0.82rem;">
   <p><strong>AI Red Team International Guideline</strong> | AIRTG-v1.6-DRAFT</p>
   <p>Version 1.6 Draft | 2026-02-13 | Status: Draft for Public Review</p>
-  <p style="margin-top:0.5rem;"><strong>Phase A/B/C Implementation (2026-02-13):</strong> ISO/IEC TS 42119-2:2025 conformance achieved <strong>79.7%</strong> (baseline 20.3% → Phase A 60.8% → Phase B 74.3% → Phase C 79.7%), 27 gaps resolved. <strong>Phase A:</strong> Data Quality Testing (D-2.8, 9 types), Model Testing (D-2.5.1, 6 types), Metamorphic Testing (D-2.5.2, 5 relations), Test Oracle Strategy (P-1, 5 types). <strong>Phase B:</strong> Risk Calculation (P-2 Section 7bis), Differential Testing (D-2.6), Deployment Testing (E-10, 7 types), AI Test Plan Requirements (P-1bis, 9 sections), Lifecycle Coverage. <strong>Phase C:</strong> Non-Determinism Statistical Methodology (P-1bis Section 4), High-Dimensional Partitioning Algorithm (P-1bis Section 5), Interpretability & Opacity Testing (P-1bis Section 9). 5-Standard Terminology Framework (177 ISO terms, v0.5.3). ISO 29119 conformance: 92% (Process 100%, Documentation 100%, Test Techniques 88%, Terminology 100%).</p>
+  <p style="margin-top:0.5rem;"><strong>Phase A/B/C Implementation (2026-02-13):</strong> ISO/IEC TS 42119-2:2025 conformance achieved <strong>79.7%</strong> (baseline 20.3% → Phase A 60.8% → Phase B 74.3% → Phase C 79.7%), 27 gaps resolved. <strong>Phase A:</strong> Data Quality Testing (D-2.8, 9 types), Model Testing (D-2.5.1, 6 types), Metamorphic Testing (D-2.5.2, 5 relations), Test Oracle Strategy (P-1, 5 types). <strong>Phase B:</strong> Risk Calculation (P-2 Section 7bis), Differential Testing (D-2.6), Deployment Testing (E-10, 7 types), AI Test Plan Requirements (P-1bis, 9 sections), Lifecycle Coverage. <strong>Phase C:</strong> Non-Determinism Statistical Methodology (P-1bis Section 4), High-Dimensional Partitioning Algorithm (P-1bis Section 5), Interpretability & Opacity Testing (P-1bis Section 9). 5-Standard Terminology Framework (177 ISO terms, v0.5.6). ISO 29119 conformance: 92% (Process 100%, Documentation 100%, Test Techniques 88%, Terminology 100%).</p>
   <p style="margin-top:0.5rem;">This document is designed as a living standard. Normative Core is stable; Living Annexes update quarterly.</p>
 </footer>
 
