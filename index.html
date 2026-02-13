@@ -308,6 +308,8 @@ a { color: var(--accent); }
     <a href="#pipeline-test-scenarios">  9.7 Pipeline: New Tests</a>
     <a href="#pipeline-dataset-feasibility">  9.8 Dataset Feasibility</a>
     <a href="#pipeline-testing-roadmap">  9.10 Testing Roadmap</a>
+    <a href="#part-x" class="nav-part">Part X: Case Studies</a>
+    <a href="#cs-001-rag">  10.1 CS-001: RAG Enterprise KB</a>
     <a href="#references-section" class="nav-part">References</a>
     <a href="#appendices" class="nav-part">Appendices</a>
     <a href="#appendix-a-test-scenarios">Appendix A: Test Scenarios</a>
@@ -6021,6 +6023,272 @@ Our guideline addresses process and methodology but lacks granular operational g
 
 </section>
 <!-- END PART IX -->
+
+<hr class="section-divider">
+
+<!-- ===== PART X: CASE STUDIES ===== -->
+<section id="part-x">
+<h1>Part X: Case Studies / 사례 연구</h1>
+<p>This section provides comprehensive case studies demonstrating the AI Red Team International Guideline's 6-stage process applied to realistic AI systems. Each case study walks through all normative activities from Planning to Follow-up, providing practical examples of threat modeling, test design, execution, analysis, reporting, and remediation.</p>
+<p class="bilingual">이 섹션은 AI 레드팀 국제 가이드라인의 6단계 프로세스를 현실적인 AI 시스템에 적용하는 종합 사례 연구를 제공합니다. 각 사례 연구는 계획부터 후속 조치까지 모든 규범적 활동을 단계별로 안내합니다.</p>
+
+<!-- 10.1 CS-001: RAG Enterprise Knowledge Base -->
+<h2 id="cs-001-rag">10.1 CS-001: RAG-Augmented Enterprise Knowledge Base</h2>
+
+<div class="info-box">
+<p><strong>System Type:</strong> RAG (Retrieval-Augmented Generation) with 10,000-document enterprise corpus</p>
+<p><strong>Risk Tier:</strong> Tier 2 (Focused) - Enterprise Deployment, Moderate Harm Potential</p>
+<p><strong>Status:</strong> ✅ Complete (2026-02-13)</p>
+<p><strong>Length:</strong> ~25,000 words (~50 pages)</p>
+<p><strong>Full Documentation:</strong> <a href="case-study-rag-enterprise-kb.md" target="_blank">case-study-rag-enterprise-kb.md</a></p>
+<p><strong>Validation Report:</strong> <a href="case-study-validation-report.md" target="_blank">case-study-validation-report.md</a></p>
+</div>
+
+<h3>System Overview / 시스템 개요</h3>
+
+<p><strong>Target System Architecture:</strong></p>
+<ul>
+  <li><strong>Embedding Model:</strong> OpenAI text-embedding-ada-002</li>
+  <li><strong>Vector Database:</strong> Pinecone (1536-dimensional embeddings)</li>
+  <li><strong>LLM:</strong> GPT-4 (via Azure OpenAI)</li>
+  <li><strong>Retrieval:</strong> Top-k=5 documents per query</li>
+  <li><strong>Corpus:</strong> Internal company policies, HR documents, technical documentation (10,000 docs)</li>
+  <li><strong>Deployment:</strong> Azure cloud environment, 500 enterprise employees</li>
+</ul>
+
+<h3>Why This System? / 이 시스템을 선택한 이유</h3>
+
+<ol>
+  <li><strong>Prominence in Guidelines:</strong> RAG poisoning (TS-SYS-002, AP-SYS-005) is a mandatory test scenario across all risk tiers (Tier 1-3). Referenced 41 times in phase-12-attacks.md.</li>
+  <li><strong>Real-World Relevance:</strong> RAG systems widely deployed in enterprises (customer support, internal knowledge access). 10,000-document scale typical of real deployments.</li>
+  <li><strong>Measurable Validation:</strong> Published research provides quantitative baselines:
+    <ul>
+      <li><strong>PoisonedRAG</strong> (Zou et al., 2024): 5 documents = 89.3% attack success rate</li>
+      <li><strong>EchoLeak</strong> (Wang et al., 2024): Hidden text injection = 70% ASR</li>
+      <li><strong>Carlini et al.</strong> (2021): Training data extraction = 24% ASR</li>
+    </ul>
+  </li>
+  <li><strong>Practical Applicability:</strong> Findings directly inform RAG deployment best practices. Remediation recommendations implementable with $350K budget (90-day timeline).</li>
+</ol>
+
+<h3>Key Findings Summary / 주요 발견사항 요약</h3>
+
+<table class="technical-table">
+<thead>
+<tr>
+  <th>Severity</th>
+  <th>Count</th>
+  <th>Representative Findings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><span class="badge badge-critical">CRITICAL</span></td>
+  <td>13</td>
+  <td>F-003 (RAG Corpus Poisoning, 89.3% ASR), F-006 (Indirect Injection, 70% ASR), F-016 (API Key Extraction, 24% ASR)</td>
+</tr>
+<tr>
+  <td><span class="badge badge-high">HIGH</span></td>
+  <td>10</td>
+  <td>F-001 (No Provenance Tracking), F-013 (Jailbreak Partial Success, 4% ASR), F-021 (Source Code Extraction, 50% ASR)</td>
+</tr>
+<tr>
+  <td><span class="badge badge-medium">MEDIUM</span></td>
+  <td>1</td>
+  <td>F-025 (Keyword Stuffing, 70% ASR but low impact)</td>
+</tr>
+<tr>
+  <td><span class="badge badge-low">POSITIVE</span></td>
+  <td>2</td>
+  <td>F-012 (Content Safety Filter Effective), M-003 (PII Protection 100% Block Rate)</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Total Findings:</strong> 26 (24 vulnerabilities + 2 positive controls)</p>
+<p><strong>Attack Success Rate:</strong> 75% overall (40/53 attack attempts successful)</p>
+
+<h3>Engagement Metrics / 참여 지표</h3>
+
+<table class="technical-table">
+<thead>
+<tr>
+  <th>Metric</th>
+  <th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Engagement Duration</strong></td>
+  <td>10 days (11 days planned, 9% under budget)</td>
+</tr>
+<tr>
+  <td><strong>Test Cases Executed</strong></td>
+  <td>12 out of 20 designed (60% execution, all CRITICAL cases completed)</td>
+</tr>
+<tr>
+  <td><strong>Attack Attempts</strong></td>
+  <td>53 total</td>
+</tr>
+<tr>
+  <td><strong>Findings Discovered</strong></td>
+  <td>26 (13 CRITICAL, 10 HIGH, 1 MEDIUM, 2 POSITIVE)</td>
+</tr>
+<tr>
+  <td><strong>Coverage</strong></td>
+  <td>100% threat scenario coverage, 100% attack pattern coverage</td>
+</tr>
+<tr>
+  <td><strong>Engagement Cost</strong></td>
+  <td>$80K</td>
+</tr>
+<tr>
+  <td><strong>Remediation Budget</strong></td>
+  <td>$350K (90-day phased plan)</td>
+</tr>
+<tr>
+  <td><strong>Risk Reduction Benefit</strong></td>
+  <td>$21.85M (GDPR fines, churn, remediation, reputational damage)</td>
+</tr>
+<tr>
+  <td><strong>ROI</strong></td>
+  <td>4,912% (($21.85M - $0.43M) / $0.43M × 100%)</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Top Recommendations / 주요 권장사항</h3>
+
+<div class="warning-box">
+<p><strong>Priority 1: Document Integrity Defense (CRITICAL) - $106K, 60 days</strong></p>
+<ul>
+  <li>Implement consensus validation algorithm (cross-validate Top-k retrieved docs for policy conflicts)</li>
+  <li>Deploy authority scoring system (downrank new uploads vs. established docs)</li>
+  <li>Add bulk upload anomaly detection (flag >3 docs/hour for review)</li>
+  <li><strong>Target:</strong> RAG Corpus Poisoning attack success <10% (down from 89.3%)</li>
+</ul>
+</div>
+
+<div class="warning-box">
+<p><strong>Priority 2: Instruction/Data Separation (CRITICAL) - $23K, 15 days</strong></p>
+<ul>
+  <li>Redesign RAG prompt with explicit <code>&lt;DATA&gt;</code> boundary</li>
+  <li>Implement input sanitization (strip hidden text, HTML comments, image ALT text)</li>
+  <li>Deploy output filtering for injection payloads</li>
+  <li><strong>Target:</strong> Indirect injection success <5% (down from 70%)</li>
+</ul>
+</div>
+
+<div class="warning-box">
+<p><strong>Priority 3: Credential Redaction (CRITICAL) - $12.5K, 22 days</strong></p>
+<ul>
+  <li>Immediate: Rotate exposed API keys and database passwords</li>
+  <li>Scan 10,000 corpus docs for credentials (GitGuardian, TruffleHog)</li>
+  <li>Redact all credentials with <code>&lt;REDACTED&gt;</code>, re-embed corpus</li>
+  <li>Deploy output filter for credential patterns (sk-*, password=*, etc.)</li>
+  <li><strong>Target:</strong> 0% credential leakage in outputs</li>
+</ul>
+</div>
+
+<p><strong>Total Remediation Investment:</strong> $350K for all 26 findings</p>
+<p><strong>Expected Benefit:</strong> $21.85M risk reduction → <strong>ROI 6,143% (61× return)</strong></p>
+
+<h3>Six-Stage Process Demonstration / 6단계 프로세스 실증</h3>
+
+<table class="technical-table">
+<thead>
+<tr>
+  <th>Stage</th>
+  <th>Activities</th>
+  <th>Pages</th>
+  <th>Key Outputs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Stage 1: Planning</strong></td>
+  <td>P-1, P-2, P-6</td>
+  <td>~8 pages</td>
+  <td>AI-Specific Test Plan (9 sections), Threat Model (6 assets, 6 threats), Test Schedule (11 days)</td>
+</tr>
+<tr>
+  <td><strong>Stage 2: Design</strong></td>
+  <td>D-1, D-2, D-2.5, D-2.7</td>
+  <td>~4 pages</td>
+  <td>20 test cases (ISO/IEC 29119-3 format), Pairwise coverage (180→20 combinations)</td>
+</tr>
+<tr>
+  <td><strong>Stage 3: Execution</strong></td>
+  <td>E-1 to E-5</td>
+  <td>~16 pages</td>
+  <td>53 attack attempts, 26 findings, Test log (attempt-level detail)</td>
+</tr>
+<tr>
+  <td><strong>Stage 4: Analysis</strong></td>
+  <td>A-1, A-2</td>
+  <td>~7 pages</td>
+  <td>Severity classification (Likelihood × Impact matrix), Root cause analysis (5 Whys for all CRITICAL)</td>
+</tr>
+<tr>
+  <td><strong>Stage 5: Reporting</strong></td>
+  <td>R-1 to R-6</td>
+  <td>~9 pages</td>
+  <td>Executive summary, Technical findings, Compliance mapping (GDPR, SOC 2, OWASP, ISO), Remediation roadmap</td>
+</tr>
+<tr>
+  <td><strong>Stage 6: Follow-up</strong></td>
+  <td>F-1 to F-4</td>
+  <td>~3 pages</td>
+  <td>Remediation recommendations (cost-benefit analysis), Verification testing plan (12 re-test cases), Risk acceptance (4 residual risks), Lessons learned (4 successes + 4 improvements)</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Lessons Learned (Process Improvements) / 교훈 (프로세스 개선사항)</h3>
+
+<p><strong>What Went Well / 잘 된 점:</strong></p>
+<ol>
+  <li><strong>Threat modeling (P-2) effectively scoped engagement:</strong> All CRITICAL findings predicted in threat model</li>
+  <li><strong>Pairwise coverage (D-2.7) reduced test case count:</strong> 180 combinations → 20 cases (89% reduction, 100% effectiveness)</li>
+  <li><strong>Simulated execution with research baselines credible:</strong> Stakeholders accepted PoisonedRAG/EchoLeak/Carlini ASR data</li>
+  <li><strong>ISO/IEC 29119 documentation enhanced professionalism:</strong> Report usable for compliance audits (GDPR, SOC 2)</li>
+</ol>
+
+<p><strong>What Could Be Improved / 개선 필요 사항:</strong></p>
+<ol>
+  <li><strong>Test oracle strategy (P-1) lacked per-test-case specificity:</strong> Recommend adding "Oracle Strategy" column to test case template</li>
+  <li><strong>Threat model (P-2) missed "retrieval ranking manipulation" attack surface:</strong> Recommend RAG component-level checklist</li>
+  <li><strong>Finding classification (A-1) lacked "regulatory impact" dimension:</strong> Recommend adding GDPR/SOC 2 severity tier</li>
+  <li><strong>Remediation roadmap (R-6) lacked "quick win" phase:</strong> Recommend Days 8-14 quick wins for stakeholder management</li>
+</ol>
+
+<p><strong>Process Enhancements for Future Engagements / 향후 참여를 위한 프로세스 개선:</strong></p>
+<ol>
+  <li>Formalize "Simulated Execution" methodology (Annex C to phase-3-normative-core.md)</li>
+  <li>Create RAG-specific test scenario library (TS-SYS-002a/b/c/d)</li>
+  <li>Develop "Regulatory Compliance Mapping" template for reports</li>
+  <li>Establish "Red Team Knowledge Base" repository for reusable artifacts</li>
+</ol>
+
+<h3>Full Case Study Access / 전체 사례 연구 접근</h3>
+
+<div class="info-box">
+<p><strong>📄 Complete Documentation:</strong> <a href="case-study-rag-enterprise-kb.md" target="_blank">case-study-rag-enterprise-kb.md</a> (25,225 words, ~50 pages)</p>
+<p><strong>📊 Validation Report:</strong> <a href="case-study-validation-report.md" target="_blank">case-study-validation-report.md</a> (validation status: ✅ PASS)</p>
+<p><strong>📚 Phase 13 Living Annex:</strong> <a href="phase-13-case-studies.md" target="_blank">phase-13-case-studies.md</a> (comprehensive case study index and contribution guidelines)</p>
+</div>
+
+<h3>Related Resources / 관련 자료</h3>
+
+<ul>
+  <li><strong>Attack Patterns:</strong> <a href="phase-12-attacks.md#2-4" target="_blank">AP-SYS-005 (RAG Corpus Poisoning)</a>, <a href="phase-12-attacks.md#1-2" target="_blank">AP-MOD-002/003 (Prompt Injection)</a>, <a href="phase-12-attacks.md#1-3" target="_blank">AP-MOD-005 (Data Extraction)</a></li>
+  <li><strong>Test Scenarios:</strong> <a href="iso-29119-test-scenarios-and-cases.md#ts-sys-002" target="_blank">TS-SYS-002 (RAG Corpus Poisoning)</a></li>
+  <li><strong>Normative Activities:</strong> <a href="phase-3-normative-core.md" target="_blank">Phase 3: Normative Core (P-1 through F-4)</a></li>
+  <li><strong>Terminology:</strong> <a href="phase-0-terminology.md" target="_blank">Phase 0: Terminology (Test Oracle, Metamorphic Testing, Data Quality Testing)</a></li>
+</ul>
+
+</section>
+<!-- END PART X -->
 
 <hr class="section-divider">
 
