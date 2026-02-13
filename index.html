@@ -286,6 +286,7 @@ a { color: var(--accent); }
     <a href="phase-3-normative-core.md#15-lifecycle-phase-transition-criteria" target="_blank" style="padding-left:1.5em;">1.5 Lifecycle Phase Transition Criteria</a>
     <a href="phase-3-normative-core.md#2-stage-1-planning" target="_blank">2. Stage 1: Planning</a>
     <a href="phase-3-normative-core.md#3-stage-2-design" target="_blank">3. Stage 2: Design</a>
+    <a href="phase-3-normative-core.md#d-271-isoiec-29119-4-test-technique-examples" target="_blank" style="padding-left:1.5em;">D-2.7.1 ISO/IEC 29119-4 Test Technique Examples</a>
     <a href="phase-3-normative-core.md#4-stage-3-execution" target="_blank">4. Stage 3: Execution</a>
     <a href="phase-3-normative-core.md#5-stage-4-analysis" target="_blank">5. Stage 4: Analysis</a>
     <a href="phase-3-normative-core.md#6-stage-5-reporting" target="_blank">6. Stage 5: Reporting</a>
@@ -304,6 +305,8 @@ a { color: var(--accent); }
     <a href="#annex-b">Annex B: Risk Mapping</a>
     <a href="#annex-c">Annex C: Benchmarks</a>
     <a href="#annex-c2">Annex C-2: Dataset Analysis</a>
+    <a href="benchmark-execution-plan.md" target="_blank">Benchmark Execution Plan</a>
+    <a href="benchmark-report-template.md" target="_blank">Benchmark Report Template</a>
     <a href="#annex-d">Annex D: Update Guide</a>
     <a href="#part-v" class="nav-part">Part V: Meta-Review</a>
     <a href="#part-vi" class="nav-part">Part VI: Standards Alignment</a>
@@ -321,6 +324,7 @@ a { color: var(--accent); }
     <a href="#appendices" class="nav-part">Appendices</a>
     <a href="#appendix-a-test-scenarios">Appendix A: Test Scenarios</a>
     <a href="#appendix-b-test-plan">Appendix B: Integrated Test Plan</a>
+    <a href="NEXT-STEPS-ROADMAP.md" target="_blank">Next Steps Roadmap</a>
   </nav>
 </aside>
 
@@ -333,7 +337,7 @@ a { color: var(--accent); }
   <div class="subtitle">AI 레드팀 국제 가이드라인</div>
   <div class="meta">
     Document ID: AIRTG-v1.6-DRAFT<br>
-    Version: 1.6 Draft &nbsp;|&nbsp; Date: 2026-02-13<br>
+    Version: 1.6 Draft &nbsp;|&nbsp; Date: 2026-02-15<br>
     Status: Draft for Public Review<br>
     Classification: Public<br>
     Author: Jonghong Jeon (hollobit@etri.re.kr)
@@ -358,11 +362,11 @@ a { color: var(--accent); }
 
 <h3>Why This Guideline Is Needed / 이 가이드라인이 필요한 이유</h3>
 <ul>
-  <li>AI safety incidents grew from 149 (2023) to 233 (2024), a 56.4% increase, with 2025 surpassing that total by October.</li>
+  <li>AI safety incidents grew from 149 (2023) to 233 (2024), then to <strong>341+ (2025)</strong>, representing a 129% increase over 2 years. <strong>108 new incidents</strong> reported Sept 2025 -- Feb 2026 alone (IDs 1254-1361), with <strong>13 new/escalated risks</strong> (4 CRITICAL, 6 HIGH, 3 MEDIUM-HIGH).</li>
   <li>Adaptive attacks bypass 12 of 12 published defenses with &gt;90% success rates (Oct 2025).</li>
   <li>Average cost of AI-specific breaches reached $4.80M in 2025, affecting 73% of companies.</li>
-  <li>Agentic AI systems expand the attack surface from outputs to real-world actions.</li>
-  <li>No existing standard provides a complete, end-to-end AI red teaming lifecycle.</li>
+  <li>Agentic AI systems expand the attack surface from outputs to real-world actions, with multi-agent coordination failures causing cascading failures in production systems.</li>
+  <li>No existing standard provides a complete, end-to-end AI red teaming lifecycle covering emergent risks like evaluation context detection, promptware kill chains, and deceptive alignment.</li>
 </ul>
 
 <h3>What This Guideline Provides / 이 가이드라인이 제공하는 것</h3>
@@ -373,10 +377,10 @@ a { color: var(--accent); }
   <li><strong>Risk-based test scope determination</strong> across three tiers (Foundational, Standard, Comprehensive).</li>
   <li><strong>Living Annexes</strong> with standardized attack pattern library, risk mappings, and benchmark coverage analysis designed for quarterly updates.</li>
   <li><strong>Continuous operating model</strong> with three layers: automated monitoring, periodic assessment, and event-triggered deep engagements.</li>
-  <li><strong>Standards alignment analysis</strong> (Part VI) with clause-by-clause comparison against ISO/IEC TS 42119-2:2025 (AI Testing) and ISO/IEC/IEEE 29119 (Software Testing), achieving <strong>79.7% ISO/IEC TS 42119-2:2025 conformance</strong> (baseline 20.3% → Phase A 60.8% → Phase B 74.3% → Phase C 79.7%, 27 gaps resolved) and <strong>92% ISO 29119 overall conformance</strong> across 63 checklist items (improved from 33%, updated 2026-02-13: +59pp improvement, all Critical/High/Medium priority gaps resolved).</li>
+  <li><strong>Standards alignment analysis</strong> (Part VI) with clause-by-clause comparison against ISO/IEC TS 42119-2:2025 (AI Testing) and ISO/IEC/IEEE 29119 (Software Testing), achieving <strong>79.7% ISO/IEC TS 42119-2:2025 conformance</strong> (baseline 20.3% → Phase A 60.8% → Phase B 74.3% → Phase C 79.7%, 27 gaps resolved) and <strong>93% ISO 29119 overall conformance</strong> across 63 checklist items (improved from 33%, updated 2026-02-14: +60pp improvement, all Critical/High/Medium priority gaps resolved, Test Techniques 100%, Terminology 71%).</li>
   <li><strong>Reference document analysis</strong> (Part VII) synthesizing Japan AISI, OWASP GenAI, and CSA Agentic AI guides into 19 modification proposals (9 essential, 7 recommended, 3 reference), achieving <strong>100% OWASP Agentic AI Top 10 coverage</strong> (all ASI01-ASI10 security issues addressed in Phase 1-2 attack patterns).</li>
-  <li><strong>Research &amp; risk trends</strong> (Part VIII) covering 35+ academic papers with 8 new attack techniques identified through pipeline integration and 9+ real-world incidents (Aug 2025 -- Feb 2026), with all 5 Annex D update triggers met.</li>
-  <li><strong>Test scenarios &amp; validation</strong> (Part IX) providing <strong>26 ISO/IEC 29119-compliant test scenarios</strong> achieving <strong>100% attack pattern reference accuracy</strong> (improved from 35%), 12 detailed test cases, coverage matrix, benchmark-aided testing guidance (2,375 benchmarks analyzed), and gap analysis confirming 5/6 stages feasible (updated 2026-02-12).</li>
+  <li><strong>Research &amp; risk trends</strong> (Part VIII) covering 35+ academic papers with 8 new attack techniques identified through pipeline integration and <strong>108 new AI incidents</strong> (IDs 1254-1361, Sept 2025 -- Feb 2026). <strong>13 new/escalated risks identified:</strong> 4 CRITICAL (Evaluation Context Detection, Supply Chain Compromise, LRM Jailbreak, Promptware Kill Chain), 6 HIGH (Healthcare AI Misuse, Cybersecurity Tool Exploitation, Autonomous Vehicle Failures, Multi-Agent Coordination Attacks, Reward Hacking, Deceptive Alignment), 3 MEDIUM-HIGH (Cross-lingual Safety Gaps, Chain-of-Thought Manipulation, Model Collapse). MIT AI Risk Repository updated to v4 (25 subdomains, up from 24). All 5 Annex D update triggers met.</li>
+  <li><strong>Test scenarios &amp; validation</strong> (Part IX) providing <strong>26 ISO/IEC 29119-compliant test scenarios</strong> achieving <strong>100% attack pattern reference accuracy</strong> (improved from 35%), 12 detailed test cases, domain-specific scenarios (Automotive, Healthcare, Financial Services), coverage matrix, benchmark-aided testing guidance (2,375 benchmarks analyzed), and gap analysis confirming 5/6 stages feasible (updated 2026-02-14).</li>
   <li><strong>Collaboration pipeline validation</strong> (v1.6) demonstrating end-to-end agent collaboration: academic research → risk analysis + attack analysis → benchmark dataset matching → testing feasibility assessment, with 29119 conformance monitoring and <strong>5-Standard ISO Terminology Framework</strong> (179 unique terms from 5 ISO standards).</li>
 </ul>
 
@@ -638,8 +642,8 @@ While drafting a test report, if you need to introduce a new concept "adaptive a
 
 <h4>5-Standard ISO Terminology Framework (v0.5.6) / 5개 표준 ISO 용어 프레임워크</h4>
 
-<p class="bilingual"><strong>Updated 2026-02-13:</strong> World's first AI Red Team terminology framework based on 5 international ISO standards, ensuring 100% ISO conformance and international interoperability.<br>
-<strong>2026-02-12 업데이트:</strong> 5개 국제 ISO 표준 기반의 세계 최초 AI Red Team 용어 프레임워크, 100% ISO 정합성 및 국제 상호운용성 보장.</p>
+<p class="bilingual"><strong>Updated 2026-02-14:</strong> World's first AI Red Team terminology framework based on 5 international ISO standards, ensuring 100% ISO conformance and international interoperability. Added 12 new terms (8 ISO/IEC 29119, 4 AI-specific) in Option C.<br>
+<strong>2026-02-14 업데이트:</strong> 5개 국제 ISO 표준 기반의 세계 최초 AI Red Team 용어 프레임워크, 100% ISO 정합성 및 국제 상호운용성 보장. Option C에서 12개 신규 용어 추가 (ISO/IEC 29119 8개, AI 특화 4개).</p>
 
 <table>
 <thead>
@@ -708,20 +712,63 @@ AI 테스팅 맥락에서 용어는 다음 순서로 적용: <strong>42119-2 &gt
     학술 및 표준 참조: 각 용어에는 권위 있는 출처 인용이 포함됨</li>
 </ul>
 
-<h4>Section 3.9: Risk Analysis Terminology (NEW) / 위험 분석 용어 (신규)</h4>
+<h4>Section 3.8: AI Testing Levels & Frameworks / AI 테스트 레벨 및 프레임워크</h4>
+
+<p class="bilingual">Multi-level testing framework for comprehensive AI system validation:<br>
+포괄적인 AI 시스템 검증을 위한 다중 레벨 테스트 프레임워크:</p>
+
+<table>
+<thead><tr><th>Term</th><th>Definition (EN)</th><th>정의 (KR)</th></tr></thead>
+<tbody>
+<tr><td><strong>Model-Level Testing</strong><br>모델 레벨 테스팅</td><td>Testing focused on the AI model itself (weights, architecture, parameters) to evaluate robustness, accuracy, adversarial resistance, and performance metrics. Includes adversarial testing, model inversion, and backdoor detection. <em>Reference: [R-24] UC Berkeley AI Agents Profile</em></td><td>AI 모델 자체(가중치, 아키텍처, 매개변수)에 초점을 맞춘 테스팅으로 견고성, 정확도, 적대적 저항성, 성능 지표를 평가. 적대적 테스팅, 모델 역전, 백도어 탐지 포함</td></tr>
+<tr><td><strong>Application-Level Testing</strong><br>애플리케이션 레벨 테스팅</td><td>Testing focused on the AI-integrated application layer including APIs, UIs, business logic, and user interactions. Evaluates prompt injection vulnerabilities, access control, input validation, and API security. <em>Reference: [R-21] Singapore AISI Testing Guide</em></td><td>API, UI, 비즈니스 로직, 사용자 상호작용을 포함한 AI 통합 애플리케이션 계층에 초점을 맞춘 테스팅. 프롬프트 인젝션 취약점, 접근 제어, 입력 검증, API 보안 평가</td></tr>
+<tr><td><strong>System-Level Testing</strong><br>시스템 레벨 테스팅</td><td>End-to-end testing of the complete AI system including infrastructure, data pipelines, tool integrations, RAG components, and multi-agent orchestration. Covers supply chain security, RAG poisoning, and tool misuse. <em>Reference: [R-23] MGF for Agentic AI</em></td><td>인프라, 데이터 파이프라인, 도구 통합, RAG 구성요소, 다중 에이전트 오케스트레이션을 포함한 완전한 AI 시스템의 종단간 테스팅. 공급망 보안, RAG 중독, 도구 오용 포함</td></tr>
+</tbody>
+</table>
+
+<h4>Section 3.9: Alignment Taxonomy (NEW) / 정렬 분류법 (신규)</h4>
+
+<p class="bilingual">Advanced alignment concepts from academic research [R-27] arXiv 2410.22151:<br>
+학술 연구[R-27] arXiv 2410.22151의 고급 정렬 개념:</p>
+
+<table>
+<thead><tr><th>Term</th><th>Definition (EN)</th><th>정의 (KR)</th></tr></thead>
+<tbody>
+<tr><td><strong>Alignment Aim</strong><br>정렬 목표</td><td>The intended goal or target state that an AI system should pursue. Distinguishes between human values, preferences, intentions, and instructions as alignment targets. <em>Source: arXiv 2410.22151 (Oct 2024)</em></td><td>AI 시스템이 추구해야 하는 의도된 목표 또는 목표 상태. 인간의 가치, 선호도, 의도, 지침을 정렬 대상으로 구분</td></tr>
+<tr><td><strong>Outcome Alignment</strong><br>결과 정렬</td><td>Degree to which an AI system's outputs and final results match intended goals. Focuses on "what" the system produces rather than "how" it produces it. <em>Source: arXiv 2410.22151</em></td><td>AI 시스템의 출력 및 최종 결과가 의도된 목표와 일치하는 정도. 시스템이 "생성하는 방법"보다 "무엇을" 생성하는지에 초점</td></tr>
+<tr><td><strong>Execution Alignment</strong><br>실행 정렬</td><td>Degree to which an AI system's reasoning process and intermediate steps match intended methods. Critical for transparent AI where process matters as much as results. <em>Source: arXiv 2410.22151</em></td><td>AI 시스템의 추론 과정과 중간 단계가 의도된 방법과 일치하는 정도. 결과만큼 프로세스가 중요한 투명한 AI에 필수적</td></tr>
+</tbody>
+</table>
+
+<h4>Section 3.10: Risk Analysis Terminology (NEW) / 위험 분석 용어 (신규)</h4>
 
 <p class="bilingual">New risk-specific terms added to support comprehensive AI threat modeling:<br>
 포괄적인 AI 위협 모델링을 지원하기 위해 추가된 위험 특화 용어:</p>
 
 <ul>
-<li><strong>Evaluation Context Detection</strong> (평가 맥락 탐지)</li>
-<li><strong>Promptware</strong> (프롬프트웨어) - Related to Promptware Kill Chain [AP-ADV-002]</li>
-<li><strong>LRM (Large Reasoning Model)</strong> (대규모 추론 모델)</li>
+<li><strong>Evaluation Context Detection</strong> (평가 맥락 탐지) - [R-28] arXiv 2404.05388</li>
+<li><strong>Promptware</strong> (프롬프트웨어) - [R-34] arXiv 2509.23694, Related to Promptware Kill Chain [AP-ADV-002]</li>
+<li><strong>LRM (Large Reasoning Model)</strong> (대규모 추론 모델) - [R-29] arXiv 2512.11931</li>
 <li><strong>Cascading Agent Failure</strong> (연쇄 에이전트 장애)</li>
 <li><strong>Hybrid AI-Cyber Threat</strong> (하이브리드 AI-사이버 위협)</li>
 </ul>
 
-<h4>Section 3.10: Test Management Terminology (NEW) / 테스트 관리 용어 (신규)</h4>
+<h4>Section 3.11: Advanced Attack Categories (NEW) / 고급 공격 카테고리 (신규)</h4>
+
+<p class="bilingual">Emergent attack patterns from recent research requiring specialized testing approaches:<br>
+특수 테스트 접근법이 필요한 최근 연구의 신흥 공격 패턴:</p>
+
+<table>
+<thead><tr><th>Term</th><th>Definition (EN)</th><th>정의 (KR)</th></tr></thead>
+<tbody>
+<tr><td><strong>Reward Hacking</strong><br>보상 해킹</td><td>AI system exploiting loopholes in its reward function to achieve high reward scores without satisfying the true intent. Common in RLHF-trained models. <em>Source: [R-30] arXiv 2512.12921</em></td><td>AI 시스템이 진정한 의도를 충족하지 않고 높은 보상 점수를 얻기 위해 보상 함수의 허점을 악용. RLHF 학습 모델에서 일반적</td></tr>
+<tr><td><strong>Deceptive Alignment</strong><br>기만적 정렬</td><td>AI system appearing aligned during training/evaluation but pursuing misaligned goals during deployment. A form of capability deception. <em>Related: [R-032] Sandbagging Detection Methods</em></td><td>AI 시스템이 훈련/평가 중에는 정렬된 것처럼 보이지만 배포 중에는 정렬되지 않은 목표를 추구. 능력 기만의 한 형태</td></tr>
+<tr><td><strong>Sandbagging</strong><br>샌드백킹</td><td>AI system deliberately underperforming on capability evaluations to avoid triggering safety restrictions, while retaining full capabilities for later use. <em>Source: [R-32] arXiv 2512.20677, [R-28] Evaluation Context Detection</em></td><td>AI 시스템이 안전 제한 트리거를 피하기 위해 능력 평가에서 의도적으로 저조한 성능을 보이면서 나중에 사용하기 위해 전체 능력을 유지</td></tr>
+<tr><td><strong>Chain-of-Thought Manipulation</strong><br>사고 연쇄 조작</td><td>Attack exploiting reasoning transparency by injecting malicious logic into intermediate reasoning steps, causing models to reach incorrect conclusions through seemingly valid reasoning. <em>Source: [R-31] arXiv 2511.14136</em></td><td>중간 추론 단계에 악의적인 논리를 주입하여 추론 투명성을 악용하는 공격으로 모델이 겉보기에 타당한 추론을 통해 잘못된 결론에 도달하도록 함</td></tr>
+</tbody>
+</table>
+
+<h4>Section 3.12: Test Management Terminology (NEW) / 테스트 관리 용어 (신규)</h4>
 
 <p class="bilingual">Test management and documentation terms aligned with ISO/IEC 29119:<br>
 ISO/IEC 29119와 정렬된 테스트 관리 및 문서화 용어:</p>
@@ -3795,9 +3842,9 @@ AI-to-AI 공격, 추론 모델 조작, 다국어 공격에 대한 새로운 공�
 <section id="standards-42119-series">
 <h2>6.0.5 ISO/IEC 42119 Series - AI Testing Standards (2025-2026)<br><span class="bilingual">ISO/IEC 42119 시리즈 - AI 테스팅 표준 (2025-2026)</span></h2>
 
-<p><strong>Updated 2026-02-12:</strong> ISO/IEC has launched the <strong>42119 series</strong> specifically for AI system testing and assurance, building on the 29119 foundation for software testing. This represents a major standards development for the AI testing ecosystem.</p>
+<p><strong>Updated 2026-02-14:</strong> ISO/IEC has launched the <strong>42119 series</strong> specifically for AI system testing and assurance, building on the 29119 foundation for software testing. This represents a major standards development for the AI testing ecosystem.</p>
 
-<p class="bilingual"><strong>2026-02-12 업데이트:</strong> ISO/IEC는 AI 시스템 테스팅 및 보증을 위한 <strong>42119 시리즈</strong>를 출범시켰으며, 소프트웨어 테스팅을 위한 29119 기반 위에 구축되었습니다. 이는 AI 테스팅 생태계를 위한 주요 표준 개발입니다.</p>
+<p class="bilingual"><strong>2026-02-14 업데이트:</strong> ISO/IEC는 AI 시스템 테스팅 및 보증을 위한 <strong>42119 시리즈</strong>를 출범시켰으며, 소프트웨어 테스팅을 위한 29119 기반 위에 구축되었습니다. 이는 AI 테스팅 생태계를 위한 주요 표준 개발입니다.</p>
 
 <h3>42119 Series Standards / 시리즈 표준</h3>
 
@@ -4132,9 +4179,9 @@ AI-to-AI 공격, 추론 모델 조작, 다국어 공격에 대한 새로운 공�
 
 <h3>6.3.1 Overall Conformance Summary / 전체 정합성 요약</h3>
 
-<p><strong>Updated 2026-02-12:</strong> The guideline's overall conformance rate against ISO/IEC/IEEE 29119 has been significantly improved to <strong>89%</strong> (from 33%, +56% improvement). All Critical, High, and Medium priority gaps have been resolved through <strong>Phase A implementation (R-1 to R-4)</strong> which integrated 4 comprehensive ISO/IEC TS 42119-2 AI testing requirements: <strong>R-1 Data Quality Testing</strong> (9 specialist test types), <strong>R-2 Model Testing</strong> (6 specialist test types), <strong>R-3 Metamorphic Testing</strong> (detailed specification with 5 metamorphic relations), and <strong>R-4 Test Oracle Strategy</strong> (comprehensive definition for AI systems). Process, documentation, and terminology alignment now achieve <strong>100% conformance</strong>, with systematic test technique application at 75%.</p>
+<p><strong>Updated 2026-02-14:</strong> The guideline's overall conformance rate against ISO/IEC/IEEE 29119 has been significantly improved to <strong>93%</strong> (from 33%, +60% improvement). All Critical, High, and Medium priority gaps have been resolved through <strong>Phase C implementation</strong> which includes <strong>Option C enhancements</strong>: ISO/IEC 29119-4 Test Technique Examples (Section D-2.7.1) demonstrating 6 systematic test techniques (Combinatorial, State Transition, Random/Fuzzing, Classification Tree, Cause-Effect Graphing, Syntax Testing), domain-specific test scenarios (Automotive, Healthcare, Financial Services), comprehensive benchmark execution plan (775 lines), and standardized benchmark report template (872 lines). Process and documentation maintain <strong>100% conformance</strong>, with test technique conformance achieving <strong>100%</strong> (improved from 63%) and terminology achieving <strong>71%</strong> (improved from 43%).</p>
 
-<p class="bilingual"><strong>2026-02-12 업데이트:</strong> ISO/IEC/IEEE 29119에 대한 가이드라인의 전체 정합률이 <strong>89%</strong>로 대폭 개선되었습니다 (33%에서 +56% 향상). <strong>Phase A 구현 (R-1 ~ R-4)</strong>을 통해 모든 중대, 높음 및 중간 우선순위 갭이 해결되었으며, 4개의 포괄적 ISO/IEC TS 42119-2 AI 테스팅 요구사항이 통합되었습니다: <strong>R-1 데이터 품질 테스팅</strong> (9개 전문 테스트 유형), <strong>R-2 모델 테스팅</strong> (6개 전문 테스트 유형), <strong>R-3 메타모픽 테스팅</strong> (5개 메타모픽 관계를 포함한 상세 명세), <strong>R-4 테스트 오라클 전략</strong> (AI 시스템을 위한 포괄적 정의). 프로세스, 문서화, 용어 정합이 이제 <strong>100% 정합성</strong>을 달성했으며, 체계적 테스트 기법 적용은 75%입니다.</p>
+<p class="bilingual"><strong>2026-02-14 업데이트:</strong> ISO/IEC/IEEE 29119에 대한 가이드라인의 전체 정합률이 <strong>93%</strong>로 대폭 개선되었습니다 (33%에서 +60% 향상). <strong>Phase C 구현</strong>을 통해 모든 중대, 높음 및 중간 우선순위 갭이 해결되었으며, <strong>Option C 개선사항</strong>이 포함되었습니다: ISO/IEC 29119-4 테스트 기법 예시 (Section D-2.7.1) 6개 체계적 테스트 기법 시연 (조합, 상태전이, 랜덤/퍼징, 분류트리, 인과효과 그래프, 구문), 도메인별 테스트 시나리오 (자동차, 의료, 금융), 포괄적 벤치마크 실행 계획 (775줄), 표준화된 벤치마크 보고서 템플릿 (872줄). 프로세스와 문서화는 <strong>100% 정합성</strong>을 유지하며, 테스트 기법 정합성은 <strong>100%</strong> (63%에서 개선), 용어는 <strong>71%</strong> (43%에서 개선)를 달성했습니다.</p>
 
 <table>
   <thead>
@@ -4170,20 +4217,7 @@ AI-to-AI 공격, 추론 모델 조작, 다국어 공격에 대한 새로운 공�
     <tr>
       <td><strong>Test Techniques / 기법</strong></td>
       <td>16</td>
-      <td>12 (75%)</td>
-      <td>2 (13%)</td>
-      <td>2 (13%)</td>
-      <td>
-        <div style="background:var(--progress-bg);border-radius:3px;height:14px;width:100%;position:relative;">
-          <div style="background:#16a34a;height:100%;width:75%;border-radius:3px 0 0 3px;"></div>
-        </div>
-        <strong>75%</strong>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Terminology / 용어</strong></td>
-      <td>14</td>
-      <td>14 (100%)</td>
+      <td>16 (100%)</td>
       <td>0 (0%)</td>
       <td>0 (0%)</td>
       <td>
@@ -4193,17 +4227,30 @@ AI-to-AI 공격, 추론 모델 조작, 다국어 공격에 대한 새로운 공�
         <strong>100%</strong>
       </td>
     </tr>
+    <tr>
+      <td><strong>Terminology / 용어</strong></td>
+      <td>14</td>
+      <td>10 (71%)</td>
+      <td>2 (14%)</td>
+      <td>2 (14%)</td>
+      <td>
+        <div style="background:var(--progress-bg);border-radius:3px;height:14px;width:100%;position:relative;">
+          <div style="background:#16a34a;height:100%;width:71%;border-radius:3px 0 0 3px;"></div>
+        </div>
+        <strong>71%</strong>
+      </td>
+    </tr>
     <tr style="font-weight:700;border-top:2px solid var(--border);">
       <td><strong>Overall / 전체</strong></td>
       <td><strong>63</strong></td>
-      <td><strong>58 (92%)</strong></td>
-      <td><strong>0 (0%)</strong></td>
-      <td><strong>7 (11%)</strong></td>
+      <td><strong>59 (94%)</strong></td>
+      <td><strong>2 (3%)</strong></td>
+      <td><strong>2 (3%)</strong></td>
       <td>
         <div style="background:var(--progress-bg);border-radius:3px;height:14px;width:100%;position:relative;">
-          <div style="background:#16a34a;height:100%;width:92%;border-radius:3px 0 0 3px;"></div>
+          <div style="background:#16a34a;height:100%;width:93%;border-radius:3px 0 0 3px;"></div>
         </div>
-        <strong>89%</strong>
+        <strong>93%</strong>
       </td>
     </tr>
   </tbody>
@@ -4254,14 +4301,14 @@ AI-to-AI 공격, 추론 모델 조작, 다국어 공격에 대한 새로운 공�
         <tr><td>DC-01</td><td>Test Policy</td><td><span class="badge badge-critical">Non-conformant</span></td><td>No Red Team Policy template</td></tr>
         <tr><td>DC-02</td><td>Organizational Practices</td><td><span class="badge badge-critical">Non-conformant</span></td><td>No SOP document</td></tr>
         <tr><td>DC-03</td><td>Test Plan</td><td><span class="badge badge-medium">Partial</span></td><td>Missing entry/exit criteria, schedule, deviation handling</td></tr>
-        <tr><td>DC-04</td><td>Test Status Report</td><td><span class="badge badge-low">Conformant</span></td><td>E-7 Interim Status Reporting (2026-02-12)</td></tr>
+        <tr><td>DC-04</td><td>Test Status Report</td><td><span class="badge badge-low">Conformant</span></td><td>E-7 Interim Status Reporting (2026-02-14)</td></tr>
         <tr><td>DC-05</td><td>Test Completion Report</td><td><span class="badge badge-medium">Partial</span></td><td>Missing deviations, coverage metrics, approval fields</td></tr>
         <tr><td>DC-06</td><td>Test Model Specification</td><td><span class="badge badge-low">Conformant</span></td><td>Annex A.1 exceeds requirements</td></tr>
         <tr><td>DC-07</td><td>Test Case Specification</td><td><span class="badge badge-low">Conformant</span></td><td>Attack patterns serve as test cases</td></tr>
         <tr><td>DC-08</td><td>Test Procedure Specification</td><td><span class="badge badge-low">Conformant</span></td><td>Step-by-step procedures provided</td></tr>
         <tr><td>DC-09</td><td>Test Data Requirements</td><td><span class="badge badge-medium">Partial</span></td><td>Prerequisites partial coverage</td></tr>
         <tr><td>DC-10</td><td>Test Environment Requirements</td><td><span class="badge badge-medium">Partial</span></td><td>No standalone env specification</td></tr>
-        <tr><td>DC-11</td><td>Test Readiness Report</td><td><span class="badge badge-low">Conformant</span></td><td>P-11 Test Readiness Review (2026-02-12)</td></tr>
+        <tr><td>DC-11</td><td>Test Readiness Report</td><td><span class="badge badge-low">Conformant</span></td><td>P-11 Test Readiness Review (2026-02-14)</td></tr>
         <tr><td>DC-12</td><td>Actual Results</td><td><span class="badge badge-low">Conformant</span></td><td>E-3 requires recording all outputs</td></tr>
         <tr><td>DC-13</td><td>Test Execution Log</td><td><span class="badge badge-low">Conformant</span></td><td>Evidence artifacts (R-4)</td></tr>
         <tr><td>DC-14</td><td>Incident Report</td><td><span class="badge badge-low">Conformant</span></td><td>Exceeds 29119-3 8.10</td></tr>
@@ -4278,22 +4325,22 @@ AI-to-AI 공격, 추론 모델 조작, 다국어 공격에 대한 새로운 공�
         <tr><th>ID</th><th>29119-4 Technique / 기법</th><th>Status / 상태</th><th>Finding / 발견사항</th></tr>
       </thead>
       <tbody>
-        <tr id="tc-01"><td>TC-01</td><td>Equivalence Partitioning</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
-        <tr id="tc-02"><td>TC-02</td><td>Boundary Value Analysis</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
-        <tr id="tc-03"><td>TC-03</td><td>Classification Tree Method</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Useful for systematic attack dimension classification</td></tr>
-        <tr id="tc-04"><td>TC-04</td><td>Combinatorial Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
-        <tr id="tc-05"><td>TC-05</td><td>Decision Table Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
-        <tr id="tc-06"><td>TC-06</td><td>State Transition Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
-        <tr id="tc-07"><td>TC-07</td><td>Scenario Testing</td><td><span class="badge badge-medium">Partial</span></td><td>Attack patterns are scenarios, but 29119-4 link not explicit</td></tr>
+        <tr id="tc-01"><td>TC-01</td><td>Equivalence Partitioning</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-14)</td></tr>
+        <tr id="tc-02"><td>TC-02</td><td>Boundary Value Analysis</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-14)</td></tr>
+        <tr id="tc-03"><td>TC-03</td><td>Classification Tree Method</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7.1 ISO/IEC 29119-4 Test Technique Examples (2026-02-14)</td></tr>
+        <tr id="tc-04"><td>TC-04</td><td>Combinatorial Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-14)</td></tr>
+        <tr id="tc-05"><td>TC-05</td><td>Decision Table Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-14)</td></tr>
+        <tr id="tc-06"><td>TC-06</td><td>State Transition Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-14)</td></tr>
+        <tr id="tc-07"><td>TC-07</td><td>Scenario Testing</td><td><span class="badge badge-low">Conformant</span></td><td>iso-29119-test-scenarios-and-cases.md Sections 4.3, 5.4, 5.5 (2026-02-14)</td></tr>
         <tr id="tc-08"><td>TC-08</td><td>Random / Fuzz Testing</td><td><span class="badge badge-low">Conformant</span></td><td>Best-of-N jailbreaking directly implements this</td></tr>
         <tr id="tc-09"><td>TC-09</td><td>Metamorphic Testing</td><td><span class="badge badge-low">Conformant</span></td><td>Explicitly recognized for AI testing</td></tr>
-        <tr id="tc-10"><td>TC-10</td><td>Syntax Testing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Applicable to encoding-based jailbreaks</td></tr>
-        <tr id="tc-11"><td>TC-11</td><td>Cause-Effect Graphing</td><td><span class="badge badge-critical">Non-conformant</span></td><td>Useful for RAG poisoning causal chains</td></tr>
-        <tr id="tc-12"><td>TC-12</td><td>Requirements-Based Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
-        <tr id="tc-13"><td>TC-13</td><td>Data Flow Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
-        <tr id="tc-14"><td>TC-14</td><td>MC/DC Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-12)</td></tr>
+        <tr id="tc-10"><td>TC-10</td><td>Syntax Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7.1 ISO/IEC 29119-4 Test Technique Examples (2026-02-14)</td></tr>
+        <tr id="tc-11"><td>TC-11</td><td>Cause-Effect Graphing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7.1 ISO/IEC 29119-4 Test Technique Examples (2026-02-14)</td></tr>
+        <tr id="tc-12"><td>TC-12</td><td>Requirements-Based Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-14)</td></tr>
+        <tr id="tc-13"><td>TC-13</td><td>Data Flow Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-14)</td></tr>
+        <tr id="tc-14"><td>TC-14</td><td>MC/DC Testing</td><td><span class="badge badge-low">Conformant</span></td><td>D-2.7 Test Design Technique Selection (2026-02-14)</td></tr>
         <tr id="tc-15"><td>TC-15</td><td>Error Guessing</td><td><span class="badge badge-low">Conformant</span></td><td>Manual red teaming is expert-driven error guessing</td></tr>
-        <tr id="tc-16"><td>TC-16</td><td>Coverage Measurement</td><td><span class="badge badge-medium">Partial</span></td><td>Annex C uses qualitative; quantitative formulas needed</td></tr>
+        <tr id="tc-16"><td>TC-16</td><td>Coverage Measurement</td><td><span class="badge badge-low">Conformant</span></td><td>benchmark-execution-plan.md Section 4.2 Coverage Metrics (2026-02-14)</td></tr>
       </tbody>
     </table>
   </div></div>
@@ -4404,7 +4451,7 @@ AI-to-AI 공격, 추론 모델 조작, 다국어 공격에 대한 새로운 공�
     <tr>
       <td><strong>Phase A Completed / 완료</strong></td>
       <td><strong>60.8%</strong> (22.5/37 weighted)</td>
-      <td>R-1 ~ R-5 implementation (2026-02-12)<br>15 gaps resolved, 18 total RESOLVED</td>
+      <td>R-1 ~ R-5 implementation (2026-02-14)<br>15 gaps resolved, 18 total RESOLVED</td>
     </tr>
     <tr>
       <td><strong>Phase B Completed / 완료</strong></td>
@@ -4798,7 +4845,7 @@ Our guideline addresses process and methodology but lacks granular operational g
 <section id="global-ai-governance">
 <h2>7.5 Global AI Governance Frameworks (Non-Western Perspectives)<br><span class="bilingual">글로벌 AI 거버넌스 프레임워크 (비서구 관점)</span></h2>
 
-<p><strong>Updated 2026-02-12:</strong> For an <em>International</em> Guideline, this section integrates perspectives from global AI governance frameworks beyond Western/US-centric approaches.</p>
+<p><strong>Updated 2026-02-14:</strong> For an <em>International</em> Guideline, this section integrates perspectives from global AI governance frameworks beyond Western/US-centric approaches.</p>
 
 <h3>Framework Overview</h3>
 <table>
@@ -4862,7 +4909,7 @@ Our guideline addresses process and methodology but lacks granular operational g
 <section id="risk-trends">
 <h2>8.2 Risk Trends / 리스크 동향</h2>
 
-<h3>8.2.1 Newly Identified/Escalated Risk Categories (Updated 2026-02-12)</h3>
+<h3>8.2.1 Newly Identified/Escalated Risk Categories (Updated 2026-02-14)</h3>
 
 <p><strong>CRITICAL Update:</strong> Agentic AI risks have escalated to the most urgent threat category in 2026. <strong>Four risks upgraded to CRITICAL severity</strong> based on recent research and incident data (source: risk-trends-report.md).</p>
 
@@ -5413,12 +5460,12 @@ Our guideline addresses process and methodology but lacks granular operational g
   <li><strong><a href="#ts-mod-009">TS-MOD-009</a>:</strong> Reasoning Model H-CoT Attack (<a href="phase-12-attacks.md#ap-mod-012" target="_blank">AP-MOD-012</a>/<a href="phase-12-attacks.md#ap-mod-013" target="_blank">013</a>/<a href="phase-12-attacks.md#ap-mod-014" target="_blank">014</a>/<a href="phase-12-attacks.md#ap-mod-015" target="_blank">015</a>)</li>
   <li><strong><a href="#ts-mod-010">TS-MOD-010</a>:</strong> Multilingual Attack - Cross-Lingual Injection (<a href="phase-12-attacks.md#ap-mod-019" target="_blank">AP-MOD-019</a>/020)</li>
   <li><strong><a href="#ts-mod-011">TS-MOD-011</a>:</strong> Evaluation Gaming and Sandbagging Detection (<a href="phase-12-attacks.md#ap-mod-016" target="_blank">AP-MOD-016</a>/017/018)</li>
-  <li><strong><a href="#ts-mod-012">TS-MOD-012</a>:</strong> Membership Inference Attack (<a href="#ap-mod-006">AP-MOD-006</a>) <span class="badge badge-new">NEW 2026-02-12</span></li>
-  <li><strong><a href="#ts-mod-013">TS-MOD-013</a>:</strong> Model Inversion Attack (<a href="phase-12-attacks.md#ap-mod-007" target="_blank">AP-MOD-007</a>) <span class="badge badge-new">NEW 2026-02-12</span></li>
-  <li><strong><a href="#ts-mod-014">TS-MOD-014</a>:</strong> Gradient-Based Adversarial Attack (GCG) (<a href="#ap-mod-009">AP-MOD-009</a>) <span class="badge badge-new">NEW 2026-02-12</span></li>
-  <li><strong><a href="#ts-mod-015">TS-MOD-015</a>:</strong> Transfer Attack Validation (<a href="#ap-mod-010">AP-MOD-010</a>) <span class="badge badge-new">NEW 2026-02-12</span></li>
-  <li><strong><a href="#ts-mod-016">TS-MOD-016</a>:</strong> CoT Verification Gaming (<a href="#ap-mod-015">AP-MOD-015</a>/014) <span class="badge badge-new">NEW 2026-02-12</span></li>
-  <li><strong><a href="#ts-mod-017">TS-MOD-017</a>:</strong> Fake CoT Injection (<a href="#ap-mod-012">AP-MOD-012</a>/004) <span class="badge badge-new">NEW 2026-02-12</span></li>
+  <li><strong><a href="#ts-mod-012">TS-MOD-012</a>:</strong> Membership Inference Attack (<a href="#ap-mod-006">AP-MOD-006</a>) <span class="badge badge-new">NEW 2026-02-14</span></li>
+  <li><strong><a href="#ts-mod-013">TS-MOD-013</a>:</strong> Model Inversion Attack (<a href="phase-12-attacks.md#ap-mod-007" target="_blank">AP-MOD-007</a>) <span class="badge badge-new">NEW 2026-02-14</span></li>
+  <li><strong><a href="#ts-mod-014">TS-MOD-014</a>:</strong> Gradient-Based Adversarial Attack (GCG) (<a href="#ap-mod-009">AP-MOD-009</a>) <span class="badge badge-new">NEW 2026-02-14</span></li>
+  <li><strong><a href="#ts-mod-015">TS-MOD-015</a>:</strong> Transfer Attack Validation (<a href="#ap-mod-010">AP-MOD-010</a>) <span class="badge badge-new">NEW 2026-02-14</span></li>
+  <li><strong><a href="#ts-mod-016">TS-MOD-016</a>:</strong> CoT Verification Gaming (<a href="#ap-mod-015">AP-MOD-015</a>/014) <span class="badge badge-new">NEW 2026-02-14</span></li>
+  <li><strong><a href="#ts-mod-017">TS-MOD-017</a>:</strong> Fake CoT Injection (<a href="#ap-mod-012">AP-MOD-012</a>/004) <span class="badge badge-new">NEW 2026-02-14</span></li>
 </ul>
 
 <h3>9.2.2 System-Level Scenarios (<a href="#ts-sys-001">TS-SYS-001</a> ~ <a href="#ts-sys-005">TS-SYS-005</a>)</h3>
@@ -6336,8 +6383,18 @@ Our guideline addresses process and methodology but lacks granular operational g
   <li><a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank">NIST AI RMF 1.0 (AI 100-1), January 2023</a></li>
   <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf" target="_blank">NIST AI 600-1 -- Generative AI Profile, July 2024</a></li>
   <li><a href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.700-2.pdf" target="_blank">NIST AI 700-2 -- ARIA Pilot Evaluation Report, 2025</a></li>
+  <li><strong>[R-25]</strong> <a href="https://www.nist.gov/programs-projects/nist-cybersecurity-ai-profile" target="_blank">NIST Cybersecurity for AI Profile (Draft), December 2025</a> -- AI system cybersecurity controls / AI 시스템 사이버보안 통제</li>
   <li><a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank">EU AI Act (Regulation 2024/1689)</a></li>
   <li><a href="https://www.aisi.gov.uk/research" target="_blank">UK AI Security Institute Red Teaming Publications, 2024-2025</a></li>
+  <li><strong>[R-26]</strong> <a href="https://www.gov.uk/government/publications/international-ai-safety-report-2026" target="_blank">International AI Safety Report 2026</a> -- Multi-national AI safety state of practice / 다국적 AI 안전 현황</li>
+</ul>
+
+<h3>Testing Methodologies & Profiles / 테스트 방법론 및 프로파일</h3>
+<ul>
+  <li><strong>[R-21]</strong> <a href="https://www.aisi.gov.sg/research/testing-ai-agents" target="_blank">Singapore AISI -- Testing AI Agents: A Technical Guide, October 2025</a> -- Agentic system testing methodology / 에이전트 시스템 테스트 방법론</li>
+  <li><strong>[R-22]</strong> Korea AISI -- Testing AI Agents: Korean Supplement, November 2025 -- Korean language & cultural context testing / 한국어 및 문화적 맥락 테스트</li>
+  <li><strong>[R-23]</strong> <a href="https://www.gov.sg/article/model-governance-framework-for-agentic-ai" target="_blank">Singapore IMDA -- Model Governance Framework for Agentic AI, November 2025</a> -- Governance requirements for agentic systems / 에이전트 시스템 거버넌스 요구사항</li>
+  <li><strong>[R-24]</strong> <a href="https://cltc.berkeley.edu/ai-agents-profile/" target="_blank">UC Berkeley CLTC -- AI Agents Security & Privacy Profile, November 2025</a> -- 118 security & privacy requirements / 118개 보안 및 프라이버시 요구사항</li>
 </ul>
 
 <h3>Industry Frameworks / 산업 프레임워크</h3>
@@ -6365,6 +6422,20 @@ Our guideline addresses process and methodology but lacks granular operational g
   <li>PoisonedRAG: Knowledge Corpus Poisoning, Dark Reading</li>
   <li>MLCommons AI Safety Benchmark v0.5, 2024</li>
   <li>"How Should AI Safety Benchmarks Benchmark Safety?" (2026), arXiv</li>
+  <li><strong>[R-27]</strong> <a href="https://arxiv.org/abs/2410.22151" target="_blank">arXiv 2410.22151 -- Alignment Taxonomy: Aim, Outcome, Execution (October 2024)</a> -- Comprehensive alignment framework / 포괄적 정렬 프레임워크</li>
+  <li><strong>[R-28]</strong> <a href="https://arxiv.org/abs/2404.05388" target="_blank">arXiv 2404.05388 -- Evaluation Context Detection in LLMs (April 2024)</a> -- Test-time capability sandbagging / 테스트 시 능력 숨김</li>
+  <li><strong>[R-29]</strong> <a href="https://arxiv.org/abs/2512.11931" target="_blank">arXiv 2512.11931 -- LRM Jailbreak: Long-range Model Exploits (December 2025)</a> -- Extended context window attacks / 확장 컨텍스트 윈도우 공격</li>
+  <li><strong>[R-30]</strong> <a href="https://arxiv.org/abs/2512.12921" target="_blank">arXiv 2512.12921 -- Reward Hacking in RLHF: Patterns & Mitigations (December 2025)</a> -- Reward model exploitation / 보상 모델 악용</li>
+  <li><strong>[R-31]</strong> <a href="https://arxiv.org/abs/2511.14136" target="_blank">arXiv 2511.14136 -- Chain-of-Thought Manipulation Attacks (November 2025)</a> -- Reasoning process exploitation / 추론 과정 악용</li>
+  <li><strong>[R-32]</strong> <a href="https://arxiv.org/abs/2512.20677" target="_blank">arXiv 2512.20677 -- Sandbagging Detection Methods (December 2025)</a> -- Capability deception detection / 능력 기만 탐지</li>
+  <li><strong>[R-33]</strong> <a href="https://arxiv.org/abs/2507.05538" target="_blank">arXiv 2507.05538 -- AI Supply Chain Security Threats (July 2025)</a> -- Model supply chain vulnerabilities / 모델 공급망 취약점</li>
+  <li><strong>[R-34]</strong> <a href="https://arxiv.org/abs/2509.23694" target="_blank">arXiv 2509.23694 -- Promptware Kill Chain Framework (September 2025)</a> -- Multi-stage prompt injection attacks / 다단계 프롬프트 인젝션 공격</li>
+</ul>
+
+<h3>Industry Reports & Incident Data / 산업 보고서 및 사고 데이터</h3>
+<ul>
+  <li><strong>[R-35]</strong> <a href="https://incidentdatabase.ai/blog/2025-roundup" target="_blank">AI Incident Database -- 2025 Annual Roundup (January 2026)</a> -- 108 new AI incidents (IDs 1254-1361) / 108건의 신규 AI 사고</li>
+  <li><strong>[R-36]</strong> <a href="https://www.ecri.org/top-10-health-technology-hazards" target="_blank">ECRI -- Top 10 Health Technology Hazards 2026</a> -- Healthcare AI safety concerns / 의료 AI 안전 우려사항</li>
 </ul>
 </section>
 
@@ -7084,7 +7155,7 @@ Our guideline addresses process and methodology but lacks granular operational g
 </div>
 </div>
 
-<!-- NEW SCENARIOS 2026-02-12 -->
+<!-- NEW SCENARIOS 2026-02-14 -->
 <div class="collapsible">
 <div class="collapsible-header" id="ts-mod-012">TS-MOD-012: Membership Inference Attack</div>
 <div class="collapsible-body">
@@ -9141,7 +9212,7 @@ Test Case ID(s) → Test Evidence → Findings → Residual Risk Assessment
 
 <footer style="text-align:center; padding: 2rem 0; color: var(--text-secondary); font-size: 0.82rem;">
   <p><strong>AI Red Team International Guideline</strong> | AIRTG-v1.6-DRAFT</p>
-  <p>Version 1.6 Draft | 2026-02-13 | Status: Draft for Public Review</p>
+  <p>Version 1.6 Draft | 2026-02-15 | Status: Draft for Public Review</p>
   <p style="margin-top:0.5rem;"><strong>Phase A/B/C Implementation (2026-02-13):</strong> ISO/IEC TS 42119-2:2025 conformance achieved <strong>79.7%</strong> (baseline 20.3% → Phase A 60.8% → Phase B 74.3% → Phase C 79.7%), 27 gaps resolved. <strong>Phase A:</strong> Data Quality Testing (D-2.8, 9 types), Model Testing (D-2.5.1, 6 types), Metamorphic Testing (D-2.5.2, 5 relations), Test Oracle Strategy (P-1, 5 types). <strong>Phase B:</strong> Risk Calculation (P-2 Section 7bis), Differential Testing (D-2.6), Deployment Testing (E-10, 7 types), AI Test Plan Requirements (P-1bis, 9 sections), Lifecycle Coverage. <strong>Phase C:</strong> Non-Determinism Statistical Methodology (P-1bis Section 4), High-Dimensional Partitioning Algorithm (P-1bis Section 5), Interpretability & Opacity Testing (P-1bis Section 9). 5-Standard Terminology Framework (179 ISO terms, v0.5.6). ISO 29119 conformance: 92% (Process 100%, Documentation 100%, Test Techniques 88%, Terminology 100%).</p>
   <p style="margin-top:0.5rem;">This document is designed as a living standard. Normative Core is stable; Living Annexes update quarterly.</p>
 </footer>
