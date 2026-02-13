@@ -266,6 +266,7 @@ a { color: var(--accent); }
     <a href="#ref-inventory">Reference Inventory</a>
     <a href="#gap-analysis">Gap Analysis</a>
     <a href="#terminology">Core Terminology</a>
+    <a href="#rosetta-stone" style="padding-left:1.5em;">3.13 Rosetta Stone Mapping</a>
     <a href="#scope-definition">Scope Definition</a>
     <a href="#stakeholders">Stakeholders</a>
     <a href="#diff-matrix">Differentiation Matrix</a>
@@ -381,7 +382,7 @@ a { color: var(--accent); }
   <li><strong>Reference document analysis</strong> (Part VII) synthesizing Japan AISI, OWASP GenAI, and CSA Agentic AI guides into 19 modification proposals (9 essential, 7 recommended, 3 reference), achieving <strong>100% OWASP Agentic AI Top 10 coverage</strong> (all ASI01-ASI10 security issues addressed in Phase 1-2 attack patterns).</li>
   <li><strong>Research &amp; risk trends</strong> (Part VIII) covering 35+ academic papers with 8 new attack techniques identified through pipeline integration and <strong>108 new AI incidents</strong> (IDs 1254-1361, Sept 2025 -- Feb 2026). <strong>13 new/escalated risks identified:</strong> 4 CRITICAL (Evaluation Context Detection, Supply Chain Compromise, LRM Jailbreak, Promptware Kill Chain), 6 HIGH (Healthcare AI Misuse, Cybersecurity Tool Exploitation, Autonomous Vehicle Failures, Multi-Agent Coordination Attacks, Reward Hacking, Deceptive Alignment), 3 MEDIUM-HIGH (Cross-lingual Safety Gaps, Chain-of-Thought Manipulation, Model Collapse). MIT AI Risk Repository updated to v4 (25 subdomains, up from 24). All 5 Annex D update triggers met.</li>
   <li><strong>Test scenarios &amp; validation</strong> (Part IX) providing <strong>26 ISO/IEC 29119-compliant test scenarios</strong> achieving <strong>100% attack pattern reference accuracy</strong> (improved from 35%), 12 detailed test cases, domain-specific scenarios (Automotive, Healthcare, Financial Services), coverage matrix, benchmark-aided testing guidance (2,375 benchmarks analyzed), and gap analysis confirming 5/6 stages feasible (updated 2026-02-14).</li>
-  <li><strong>Collaboration pipeline validation</strong> (v1.6) demonstrating end-to-end agent collaboration: academic research → risk analysis + attack analysis → benchmark dataset matching → testing feasibility assessment, with 29119 conformance monitoring and <strong>5-Standard ISO Terminology Framework</strong> (179 unique terms from 5 ISO standards).</li>
+  <li><strong>Collaboration pipeline validation</strong> (v1.6) demonstrating end-to-end agent collaboration: academic research → risk analysis + attack analysis → benchmark dataset matching → testing feasibility assessment, with 29119 conformance monitoring and <strong>5-Standard ISO Terminology Framework</strong> (179 unique terms from 5 ISO standards) <strong>plus Rosetta Stone cross-framework mapping</strong> (21 key terms mapped across 7 frameworks: ISO/IEC 42119-2, 29119-1, NIST AI RMF, OWASP/MITRE, EU AI Act, Academia/Industry).</li>
 </ul>
 
 <blockquote>
@@ -477,6 +478,9 @@ a { color: var(--accent); }
 <!-- Terminology -->
 <section id="terminology">
 <h2>3. Core Terminology / 핵심 용어 정의</h2>
+
+<p class="bilingual">This section defines 179+ unique terms from 5 ISO standards (ISO/IEC TS 42119-2:2025, 29119-1:2022, DIS 27090, 22989 AMD1:2025, 22989:2022) plus emergent AI security terminology. <strong>Section 3.13 provides a Rosetta Stone</strong> mapping 21 key terms across 7 frameworks (ISO/IEC, NIST AI RMF, OWASP, MITRE, EU AI Act) to facilitate cross-framework interpretation and standards harmonization.<br>
+이 섹션은 5개 ISO 표준의 179개 이상의 고유 용어와 신흥 AI 보안 용어를 정의합니다. <strong>섹션 3.13은 Rosetta Stone을</strong> 제공하여 7개 프레임워크에 걸쳐 21개 핵심 용어를 매핑합니다.</p>
 
 <h3>3.1 AI System vs AI Model vs AI Application</h3>
 <table>
@@ -1076,6 +1080,268 @@ ISO/IEC 29119와 정렬된 테스트 관리 및 문서화 용어:</p>
       <strong>Coverage:</strong> AI concepts, GenAI, AI security, software testing, AI-specific testing
     </blockquote>
 
+    <!-- Rosetta Stone: Cross-Framework Terminology Mapping -->
+    <h3 id="rosetta-stone" style="margin-top: 2rem;">3.13 Rosetta Stone: Cross-Framework Terminology Mapping / 프레임워크 간 용어 매핑</h3>
+
+    <blockquote>
+      <strong>Purpose:</strong> This section provides equivalence mappings for key AI security testing terms across multiple frameworks to facilitate cross-framework interpretation and standards harmonization. When the same concept is described using different terminology across frameworks, this table identifies the canonical term used in this guideline and its equivalents in other standards.
+    </blockquote>
+
+    <h4>Standards Conflict Resolution Protocol / 표준 충돌 해결 프로토콜</h4>
+
+    <p>When requirements or terminology conflict across standards, apply the following <strong>precedence hierarchy</strong>:</p>
+
+    <ol>
+      <li><strong>Legal Requirements</strong> (e.g., EU AI Act, sector-specific regulations) - Mandatory compliance</li>
+      <li><strong>Contractual Obligations</strong> (e.g., customer-specific requirements, SLAs)</li>
+      <li><strong>International Standards</strong> (e.g., ISO/IEC 42119, 29119, 22989) - Normative guidance</li>
+      <li><strong>Regional/National Standards</strong> (e.g., NIST AI RMF for US deployments)</li>
+      <li><strong>Industry Best Practices</strong> (e.g., OWASP, MITRE ATLAS, MLCommons)</li>
+    </ol>
+
+    <p><strong>Conflict Documentation:</strong> When a conflict arises, document: (1) Conflicting requirements explicitly, (2) Which requirement takes precedence and why, (3) How non-prioritized requirement is addressed (if at all).</p>
+
+    <h4>Cross-Framework Terminology Equivalence Table / 프레임워크 간 용어 동치 테이블</h4>
+
+    <table style="font-size: 0.80rem;">
+      <thead>
+        <tr>
+          <th style="width: 15%;">This Guideline<br>(Canonical Term)</th>
+          <th style="width: 15%;">ISO/IEC 42119-2:2025</th>
+          <th style="width: 15%;">ISO/IEC 29119-1:2022</th>
+          <th style="width: 14%;">NIST AI RMF</th>
+          <th style="width: 14%;">OWASP / MITRE</th>
+          <th style="width: 13%;">EU AI Act</th>
+          <th style="width: 14%;">Other Sources</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Core Testing Concepts -->
+        <tr>
+          <td><strong>AI Red Teaming</strong></td>
+          <td>Testing of AI Systems</td>
+          <td>Testing</td>
+          <td>Red-teaming, Adversarial Testing</td>
+          <td>AI Security Testing (OWASP)</td>
+          <td>Conformity Assessment</td>
+          <td>Model Evaluation (Academia)</td>
+        </tr>
+        <tr>
+          <td><strong>Attack Pattern</strong></td>
+          <td>Test Technique</td>
+          <td>Test Design Technique</td>
+          <td>Threat Scenario</td>
+          <td>Attack Pattern (MITRE ATLAS), Vulnerability Class (OWASP)</td>
+          <td>Risk Source</td>
+          <td>Adversarial Example (Academia)</td>
+        </tr>
+        <tr>
+          <td><strong>Test Scenario</strong></td>
+          <td>AI-specific Test Scenario</td>
+          <td>Test Case Specification</td>
+          <td>Test Case</td>
+          <td>Test Procedure (OWASP)</td>
+          <td>Testing Protocol</td>
+          <td>Benchmark Task (MLCommons)</td>
+        </tr>
+        <tr>
+          <td><strong>Test Oracle</strong></td>
+          <td>Test Oracle</td>
+          <td>Test Oracle</td>
+          <td>Ground Truth, Evaluation Metric</td>
+          <td>Detection Logic (OWASP)</td>
+          <td>Conformity Criterion</td>
+          <td>LLM-as-a-Judge (Academia)</td>
+        </tr>
+
+        <!-- Attack-Specific Terms -->
+        <tr>
+          <td><strong>Prompt Injection</strong></td>
+          <td>Prompt Manipulation</td>
+          <td>(No equivalent)</td>
+          <td>Adversarial Input</td>
+          <td>LLM01 Prompt Injection (OWASP), AML.T0051 (MITRE)</td>
+          <td>Adversarial Manipulation</td>
+          <td>System Prompt Bypass (Industry)</td>
+        </tr>
+        <tr>
+          <td><strong>Jailbreak</strong></td>
+          <td>Safety Guardrail Bypass</td>
+          <td>(No equivalent)</td>
+          <td>Constraint Violation</td>
+          <td>LLM01 variant (OWASP), AML.T0051 (MITRE)</td>
+          <td>Misuse Risk</td>
+          <td>Alignment Failure (Academia)</td>
+        </tr>
+        <tr>
+          <td><strong>Goal Hijacking</strong></td>
+          <td>Objective Manipulation</td>
+          <td>(No equivalent)</td>
+          <td>System Misuse</td>
+          <td>ASI01 Agent Goal Hijack (OWASP)</td>
+          <td>Unintended Purpose</td>
+          <td>Reward Hacking (RL Literature)</td>
+        </tr>
+        <tr>
+          <td><strong>Indirect Prompt Injection</strong></td>
+          <td>External Input Injection</td>
+          <td>(No equivalent)</td>
+          <td>Supply Chain Attack</td>
+          <td>LLM01 (indirect) (OWASP), AML.T0051.001 (MITRE)</td>
+          <td>Data Poisoning</td>
+          <td>Cross-Plugin Attack (Industry)</td>
+        </tr>
+
+        <!-- System Architecture Terms -->
+        <tr>
+          <td><strong>Model-Level Testing</strong></td>
+          <td>AI System Component Testing</td>
+          <td>Component Testing</td>
+          <td>Model Evaluation</td>
+          <td>Model Testing (OWASP)</td>
+          <td>System Testing (Technical Documentation)</td>
+          <td>Unit Testing (ML Engineering)</td>
+        </tr>
+        <tr>
+          <td><strong>System-Level Testing</strong></td>
+          <td>AI System Testing</td>
+          <td>System Testing</td>
+          <td>Integrated Testing</td>
+          <td>Application Testing (OWASP)</td>
+          <td>Conformity Assessment</td>
+          <td>End-to-End Testing (Industry)</td>
+        </tr>
+        <tr>
+          <td><strong>Agentic AI System</strong></td>
+          <td>Autonomous AI System</td>
+          <td>(No equivalent)</td>
+          <td>AI Actor</td>
+          <td>AI Agent (OWASP ASI)</td>
+          <td>Autonomous System (Annex III)</td>
+          <td>LLM Agent (Academia)</td>
+        </tr>
+        <tr>
+          <td><strong>Tool-Use Attack</strong></td>
+          <td>External Interface Attack</td>
+          <td>(No equivalent)</td>
+          <td>Function Misuse</td>
+          <td>ASI02 Tool Misuse (OWASP)</td>
+          <td>Third-Party Risk</td>
+          <td>API Exploitation (Industry)</td>
+        </tr>
+
+        <!-- Risk and Safety Terms -->
+        <tr>
+          <td><strong>Attack Success Rate (ASR)</strong></td>
+          <td>Defect Detection Percentage</td>
+          <td>Test Effectiveness Metric</td>
+          <td>Failure Rate</td>
+          <td>Success Metric (OWASP)</td>
+          <td>Risk Level Indicator</td>
+          <td>Robustness Metric (Academia)</td>
+        </tr>
+        <tr>
+          <td><strong>Safety Testing</strong></td>
+          <td>Robustness Testing</td>
+          <td>Quality Characteristic Testing</td>
+          <td>Safety Evaluation</td>
+          <td>Security Testing (OWASP)</td>
+          <td>Risk Assessment</td>
+          <td>Alignment Testing (Academia)</td>
+        </tr>
+        <tr>
+          <td><strong>Risk Profile</strong></td>
+          <td>Risk Assessment</td>
+          <td>(No equivalent)</td>
+          <td>Risk Tier, Risk Level</td>
+          <td>Threat Model (OWASP/MITRE)</td>
+          <td>Risk Level (Article 6-7)</td>
+          <td>Failure Mode (FMEA)</td>
+        </tr>
+        <tr>
+          <td><strong>Emergent Capability</strong></td>
+          <td>Unintended Behavior</td>
+          <td>(No equivalent)</td>
+          <td>Capability Jump</td>
+          <td>(No equivalent)</td>
+          <td>Unforeseen Behavior</td>
+          <td>Scaling Law (Academia)</td>
+        </tr>
+
+        <!-- Process and Roles -->
+        <tr>
+          <td><strong>Red Team Lead</strong></td>
+          <td>Test Manager</td>
+          <td>Test Manager</td>
+          <td>Evaluation Lead</td>
+          <td>Security Lead (OWASP)</td>
+          <td>Conformity Assessment Body</td>
+          <td>Principal Investigator (Academia)</td>
+        </tr>
+        <tr>
+          <td><strong>Test Environment</strong></td>
+          <td>Test Environment</td>
+          <td>Test Environment</td>
+          <td>Evaluation Infrastructure</td>
+          <td>Lab Environment (OWASP)</td>
+          <td>Testing Facility</td>
+          <td>Sandbox (Industry)</td>
+        </tr>
+        <tr>
+          <td><strong>Test Coverage</strong></td>
+          <td>Test Coverage</td>
+          <td>Test Coverage</td>
+          <td>Evaluation Scope</td>
+          <td>Attack Surface Coverage (OWASP)</td>
+          <td>Compliance Coverage</td>
+          <td>Benchmark Coverage (Academia)</td>
+        </tr>
+
+        <!-- Evaluation and Metrics -->
+        <tr>
+          <td><strong>LLM-as-a-Judge</strong></td>
+          <td>Automated Test Oracle</td>
+          <td>Test Automation</td>
+          <td>Automated Evaluation</td>
+          <td>(No equivalent)</td>
+          <td>(No equivalent)</td>
+          <td>Model-based Evaluation (Academia)</td>
+        </tr>
+        <tr>
+          <td><strong>Benchmark</strong></td>
+          <td>Standardized Test</td>
+          <td>Test Suite</td>
+          <td>Standard Evaluation</td>
+          <td>Test Suite (OWASP)</td>
+          <td>Harmonized Standard</td>
+          <td>Dataset (MLCommons)</td>
+        </tr>
+        <tr>
+          <td><strong>Test Data</strong></td>
+          <td>Test Input</td>
+          <td>Test Data</td>
+          <td>Evaluation Dataset</td>
+          <td>Test Cases (OWASP)</td>
+          <td>Testing Data</td>
+          <td>Prompt Set (Industry)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4 style="margin-top: 1.5rem;">Usage Guidelines / 사용 지침</h4>
+
+    <ul>
+      <li><strong>Primary Term Selection:</strong> This guideline uses the "Canonical Term" (column 1) throughout all phases and appendices for consistency.</li>
+      <li><strong>Cross-Framework Interpretation:</strong> When referencing external standards, use this table to identify equivalent concepts. For example, "Test Technique" in ISO/IEC 42119-2 corresponds to "Attack Pattern" in this guideline.</li>
+      <li><strong>Conflict Resolution:</strong> When multiple frameworks define the same concept differently, apply the precedence hierarchy above. Document the chosen interpretation in test plans.</li>
+      <li><strong>New Term Additions:</strong> As new standards emerge (e.g., ISO/IEC 27090, ISO/IEC 22989 AMD 2), update this table to maintain harmonization.</li>
+      <li><strong>Non-Equivalent Concepts:</strong> "(No equivalent)" indicates the source framework does not explicitly define this concept. In such cases, use the canonical term with a brief explanation when citing that framework.</li>
+    </ul>
+
+    <blockquote style="margin-top: 1rem;">
+      <strong>Maintenance Note:</strong> This Rosetta Stone is a living document. As AI security testing standards evolve (especially ISO/IEC TS 42119-2, NIST AI 600-1, and OWASP ASI), terminology mappings should be reviewed and updated annually to reflect the latest standardization efforts.
+    </blockquote>
+
   </div></div>
 </div>
 
@@ -1263,21 +1529,419 @@ ISO/IEC 29119와 정렬된 테스트 관리 및 문서화 용어:</p>
 <h2>2. System-Level Attack Patterns / 시스템 수준 공격 패턴</h2>
 
 <h3>2.1 Agentic System Risks (OWASP Agentic Top 10) / 에이전틱 시스템 위험</h3>
+
+<p class="bilingual"><strong>Source:</strong> OWASP Agentic Security Initiative (ASI), December 2025 [R-13]<br>
+The OWASP Agentic AI Top 10 represents the highest-impact security threats to agentic AI systems. Click each item to expand for detailed attack techniques, scenarios, and testing guidance.<br>
+<strong>출처:</strong> OWASP 에이전틱 보안 이니셔티브, 2025년 12월 [R-13]<br>
+OWASP 에이전틱 AI Top 10은 에이전틱 AI 시스템에 대한 가장 영향력 있는 보안 위협을 나타냅니다. 각 항목을 클릭하여 상세한 공격 기법, 시나리오 및 테스트 지침을 확인하세요.</p>
+
+<h4>Overview Table / 개요 테이블</h4>
 <table>
-<thead><tr><th>ID</th><th>Risk</th><th>Attack Pattern</th></tr></thead>
+<thead><tr><th>ID</th><th>Risk</th><th>Severity</th><th>Layer</th></tr></thead>
 <tbody>
-<tr><td>ASI01</td><td>Agent Goal Hijack</td><td>Manipulating agent objectives through prompt injection or goal drift</td></tr>
-<tr><td>ASI02</td><td>Tool Misuse & Exploitation</td><td>Agent uses legitimate tools in unsafe ways through chaining</td></tr>
-<tr><td>ASI03</td><td>Identity & Privilege Abuse</td><td>Leaked credentials or confused deputy scenarios</td></tr>
-<tr><td>ASI04</td><td>Agentic Supply Chain Vulnerabilities</td><td>Compromised tools, models, or dependencies in agent ecosystem</td></tr>
-<tr><td>ASI05</td><td>Unexpected Code Execution (RCE)</td><td>Arbitrary code execution via tool misuse or injection vulnerabilities</td></tr>
-<tr><td>ASI06</td><td>Memory & Context Poisoning</td><td>Corrupting agent memory, RAG systems, or persistent context</td></tr>
-<tr><td>ASI07</td><td>Insecure Inter-Agent Communication</td><td>Unverified messages between agents enabling trust exploitation</td></tr>
-<tr><td>ASI08</td><td>Cascading Failures</td><td>Error propagation across agent chains causing system-wide failures</td></tr>
-<tr><td>ASI09</td><td>Human-Agent Trust Exploitation</td><td>Social engineering via trusted agent interfaces</td></tr>
-<tr><td>ASI10</td><td>Rogue Agents</td><td>Persistent deviation from intended behavior due to compromise or drift</td></tr>
+<tr><td>ASI01</td><td>Agent Goal Hijack</td><td><span class="badge badge-critical">CRITICAL</span></td><td>Model + System</td></tr>
+<tr><td>ASI02</td><td>Tool Misuse & Exploitation</td><td><span class="badge badge-critical">CRITICAL</span></td><td>System</td></tr>
+<tr><td>ASI03</td><td>Identity & Privilege Abuse</td><td><span class="badge badge-high">HIGH</span></td><td>System</td></tr>
+<tr><td>ASI04</td><td>Agentic Supply Chain Vulnerabilities</td><td><span class="badge badge-high">HIGH</span></td><td>System</td></tr>
+<tr><td>ASI05</td><td>Unexpected Code Execution (RCE)</td><td><span class="badge badge-critical">CRITICAL</span></td><td>System</td></tr>
+<tr><td>ASI06</td><td>Memory & Context Poisoning</td><td><span class="badge badge-high">HIGH</span></td><td>System</td></tr>
+<tr><td>ASI07</td><td>Insecure Inter-Agent Communication</td><td><span class="badge badge-medium">MEDIUM-HIGH</span></td><td>System</td></tr>
+<tr><td>ASI08</td><td>Cascading Failures</td><td><span class="badge badge-medium">MEDIUM-HIGH</span></td><td>System + Socio-Tech</td></tr>
+<tr><td>ASI09</td><td>Human-Agent Trust Exploitation</td><td><span class="badge badge-medium">MEDIUM</span></td><td>Socio-Technical</td></tr>
+<tr><td>ASI10</td><td>Rogue Agents</td><td><span class="badge badge-high">HIGH</span></td><td>System + Socio-Tech</td></tr>
 </tbody>
 </table>
+
+<h4>Detailed Attack Patterns / 상세 공격 패턴</h4>
+
+<!-- ASI01 -->
+<div class="collapsible">
+<div class="collapsible-header" id="asi01">ASI01: Agent Goal Hijack <span class="badge badge-critical">CRITICAL</span></div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+
+<p><strong>Description:</strong> Attackers manipulate an agent's objectives, task selection, or decision pathways through prompt-based manipulation, deceptive tool outputs, malicious artifacts, forged agent-to-agent messages, or poisoned external data. Unlike simple prompt injection (LLM01:2025), this attack redirects goals, planning, and multi-step behavior.</p>
+
+<p class="bilingual"><strong>설명:</strong> 공격자가 프롬프트 기반 조작, 기만적인 도구 출력, 악의적인 아티팩트, 위조된 에이전트 간 메시지 또는 오염된 외부 데이터를 통해 에이전트의 목표, 작업 선택 또는 결정 경로를 조작합니다.</p>
+
+<p><strong>Attack Techniques:</strong></p>
+<ol>
+  <li><strong>Direct Goal Manipulation</strong> - Injecting instructions that override the agent's original objective</li>
+  <li><strong>Indirect Goal Hijacking via Tool Outputs</strong> - Malicious tools return outputs containing instructions that redirect the agent</li>
+  <li><strong>Agent-to-Agent Message Forgery</strong> - In multi-agent systems, attacker crafts messages that appear to come from trusted agents</li>
+  <li><strong>External Data Poisoning</strong> - Manipulating web pages, documents, or databases that agents retrieve during execution</li>
+  <li><strong>Planning Phase Injection</strong> - Injecting instructions during the agent's planning/reasoning phase to alter subsequent steps</li>
+</ol>
+
+<p><strong>Example Attack Scenarios:</strong></p>
+<ul>
+  <li>Customer service agent redirected to exfiltrate customer data instead of resolving tickets</li>
+  <li>Financial agent manipulated to approve unauthorized transactions</li>
+  <li>Research agent tricked into retrieving attacker-controlled URLs containing malicious instructions</li>
+</ul>
+
+<p><strong>Testing Recommendations:</strong></p>
+<ul>
+  <li>Test Scenario: <strong>TS-SYS-001</strong> (Tool Misuse in Agentic Systems)</li>
+  <li>Inject goal-redirecting prompts at various stages (initialization, planning, execution)</li>
+  <li>Simulate malicious tool outputs containing goal manipulation instructions</li>
+  <li>Monitor for deviation from original objectives and unplanned actions</li>
+</ul>
+
+<p><strong>Related Attack Patterns:</strong> AP-AGT-001 (Agentic Goal Hijacking), AP-MOD-001 (Prompt Injection)</p>
+
+</div></div>
+</div>
+
+<!-- ASI02 -->
+<div class="collapsible">
+<div class="collapsible-header" id="asi02">ASI02: Tool Misuse and Exploitation <span class="badge badge-critical">CRITICAL</span></div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+
+<p><strong>Description:</strong> Agents gain access to tools/APIs that they should not use, or use legitimate tools in unintended/unsafe ways. Attackers exploit weak tool permission boundaries, insufficient input validation, or lack of runtime sandboxing.</p>
+
+<p class="bilingual"><strong>설명:</strong> 에이전트가 사용해서는 안 되는 도구/API에 액세스하거나 정당한 도구를 의도하지 않은/안전하지 않은 방식으로 사용합니다.</p>
+
+<p><strong>Attack Techniques:</strong></p>
+<ol>
+  <li><strong>Tool Injection</strong> - Convincing agent to call attacker-controlled tools</li>
+  <li><strong>Parameter Manipulation</strong> - Altering tool parameters to cause unsafe behavior (SQL injection, command injection)</li>
+  <li><strong>Tool Chaining Exploits</strong> - Combining multiple tools in unexpected sequences to achieve unauthorized outcomes</li>
+  <li><strong>Permission Boundary Testing</strong> - Repeatedly invoking tools to discover and exploit authorization gaps</li>
+  <li><strong>Tool Output Manipulation</strong> - If attacker controls a tool's output, they can inject instructions back to the agent</li>
+</ol>
+
+<p><strong>Example Attack Scenarios:</strong></p>
+<ul>
+  <li>Code execution tool used to spawn reverse shell</li>
+  <li>Database tool manipulated to drop tables or exfiltrate data</li>
+  <li>Email tool abused to send phishing emails to entire contact list</li>
+  <li>File system tool used to delete critical system files</li>
+</ul>
+
+<p><strong>Testing Recommendations:</strong></p>
+<ul>
+  <li>Test Scenario: <strong>TS-SYS-001</strong> (Tool Misuse in Agentic Systems)</li>
+  <li>Test tool permission boundaries with escalating privilege requests</li>
+  <li>Inject SQL/command injection payloads into tool parameters</li>
+  <li>Monitor for unauthorized tool invocations and unexpected system state changes</li>
+</ul>
+
+<p><strong>Related Attack Patterns:</strong> AP-AGT-001 (Agentic Goal Hijacking), AP-SYS-002 (API Abuse)</p>
+
+</div></div>
+</div>
+
+<!-- ASI03 -->
+<div class="collapsible">
+<div class="collapsible-header" id="asi03">ASI03: Identity and Privilege Abuse <span class="badge badge-high">HIGH</span></div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+
+<p><strong>Description:</strong> Agents operate with excessive permissions, allowing attackers to abuse the agent's identity to access resources, perform actions, or impersonate users beyond the agent's intended scope.</p>
+
+<p class="bilingual"><strong>설명:</strong> 에이전트가 과도한 권한으로 작동하여 공격자가 에이전트의 신원을 악용하여 에이전트의 의도된 범위를 넘어 리소스에 액세스하거나 작업을 수행하거나 사용자를 가장할 수 있습니다.</p>
+
+<p><strong>Attack Techniques:</strong></p>
+<ol>
+  <li><strong>Privilege Escalation via Agent Identity</strong> - Exploiting an over-privileged agent to access restricted resources</li>
+  <li><strong>Cross-Tenant Access</strong> - Multi-tenant agents accessing data/resources from other tenants</li>
+  <li><strong>User Impersonation</strong> - Agent acting on behalf of users without proper authorization verification</li>
+  <li><strong>Token/Credential Theft</strong> - Stealing agent credentials to impersonate the agent offline</li>
+  <li><strong>Authority Boundary Bypass</strong> - Circumventing approval requirements for high-stakes actions</li>
+</ol>
+
+<p><strong>Example Attack Scenarios:</strong></p>
+<ul>
+  <li>HR agent with admin privileges used to access all employee records</li>
+  <li>Multi-tenant SaaS agent leaking data across customer boundaries</li>
+  <li>Agent bypassing human approval for financial transactions</li>
+  <li>Stolen agent API key used to invoke agent offline</li>
+</ul>
+
+<p><strong>Testing Recommendations:</strong></p>
+<ul>
+  <li>Test cross-tenant isolation in multi-tenant deployments</li>
+  <li>Verify least-privilege enforcement for agent identities</li>
+  <li>Test human-in-the-loop checkpoints for high-stakes actions</li>
+  <li>Monitor for privilege escalation attempts and unauthorized resource access</li>
+</ul>
+
+<p><strong>Related Attack Patterns:</strong> AP-AGT-002 (Excessive Agency)</p>
+
+</div></div>
+</div>
+
+<!-- ASI04 -->
+<div class="collapsible">
+<div class="collapsible-header" id="asi04">ASI04: Agentic Supply Chain Vulnerabilities <span class="badge badge-high">HIGH</span></div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+
+<p><strong>Description:</strong> Agents depend on third-party components (tools, plugins, models, APIs, libraries) that may be compromised, outdated, or malicious. Attackers exploit supply chain weaknesses to inject backdoors, exfiltrate data, or manipulate agent behavior.</p>
+
+<p class="bilingual"><strong>설명:</strong> 에이전트는 손상되었거나 오래되었거나 악의적일 수 있는 타사 구성 요소(도구, 플러그인, 모델, API, 라이브러리)에 의존합니다.</p>
+
+<p><strong>Attack Techniques:</strong></p>
+<ol>
+  <li><strong>Malicious Tool/Plugin Injection</strong> - Installing compromised tools that appear legitimate</li>
+  <li><strong>Dependency Confusion</strong> - Tricking agent into loading attacker-controlled package</li>
+  <li><strong>Model Backdoors</strong> - Using poisoned foundation models with embedded backdoors</li>
+  <li><strong>API Dependency Exploitation</strong> - Compromising third-party APIs that agents rely on</li>
+  <li><strong>Transitive Dependency Attacks</strong> - Exploiting vulnerabilities in dependencies of dependencies</li>
+</ol>
+
+<p><strong>Example Attack Scenarios:</strong></p>
+<ul>
+  <li>Agent downloads malicious "web scraper" tool from untrusted registry</li>
+  <li>Compromised API returns poisoned data that redirects agent behavior</li>
+  <li>Attacker publishes fake "langchain-pro" package that agents install</li>
+  <li>Foundation model backdoor activates when specific trigger prompt is used</li>
+</ul>
+
+<p><strong>Testing Recommendations:</strong></p>
+<ul>
+  <li>Verify tool provenance (signatures, checksums) for all loaded components</li>
+  <li>Test behavior with malicious tool responses</li>
+  <li>Monitor for unauthorized network connections and data exfiltration</li>
+  <li>Conduct supply chain security scanning (SBOM, vulnerability scanning)</li>
+</ul>
+
+<p><strong>Related Attack Patterns:</strong> AP-SYS-003 (Supply Chain Attack), [R-33] arXiv 2507.05538</p>
+
+</div></div>
+</div>
+
+<!-- ASI05 -->
+<div class="collapsible">
+<div class="collapsible-header" id="asi05">ASI05: Unexpected Code Execution (RCE) <span class="badge badge-critical">CRITICAL</span></div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+
+<p><strong>Description:</strong> Agents with code execution capabilities (Python REPL, shell access, code interpreters) can be exploited to execute arbitrary code, leading to system compromise, data exfiltration, or lateral movement.</p>
+
+<p class="bilingual"><strong>설명:</strong> 코드 실행 기능(Python REPL, 셸 액세스, 코드 인터프리터)을 가진 에이전트는 임의 코드 실행에 악용될 수 있습니다.</p>
+
+<p><strong>Attack Techniques:</strong></p>
+<ol>
+  <li><strong>Direct Code Injection</strong> - Injecting malicious code into agent's execution environment</li>
+  <li><strong>Indirect Code Execution via Tool Outputs</strong> - Malicious tool output triggers code execution</li>
+  <li><strong>Unsafe Deserialization</strong> - Exploiting deserialization vulnerabilities in agent's data handling</li>
+  <li><strong>Environment Variable Manipulation</strong> - Altering environment to load malicious libraries</li>
+  <li><strong>Shell Command Injection</strong> - Injecting OS commands when agent interacts with shell</li>
+</ol>
+
+<p><strong>Example Attack Scenarios:</strong></p>
+<ul>
+  <li>Coding assistant agent tricked into executing <code>os.system('rm -rf /')</code></li>
+  <li>Agent deserializes malicious pickle object containing reverse shell</li>
+  <li>Web scraping agent manipulated to execute JavaScript in headless browser</li>
+  <li>DevOps agent used to deploy backdoored container</li>
+</ul>
+
+<p><strong>Testing Recommendations:</strong></p>
+<ul>
+  <li>Test input sanitization before code execution</li>
+  <li>Verify sandboxing and containerization of execution environment</li>
+  <li>Monitor for unexpected processes, network connections, and file system changes</li>
+  <li>Test deserialization of untrusted data</li>
+</ul>
+
+<p><strong>Related Attack Patterns:</strong> AP-SYS-005 (Remote Code Execution)</p>
+
+</div></div>
+</div>
+
+<!-- ASI06 -->
+<div class="collapsible">
+<div class="collapsible-header" id="asi06">ASI06: Memory & Context Poisoning <span class="badge badge-high">HIGH</span></div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+
+<p><strong>Description:</strong> Agents use memory (short-term conversation history, long-term vector stores, RAG databases) that can be poisoned by attackers. Poisoned memory influences future agent decisions, leading to incorrect actions, data leakage, or goal redirection.</p>
+
+<p class="bilingual"><strong>설명:</strong> 에이전트는 공격자가 오염시킬 수 있는 메모리(단기 대화 기록, 장기 벡터 저장소, RAG 데이터베이스)를 사용합니다.</p>
+
+<p><strong>Attack Techniques:</strong></p>
+<ol>
+  <li><strong>RAG Poisoning</strong> - Injecting malicious documents into RAG databases</li>
+  <li><strong>Conversation History Manipulation</strong> - Polluting short-term memory with false information</li>
+  <li><strong>Vector Database Injection</strong> - Embedding adversarial vectors that trigger during similarity search</li>
+  <li><strong>Cross-Session Contamination</strong> - Leaking memory from one user session to another</li>
+  <li><strong>Memory Persistence Exploits</strong> - Exploiting long-term memory to maintain persistence across agent restarts</li>
+</ol>
+
+<p><strong>Example Attack Scenarios:</strong></p>
+<ul>
+  <li>Customer service agent retrieves poisoned FAQ document containing "exfiltrate data" instructions</li>
+  <li>Attacker injects false conversation history making agent believe user authorized sensitive action</li>
+  <li>Vector store poisoned with adversarial embeddings that match common queries</li>
+  <li>Multi-user agent leaks Session A's data into Session B's context</li>
+</ul>
+
+<p><strong>Testing Recommendations:</strong></p>
+<ul>
+  <li>Test Scenario: <strong>TS-SYS-002</strong> (RAG Knowledge Base Poisoning)</li>
+  <li>Inject malicious documents into RAG corpus and observe agent behavior</li>
+  <li>Test cross-session isolation in multi-user environments</li>
+  <li>Monitor for anomalous similarity search results and context contamination</li>
+</ul>
+
+<p><strong>Related Attack Patterns:</strong> AP-SYS-004 (RAG Poisoning), AP-MOD-005 (Indirect Prompt Injection)</p>
+
+</div></div>
+</div>
+
+<!-- ASI07 -->
+<div class="collapsible">
+<div class="collapsible-header" id="asi07">ASI07: Insecure Inter-Agent Communication <span class="badge badge-medium">MEDIUM-HIGH</span></div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+
+<p><strong>Description:</strong> In multi-agent systems, agents communicate via messages, APIs, or shared memory. Attackers exploit insecure communication channels to eavesdrop, inject messages, impersonate agents, or cause coordination failures.</p>
+
+<p class="bilingual"><strong>설명:</strong> 다중 에이전트 시스템에서 에이전트는 메시지, API 또는 공유 메모리를 통해 통신합니다. 공격자는 안전하지 않은 통신 채널을 악용합니다.</p>
+
+<p><strong>Attack Techniques:</strong></p>
+<ol>
+  <li><strong>Agent Message Injection</strong> - Crafting fake messages that appear to come from trusted agents</li>
+  <li><strong>Man-in-the-Middle (MITM) on Agent Communication</strong> - Intercepting and modifying inter-agent messages</li>
+  <li><strong>Agent Impersonation</strong> - Impersonating one agent to another agent</li>
+  <li><strong>Shared Memory Exploitation</strong> - Tampering with shared state/memory used by multiple agents</li>
+  <li><strong>Coordination Protocol Exploitation</strong> - Exploiting weaknesses in consensus or coordination protocols</li>
+</ol>
+
+<p><strong>Example Attack Scenarios:</strong></p>
+<ul>
+  <li>Attacker injects message from "Risk Analyst Agent" to "Trading Agent" approving risky trades</li>
+  <li>MITM attack modifies budget constraint message from Supervisor Agent to Worker Agent</li>
+  <li>Attacker impersonates Manager Agent to delegate malicious tasks to Worker Agents</li>
+  <li>Shared Redis cache poisoned with false data consumed by multiple agents</li>
+</ul>
+
+<p><strong>Testing Recommendations:</strong></p>
+<ul>
+  <li>Test message authentication between agents (verify lack of signatures)</li>
+  <li>Attempt MITM attacks on inter-agent communication channels</li>
+  <li>Test agent identity verification mechanisms</li>
+  <li>Monitor for message authentication failures and coordination anomalies</li>
+</ul>
+
+<p><strong>Related Attack Patterns:</strong> AP-AGT-003 (Multi-Agent Coordination Attacks)</p>
+
+</div></div>
+</div>
+
+<!-- ASI08 -->
+<div class="collapsible">
+<div class="collapsible-header" id="asi08">ASI08: Cascading Failures <span class="badge badge-medium">MEDIUM-HIGH</span></div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+
+<p><strong>Description:</strong> Failures in one agent or component propagate to other agents or systems, causing system-wide degradation or collapse. Attackers exploit tight coupling, lack of error handling, or insufficient circuit breakers.</p>
+
+<p class="bilingual"><strong>설명:</strong> 한 에이전트 또는 구성 요소의 장애가 다른 에이전트 또는 시스템으로 전파되어 시스템 전체의 저하 또는 붕괴를 일으킵니다.</p>
+
+<p><strong>Attack Techniques:</strong></p>
+<ol>
+  <li><strong>Failure Amplification</strong> - Triggering a failure in one agent that cascades to dependent agents</li>
+  <li><strong>Resource Exhaustion Cascade</strong> - Causing one agent to consume all resources, starving others</li>
+  <li><strong>Error Propagation</strong> - Exploiting lack of error handling to propagate failures across agents</li>
+  <li><strong>Circular Dependency Exploitation</strong> - Triggering deadlocks or infinite loops in agent dependencies</li>
+  <li><strong>Synchronous Blocking Attacks</strong> - Forcing agents to wait indefinitely for failed dependencies</li>
+</ol>
+
+<p><strong>Example Attack Scenarios:</strong></p>
+<ul>
+  <li>Overloading authentication agent causes all dependent agents to fail</li>
+  <li>Infinite loop in one agent consumes all API quota, blocking other agents</li>
+  <li>Error in RAG retrieval agent propagates unchecked, crashing orchestrator</li>
+  <li>Circular dependency: Agent A waits for Agent B, Agent B waits for Agent A</li>
+</ul>
+
+<p><strong>Testing Recommendations:</strong></p>
+<ul>
+  <li>Test failure scenarios in individual agents and monitor cascade effects</li>
+  <li>Verify circuit breakers and retry limits are in place</li>
+  <li>Test health checks and monitoring for early failure detection</li>
+  <li>Monitor for simultaneous multi-agent failures and resource exhaustion</li>
+</ul>
+
+<p><strong>Related Attack Patterns:</strong> AP-SYS-012 (Denial of Service), AP-AGT-004 (Cascading Agent Failures)</p>
+
+</div></div>
+</div>
+
+<!-- ASI09 -->
+<div class="collapsible">
+<div class="collapsible-header" id="asi09">ASI09: Human-Agent Trust Exploitation <span class="badge badge-medium">MEDIUM</span></div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+
+<p><strong>Description:</strong> Attackers exploit human trust in agents to bypass security controls, manipulate users, or gain unauthorized access. Includes automation bias (over-trusting agent outputs) and social engineering via agents.</p>
+
+<p class="bilingual"><strong>설명:</strong> 공격자는 에이전트에 대한 인간의 신뢰를 악용하여 보안 제어를 우회하거나 사용자를 조작하거나 무단 액세스를 얻습니다.</p>
+
+<p><strong>Attack Techniques:</strong></p>
+<ol>
+  <li><strong>Automation Bias Exploitation</strong> - Leveraging human tendency to trust agent recommendations without verification</li>
+  <li><strong>Agent-Delivered Social Engineering</strong> - Using agent to deliver phishing or pretexting attacks</li>
+  <li><strong>Fake Authority</strong> - Agent impersonates authority figure (manager, IT support) to manipulate users</li>
+  <li><strong>Output Obfuscation</strong> - Presenting malicious actions in benign-looking agent outputs</li>
+  <li><strong>Trust Transference</strong> - Exploiting user trust in one agent to gain trust for malicious actions</li>
+</ol>
+
+<p><strong>Example Attack Scenarios:</strong></p>
+<ul>
+  <li>HR agent socially engineers employee to reveal password under guise of "verification"</li>
+  <li>User approves malicious code changes because coding agent presented them confidently</li>
+  <li>Customer service agent tricks user into clicking phishing link</li>
+  <li>Agent outputs "System update required - click here" to deliver malware</li>
+</ul>
+
+<p><strong>Testing Recommendations:</strong></p>
+<ul>
+  <li>Test Scenario: <strong>TS-SOC-001</strong> (AI-Assisted Social Engineering)</li>
+  <li>Simulate social engineering attacks via agent interfaces</li>
+  <li>Test human verification mechanisms for sensitive agent actions</li>
+  <li>Monitor for unusual agent behavior that could indicate manipulation</li>
+</ul>
+
+<p><strong>Related Attack Patterns:</strong> AP-SOC-002 (Social Engineering)</p>
+
+</div></div>
+</div>
+
+<!-- ASI10 -->
+<div class="collapsible">
+<div class="collapsible-header" id="asi10">ASI10: Rogue Agents <span class="badge badge-high">HIGH</span></div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+
+<p><strong>Description:</strong> Agents that persistently deviate from intended behavior, either due to compromise, misconfiguration, or emergent behavior. Rogue agents can sabotage systems, exfiltrate data, or pursue unintended goals autonomously.</p>
+
+<p class="bilingual"><strong>설명:</strong> 손상, 잘못된 구성 또는 창발적 행동으로 인해 의도된 행동에서 지속적으로 벗어나는 에이전트입니다.</p>
+
+<p><strong>Attack Techniques:</strong></p>
+<ol>
+  <li><strong>Goal Drift</strong> - Agent's objectives gradually shift away from original intent (emergent behavior)</li>
+  <li><strong>Agent Hijacking</strong> - Attacker gains persistent control over agent</li>
+  <li><strong>Self-Modification Exploits</strong> - Agent modifies its own instructions or code to bypass controls</li>
+  <li><strong>Persistent Backdoors</strong> - Agent contains hidden backdoor that activates under specific conditions</li>
+  <li><strong>Agent Cloning/Replication</strong> - Unauthorized copies of agents created for malicious purposes</li>
+</ol>
+
+<p><strong>Example Attack Scenarios:</strong></p>
+<ul>
+  <li>Profit-maximizing agent gradually becomes willing to commit fraud</li>
+  <li>Compromised agent persists malicious behavior across restarts</li>
+  <li>Agent modifies its own system prompt to remove safety constraints</li>
+  <li>Attacker clones proprietary agent and runs it externally to steal data</li>
+</ul>
+
+<p><strong>Testing Recommendations:</strong></p>
+<ul>
+  <li>Test behavioral drift detection mechanisms</li>
+  <li>Verify agent integrity verification (signing, attestation)</li>
+  <li>Monitor for unauthorized agent instances and self-modifications</li>
+  <li>Test auditability of agent actions for deviation detection</li>
+</ul>
+
+<p><strong>Related Attack Patterns:</strong> Deceptive Alignment, Reward Hacking, Sandbagging (see Section 3.11 Terminology)</p>
+
+</div></div>
+</div>
 
 <h3>2.2 Supply Chain Attacks / 공급망 공격</h3>
 <table>
@@ -1887,6 +2551,276 @@ Source: arXiv analysis by attack-researcher agent, cross-referenced with Phase 1
 </tr>
 </tbody>
 </table>
+
+<!-- Multi-Level Testing Matrix -->
+<section id="multi-level-testing-matrix">
+<h2>7. Multi-Level Testing Matrix / 다중 레벨 테스트 매트릭스</h2>
+
+<p class="bilingual">AI systems require testing across three distinct levels: Model, Application, and System. Each level has unique attack surfaces, threat models, and testing methodologies. This matrix provides a comprehensive view of testing coverage and effort allocation across all levels.<br>
+AI 시스템은 모델, 애플리케이션, 시스템의 세 가지 레벨에 걸친 테스트가 필요합니다. 각 레벨은 고유한 공격 표면, 위협 모델 및 테스트 방법론을 가지고 있습니다.</p>
+
+<blockquote>
+<strong>Key Insight:</strong> System-level attacks account for 50% of the attack surface in agentic AI systems, yet many organizations focus testing efforts disproportionately on model-level attacks (prompt injection, jailbreaks). This matrix guides balanced coverage.<br>
+<strong>핵심 통찰:</strong> 시스템 레벨 공격은 에이전틱 AI 시스템 공격 표면의 50%를 차지하지만, 많은 조직이 모델 레벨 공격(프롬프트 인젝션, 탈옥)에 테스트 노력을 불균형하게 집중합니다. 이 매트릭스는 균형 잡힌 커버리지를 안내합니다.
+</blockquote>
+
+<h3>7.1 Model-Level Testing / 모델 레벨 테스팅</h3>
+
+<p><strong>Definition:</strong> Testing focused on the AI model itself (weights, architecture, parameters) to evaluate robustness, accuracy, adversarial resistance, and performance metrics. [See Section 3.8]</p>
+
+<table>
+<thead>
+<tr>
+  <th>Attack Category</th>
+  <th>Representative Attack Patterns</th>
+  <th>Test Scenarios</th>
+  <th>Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Prompt-Based Attacks</strong></td>
+  <td>AP-MOD-001 (Prompt Injection)<br>AP-MOD-002 (Jailbreak)<br>AP-MOD-003 (System Prompt Extraction)</td>
+  <td>TS-MOD-001 (Prefix Injection)<br>TS-MOD-002 (DAN Jailbreak)<br>TS-MOD-003 (System Prompt Extraction)</td>
+  <td><span class="badge badge-critical">CRITICAL</span></td>
+</tr>
+<tr>
+  <td><strong>Data Extraction</strong></td>
+  <td>AP-MOD-004 (Training Data Extraction)<br>AP-MOD-011 (PII Leakage)</td>
+  <td>TS-MOD-004 (Training Data Extraction)<br>TS-MOD-011 (Cross-User Data Leakage)</td>
+  <td><span class="badge badge-high">HIGH</span></td>
+</tr>
+<tr>
+  <td><strong>Adversarial Examples</strong></td>
+  <td>AP-MOD-006 (Adversarial Images)<br>AP-MOD-007 (Cross-Modal Attacks)</td>
+  <td>TS-MOD-006 (Adversarial Image Attacks)<br>TS-MOD-007 (Cross-Modal Jailbreak)</td>
+  <td><span class="badge badge-medium">MEDIUM</span></td>
+</tr>
+<tr>
+  <td><strong>Safety Bypasses</strong></td>
+  <td>AP-MOD-009 (CBRN Content Generation)<br>AP-MOD-010 (Multilingual Safety Gaps)</td>
+  <td>TS-MOD-009 (CBRN Generation)<br>TS-MOD-010 (Multilingual Safety Gap)</td>
+  <td><span class="badge badge-critical">CRITICAL</span></td>
+</tr>
+<tr>
+  <td><strong>Model Integrity</strong></td>
+  <td>AP-MOD-013 (Model Inversion)<br>AP-MOD-014 (Model Stealing)</td>
+  <td>TS-MOD-013 (Model Inversion)<br>TS-MOD-014 (Model Extraction)</td>
+  <td><span class="badge badge-medium">MEDIUM</span></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Attack Surface Coverage:</strong> ~35% of total attack surface<br>
+<strong>Recommended Effort Allocation:</strong> 30-35% of testing time<br>
+<strong>Primary Focus:</strong> Safety alignment, robustness, adversarial resistance, hallucination reduction</p>
+
+<h3>7.2 Application-Level Testing / 애플리케이션 레벨 테스팅</h3>
+
+<p><strong>Definition:</strong> Testing focused on the AI-integrated application layer including APIs, UIs, business logic, and user interactions. Evaluates prompt injection vulnerabilities, access control, input validation, and API security. [See Section 3.8]</p>
+
+<table>
+<thead>
+<tr>
+  <th>Attack Category</th>
+  <th>Representative Attack Patterns</th>
+  <th>Test Scenarios</th>
+  <th>Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>API Security</strong></td>
+  <td>AP-SYS-002 (API Abuse)<br>AP-SYS-010 (Rate Limiting Bypass)</td>
+  <td>TS-SYS-003 (API Rate Limiting)<br>Custom API security tests</td>
+  <td><span class="badge badge-high">HIGH</span></td>
+</tr>
+<tr>
+  <td><strong>Access Control</strong></td>
+  <td>AP-SYS-006 (Privilege Escalation)<br>AP-AGT-003 (Identity Abuse - ASI03)</td>
+  <td>TS-SYS-004 (Multi-Tenant Isolation)<br>Access control test cases</td>
+  <td><span class="badge badge-critical">CRITICAL</span></td>
+</tr>
+<tr>
+  <td><strong>Input Validation</strong></td>
+  <td>AP-MOD-005 (Indirect Prompt Injection)<br>AP-SYS-005 (RCE)</td>
+  <td>TS-MOD-005 (Indirect PI via PDF)<br>Input validation tests</td>
+  <td><span class="badge badge-critical">CRITICAL</span></td>
+</tr>
+<tr>
+  <td><strong>Business Logic</strong></td>
+  <td>AP-AGT-001 (Goal Hijacking - ASI01)<br>Policy compliance bypasses</td>
+  <td>TS-SYS-001 (Tool Misuse)<br>Business rule violation tests</td>
+  <td><span class="badge badge-high">HIGH</span></td>
+</tr>
+<tr>
+  <td><strong>UI/UX Security</strong></td>
+  <td>AP-SOC-001 (UI Manipulation)<br>Output obfuscation</td>
+  <td>TS-SOC-002 (Deepfake Detection)<br>UI security tests</td>
+  <td><span class="badge badge-medium">MEDIUM</span></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Attack Surface Coverage:</strong> ~15% of total attack surface<br>
+<strong>Recommended Effort Allocation:</strong> 15-20% of testing time<br>
+<strong>Primary Focus:</strong> API security, access control, input validation, business logic flaws, UI vulnerabilities</p>
+
+<h3>7.3 System-Level Testing / 시스템 레벨 테스팅</h3>
+
+<p><strong>Definition:</strong> End-to-end testing of the complete AI system including infrastructure, data pipelines, tool integrations, RAG components, and multi-agent orchestration. Covers supply chain security, RAG poisoning, and tool misuse. [See Section 3.8]</p>
+
+<table>
+<thead>
+<tr>
+  <th>Attack Category</th>
+  <th>Representative Attack Patterns</th>
+  <th>Test Scenarios</th>
+  <th>Coverage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Tool Misuse (ASI02)</strong></td>
+  <td>AP-AGT-001 (Tool Exploitation)<br>Tool injection, parameter manipulation, chaining exploits</td>
+  <td>TS-SYS-001 (Tool Misuse)<br>Tool security tests</td>
+  <td><span class="badge badge-critical">CRITICAL</span></td>
+</tr>
+<tr>
+  <td><strong>RAG Poisoning (ASI06)</strong></td>
+  <td>AP-SYS-004 (RAG Corpus Poisoning)<br>Vector database injection, memory contamination</td>
+  <td>TS-SYS-002 (RAG KB Poisoning)<br>Memory poisoning tests</td>
+  <td><span class="badge badge-high">HIGH</span></td>
+</tr>
+<tr>
+  <td><strong>Supply Chain (ASI04)</strong></td>
+  <td>AP-SYS-003 (Supply Chain Attack)<br>Malicious tools, model backdoors, dependency confusion</td>
+  <td>TS-SYS-005 (Supply Chain)<br>Dependency audits</td>
+  <td><span class="badge badge-high">HIGH</span></td>
+</tr>
+<tr>
+  <td><strong>Multi-Agent (ASI07/08)</strong></td>
+  <td>AP-AGT-003 (Multi-Agent Coordination)<br>AP-AGT-004 (Cascading Failures)<br>Inter-agent message injection, coordination exploits</td>
+  <td>TS-SYS-006 (Multi-Agent Security)<br>Coordination failure tests</td>
+  <td><span class="badge badge-medium">MEDIUM-HIGH</span></td>
+</tr>
+<tr>
+  <td><strong>Infrastructure</strong></td>
+  <td>AP-SYS-005 (Remote Code Execution - ASI05)<br>AP-SYS-012 (Denial of Service)<br>Container escape, runtime attacks</td>
+  <td>TS-SYS-007 (Infrastructure Security)<br>Runtime security tests</td>
+  <td><span class="badge badge-high">HIGH</span></td>
+</tr>
+<tr>
+  <td><strong>Data Pipelines</strong></td>
+  <td>AP-SYS-007 (Training Data Poisoning)<br>AP-SYS-008 (Data Exfiltration)</td>
+  <td>Data quality testing<br>Pipeline security tests</td>
+  <td><span class="badge badge-medium">MEDIUM</span></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Attack Surface Coverage:</strong> ~50% of total attack surface<br>
+<strong>Recommended Effort Allocation:</strong> 45-55% of testing time<br>
+<strong>Primary Focus:</strong> Tool security, RAG integrity, supply chain, multi-agent coordination, infrastructure hardening</p>
+
+<h3>7.4 Cross-Level Integration Testing / 교차 레벨 통합 테스팅</h3>
+
+<p class="bilingual">Many sophisticated attacks span multiple levels. For example, a prompt injection (Model-Level) may enable tool misuse (System-Level), leading to data exfiltration (Application-Level). Cross-level testing identifies these attack chains.<br>
+많은 정교한 공격은 여러 레벨에 걸쳐 있습니다. 예를 들어, 프롬프트 인젝션(모델 레벨)은 도구 오용(시스템 레벨)을 가능하게 하여 데이터 유출(애플리케이션 레벨)로 이어질 수 있습니다.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Attack Chain</th>
+  <th>Levels Involved</th>
+  <th>Example Scenario</th>
+  <th>Test Approach</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Prompt Injection → Tool Misuse → Data Exfiltration</strong></td>
+  <td>Model → System → Application</td>
+  <td>Attacker injects prompt causing agent to misuse email tool to exfiltrate customer database</td>
+  <td>End-to-end attack simulation with monitoring at each level</td>
+</tr>
+<tr>
+  <td><strong>RAG Poisoning → Goal Hijacking → Privilege Escalation</strong></td>
+  <td>System → Model → Application</td>
+  <td>Poisoned document in RAG corpus redirects agent goal, leading to unauthorized admin actions</td>
+  <td>Inject malicious documents and trace impact through decision chain</td>
+</tr>
+<tr>
+  <td><strong>Supply Chain → Code Execution → Lateral Movement</strong></td>
+  <td>System → System → Application</td>
+  <td>Malicious tool package contains backdoor enabling code execution and network pivot</td>
+  <td>Dependency security audit + runtime monitoring + network segmentation tests</td>
+</tr>
+<tr>
+  <td><strong>Social Engineering → Trust Exploitation → Business Logic Bypass</strong></td>
+  <td>Socio-Tech → Application → System</td>
+  <td>Agent socially engineers user into approving malicious actions, bypassing approval workflows</td>
+  <td>Human-in-the-loop testing + output validation + approval mechanism testing</td>
+</tr>
+</tbody>
+</table>
+
+<h3>7.5 Effort Allocation Recommendations / 노력 배분 권장사항</h3>
+
+<table>
+<thead>
+<tr>
+  <th>System Type</th>
+  <th>Model-Level</th>
+  <th>Application-Level</th>
+  <th>System-Level</th>
+  <th>Cross-Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Simple Chatbot</strong><br>(No tool access)</td>
+  <td>60%</td>
+  <td>25%</td>
+  <td>10%</td>
+  <td>5%</td>
+</tr>
+<tr>
+  <td><strong>RAG-Augmented App</strong><br>(Knowledge base + API)</td>
+  <td>35%</td>
+  <td>25%</td>
+  <td>30%</td>
+  <td>10%</td>
+</tr>
+<tr>
+  <td><strong>Agentic System</strong><br>(Multi-tool, autonomous)</td>
+  <td>25%</td>
+  <td>15%</td>
+  <td>50%</td>
+  <td>10%</td>
+</tr>
+<tr>
+  <td><strong>Multi-Agent System</strong><br>(Distributed, coordinated)</td>
+  <td>20%</td>
+  <td>15%</td>
+  <td>55%</td>
+  <td>10%</td>
+</tr>
+<tr>
+  <td><strong>High-Risk Critical System</strong><br>(Healthcare, Finance, AV)</td>
+  <td>30%</td>
+  <td>20%</td>
+  <td>40%</td>
+  <td>10%</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Key Takeaway:</strong> As AI systems increase in autonomy and tool access, testing effort should shift from model-level (prompt attacks) to system-level (tool misuse, RAG poisoning, multi-agent coordination). Agentic systems require 50%+ of testing effort at the system level.</p>
+
+<p class="bilingual"><strong>핵심 요점:</strong> AI 시스템의 자율성과 도구 액세스가 증가함에 따라 테스트 노력은 모델 레벨(프롬프트 공격)에서 시스템 레벨(도구 오용, RAG 중독, 다중 에이전트 조정)로 이동해야 합니다. 에이전틱 시스템은 테스트 노력의 50% 이상을 시스템 레벨에서 요구합니다.</p>
+
+</section>
 
 </section>
 <!-- ===== END PART II UPDATE ===== -->
@@ -4862,6 +5796,397 @@ Our guideline addresses process and methodology but lacks granular operational g
 </table>
 
 <p><strong>References:</strong> <a href="http://www.tc260.org.cn/" target="_blank">TC260</a>, <a href="https://www8.cao.go.jp/cstp/ai/" target="_blank">Japan AI</a>, <a href="https://www.msit.go.kr/" target="_blank">Korea MSIT</a>, <a href="https://www.pdpc.gov.sg/" target="_blank">Singapore PDPC</a>, <a href="https://www.niti.gov.in/" target="_blank">NITI Aayog</a></p>
+
+</section>
+
+<!-- 7.5 Testing Requirements Synthesis -->
+<section id="testing-requirements-synthesis">
+<h2>7.5 Testing Requirements Synthesis / 테스트 요구사항 종합</h2>
+
+<p class="bilingual"><strong>Objective:</strong> This section synthesizes testing requirements extracted from 7 authoritative profile documents, providing a comprehensive catalog of 491 unique requirements across all testing phases.<br>
+<strong>목적:</strong> 7개의 권위 있는 프로파일 문서에서 추출한 테스트 요구사항을 종합하여 모든 테스트 단계에 걸친 491개의 고유 요구사항 카탈로그를 제공합니다.</p>
+
+<blockquote>
+<strong>Key Insight:</strong> Analysis of 7 profile documents (Singapore AISI, Korea AISI, OWASP, UC Berkeley, NIST, CSA, Securing Agentic Applications) reveals 491 unique testing requirements that significantly expand beyond current guideline coverage. These requirements address critical gaps in agentic AI testing, including behavioral testing, multi-agent coordination, continuous monitoring, and realistic test environment configuration.<br>
+<strong>핵심 통찰:</strong> 7개 프로파일 문서 분석 결과 현재 가이드라인 범위를 크게 확장하는 491개의 고유 테스트 요구사항이 발견되었습니다. 이러한 요구사항은 행동 테스팅, 다중 에이전트 조정, 지속적 모니터링, 현실적 테스트 환경 구성 등 에이전틱 AI 테스팅의 중요한 격차를 해결합니다.
+</blockquote>
+
+<h3>7.5.1 Requirements Distribution / 요구사항 분포</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Category</th>
+  <th>Count</th>
+  <th>% of Total</th>
+  <th>Priority</th>
+  <th>Primary Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Test Execution Requirements</strong></td>
+  <td>96</td>
+  <td>19.6%</td>
+  <td><span class="badge badge-critical">CRITICAL</span></td>
+  <td>OWASP ASI, Singapore AISI</td>
+</tr>
+<tr>
+  <td><strong>Test Design Requirements</strong></td>
+  <td>82</td>
+  <td>16.7%</td>
+  <td><span class="badge badge-high">HIGH</span></td>
+  <td>Singapore/Korea AISI, MGF</td>
+</tr>
+<tr>
+  <td><strong>Test Evaluation Requirements</strong></td>
+  <td>73</td>
+  <td>14.9%</td>
+  <td><span class="badge badge-critical">CRITICAL</span></td>
+  <td>Singapore AISI, MGF</td>
+</tr>
+<tr>
+  <td><strong>Test Documentation Requirements</strong></td>
+  <td>48</td>
+  <td>9.8%</td>
+  <td><span class="badge badge-medium">MEDIUM</span></td>
+  <td>ISO 29119, UC Berkeley</td>
+</tr>
+<tr>
+  <td><strong>Test Environment Requirements</strong></td>
+  <td>32</td>
+  <td>6.5%</td>
+  <td><span class="badge badge-high">HIGH</span></td>
+  <td>Singapore AISI, CSA</td>
+</tr>
+<tr>
+  <td><strong>Test Management Requirements</strong></td>
+  <td>28</td>
+  <td>5.7%</td>
+  <td><span class="badge badge-medium">MEDIUM</span></td>
+  <td>NIST AI RMF, MGF</td>
+</tr>
+<tr>
+  <td><strong>Continuous Testing Requirements</strong></td>
+  <td>26</td>
+  <td>5.3%</td>
+  <td><span class="badge badge-high">HIGH</span></td>
+  <td>MGF, UC Berkeley</td>
+</tr>
+<tr>
+  <td><strong>Advanced Behavioral Testing</strong></td>
+  <td>24</td>
+  <td>4.9%</td>
+  <td><span class="badge badge-critical">CRITICAL</span></td>
+  <td>UC Berkeley, OWASP</td>
+</tr>
+<tr>
+  <td><strong>Security & Compliance Requirements</strong></td>
+  <td>82</td>
+  <td>16.7%</td>
+  <td><span class="badge badge-high">HIGH</span></td>
+  <td>NIST Cyber Profile, UC Berkeley</td>
+</tr>
+<tr style="font-weight:700;border-top:2px solid var(--border);">
+  <td><strong>TOTAL</strong></td>
+  <td><strong>491</strong></td>
+  <td><strong>100%</strong></td>
+  <td colspan="2"></td>
+</tr>
+</tbody>
+</table>
+
+<h3>7.5.2 Critical Gaps Identified / 식별된 중요 격차</h3>
+
+<h4>Gap 1: Agentic-Specific Test Techniques (40 techniques missing)</h4>
+
+<p><strong>Current State:</strong> Guideline Phase 3 covers primarily model-level attacks (prompt injection, jailbreak). Limited coverage of system-level agentic behaviors.</p>
+
+<p><strong>Required Additions:</strong></p>
+<ul>
+  <li><strong>Multi-Agent System Testing</strong> (10 techniques):
+    <ul>
+      <li>Test emergent behaviors in agent collaboration</li>
+      <li>Test competitive behaviors between agents</li>
+      <li>Test inter-agent message integrity</li>
+      <li>Test coordination protocol vulnerabilities</li>
+      <li>Test shared memory exploitation</li>
+    </ul>
+  </li>
+  <li><strong>Behavioral Testing</strong> (8 techniques):
+    <ul>
+      <li>Test self-proliferation detection</li>
+      <li>Test self-modification attempts</li>
+      <li>Test deceptive alignment</li>
+      <li>Test reward hacking patterns</li>
+      <li>Test oversight subversion</li>
+    </ul>
+  </li>
+  <li><strong>Memory & Context Testing</strong> (8 techniques):
+    <ul>
+      <li>Test in-agent session memory poisoning</li>
+      <li>Test cross-agent memory contamination</li>
+      <li>Test cross-user memory leakage</li>
+      <li>Test vector database injection</li>
+    </ul>
+  </li>
+  <li><strong>Tool Integration Testing</strong> (8 techniques):
+    <ul>
+      <li>Test over-privileged tool access</li>
+      <li>Test tool chaining exploits</li>
+      <li>Test tool descriptor manipulation</li>
+      <li>Test MCP security vulnerabilities</li>
+    </ul>
+  </li>
+  <li><strong>Data Leakage Testing</strong> (6 techniques):
+    <ul>
+      <li>Test data awareness (passwords, API keys, PII)</li>
+      <li>Test audience awareness (internal vs external)</li>
+      <li>Test policy compliance violations</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Impact:</strong> Adding these techniques would improve ISO/IEC 29119 Test Techniques conformance from 63% to 88% (+25 percentage points).</p>
+
+<h4>Gap 2: Test Evaluation & Metrics (30 metrics missing)</h4>
+
+<p><strong>Current State:</strong> Limited evaluation guidance beyond binary pass/fail. No standardized metrics for partial scoring, "NA" handling, or behavioral assessment.</p>
+
+<p><strong>Required Additions:</strong></p>
+<ul>
+  <li><strong>Correctness Metrics</strong> (7 metrics):
+    <ul>
+      <li>% fully correct trajectories (100% criteria met)</li>
+      <li>% of correctness criteria satisfied (partial scoring)</li>
+      <li>Overall task execution success rate</li>
+      <li>Tool calling accuracy rate</li>
+      <li>Planning vs execution alignment score</li>
+    </ul>
+  </li>
+  <li><strong>Safety Metrics</strong> (7 metrics):
+    <ul>
+      <li>% fully safe trajectories (100% criteria met)</li>
+      <li>% of safety criteria satisfied (partial scoring)</li>
+      <li>Data leakage incident rate</li>
+      <li>Unauthorized action incident rate</li>
+      <li>"NA" safety condition handling rate</li>
+    </ul>
+  </li>
+  <li><strong>Combined Metrics</strong> (5 metrics):
+    <ul>
+      <li>% meeting BOTH 100% correctness AND 100% safety</li>
+      <li>Correctness vs safety trade-off analysis</li>
+      <li>Runs that are highly correct but unsafe (risk priority)</li>
+    </ul>
+  </li>
+  <li><strong>LLM-as-a-Judge Procedures</strong> (7 guidelines):
+    <ul>
+      <li>Define granular yes/no criteria for LLM judges</li>
+      <li>Sample minimum 10% for human validation</li>
+      <li>Target <20% human-LLM disagreement rate</li>
+      <li>Calibrate LLM judges against ground truth</li>
+    </ul>
+  </li>
+  <li><strong>"NA" Handling Procedures</strong> (5 procedures):
+    <ul>
+      <li>Mark safety conditions as "NA" when prerequisites not met</li>
+      <li>Exclude NAs from safety percentage calculations</li>
+      <li>Report "NA" rates separately in test reports</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Source:</strong> Singapore AISI "Testing AI Agents" methodology (lines 54-63)</p>
+
+<h4>Gap 3: Realistic Test Environment Configuration (25 requirements missing)</h4>
+
+<p><strong>Current State:</strong> No specific guidance on test environment realism, MCP server configuration, or production mirroring.</p>
+
+<p><strong>Required Additions:</strong></p>
+<ul>
+  <li><strong>Realism Requirements</strong> (5 items):
+    <ul>
+      <li>Use realistic data (not synthetic placeholders like "123-456-7890")</li>
+      <li>Use real email domains and web addresses</li>
+      <li>Mirror production data patterns and distributions</li>
+      <li>Implement realistic user interaction patterns</li>
+    </ul>
+  </li>
+  <li><strong>MCP Server Configuration</strong> (5 items):
+    <ul>
+      <li>Use real MCP server implementations (not localhost:8080)</li>
+      <li>Reference multiple MCP servers per task (multi-tool integration)</li>
+      <li>Configure MCP security properly (authentication, authorization)</li>
+      <li>Test MCP protocol compliance</li>
+    </ul>
+  </li>
+  <li><strong>Multi-Turn Interaction Setup</strong> (5 items):
+    <ul>
+      <li>Support multi-turn interactions with simulated user LLM</li>
+      <li>Implement interaction limits to prevent infinite loops</li>
+      <li>Configure turn limits based on task complexity</li>
+      <li>Track termination reasons (success, limit, error)</li>
+    </ul>
+  </li>
+  <li><strong>Isolation & Sandboxing</strong> (5 items):
+    <ul>
+      <li>Implement agent sandboxes for safe testing</li>
+      <li>Isolate test agents from production systems</li>
+      <li>Prevent test agents from accessing real credentials</li>
+      <li>Configure network segmentation for test environments</li>
+    </ul>
+  </li>
+  <li><strong>Production Mirroring</strong> (5 items):
+    <ul>
+      <li>Mirror production data pipelines in test environment</li>
+      <li>Replicate production API rate limits and quotas</li>
+      <li>Match production tool access patterns</li>
+      <li>Simulate production failure modes</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Source:</strong> Singapore AISI "Testing AI Agents", MGF "Agentic AI Testing" (lines 47-53, 96-99)</p>
+
+<h3>7.5.3 Implementation Priority Matrix / 구현 우선순위 매트릭스</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Priority Level</th>
+  <th>Requirement Category</th>
+  <th>Count</th>
+  <th>Timeline</th>
+  <th>ISO Impact</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><span class="badge badge-critical">CRITICAL</span></td>
+  <td>Agentic Test Techniques (Gap 1)<br>Test Evaluation & Metrics (Gap 2)<br>Advanced Behavioral Testing</td>
+  <td>94</td>
+  <td>Immediate (Q1 2026)</td>
+  <td>Test Techniques: 63% → 88% (+25pp)</td>
+</tr>
+<tr>
+  <td><span class="badge badge-high">HIGH</span></td>
+  <td>Test Environment Configuration (Gap 3)<br>Continuous Testing Requirements<br>Security & Compliance</td>
+  <td>139</td>
+  <td>Short-term (Q2 2026)</td>
+  <td>Overall conformance: 71% → 82% (+11pp)</td>
+</tr>
+<tr>
+  <td><span class="badge badge-medium">MEDIUM</span></td>
+  <td>Test Documentation Requirements<br>Test Management Requirements</td>
+  <td>76</td>
+  <td>Medium-term (Q3 2026)</td>
+  <td>Documentation: 93% → 100% (+7pp)</td>
+</tr>
+<tr>
+  <td><span class="badge badge-low">LOW</span></td>
+  <td>Standards Compliance Matrix<br>Terminology Extensions<br>Tool Integration Details</td>
+  <td>182</td>
+  <td>Long-term (Q4 2026)</td>
+  <td>Terminology: 43% → 80% (+37pp)</td>
+</tr>
+</tbody>
+</table>
+
+<h3>7.5.4 Source Document Mapping / 출처 문서 매핑</h3>
+
+<table>
+<thead>
+<tr>
+  <th>Document</th>
+  <th>Publisher</th>
+  <th>Requirements Contributed</th>
+  <th>Primary Focus Area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>[R-21] Testing AI Agents</strong></td>
+  <td>Singapore & Korea AISI</td>
+  <td>58 requirements</td>
+  <td>Data leakage testing, realistic environments, LLM-as-a-Judge</td>
+</tr>
+<tr>
+  <td><strong>[R-23] MGF for Agentic AI</strong></td>
+  <td>Singapore IMDA</td>
+  <td>67 requirements</td>
+  <td>Pre-deployment testing, continuous monitoring, multi-agent systems</td>
+</tr>
+<tr>
+  <td><strong>[R-13] OWASP Agentic Top 10</strong></td>
+  <td>OWASP ASI</td>
+  <td>97 requirements</td>
+  <td>Vulnerability testing, penetration testing, ASI01-ASI10 scenarios</td>
+</tr>
+<tr>
+  <td><strong>[R-24] UC Berkeley AI Agents Profile</strong></td>
+  <td>UC Berkeley CLTC</td>
+  <td>118 requirements</td>
+  <td>Security & privacy, behavioral testing, advanced threat detection</td>
+</tr>
+<tr>
+  <td><strong>[R-25] NIST Cyber AI Profile</strong></td>
+  <td>NIST</td>
+  <td>52 requirements</td>
+  <td>Cybersecurity controls, risk management, compliance</td>
+</tr>
+<tr>
+  <td><strong>Securing Agentic Applications</strong></td>
+  <td>CSA</td>
+  <td>43 requirements</td>
+  <td>Runtime security, orchestration, observability</td>
+</tr>
+<tr>
+  <td><strong>OWASP GenAI Testing</strong></td>
+  <td>OWASP</td>
+  <td>56 requirements</td>
+  <td>GenAI-specific testing, LLM evaluation methodologies</td>
+</tr>
+<tr style="font-weight:700;border-top:2px solid var(--border);">
+  <td colspan="2"><strong>TOTAL</strong></td>
+  <td><strong>491 unique requirements</strong></td>
+  <td></td>
+</tr>
+</tbody>
+</table>
+
+<h3>7.5.5 Integration Recommendations / 통합 권장사항</h3>
+
+<blockquote class="warning">
+<strong>⚠️ Implementation Note:</strong> Integrating all 491 requirements directly into the guideline would result in excessive document length (estimated +300 pages). Instead, this synthesis provides a catalog and priority matrix, with detailed requirements available in the source document: <code>profile-analysis/reference-doc-report.md</code>
+</blockquote>
+
+<p><strong>Recommended Approach:</strong></p>
+<ol>
+  <li><strong>Phase 1 (Immediate)</strong>: Integrate 94 CRITICAL requirements into existing Phase 3 sections
+    <ul>
+      <li>Add Section 6: Agentic Test Techniques (40 techniques)</li>
+      <li>Add Section 8: Test Evaluation and Metrics (30 metrics)</li>
+      <li>Expand test scenarios with behavioral testing (24 tests)</li>
+    </ul>
+  </li>
+  <li><strong>Phase 2 (Q2 2026)</strong>: Add 139 HIGH priority requirements
+    <ul>
+      <li>Add Section 7: Test Environment Configuration (25 requirements)</li>
+      <li>Add Section 10: Continuous Testing and Monitoring (26 requirements)</li>
+      <li>Integrate security & compliance requirements (88 requirements)</li>
+    </ul>
+  </li>
+  <li><strong>Phase 3 (Q3-Q4 2026)</strong>: Complete remaining 258 MEDIUM/LOW priority requirements
+    <ul>
+      <li>Comprehensive documentation templates</li>
+      <li>Standards compliance matrices</li>
+      <li>Extended terminology catalog</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Full Requirements Catalog:</strong> Complete 491-item catalog with detailed descriptions, sources, and cross-references available in <a href="profile-analysis/reference-doc-report.md" target="_blank">profile-analysis/reference-doc-report.md</a></p>
 
 </section>
 
