@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generative Trabecular Foam Block</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #09090b; /* 지면/배경을 배제한 스튜디오 블랙 */
+            color: #f1f5f9;
+            font-family: 'Inter', -apple-system, sans-serif;
+            user-select: none;
+        }
+
+        #canvas-container {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+        }
+
+        /* 다크 모드 미니멀 UI 오버레이 */
+        #ui-overlay {
+            position: absolute;
+            top: 24px; left: 24px;
+            width: 340px;
+            background: rgba(15, 15, 20, 0.7);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.8);
+            z-index: 10;
+            opacity: 0; /* 로딩 완료 후 페이드 인 */
+            transition: opacity 0.8s ease;
+        }
+
+        .title { font-size: 1.25rem; font-weight: 700; color: #ffffff; margin: 0 0 6px 0; letter-spacing: -0.02em; }
+        .subtitle { font-size: 0.85rem; color: #a1a1aa; margin: 0 0 24px 0; line-height: 1.5; word-break: keep-all; }
+
+        .spec { 
+            display: flex; justify-content: space-between; align-items: center; 
+            padding: 12px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.06); 
+            font-size: 0.85rem; 
+        }
+        .spec:last-of-type { border-bottom: none; margin-bottom: 24px; }
+        .spec .label { color: #a1a1aa; font-weight: 500; }
+        .spec .val { color: #f8fafc; font-weight: 500; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; }
+
+        .btn {
+            width: 100%; padding: 14px; background: #ffffff; color: #09090b;
+            border: none; border-radius: 10px; font-weight: 600; font-size: 0.95rem;
+            cursor: pointer; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+        }
+        .btn:hover:not(:disabled) { background: #e4e4e7; transform: translateY(-2px); box-shadow: 0 8px 16px rgba(255,255,255,0.1); }
+        .btn:disabled { background: #27272a; color: #52525b; cursor: not-allowed; transform: none; box-shadow: none; }
+
+        /* 볼륨 생성 로딩 스크린 */
+        #loader {
+            position: fixed; inset: 0; background: #09090b; display: flex;
+            flex-direction: column; justify-content: center; align-items: center;
+            z-index: 50; transition: opacity 0.6s ease;
+        }
+        .spinner {
+            width: 48px; height: 48px; border: 3px solid rgba(255,255,255,0.05);
+            border-top-color: #ffffff; border-radius: 50%;
+            animation: spin 1s cubic-bezier(0.4, 0, 0.2, 1) infinite; margin-bottom: 24px;
+        }
+        .loading-text { font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; letter-spacing: 0.15em; color: #a1a1aa; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        #hint {
+            position: absolute; bottom: 24px; width: 100%; text-align: center;
+            font-size: 0.8rem; color: #52525b; pointer-events: none; letter-spacing: 0.05em; font-weight: 500;
+        }
+    </style>
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+
+    <div id="loader">
+        <div class="spinner"></div>
+        <div class="loading-text">GENERATING TRABECULAR MESH...</div>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <div id="ui-overlay">
+        <h1 class="title">Trabecular Foam Block</h1>
+        <p class="subtitle">절차적 다중 주파수 뼈대 기반<br>매니폴드 스탠드 제너레이터</p>
+        
+        <div class="spec">
+            <span class="label">바운딩 볼륨 치수</span>
+            <span class="val">100 × 120 × 100 mm</span>
+        </div>
+        <div class="spec">
+            <span class="label">구조 내하중 설계</span>
+            <span class="val">3.0 kg 압축 응력 분산망</span>
+        </div>
+        <div class="spec">
+            <span class="label">가변형 공기역학</span>
+            <span class="val">패시브 쿨링을 위한 다공성</span>
+        </div>
+        <div class="spec">
+            <span class="label">출력물 예상 부피</span>
+            <span class="val" id="val-vol">계산 중...</span>
+        </div>
+        <div class="spec">
+            <span class="label">출력물 예상 중량</span>
+            <span class="val" id="val-weight">계산 중...</span>
+        </div>
+
+        <button class="btn" id="exportBtn" disabled>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            인쇄 준비 3MF 다운로드
+        </button>
+    </div>
+
+    <div id="hint">좌클릭: 360&deg; 회전 &middot; 스크롤: 줌 &middot; 우클릭: 패닝</div>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import { MarchingCubes } from 'three/addons/objects/MarchingCubes.js';
+        import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+
+        let scene, camera, renderer, controls, effect;
+
+        // --- 물리적 크기 및 해상도 설정 ---
+        const RES = 120; // 120^3 ≒ 약 172만 개의 복셀 해상도 (브라우저 최적화 마지노선)
+        
+        // 실제 물리적 치수 반경 (폭 100mm, 높이 120mm, 깊이 100mm)
+        const sizeX = 50;  
+        const sizeY = 60;  
+        const sizeZ = 50;  
+        
+        // 표면 밀폐(Watertight) 연산을 위한 경계 패딩
+        const pad = 10; 
+
+        init();
+
+        function init() {
+            const container = document.getElementById('canvas-container');
+            
+            // 1. 피사체 형태만 강조하기 위한 퓨어 블랙 씬
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x09090b);
+
+            camera = new THREE.PerspectiveCamera(35, window.innerWidth / window.innerHeight, 1, 1000);
+            camera.position.set(180, 160, 240);
+
+            // 2. 고품질 렌더러 및 스튜디오 HDRI 조명
+            renderer = new THREE.WebGLRenderer({ antialias: true, powerPreference: "high-performance" });
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.toneMapping = THREE.ACESFilmicToneMapping;
+            renderer.toneMappingExposure = 1.2;
+            container.appendChild(renderer.domElement);
+
+            const pmremGenerator = new THREE.PMREMGenerator(renderer);
+            scene.environment = pmremGenerator.fromScene(new RoomEnvironment(), 0.04).texture;
+            
+            const dirLight = new THREE.DirectionalLight(0xffffff, 2.0);
+            dirLight.position.set(100, 200, 50);
+            scene.add(dirLight);
+
+            const fillLight = new THREE.DirectionalLight(0xddddff, 0.4);
+            fillLight.position.set(-100, -50, -100);
+            scene.add(fillLight);
+
+            // 3. 서리 처리된 산업용 폴리머 (MeshPhysicalMaterial)
+            const material = new THREE.MeshPhysicalMaterial({
+                color: 0xffffff,
+                metalness: 0.0,
+                roughness: 0.35,
+                transmission: 0.5,    // 빛 투과 효과를 통한 뼈대 깊이감 표현
+                ior: 1.5,             
+                thickness: 5.0,       // 내부 산란 (Sub-surface scattering)
+                clearcoat: 0.1,
+                side: THREE.DoubleSide 
+            });
+
+            // 4. Marching Cubes 볼륨 생성기
+            effect = new MarchingCubes(RES, material, false, false, 2500000);
+            effect.scale.set(sizeX + pad, sizeY + pad, sizeZ + pad);
+            effect.isolation = 0; 
+            scene.add(effect);
+
+            // 5. 360도 검사용 카메라 컨트롤러
+            controls = new OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.05;
+            controls.autoRotate = true;
+            controls.autoRotateSpeed = 1.0;
+
+            window.addEventListener('resize', onWindowResize);
+            document.getElementById('exportBtn').addEventListener('click', download3MF);
+
+            // UI 렌더링 블로킹 방지를 위한 비동기 지연 실행
+            setTimeout(generateGenerativeStructure, 100);
+        }
+
+        function generateGenerativeStructure() {
+            let solidVoxels = 0;
+            let idx = 0;
+            const cornerRadius = 8.0;
+
+            // 유기적 폼(Trabecular) 형태를 만들기 위한 3중 프랙탈 노이즈 주파수
+            const f1 = 0.22; // 거시적 큰 뼈대
+            const f2 = 0.38; // 중간 형태의 무작위성
+            const f3 = 0.81; // 미세한 표면 디테일
+
+            // [핵심 성능 최적화] O(N^3) 삼각함수 연산을 O(N)으로 단축하기 위한 1D 캐싱
+            const pX = new Float32Array(RES), pY = new Float32Array(RES), pZ = new Float32Array(RES);
+            const s1X = new Float32Array(RES), c1X = new Float32Array(RES);
+            const s1Y = new Float32Array(RES), c1Y = new Float32Array(RES);
+            const s1Z = new Float32Array(RES), c1Z = new Float32Array(RES);
+            const s2X = new Float32Array(RES), c2X = new Float32Array(RES);
+            const s2Y = new Float32Array(RES), c2Y = new Float32Array(RES);
+            const s2Z = new Float32Array(RES), c2Z = new Float32Array(RES);
+            const s3X = new Float32Array(RES), c3X = new Float32Array(RES);
+            const s3Y = new Float32Array(RES), c3Y = new Float32Array(RES);
+            const s3Z = new Float32Array(RES), c3Z = new Float32Array(RES);
+
+            for (let i = 0; i < RES; i++) {
+                let norm = (i / (RES - 1)) * 2 - 1; 
+
+                let x = norm * (sizeX + pad); pX[i] = x;
+                s1X[i] = Math.sin(x*f1); c1X[i] = Math.cos(x*f1);
+                s2X[i] = Math.sin(x*f2); c2X[i] = Math.cos(x*f2);
+                s3X[i] = Math.sin(x*f3); c3X[i] = Math.cos(x*f3);
+
+                let y = norm * (sizeY + pad); pY[i] = y;
+                s1Y[i] = Math.sin(y*f1); c1Y[i] = Math.cos(y*f1);
+                s2Y[i] = Math.sin(y*f2); c2Y[i] = Math.cos(y*f2);
+                s3Y[i] = Math.sin(y*f3); c3Y[i] = Math.cos(y*f3);
+
+                let z = norm * (sizeZ + pad); pZ[i] = z;
+                s1Z[i] = Math.sin(z*f1); c1Z[i] = Math.cos(z*f1);
+                s2Z[i] = Math.sin(z*f2); c2Z[i] = Math.cos(z*f2);
+                s3Z[i] = Math.sin(z*f3); c3Z[i] = Math.cos(z*f3);
+            }
+
+            // 공간 연산 (SDF 기반의 Boolean Intersection)
+            for (let k = 0; k < RES; k++) {
+                let z = pZ[k];
+                let bz = Math.abs(z) - (sizeZ - cornerRadius);
+                
+                for (let j = 0; j < RES; j++) {
+                    let y = pY[j];
+                    let by = Math.abs(y) - (sizeY - cornerRadius);
+                    
+                    for (let i = 0; i < RES; i++) {
+                        let x = pX[i];
+                        let bx = Math.abs(x) - (sizeX - cornerRadius);
+                        
+                        // 1. 외부 바운딩 박스 SDF 계산 (모서리가 둥근 직육면체)
+                        let dOut = Math.sqrt(Math.max(bx, 0)**2 + Math.max(by, 0)**2 + Math.max(bz, 0)**2);
+                        let dIn = Math.min(Math.max(bx, Math.max(by, bz)), 0);
+                        let boxDist = dOut + dIn - cornerRadius; 
+
+                        if (boxDist > 2.0) {
+                            effect.field[idx++] = -boxDist;
+                            continue;
+                        }
+
+                        // 2. 다중 위상 뼈대 생성 (유기적 폼)
+                        let g1 = s1X[i]*c1Y[j] + s1Y[j]*c1Z[k] + s1Z[k]*c1X[i];
+                        let g2 = s2X[i]*c2Y[j] + s2Y[j]*c2Z[k] + s2Z[k]*c2X[i];
+                        let g3 = s3X[i]*c3Y[j] + s3Y[j]*c3Z[k] + s3Z[k]*c3X[i];
+                        
+                        let noiseField = g1 + 0.35 * g2 + 0.15 * g3;
+
+                        // 3. 3kg 하중 및 공기역학적 최적화를 고려한 가변 두께 (Gradient Thickness)
+                        // 상단으로 갈수록 노트북 쿨링을 위해 공극이 넓어지고, 하단으로 갈수록 지지하중을 위해 뼈대가 두꺼워짐
+                        let loadFactor = 1.0 - (y + sizeY) / (sizeY * 2); 
+                        let thickness = 0.45 + 0.15 * loadFactor; 
+
+                        // 절대값 차연산을 적용하여 표면이 아닌 관(Tube/Strut) 형태의 네트워크 추출
+                        let strutDist = thickness - Math.abs(noiseField);
+
+                        // 4. 불리언 교차 연산으로 매니폴드화
+                        let finalDist = Math.min(strutDist, -boxDist);
+
+                        // 그리드 끝부분 강제 닫힘(Watertight) 처리
+                        if (i === 0 || i === RES - 1 || j === 0 || j === RES - 1 || k === 0 || k === RES - 1) {
+                            finalDist = -1;
+                        }
+
+                        effect.field[idx++] = finalDist;
+                        if (finalDist > 0) solidVoxels++;
+                    }
+                }
+            }
+
+            effect.update(); // 지오메트리로 변환
+
+            // 통계 (부피 및 출력 중량 계산)
+            let voxelVolMm3 = ((sizeX + pad)*2 / (RES - 1)) * ((sizeY + pad)*2 / (RES - 1)) * ((sizeZ + pad)*2 / (RES - 1));
+            let totalCm3 = (solidVoxels * voxelVolMm3) / 1000;
+            let weightGrams = totalCm3 * 1.2; // PLA/SLA 수지 평균 밀도
+
+            document.getElementById('val-vol').innerText = `${totalCm3.toFixed(1)} cm³`;
+            document.getElementById('val-weight').innerText = `${weightGrams.toFixed(0)} g`;
+
+            // 로딩 종료
+            document.getElementById('loader').style.opacity = '0';
+            setTimeout(() => { document.getElementById('loader').style.display = 'none'; }, 600);
+            document.getElementById('ui-overlay').style.opacity = '1';
+            document.getElementById('exportBtn').disabled = false;
+
+            animate();
+        }
+
+        // --- 3D 프린팅을 위한 3MF 포맷 내보내기 ---
+        async function download3MF() {
+            const btn = document.getElementById('exportBtn');
+            const orgText = btn.innerHTML;
+            btn.innerHTML = `<span style="display:inline-block; animation: spin 1s linear infinite;">⏳</span> 매니폴드 인코딩 중...`;
+            btn.disabled = true;
+
+            await new Promise(r => setTimeout(r, 50)); // UI 렌더링 스레드 양보
+
+            try {
+                let ExporterClass;
+                let ext = '3mf';
+                let mime = 'application/vnd.ms-package.3dmanufacturing-3dmodel+xml';
+
+                try {
+                    const module = await import('three/addons/exporters/3MFExporter.js');
+                    ExporterClass = module.ThreeMFExporter || module['3MFExporter'];
+                    if (!ExporterClass) throw new Error("3MF 모듈을 불러올 수 없습니다.");
+                } catch (e) {
+                    console.warn("3MF 모듈 폴백(Fallback): STL 형식으로 저장합니다.");
+                    const module = await import('three/addons/exporters/STLExporter.js');
+                    ExporterClass = module.STLExporter;
+                    ext = 'stl';
+                    mime = 'text/plain';
+                }
+
+                const exporter = new ExporterClass();
+                const exportScene = new THREE.Scene();
+                
+                // 슬라이싱 프로그램 호환성을 위해 MarchingCubes의 빈 버퍼 배열(Zero array) 트리밍
+                const drawCount = effect.geometry.drawRange.count;
+                const cleanGeo = new THREE.BufferGeometry();
+                const cleanPos = effect.geometry.attributes.position.array.subarray(0, drawCount * 3);
+                const cleanNorm = effect.geometry.attributes.normal.array.subarray(0, drawCount * 3);
+                
+                cleanGeo.setAttribute('position', new THREE.BufferAttribute(new Float32Array(cleanPos), 3));
+                cleanGeo.setAttribute('normal', new THREE.BufferAttribute(new Float32Array(cleanNorm), 3));
+
+                const exportMesh = new THREE.Mesh(cleanGeo, new THREE.MeshStandardMaterial({ color: 0xffffff }));
+                
+                // 생성된 모델의 1:1 물리적 스케일(mm) 적용
+                exportMesh.scale.copy(effect.scale);
+                exportScene.add(exportMesh);
+
+                const result = exporter.parse(exportScene);
+                const blob = new Blob([result], { type: mime });
+                const url = URL.createObjectURL(blob);
+                
+                const link = document.createElement('a');
+                link.style.display = 'none';
+                link.href = url;
+                link.download = `Trabecular_AeroBlock.${ext}`;
+                document.body.appendChild(link);
+                link.click();
+                
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+            } catch (error) {
+                console.error("내보내기 오류:", error);
+                alert("모델 데이터 다운로드에 실패했습니다. 브라우저 콘솔을 확인해주세요.");
+            } finally {
+                btn.innerHTML = orgText;
+                btn.disabled = false;
+            }
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update(); 
+            renderer.render(scene, camera);
+        }
+    </script>
+</body>
+</html>
