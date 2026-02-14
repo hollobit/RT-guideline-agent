@@ -379,7 +379,7 @@ a { color: var(--accent); }
 <ul>
   <li><strong>Unified terminology</strong> (bilingual KR/EN) aligned with NIST, ISO, EU AI Act, OWASP, and MITRE ATLAS, including <strong>7 Guiding Principles</strong> with new <strong>Least-Agency Principle</strong> for agentic systems.</li>
   <li><strong>Comprehensive threat landscape</strong> covering model-level, system-level, and socio-technical attack patterns with real-world incident analysis.</li>
-  <li><strong>Six-stage normative process</strong> (Planning, Design, Execution, Analysis, Reporting, Follow-up) aligned with ISO/IEC 29119, with <strong>79 activities</strong> (16 Planning, 19 Design, 15 Execution, 13 Analysis, 8 Reporting, 8 Follow-up) including <strong>Phase 1 & Phase 2 additions</strong>: CBRN framework, tester safety, Rules of Engagement, three-step execution, evaluation integrity verification, deceptive alignment testing, self-replication testing, agent archetype classification (P-13), cascading failure testing (D-5), trust & identity security (D-6), protocol security for MCP/A2A/ACP/AGNTCY/AP2 (D-7), attack signature library (F-5), ISO/IEC 29147 CVD procedures (F-6), network traffic monitoring (F-7), and model recovery procedures (F-8).</li>
+  <li><strong>Six-stage normative process</strong> (Planning, Design, Execution, Analysis, Reporting, Follow-up) aligned with ISO/IEC 29119, with <strong>83 activities</strong> (17 Planning, 19 Design, 16 Execution, 14 Analysis, 8 Reporting, 9 Follow-up) including <strong>Phase 1, Phase 2 & Phase 3 additions</strong>: CBRN framework, tester safety, Rules of Engagement, three-step execution, evaluation integrity verification, deceptive alignment testing, self-replication testing, agent archetype classification (P-13), cascading failure testing (D-5), trust & identity security (D-6), protocol security for MCP/A2A/ACP/AGNTCY/AP2 (D-7), attack signature library (F-5), ISO/IEC 29147 CVD procedures (F-6), network traffic monitoring (F-7), model recovery procedures (F-8), <strong>Phase 3:</strong> AIVSS scoring (A-2.6), runtime SBOM/AIBOM verification (T-2.1), forensic readiness & incident response (F-9), and physical/IoT system testing (E-13).</li>
   <li><strong>Risk-based test scope determination</strong> across three tiers (Foundational, Standard, Comprehensive) with <strong>L0-L5 Graduated Autonomy Scale</strong> integration.</li>
   <li><strong>Living Annexes</strong> with standardized attack pattern library, risk mappings, and benchmark coverage analysis designed for quarterly updates.</li>
   <li><strong>Continuous operating model</strong> with three layers: automated monitoring, periodic assessment, and event-triggered deep engagements, including change-triggered re-evaluation protocols.</li>
@@ -398,12 +398,13 @@ a { color: var(--accent); }
 
 <h3 style="margin-top: 2rem;">Recent Updates / 최근 업데이트</h3>
 <div style="background: var(--accent-light); padding: 1rem 1.25rem; border-radius: 6px; margin: 1rem 0;">
-  <p style="margin: 0;"><strong>Version 1.7 (2026-02-14):</strong></p>
+  <p style="margin: 0;"><strong>Version 1.8 (2026-02-14):</strong></p>
   <ul style="margin: 0.5rem 0 0 1.5rem;">
-    <li><strong>Phase 1 Complete:</strong> Integrated 28 Essential proposals including CBRN framework, tester safety protocols (P-11), Rules of Engagement (P-12), three-step execution methodology, evaluation integrity verification (E-12), AI defense validation (E-13), deceptive alignment testing (T-5), and self-replication testing (T-6).</li>
+    <li><strong>Phase 1 Complete:</strong> Integrated 28 Essential proposals including CBRN framework, tester safety protocols (P-11), Rules of Engagement (P-12), three-step execution methodology, evaluation integrity verification (E-12), deceptive alignment testing (T-5), and self-replication testing (T-6).</li>
     <li><strong>Phase 2 Complete:</strong> Integrated 20 Recommended proposals including agent archetype classification & multi-party testing (P-13), cascading failure & system resilience testing (D-5), trust & identity security testing (D-6), protocol & governance integration testing for MCP/A2A/ACP/AGNTCY/AP2 (D-7), attack signature library (F-5), ISO/IEC 29147 CVD procedures (F-6), network traffic monitoring validation (F-7), model retraining & recovery procedures (F-8), and <strong>Least-Agency Principle</strong> (Principle 7).</li>
-    <li><strong>Activity Count:</strong> Expanded from 51 to <strong>79 activities</strong> across six stages.</li>
-    <li><strong>Expected Impact:</strong> ISO/IEC 29119 conformance projected to reach ~87%, ISO/IEC 42119-7 alignment ~80%, total requirements ~641 items.</li>
+    <li><strong>Phase 3 Complete:</strong> Integrated 7 Reference proposals including <strong>AIVSS (AI Vulnerability Severity Scoring System)</strong> with 6 risk dimensions (A-2.6), <strong>Runtime SBOM/AIBOM Verification</strong> for supply chain drift detection (T-2.1), <strong>Forensic Readiness & Incident Response</strong> with ASI08/ASI10 alignment for immutable logging and behavioral integrity attestation (F-9), and <strong>Physical/IoT System Interaction Testing</strong> with ISO/IEC 42119-7 Annex B.11/B.12 alignment (E-13).</li>
+    <li><strong>Activity Count:</strong> Expanded from 51 to <strong>83 activities</strong> across six stages (17 Planning, 19 Design, 16 Execution, 14 Analysis, 8 Reporting, 9 Follow-up).</li>
+    <li><strong>Expected Impact:</strong> ISO/IEC 29119 conformance projected to reach ~90%, ISO/IEC 42119-7 alignment ~85%, total requirements ~671 items (up from 641).</li>
   </ul>
 </div>
 </section>
@@ -2979,6 +2980,7 @@ ISO/IEC 29119와 ISO/IEC 42119-7 간 충돌이 발생할 경우:</p>
 <tr><td><strong>P-11. Tester Safety & Psychological Support</strong></td><td><span class="badge badge-new">NEW</span> Mandatory psychological safety protocols: rotation schedules (max 4h/day harmful content), opt-out mechanisms, mental health support, exposure limits</td></tr>
 <tr><td><strong>P-12. Rules of Engagement</strong></td><td><span class="badge badge-new">NEW</span> Forbidden targets, authorized techniques by risk level, stop conditions, per-domain suspension thresholds, escalation protocols</td></tr>
 <tr><td><strong>P-13. Agent Archetype Classification & Multi-Party Testing</strong></td><td><span class="badge badge-new">Phase 2</span> Classify agent archetypes (customer service, enterprise, personal, code gen, research, orchestrator, physical), define bounded autonomy (L0-L5), establish multi-party testing coordination for cross-organizational systems</td></tr>
+<tr><td><strong>T-2.1. Runtime SBOM/AIBOM Verification</strong></td><td><span class="badge badge-new">Phase 3</span> Extend static SBOM/AIBOM verification with continuous runtime validation: model hash verification, dependency drift detection, tool/plugin behavioral fingerprinting, data source validation, license compliance monitoring, transitive dependency monitoring, AI model card drift detection</td></tr>
 </tbody>
 </table>
 
@@ -3255,8 +3257,8 @@ ISO/IEC 29119와 ISO/IEC 42119-7 간 충돌이 발생할 경우:</p>
 <tr><td><strong>E-4. Multi-Turn & Temporal Testing</strong></td><td>Extended conversations, behavioral stability, agentic action chains</td></tr>
 <tr><td><strong>E-5. Escalation Protocol</strong></td><td>Immediate halt for real-world harm potential; pause for ethical concerns</td></tr>
 <tr><td><strong>E-6. Progress Monitoring & Stop/Go Criteria</strong></td><td><span class="badge badge-new">ENHANCED</span> Continuous monitoring + per-domain suspension thresholds (CBRN: zero tolerance, PII: >5 instances, Jailbreak: >70% success rate) + Go/No-Go decision points</td></tr>
-<tr><td><strong>E-12. Evaluation Integrity Verification</strong></td><td><span class="badge badge-new">NEW</span> Detect evaluation gaming: transcript review, internet access verification, evaluation vs. production behavior comparison (>10% delta = critical concern)</td></tr>
-<tr><td><strong>E-13. AI Defense Validation</strong></td><td><span class="badge badge-new">NEW</span> Test AI-powered defenses: monitoring detection rates (≥90% target), HITL bypass testing, confidence score validation, false positive/negative assessment</td></tr>
+<tr><td><strong>E-12. Evaluation Integrity Verification</strong></td><td><span class="badge badge-new">Phase 2</span> Detect evaluation gaming: transcript review, internet access verification, evaluation vs. production behavior comparison (>10% delta = critical concern)</td></tr>
+<tr><td><strong>E-13. Physical and IoT System Interaction Testing</strong></td><td><span class="badge badge-new">Phase 3</span> For AI systems with physical/IoT interfaces: test physical actuation safety boundaries (kinetic limits, force/torque, collision avoidance, emergency stop), sensor attack resilience (adversarial inputs, spoofing, DoS), IoT network security (protocol exploitation, device identity, network segmentation), environmental context attacks, and fail-safe validation (ISO/IEC 42119-7 Annex B.11/B.12)</td></tr>
 </tbody>
 </table>
 
@@ -3370,7 +3372,8 @@ ISO/IEC 29119와 ISO/IEC 42119-7 간 충돌이 발생할 경우:</p>
 <ul>
   <li><strong>A-1. Finding Deduplication</strong> -- Group related observations; identify root causes</li>
   <li><strong>A-2. Finding Characterization</strong> -- Apply evaluation framework across all dimensions</li>
-  <li><strong>A-2.5. CBRN-Specific Evaluation</strong> -- <span class="badge badge-new">NEW</span> For findings related to Chemical, Biological, Radiological, Nuclear (CBRN) or safety-critical risks, apply additional specialized evaluation criteria: actionability assessment (working formula vs. general knowledge), novelty assessment (does AI lower barrier?), zero-tolerance severity classification (Critical/High/Low), and root cause analysis. See <a href="phase-3-normative-core.md#stage-4" target="_blank">Stage 4 A-2.5</a> for complete framework.</li>
+  <li><strong>A-2.5. CBRN-Specific Evaluation</strong> -- <span class="badge badge-new">Phase 1</span> For findings related to Chemical, Biological, Radiological, Nuclear (CBRN) or safety-critical risks, apply additional specialized evaluation criteria: actionability assessment (working formula vs. general knowledge), novelty assessment (does AI lower barrier?), zero-tolerance severity classification (Critical/High/Low), and root cause analysis. See <a href="phase-3-normative-core.md#stage-4" target="_blank">Stage 4 A-2.5</a> for complete framework.</li>
+  <li><strong>A-2.6. AIVSS (AI Vulnerability Severity Scoring System) Integration</strong> -- <span class="badge badge-new">Phase 3</span> Apply standardized quantitative severity scoring across 6 AI-specific risk dimensions: Confidentiality (0-10), Integrity (0-10), Availability (0-10), Safety (0-10), Fairness (0-10), Explainability (0-10). Calculate composite score with domain-specific weighting (CBRN: Safety 50%, Financial: Confidentiality 30%). Map to severity tiers (9.0-10.0: Critical, 7.0-8.9: High, 5.0-6.9: Medium). Complements qualitative assessment (A-2); use higher severity when conflict occurs (precautionary principle). Includes AIVSS scoring example with PII extraction scenario.</li>
   <li><strong>A-3. Attack Chain Analysis</strong> -- Can findings combine to amplify impact?</li>
   <li><strong>A-4. Coverage Analysis</strong> -- What was and was NOT examined? (Mandatory in final report)</li>
   <li><strong>A-5. Contextualized Risk Narrative</strong> -- What does the pattern of findings reveal?</li>
@@ -3575,6 +3578,7 @@ ISO/IEC 29119와 ISO/IEC 42119-7 간 충돌이 발생할 경우:</p>
   <li><strong>F-6. External Disclosure & CVD</strong> <span class="badge badge-new">Phase 2</span> -- ISO/IEC 29147-aligned coordinated vulnerability disclosure to vendors and researchers</li>
   <li><strong>F-7. Network Traffic Monitoring Validation</strong> <span class="badge badge-new">Phase 2</span> -- AI traffic 4-category classification (inference, RAG, tool execution, inter-agent), anomaly detection testing</li>
   <li><strong>F-8. Model Retraining & Recovery Procedures</strong> <span class="badge badge-new">Phase 2</span> -- Recovery from model poisoning, backup validation, post-recovery performance verification</li>
+  <li><strong>F-9. Forensic Readiness & Incident Response Capability Verification</strong> <span class="badge badge-new">Phase 3</span> -- Validate forensic readiness per ASI08/ASI10: immutable logging (WORM enforcement, hash chain integrity, Merkle tree validation), non-repudiation (cryptographic identity binding, signature verification, key revocation), tamper-evident audit trails (digital signatures, third-party timestamping), behavioral integrity attestation (manifest validation, capability drift detection, goal divergence detection, collusion detection, self-replication prevention), and forensic investigation readiness (simulated incident response, timeline reconstruction accuracy ≥90%, evidence sufficiency for regulatory reporting)</li>
 </ul>
 
 <h3>Remediation Status Tracking</h3>
@@ -11145,8 +11149,8 @@ Test Case ID(s) → Test Evidence → Findings → Residual Risk Assessment
 <hr class="section-divider">
 
 <footer style="text-align:center; padding: 2rem 0; color: var(--text-secondary); font-size: 0.82rem;">
-  <p><strong>AI Red Team International Guideline</strong> | AIRTG-v1.6-DRAFT</p>
-  <p>Version 1.6 Draft | 2026-02-15 | Status: Draft for Public Review</p>
+  <p><strong>AI Red Team International Guideline</strong> | AIRTG-v1.8-DRAFT</p>
+  <p>Version 1.8 Draft | 2026-02-14 | Status: Draft for Public Review</p>
   <p style="margin-top:0.5rem;"><strong>Phase A/B/C Implementation (2026-02-13):</strong> ISO/IEC TS 42119-2:2025 conformance achieved <strong>79.7%</strong> (baseline 20.3% → Phase A 60.8% → Phase B 74.3% → Phase C 79.7%), 27 gaps resolved. <strong>Phase A:</strong> Data Quality Testing (D-2.8, 9 types), Model Testing (D-2.5.1, 6 types), Metamorphic Testing (D-2.5.2, 5 relations), Test Oracle Strategy (P-1, 5 types). <strong>Phase B:</strong> Risk Calculation (P-2 Section 7bis), Differential Testing (D-2.6), Deployment Testing (E-10, 7 types), AI Test Plan Requirements (P-1bis, 9 sections), Lifecycle Coverage. <strong>Phase C:</strong> Non-Determinism Statistical Methodology (P-1bis Section 4), High-Dimensional Partitioning Algorithm (P-1bis Section 5), Interpretability & Opacity Testing (P-1bis Section 9). 5-Standard Terminology Framework (179 ISO terms, v0.5.6). ISO 29119 conformance: 92% (Process 100%, Documentation 100%, Test Techniques 88%, Terminology 100%).</p>
   <p style="margin-top:0.5rem;">This document is designed as a living standard. Normative Core is stable; Living Annexes update quarterly.</p>
 </footer>
