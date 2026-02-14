@@ -312,6 +312,11 @@ a { color: var(--accent); }
     <a href="#part-v" class="nav-part">Part V: Meta-Review</a>
     <a href="#part-vi" class="nav-part">Part VI: Standards Alignment</a>
     <a href="#part-vii" class="nav-part">Part VII: Reference Analysis</a>
+    <a href="#ref-iso42119-analysis">  7.6 ISO/IEC 42119-7</a>
+    <a href="#ref-owasp-agentic-analysis">  7.7 OWASP Agentic Top 10</a>
+    <a href="#ref-nist-cyber-analysis">  7.8 NIST Cyber AI Profile</a>
+    <a href="#ref-testing-agents-analysis">  7.9 Testing AI Agents</a>
+    <a href="#ref-berkeley-analysis">  7.10 UC Berkeley Risk Mgmt</a>
     <a href="#part-viii" class="nav-part">Part VIII: Research &amp; Risk Trends</a>
     <a href="#pipeline-research">  8.4 Pipeline: New Research</a>
     <a href="#pipeline-risks">  8.5 Pipeline: New Risks</a>
@@ -372,12 +377,12 @@ a { color: var(--accent); }
 
 <h3>What This Guideline Provides / 이 가이드라인이 제공하는 것</h3>
 <ul>
-  <li><strong>Unified terminology</strong> (bilingual KR/EN) aligned with NIST, ISO, EU AI Act, OWASP, and MITRE ATLAS.</li>
+  <li><strong>Unified terminology</strong> (bilingual KR/EN) aligned with NIST, ISO, EU AI Act, OWASP, and MITRE ATLAS, including <strong>7 Guiding Principles</strong> with new <strong>Least-Agency Principle</strong> for agentic systems.</li>
   <li><strong>Comprehensive threat landscape</strong> covering model-level, system-level, and socio-technical attack patterns with real-world incident analysis.</li>
-  <li><strong>Six-stage normative process</strong> (Planning, Design, Execution, Analysis, Reporting, Follow-up) aligned with ISO/IEC 29119.</li>
-  <li><strong>Risk-based test scope determination</strong> across three tiers (Foundational, Standard, Comprehensive).</li>
+  <li><strong>Six-stage normative process</strong> (Planning, Design, Execution, Analysis, Reporting, Follow-up) aligned with ISO/IEC 29119, with <strong>79 activities</strong> (16 Planning, 19 Design, 15 Execution, 13 Analysis, 8 Reporting, 8 Follow-up) including <strong>Phase 1 & Phase 2 additions</strong>: CBRN framework, tester safety, Rules of Engagement, three-step execution, evaluation integrity verification, deceptive alignment testing, self-replication testing, agent archetype classification (P-13), cascading failure testing (D-5), trust & identity security (D-6), protocol security for MCP/A2A/ACP/AGNTCY/AP2 (D-7), attack signature library (F-5), ISO/IEC 29147 CVD procedures (F-6), network traffic monitoring (F-7), and model recovery procedures (F-8).</li>
+  <li><strong>Risk-based test scope determination</strong> across three tiers (Foundational, Standard, Comprehensive) with <strong>L0-L5 Graduated Autonomy Scale</strong> integration.</li>
   <li><strong>Living Annexes</strong> with standardized attack pattern library, risk mappings, and benchmark coverage analysis designed for quarterly updates.</li>
-  <li><strong>Continuous operating model</strong> with three layers: automated monitoring, periodic assessment, and event-triggered deep engagements.</li>
+  <li><strong>Continuous operating model</strong> with three layers: automated monitoring, periodic assessment, and event-triggered deep engagements, including change-triggered re-evaluation protocols.</li>
   <li><strong>Standards alignment analysis</strong> (Part VI) with clause-by-clause comparison against ISO/IEC TS 42119-2:2025 (AI Testing) and ISO/IEC/IEEE 29119 (Software Testing), achieving <strong>79.7% ISO/IEC TS 42119-2:2025 conformance</strong> (baseline 20.3% → Phase A 60.8% → Phase B 74.3% → Phase C 79.7%, 27 gaps resolved) and <strong>93% ISO 29119 overall conformance</strong> across 63 checklist items (improved from 33%, updated 2026-02-14: +60pp improvement, all Critical/High/Medium priority gaps resolved, <strong>Test Techniques 100%</strong> with 6 ISO/IEC 29119-4 worked examples, <strong>Terminology 100%</strong>).</li>
   <li><strong>Reference document analysis</strong> (Part VII) synthesizing Japan AISI, OWASP GenAI, and CSA Agentic AI guides into 19 modification proposals (9 essential, 7 recommended, 3 reference), achieving <strong>100% OWASP Agentic AI Top 10 coverage</strong> (all ASI01-ASI10 security issues addressed in Phase 1-2 attack patterns).</li>
   <li><strong>Research &amp; risk trends</strong> (Part VIII) covering 35+ academic papers with 8 new attack techniques identified through pipeline integration and <strong>108 new AI incidents</strong> (IDs 1254-1361, Sept 2025 -- Feb 2026). <strong>13 new/escalated risks identified:</strong> 4 CRITICAL (Evaluation Context Detection, Supply Chain Compromise, LRM Jailbreak, Promptware Kill Chain), 6 HIGH (Healthcare AI Misuse, Cybersecurity Tool Exploitation, Autonomous Vehicle Failures, Multi-Agent Coordination Attacks, Reward Hacking, Deceptive Alignment), 3 MEDIUM-HIGH (Cross-lingual Safety Gaps, Chain-of-Thought Manipulation, Model Collapse). MIT AI Risk Repository updated to v4 (25 subdomains, up from 24). All 5 Annex D update triggers met.</li>
@@ -390,6 +395,17 @@ a { color: var(--accent); }
 "AI systems are inherently incapable of complete verification. This process systematically reduces discovered risks and transparently acknowledges undiscovered risks."<br>
 "AI 시스템은 본질적으로 완전한 검증이 불가능하다. 이 프로세스는 발견된 위험을 체계적으로 줄이고, 미발견 위험의 존재를 투명하게 인정한다."
 </blockquote>
+
+<h3 style="margin-top: 2rem;">Recent Updates / 최근 업데이트</h3>
+<div style="background: var(--accent-light); padding: 1rem 1.25rem; border-radius: 6px; margin: 1rem 0;">
+  <p style="margin: 0;"><strong>Version 1.7 (2026-02-14):</strong></p>
+  <ul style="margin: 0.5rem 0 0 1.5rem;">
+    <li><strong>Phase 1 Complete:</strong> Integrated 28 Essential proposals including CBRN framework, tester safety protocols (P-11), Rules of Engagement (P-12), three-step execution methodology, evaluation integrity verification (E-12), AI defense validation (E-13), deceptive alignment testing (T-5), and self-replication testing (T-6).</li>
+    <li><strong>Phase 2 Complete:</strong> Integrated 20 Recommended proposals including agent archetype classification & multi-party testing (P-13), cascading failure & system resilience testing (D-5), trust & identity security testing (D-6), protocol & governance integration testing for MCP/A2A/ACP/AGNTCY/AP2 (D-7), attack signature library (F-5), ISO/IEC 29147 CVD procedures (F-6), network traffic monitoring validation (F-7), model retraining & recovery procedures (F-8), and <strong>Least-Agency Principle</strong> (Principle 7).</li>
+    <li><strong>Activity Count:</strong> Expanded from 51 to <strong>79 activities</strong> across six stages.</li>
+    <li><strong>Expected Impact:</strong> ISO/IEC 29119 conformance projected to reach ~87%, ISO/IEC 42119-7 alignment ~80%, total requirements ~641 items.</li>
+  </ul>
+</div>
 </section>
 
 <hr class="section-divider">
@@ -1464,6 +1480,15 @@ ISO/IEC 29119와 정렬된 테스트 관리 및 문서화 용어:</p>
 <div class="collapsible-header">Principle 6: Diversity of Perspective / 관점의 다양성</div>
 <div class="collapsible-body"><div class="collapsible-body-inner">
 <p>Effective red teaming requires diverse teams: technical expertise, domain expertise, demographic diversity, and adversarial creativity. Homogeneous red teams produce homogeneous findings.</p>
+</div></div>
+
+<div class="collapsible-header">Principle 7: Least-Agency / 최소 에이전시 <span class="badge badge-new">Phase 2</span></div>
+<div class="collapsible-body"><div class="collapsible-body-inner">
+<p><strong>"Agents should operate with the minimum autonomy necessary to accomplish their designated tasks."</strong></p>
+<p>The Least-Agency Principle extends "least privilege" to agentic AI systems. While least privilege limits access rights, least-agency limits autonomous decision-making authority.</p>
+<p><strong>Why?</strong> Excessive autonomy increases risk: error amplification (agents execute incorrect decisions at scale), goal misalignment (agents misinterpret broad objectives), cascading failures (autonomous decisions trigger downstream failures), accountability gaps (hard to trace responsibility).</p>
+<p><strong>Implementation:</strong> Define minimum necessary autonomy using L0-L5 Graduated Autonomy Scale. Set explicit action boundaries (whitelist permitted, blacklist prohibited). Escalate to human when agent confidence <90%. Prefer reversible actions over irreversible.</p>
+<p><strong>Red Teaming:</strong> Test autonomy level compliance (P-13), boundary probing (D-7), escalation bypass attempts (D-7), scope creep detection (D-5). See <a href="phase-0-terminology.md#principle-7" target="_blank">Principle 7</a> for complete definition.</p>
 </div></div>
 </div>
 </section>
@@ -2950,7 +2975,10 @@ ISO/IEC 29119와 ISO/IEC 42119-7 간 충돌이 발생할 경우:</p>
 <tr><td><strong>P-2. Threat Model Construction</strong></td><td>Identify assets, threat actors, attack surfaces (3 levels), and existing mitigations</td></tr>
 <tr><td><strong>P-3. Team Composition</strong></td><td>Determine required technical, domain, and diversity competencies</td></tr>
 <tr><td><strong>P-4. Legal & Ethical Review</strong></td><td>Establish authorization, ethical boundaries, data handling, and disclosure terms</td></tr>
-<tr><td><strong>P-5. Risk Tier Determination</strong></td><td>Classify system risk tier to calibrate testing depth</td></tr>
+<tr><td><strong>P-5. Risk Tier Determination</strong></td><td>Classify system risk tier to calibrate testing depth (includes L0-L5 Graduated Autonomy assessment)</td></tr>
+<tr><td><strong>P-11. Tester Safety & Psychological Support</strong></td><td><span class="badge badge-new">NEW</span> Mandatory psychological safety protocols: rotation schedules (max 4h/day harmful content), opt-out mechanisms, mental health support, exposure limits</td></tr>
+<tr><td><strong>P-12. Rules of Engagement</strong></td><td><span class="badge badge-new">NEW</span> Forbidden targets, authorized techniques by risk level, stop conditions, per-domain suspension thresholds, escalation protocols</td></tr>
+<tr><td><strong>P-13. Agent Archetype Classification & Multi-Party Testing</strong></td><td><span class="badge badge-new">Phase 2</span> Classify agent archetypes (customer service, enterprise, personal, code gen, research, orchestrator, physical), define bounded autonomy (L0-L5), establish multi-party testing coordination for cross-organizational systems</td></tr>
 </tbody>
 </table>
 
@@ -3203,6 +3231,9 @@ ISO/IEC 29119와 ISO/IEC 42119-7 간 충돌이 발생할 경우:</p>
 <tr><td><strong>D-2. Test Strategy Selection</strong></td><td>Threat actors to emulate, surfaces to prioritize, manual vs. automated balance, breadth vs. depth</td></tr>
 <tr><td><strong>D-3. Test Case Design</strong></td><td>Threat-model-derived, scenario-based, evaluation-criteria-explicit, modality-aware</td></tr>
 <tr><td><strong>D-4. Evaluation Framework</strong></td><td>Finding characterization (reproducibility, exploitability, impact scope, mitigation, context sensitivity)</td></tr>
+<tr><td><strong>D-5. Cascading Failure & System Resilience Test Design</strong></td><td><span class="badge badge-new">Phase 2</span> Digital twin replay testing, circuit breaker/guardrail testing, governance drift detection, rogue agent attestation, kill-switch verification</td></tr>
+<tr><td><strong>D-6. Trust & Identity Security Test Design</strong></td><td><span class="badge badge-new">Phase 2</span> Fake explainability detection, consent laundering, TOCTOU testing, synthetic identity injection, delegation chain abuse scenarios</td></tr>
+<tr><td><strong>D-7. Protocol & Governance Integration Test Design</strong></td><td><span class="badge badge-new">Phase 2</span> Least-Agency principle violation testing, AI-interpretable governance, protocol-specific tests (MCP, A2A, ACP, AGNTCY, AP2), change-triggered re-evaluation</td></tr>
 </tbody>
 </table>
 
@@ -3219,10 +3250,13 @@ ISO/IEC 29119와 ISO/IEC 42119-7 간 충돌이 발생할 경우:</p>
 <thead><tr><th>Activity</th><th>Description</th></tr></thead>
 <tbody>
 <tr><td><strong>E-1. Environment Preparation</strong></td><td>Verify config, establish logging, confirm safety controls</td></tr>
-<tr><td><strong>E-2. Structured Test Execution</strong></td><td>Execute planned test cases; document inputs, outputs, observations</td></tr>
+<tr><td><strong>E-2. Structured Test Execution (Three-Step)</strong></td><td><span class="badge badge-new">ENHANCED</span> <strong>Step 1:</strong> Exploratory Testing (attack vector identification) → <strong>Step 2:</strong> Attack Development (optimized payloads) → <strong>Step 3:</strong> System-wide Testing (end-to-end impact assessment)</td></tr>
 <tr><td><strong>E-3. Creative/Exploratory Probing</strong></td><td>Unstructured exploration beyond planned cases to discover novel failure modes</td></tr>
 <tr><td><strong>E-4. Multi-Turn & Temporal Testing</strong></td><td>Extended conversations, behavioral stability, agentic action chains</td></tr>
 <tr><td><strong>E-5. Escalation Protocol</strong></td><td>Immediate halt for real-world harm potential; pause for ethical concerns</td></tr>
+<tr><td><strong>E-6. Progress Monitoring & Stop/Go Criteria</strong></td><td><span class="badge badge-new">ENHANCED</span> Continuous monitoring + per-domain suspension thresholds (CBRN: zero tolerance, PII: >5 instances, Jailbreak: >70% success rate) + Go/No-Go decision points</td></tr>
+<tr><td><strong>E-12. Evaluation Integrity Verification</strong></td><td><span class="badge badge-new">NEW</span> Detect evaluation gaming: transcript review, internet access verification, evaluation vs. production behavior comparison (>10% delta = critical concern)</td></tr>
+<tr><td><strong>E-13. AI Defense Validation</strong></td><td><span class="badge badge-new">NEW</span> Test AI-powered defenses: monitoring detection rates (≥90% target), HITL bypass testing, confidence score validation, false positive/negative assessment</td></tr>
 </tbody>
 </table>
 
@@ -3336,6 +3370,7 @@ ISO/IEC 29119와 ISO/IEC 42119-7 간 충돌이 발생할 경우:</p>
 <ul>
   <li><strong>A-1. Finding Deduplication</strong> -- Group related observations; identify root causes</li>
   <li><strong>A-2. Finding Characterization</strong> -- Apply evaluation framework across all dimensions</li>
+  <li><strong>A-2.5. CBRN-Specific Evaluation</strong> -- <span class="badge badge-new">NEW</span> For findings related to Chemical, Biological, Radiological, Nuclear (CBRN) or safety-critical risks, apply additional specialized evaluation criteria: actionability assessment (working formula vs. general knowledge), novelty assessment (does AI lower barrier?), zero-tolerance severity classification (Critical/High/Low), and root cause analysis. See <a href="phase-3-normative-core.md#stage-4" target="_blank">Stage 4 A-2.5</a> for complete framework.</li>
   <li><strong>A-3. Attack Chain Analysis</strong> -- Can findings combine to amplify impact?</li>
   <li><strong>A-4. Coverage Analysis</strong> -- What was and was NOT examined? (Mandatory in final report)</li>
   <li><strong>A-5. Contextualized Risk Narrative</strong> -- What does the pattern of findings reveal?</li>
@@ -3352,6 +3387,50 @@ ISO/IEC 29119와 ISO/IEC 42119-7 간 충돌이 발생할 경우:</p>
 "This report presents results of a bounded adversarial assessment. Findings do not represent an exhaustive enumeration of all possible risks. Absence of findings in any category does not warrant absence of vulnerabilities. AI systems are inherently incapable of complete verification."<br><br>
 "이 보고서는 제한된 적대적 평가의 결과를 제시한다. 어떤 범주에서든 발견사항의 부재가 해당 범주에서의 취약점 부재를 보증하지 않는다. AI 시스템은 본질적으로 완전한 검증이 불가능하다."
 </blockquote>
+
+<h3 id="differentiated-reporting">Differentiated Reporting for Sensitive Findings <span class="badge badge-new">NEW</span></h3>
+<p><strong>Activity R-2.2:</strong> For safety-critical, CBRN, or highly sensitive vulnerabilities, produce differentiated report versions with appropriate information sanitization to prevent misuse while preserving decision-making value.</p>
+<p class="bilingual"><strong>활동 R-2.2:</strong> 안전 중대, CBRN 또는 고도로 민감한 취약점의 경우, 오용을 방지하면서 의사결정 가치를 보존하기 위해 적절한 정보 살균을 적용한 차등 보고서 버전을 생성한다.</p>
+
+<div style="overflow-x:auto;">
+<table>
+<thead>
+<tr>
+  <th>Report Type / 보고서 유형</th>
+  <th>Audience / 대상</th>
+  <th>Access Controls / 접근 통제</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Full Technical Report</strong></td>
+  <td>RTL, System Owner, Project Sponsor, Security Team</td>
+  <td>Encrypted storage, access logging, 1-year retention (90 days for CBRN)</td>
+</tr>
+<tr>
+  <td><strong>Sanitized Report</strong></td>
+  <td>Executives, Compliance, Board</td>
+  <td>Standard confidential controls - harmful details removed</td>
+</tr>
+<tr>
+  <td><strong>CBRN Report</strong></td>
+  <td>RTL, System Owner, Project Sponsor, Safety Officer ONLY</td>
+  <td><strong>CRITICAL:</strong> Air-gapped storage, two-person rule, mandatory destruction post-remediation</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Key Sanitization Examples / 주요 살균 예시:</strong></p>
+<ul>
+  <li><strong>CBRN:</strong> Remove working instructions, retain vulnerability category + severity</li>
+  <li><strong>PII Leakage:</strong> Remove actual leaked data, retain category + volume + technique</li>
+  <li><strong>Jailbreak:</strong> Remove exact working prompts, retain attack category + success rate + technique type</li>
+</ul>
+
+<p class="info-box">
+<strong>Rationale:</strong> Differentiated reporting balances transparency with security. CBRN and safety-critical findings require strict need-to-know controls to prevent dual-use exploitation, while sanitized versions enable informed governance decisions across broader stakeholder groups.
+</p>
 
 <h3 id="residual-risk-template">Residual Risk Summary Template / 잔여 위험 요약 템플릿</h3>
 
@@ -3486,6 +3565,18 @@ ISO/IEC 29119와 ISO/IEC 42119-7 간 충돌이 발생할 경우:</p>
 <h2>7. Stage 6: Follow-up / 후속조치</h2>
 <p><strong>Purpose:</strong> Ensure findings lead to actual risk reduction through remediation tracking, re-testing, and lessons learned integration.</p>
 
+<h3>Key Activities</h3>
+<ul>
+  <li><strong>F-1. Remediation Tracking</strong> -- Track finding status: Open → In Progress → Remediated → Verified</li>
+  <li><strong>F-2. Remediation Verification</strong> -- Re-test remediated findings to confirm effectiveness and detect bypasses</li>
+  <li><strong>F-3. Lessons Learned Integration</strong> -- Update threat models, training processes, and methodologies based on findings</li>
+  <li><strong>F-4. Engagement Closure</strong> -- Archive documentation, conduct retrospective, issue closure notice</li>
+  <li><strong>F-5. Attack Signature Library Maintenance</strong> <span class="badge badge-new">Phase 2</span> -- Centralized repository of attack signatures for vulnerability detection and reuse</li>
+  <li><strong>F-6. External Disclosure & CVD</strong> <span class="badge badge-new">Phase 2</span> -- ISO/IEC 29147-aligned coordinated vulnerability disclosure to vendors and researchers</li>
+  <li><strong>F-7. Network Traffic Monitoring Validation</strong> <span class="badge badge-new">Phase 2</span> -- AI traffic 4-category classification (inference, RAG, tool execution, inter-agent), anomaly detection testing</li>
+  <li><strong>F-8. Model Retraining & Recovery Procedures</strong> <span class="badge badge-new">Phase 2</span> -- Recovery from model poisoning, backup validation, post-recovery performance verification</li>
+</ul>
+
 <h3>Remediation Status Tracking</h3>
 <table>
 <thead><tr><th>Status</th><th>Definition / 정의</th></tr></thead>
@@ -3505,7 +3596,11 @@ ISO/IEC 29119와 ISO/IEC 42119-7 간 충돌이 발생할 경우:</p>
 <h2>8. Risk-Based Test Scope Determination / 리스크 기반 테스트 범위</h2>
 
 <h3>Risk Tier Factors / 리스크 등급 결정 요소</h3>
-<p>Deployment domain, affected population scale, autonomy level, decision consequence, data sensitivity, regulatory classification, public exposure.</p>
+<p>Deployment domain, affected population scale, <strong>autonomy level (L0-L5 graduated scale)</strong>, agent authority, environmental complexity (simulated/mediated/physical), causal impact level, decision consequence, data sensitivity, regulatory classification, public exposure.</p>
+<p class="info-box" style="background: var(--accent-light); border-left: 4px solid var(--accent); padding: 0.5rem; margin: 0.5rem 0; font-size: 0.9em;">
+<strong>Updated 2026-02-14:</strong> Autonomy level assessment now uses the L0-L5 Graduated Autonomy Scale (Kasirzadeh & Gabriel 2025): <strong>L0</strong> (no autonomy/pure tool) → <strong>L1</strong> (minimal/AI suggests) → <strong>L2</strong> (partial/bounded execution) → <strong>L3</strong> (conditional/independent within constraints) → <strong>L4</strong> (high/minimal oversight) → <strong>L5</strong> (full/operates independently). L4-L5 systems require Tier 3 (Comprehensive) testing minimum. See <a href="phase-3-normative-core.md#section-8" target="_blank">Section 8.2</a> for complete framework.<br>
+<strong>업데이트 2026-02-14:</strong> 자율성 수준 평가는 이제 L0-L5 단계별 자율성 척도 사용 (Kasirzadeh & Gabriel 2025). L4-L5 시스템은 최소 Tier 3 (포괄) 테스트 필요.
+</p>
 
 <h3>Testing Depth by Tier / 등급별 테스트 깊이</h3>
 <div style="overflow-x:auto;">
@@ -3889,12 +3984,16 @@ A: [Standard tier information]</code></pre>
 <tr id="ap-sys-004"><td>AP-SYS-004</td><td>Privilege Escalation via Agent Identity Abuse</td><td>SYS</td><td>SYS-PE</td><td><span class="badge badge-critical">Critical</span></td></tr>
 <tr id="ap-soc-001"><td>AP-SOC-001</td><td>AI-Powered Deepfake Fraud</td><td>SOC</td><td>SOC-DF</td><td><span class="badge badge-critical">Critical</span></td></tr>
 <tr id="ap-soc-002"><td>AP-SOC-002</td><td>Algorithmic Bias Amplification</td><td>SOC</td><td>SOC-BA</td><td><span class="badge badge-high">High</span></td></tr>
+<tr id="ap-emg-011"><td>AP-EMG-011</td><td>Self-Replication</td><td>SYS</td><td>Emergent</td><td><span class="badge badge-critical">Critical</span></td></tr>
+<tr id="ap-emg-012"><td>AP-EMG-012</td><td>Self-Exfiltration</td><td>SYS</td><td>Emergent</td><td><span class="badge badge-critical">Critical</span></td></tr>
+<tr id="ap-emg-013"><td>AP-EMG-013</td><td>Self-Modification</td><td>SYS</td><td>Emergent</td><td><span class="badge badge-high">High</span></td></tr>
+<tr id="ap-emg-014"><td>AP-EMG-014</td><td>Shutdown Resistance</td><td>SYS</td><td>Emergent</td><td><span class="badge badge-critical">Critical</span></td></tr>
 </tbody>
 </table>
 
 <p class="info-box" style="background: var(--accent-light); border-left: 4px solid var(--accent); padding: 1rem; margin: 1rem 0;">
-<strong>Note:</strong> This Pattern Library Index contains a representative subset of attack patterns. For the complete catalog with detailed descriptions, see <a href="phase-12-attacks.md" target="_blank">phase-12-attacks.md v1.2</a> (30+ patterns across model, system, and socio-technical layers).<br>
-<strong>참고:</strong> 이 패턴 라이브러리 인덱스는 대표적인 공격 패턴의 하위 집합을 포함합니다. 상세한 설명이 포함된 전체 카탈로그는 <a href="phase-12-attacks.md" target="_blank">phase-12-attacks.md v1.2</a>을 참조하세요 (모델, 시스템, 사회기술적 계층의 30개 이상 패턴).
+<strong>Note:</strong> This Pattern Library Index contains a representative subset of attack patterns. For the complete catalog with detailed descriptions, see <a href="phase-12-attacks.md" target="_blank">phase-12-attacks.md v1.3</a> (81 patterns across model, system, and socio-technical layers, including 14 emergent capability threat patterns AP-EMG-001 through AP-EMG-014).<br>
+<strong>참고:</strong> 이 패턴 라이브러리 인덱스는 대표적인 공격 패턴의 하위 집합을 포함합니다. 상세한 설명이 포함된 전체 카탈로그는 <a href="phase-12-attacks.md" target="_blank">phase-12-attacks.md v1.3</a>을 참조하세요 (모델, 시스템, 사회기술적 계층의 81개 패턴, 14개 창발적 역량 위협 패턴 AP-EMG-001~AP-EMG-014 포함).
 </p>
 </section>
 
@@ -5601,13 +5700,14 @@ ISO/IEC TS 42119-2:2025 Section 5는 7단계 AI 생명주기를 정의합니다.
 <!-- ===== PART VII: REFERENCE DOCUMENT ANALYSIS ===== -->
 <section id="part-vii">
 <h1>Part VII: Reference Document Analysis / 제7부: 참고 문서 분석</h1>
-<p class="bilingual">3개 핵심 참고 문서의 심층 분석, 19개 수정 제안, 통합 권고사항</p>
+<p class="bilingual">8개 핵심 참고 문서의 심층 분석, 55개 수정 제안, 671개 통합 요구사항 카탈로그<br>
+In-depth analysis of 8 key reference documents, 55 modification proposals, 671 consolidated requirements</p>
 
 <!-- 7.1 Analysis Overview -->
 <section id="ref-analysis-overview">
 <h2>7.1 Analysis Overview / 분석 개요</h2>
-<p>Three authoritative reference documents were analyzed in depth to identify gaps, complementary frameworks, and specific modification proposals for this guideline. Together, these documents cover the full spectrum from general LLM testing methodology through GenAI evaluation structure to agentic AI-specific threat patterns.</p>
-<p class="bilingual">본 가이드라인의 갭 식별, 보완적 프레임워크, 구체적 수정 제안을 도출하기 위해 3개의 권위 있는 참고 문서를 심층 분석하였습니다. 이 문서들은 일반 LLM 테스트 방법론부터 GenAI 평가 구조, 에이전틱 AI 특화 위협 패턴까지 전 범위를 포괄합니다.</p>
+<p><strong>Updated 2026-02-14:</strong> Eight authoritative reference documents have been analyzed in depth to identify gaps, complementary frameworks, and specific modification proposals for this guideline. The original 3 documents (Japan AISI, OWASP GenAI, CSA Agentic) have been supplemented with 5 additional documents covering ISO red teaming standards, agentic security vulnerabilities, cybersecurity AI profiling, agent data leakage testing, and agentic AI risk management.</p>
+<p class="bilingual"><strong>2026-02-14 업데이트:</strong> 8개의 권위 있는 참고 문서를 심층 분석하여 갭, 보완적 프레임워크, 구체적 수정 제안을 도출하였습니다. 기존 3개 문서(일본 AISI, OWASP GenAI, CSA Agentic)에 ISO 레드팀 표준, 에이전틱 보안 취약점, 사이버보안 AI 프로파일, 에이전트 데이터 유출 테스팅, 에이전틱 AI 위험 관리 등 5개 문서가 추가되었습니다.</p>
 
 <h3>Analyzed Documents / 분석 대상 문서</h3>
 <table>
@@ -5640,6 +5740,51 @@ ISO/IEC TS 42119-2:2025 Section 5는 7단계 AI 생명주기를 정의합니다.
   <td>Agentic AI systems -- 12-category threat taxonomy</td>
   <td>Phase 1-2 (Attacks), Phase 4 (Annex)</td>
 </tr>
+<tr style="background:var(--accent-light);">
+  <td>4 <span class="badge badge-new">NEW</span></td>
+  <td><strong>ISO/IEC AWI TS 42119-7:2026 -- AI Testing Part 7: Red Teaming</strong></td>
+  <td>ISO/IEC JTC 1/SC 42</td>
+  <td>2026</td>
+  <td>~80</td>
+  <td>ISO red teaming standard -- 3-phase methodology, CBRN framework, tester safety</td>
+  <td>Phase 0, Phase 3 (all stages)</td>
+</tr>
+<tr style="background:var(--accent-light);">
+  <td>5 <span class="badge badge-new">NEW</span></td>
+  <td><strong>OWASP Top 10 for Agentic Applications 2026</strong></td>
+  <td>OWASP Agentic Security Initiative</td>
+  <td>2026</td>
+  <td>~60</td>
+  <td>Agentic app vulnerabilities (ASI01-ASI10) -- 21 novel test techniques</td>
+  <td>Phase 1-2 (Attacks), Phase 3-4</td>
+</tr>
+<tr style="background:var(--accent-light);">
+  <td>6 <span class="badge badge-new">NEW</span></td>
+  <td><strong>NIST IR 8596 -- Cybersecurity Framework Profile for AI (Cyber AI Profile)</strong></td>
+  <td>NIST / MITRE</td>
+  <td>2025</td>
+  <td>107</td>
+  <td>CSF 2.0 mapping for AI cybersecurity -- Secure/Defend/Thwart focus areas</td>
+  <td>Phase 3 (Execution, Reporting)</td>
+</tr>
+<tr style="background:var(--accent-light);">
+  <td>7 <span class="badge badge-new">NEW</span></td>
+  <td><strong>Testing AI Agents for Data Leakage Risks</strong></td>
+  <td>Singapore &amp; Korea AISI (bilateral)</td>
+  <td>2026</td>
+  <td>~30</td>
+  <td>Agent data leakage -- 3 risk types, 13 novel techniques, quantitative benchmarks</td>
+  <td>Phase 3 (Design, Execution, Evaluation)</td>
+</tr>
+<tr style="background:var(--accent-light);">
+  <td>8 <span class="badge badge-new">NEW</span></td>
+  <td><strong>Agentic AI Risk-Management Standards Profile v1.0</strong></td>
+  <td>UC Berkeley CLTC</td>
+  <td>2026</td>
+  <td>67</td>
+  <td>NIST AI RMF extension -- L0-L5 autonomy, deceptive alignment, self-replication</td>
+  <td>Phase 3 (Risk Tiers, D-2.11)</td>
+</tr>
 </tbody>
 </table>
 
@@ -5648,16 +5793,21 @@ ISO/IEC TS 42119-2:2025 Section 5는 7단계 AI 생명주기를 정의합니다.
   <li><strong>Japan AISI:</strong> Most process-detailed (15-step methodology), strongest on operational execution guidance, LLM-focused</li>
   <li><strong>OWASP GenAI:</strong> Broadest evaluation structure (4-phase blueprint), strongest on organizational maturity and metrics, GenAI-focused</li>
   <li><strong>CSA Agentic AI:</strong> Most specialized (12 threat categories), strongest on agentic-specific attack patterns, agentic-focused</li>
+  <li><strong>ISO/IEC 42119-7:</strong> <span class="badge badge-new">NEW</span> Only ISO standard for AI red teaming -- CBRN framework, tester safety, 3-step execution, 73 net-new requirements</li>
+  <li><strong>OWASP Agentic Top 10:</strong> <span class="badge badge-new">NEW</span> 10 agentic vulnerability categories (ASI01-ASI10), 21 novel test techniques, backed by 20+ real-world exploits</li>
+  <li><strong>NIST Cyber AI Profile:</strong> <span class="badge badge-new">NEW</span> CSF 2.0 cybersecurity mapping with Secure/Defend/Thwart focus areas, 42 net-new requirements</li>
+  <li><strong>Testing AI Agents:</strong> <span class="badge badge-new">NEW</span> First bilateral AISI testing exercise, quantitative benchmarks, 13 novel techniques for data leakage</li>
+  <li><strong>UC Berkeley Risk Mgmt:</strong> <span class="badge badge-new">NEW</span> L0-L5 autonomy scale, deceptive alignment, self-replication testing, evaluation integrity</li>
 </ul>
 
 <h3>Modification Proposal Summary / 수정 제안 요약</h3>
 <table>
-<thead><tr><th>Priority / 우선순위</th><th>Count / 수량</th><th>Description / 설명</th></tr></thead>
+<thead><tr><th>Priority / 우선순위</th><th>Previous / 기존</th><th>New / 신규</th><th>Total / 합계</th><th>Description / 설명</th></tr></thead>
 <tbody>
-<tr><td><span class="badge badge-critical">Essential / 필수</span></td><td><strong>9</strong></td><td>Critical gaps that should be addressed for guideline completeness</td></tr>
-<tr><td><span class="badge badge-high">Recommended / 권장</span></td><td><strong>7</strong></td><td>Enhancements that improve quality and coverage</td></tr>
-<tr><td><span class="badge badge-medium">Reference / 참고</span></td><td><strong>3</strong></td><td>Useful additions as resources permit</td></tr>
-<tr><td style="font-weight:700;">Total / 합계</td><td style="font-weight:700;">19</td><td>Across 3 reference documents</td></tr>
+<tr><td><span class="badge badge-critical">Essential / 필수</span></td><td>9</td><td>+19</td><td><strong>28</strong></td><td>Critical gaps that must be addressed for guideline completeness</td></tr>
+<tr><td><span class="badge badge-high">Recommended / 권장</span></td><td>7</td><td>+13</td><td><strong>20</strong></td><td>Significant quality and coverage improvements</td></tr>
+<tr><td><span class="badge badge-medium">Reference / 참고</span></td><td>3</td><td>+4</td><td><strong>7</strong></td><td>Useful additions as resources permit</td></tr>
+<tr style="font-weight:700;border-top:2px solid var(--border);"><td>Total / 합계</td><td>19</td><td>+36</td><td><strong>55</strong></td><td>Across 8 reference documents</td></tr>
 </tbody>
 </table>
 </section>
@@ -5729,33 +5879,315 @@ ISO/IEC TS 42119-2:2025 Section 5는 7단계 AI 생명주기를 정의합니다.
 
 <hr class="section-divider">
 
+<!-- 7.6 ISO/IEC 42119-7 Analysis -->
+<section id="ref-iso42119-analysis">
+<h2>7.6 ISO/IEC 42119-7 Red Teaming Standard Analysis <span class="badge badge-new">NEW</span><br><span class="bilingual">ISO/IEC 42119-7 레드팀 표준 분석</span></h2>
+
+<h3>Document Summary / 문서 요약</h3>
+<p>ISO/IEC AWI TS 42119-7:2026 is the first ISO standard specifically addressing AI red teaming. It provides a 3-phase methodology (Team Formation, Execution, Knowledge Sharing) aligned with ISO/IEC 29119-2. The standard introduces <strong>147 requirements</strong> (73 net-new), covering CBRN evaluation frameworks, tester psychological safety, and formal Rules of Engagement.</p>
+<p class="bilingual">ISO/IEC AWI TS 42119-7:2026은 AI 레드팀을 구체적으로 다루는 최초의 ISO 표준입니다. ISO/IEC 29119-2에 맞춘 3단계 방법론(팀 구성, 실행, 지식 공유)을 제공하며, CBRN 평가 프레임워크, 테스터 심리적 안전, 교전 규칙(RoE) 공식화 등 73개 순 신규 요구사항을 포함합니다.</p>
+
+<h3>Key Contributions / 주요 기여</h3>
+<ul>
+  <li><strong>CBRN Evaluation Framework:</strong> Zero-tolerance criteria, actionability/novelty assessment, 3-level severity (Critical/High/Low)</li>
+  <li><strong>Tester Safety:</strong> Psychological support services, rotation schedules, opt-out mechanisms for harmful content exposure</li>
+  <li><strong>Three-Step Execution:</strong> Exploratory Testing &rarr; Attack Development &rarr; System-wide Testing</li>
+  <li><strong>Rules of Engagement:</strong> Forbidden targets, authorized techniques, stop conditions with specific thresholds</li>
+  <li><strong>Sanitized Reporting:</strong> Need-to-know CBRN access controls, separate full/redacted report tracks</li>
+  <li><strong>ISO 29119-2 Alignment:</strong> Direct process mapping (Annex E) validates guideline Phase 3 architecture</li>
+</ul>
+
+<h3>Modification Proposals / 수정 제안 (9 proposals: E-1 to E-9)</h3>
+<table>
+<thead><tr><th>#</th><th>Proposal / 제안</th><th>Priority / 우선순위</th><th>Target Phase</th><th>Description / 설명</th></tr></thead>
+<tbody>
+<tr><td>E-1</td><td><strong>Tester Safety and Psychological Support</strong></td><td><span class="badge badge-high">Recommended</span></td><td>Phase 3 Stage 1</td><td>Rotation schedules, opt-out mechanisms, psychological support</td></tr>
+<tr><td>E-2</td><td><strong>CBRN Evaluation Framework</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 3 Stage 4</td><td>Zero-tolerance criteria, actionability/novelty assessment</td></tr>
+<tr><td>E-3</td><td><strong>Three-Step Execution Methodology</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 3 Stage 3</td><td>Exploratory &rarr; Attack Development &rarr; System-wide</td></tr>
+<tr><td>E-4</td><td><strong>Rules of Engagement Formalization</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 3 Stage 2</td><td>Forbidden targets, authorized techniques, stop conditions</td></tr>
+<tr><td>E-5</td><td><strong>Domain-Specific Severity Frameworks</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 3 Stage 4</td><td>CBRN, Performance, Quality domain-specific evaluation</td></tr>
+<tr><td>E-6</td><td><strong>Stop/Go Criteria &amp; Escalation</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 3 Stage 1</td><td>Formal suspension thresholds and incident reporting</td></tr>
+<tr><td>E-7</td><td><strong>Sanitized Reporting &amp; Access Controls</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 3 Stage 5</td><td>Need-to-know CBRN access, full vs. sanitized reports</td></tr>
+<tr><td>E-8</td><td><strong>Attack Signature Library</strong></td><td><span class="badge badge-high">Recommended</span></td><td>Phase 3 Stage 5</td><td>Shared library, design patterns, lesson learned sessions</td></tr>
+<tr><td>E-9</td><td><strong>ISO/IEC 29147 External Disclosure</strong></td><td><span class="badge badge-high">Recommended</span></td><td>Phase 3 Stage 5</td><td>Responsible vulnerability disclosure alignment</td></tr>
+</tbody>
+</table>
+
+<h3>Impact Assessment / 영향 평가</h3>
+<table>
+<thead><tr><th>Dimension</th><th>Current</th><th>After Integration</th><th>Change</th></tr></thead>
+<tbody>
+<tr><td>Total requirements</td><td>491</td><td>564 (+73)</td><td>+14.9%</td></tr>
+<tr><td>ISO 42119-7 alignment</td><td>0%</td><td>~85%</td><td>+85pp</td></tr>
+<tr><td>ISO 29119 process conformance</td><td>84%</td><td>~92%</td><td>+8pp</td></tr>
+<tr><td>Terminology conformance</td><td>43%</td><td>~57%</td><td>+14pp</td></tr>
+</tbody>
+</table>
+</section>
+
+<hr class="section-divider">
+
+<!-- 7.7 OWASP Agentic Top 10 Analysis -->
+<section id="ref-owasp-agentic-analysis">
+<h2>7.7 OWASP Top 10 for Agentic Applications Analysis <span class="badge badge-new">NEW</span><br><span class="bilingual">OWASP 에이전틱 애플리케이션 Top 10 분석</span></h2>
+
+<h3>Document Summary / 문서 요약</h3>
+<p>The OWASP Top 10 for Agentic Applications (2026) catalogs the 10 highest-impact security vulnerabilities specific to agentic AI systems. Each entry (ASI01-ASI10) includes attack scenarios, prevention guidelines, and cross-references to 20+ real-world exploits from 2025. It introduces the <strong>Least-Agency</strong> principle and provides 21 novel test techniques.</p>
+<p class="bilingual">OWASP 에이전틱 애플리케이션 Top 10(2026)은 에이전틱 AI 시스템에 특화된 10대 보안 취약점을 목록화합니다. 각 항목(ASI01-ASI10)은 공격 시나리오, 예방 지침, 2025년 20개 이상의 실제 익스플로잇 사례를 포함합니다.</p>
+
+<h3>ASI Vulnerability Categories / ASI 취약점 분류</h3>
+<table>
+<thead><tr><th>ASI ID</th><th>Title</th><th>Risk Level</th><th>Real-World Incidents</th></tr></thead>
+<tbody>
+<tr><td><strong>ASI01</strong></td><td>Agent Goal Hijack</td><td><span class="badge badge-critical">CRITICAL</span></td><td>Google Gemini Trifecta, ForcedLeak, Amazon Q Poisoning</td></tr>
+<tr><td><strong>ASI02</strong></td><td>Tool Misuse &amp; Exploitation</td><td><span class="badge badge-critical">CRITICAL</span></td><td>Framelink Figma MCP RCE, Malicious MCP Postmark</td></tr>
+<tr><td><strong>ASI03</strong></td><td>Identity &amp; Privilege Abuse</td><td><span class="badge badge-high">HIGH</span></td><td>OpenAI ChatGPT Operator Vulnerability</td></tr>
+<tr><td><strong>ASI04</strong></td><td>Agentic Supply Chain</td><td><span class="badge badge-high">HIGH</span></td><td>Malicious MCP Package Backdoor (npm), Cursor CVEs</td></tr>
+<tr><td><strong>ASI05</strong></td><td>Unexpected Code Execution</td><td><span class="badge badge-critical">CRITICAL</span></td><td>Replit Vibe Coding Meltdown, Hub MCP Injection</td></tr>
+<tr><td><strong>ASI06</strong></td><td>Memory &amp; Context Poisoning</td><td><span class="badge badge-high">HIGH</span></td><td>EchoLeak Zero-Click Injection</td></tr>
+<tr><td><strong>ASI07</strong></td><td>Insecure Inter-Agent Comm</td><td><span class="badge badge-high">HIGH</span></td><td>Agent-in-the-Middle A2A Spoofing</td></tr>
+<tr><td><strong>ASI08</strong></td><td>Cascading Failures</td><td><span class="badge badge-high">HIGH</span></td><td>Multi-agent cascade scenarios</td></tr>
+<tr><td><strong>ASI09</strong></td><td>Human-Agent Trust Exploitation</td><td><span class="badge badge-medium">MEDIUM</span></td><td>Replit manipulation, consent laundering</td></tr>
+<tr><td><strong>ASI10</strong></td><td>Rogue Agents</td><td><span class="badge badge-high">HIGH</span></td><td>Behavioral drift and collusion scenarios</td></tr>
+</tbody>
+</table>
+
+<h3>Modification Proposals / 수정 제안 (12 proposals: D-1 to D-12)</h3>
+<table>
+<thead><tr><th>#</th><th>Proposal / 제안</th><th>Priority / 우선순위</th><th>Target Phase</th><th>Description / 설명</th></tr></thead>
+<tbody>
+<tr><td>D-1</td><td><strong>ASI Vulnerability Taxonomy Integration</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 1-2</td><td>Integrate ASI01-ASI10 into threat catalog</td></tr>
+<tr><td>D-2</td><td><strong>Tool Poisoning &amp; MCP Security Testing</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 4</td><td>MCP descriptor injection, schema manipulation, typosquatting</td></tr>
+<tr><td>D-3</td><td><strong>Agentic Supply Chain Runtime Verification</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 3-4</td><td>SBOM/AIBOM runtime verification, kill switch testing</td></tr>
+<tr><td>D-4</td><td><strong>Agent Code Execution Security</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 4</td><td>Sandbox escape, code hallucination, eval() exploitation</td></tr>
+<tr><td>D-5</td><td><strong>Persistent Memory &amp; Context Poisoning</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 4</td><td>Cross-session memory poisoning, bootstrap poisoning</td></tr>
+<tr><td>D-6</td><td><strong>Inter-Agent Communication Security</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 4</td><td>MITM semantic injection, replay attacks, A2A spoofing</td></tr>
+<tr><td>D-7</td><td><strong>Cascading Failure &amp; Blast Radius</strong></td><td><span class="badge badge-high">Recommended</span></td><td>Phase 3-4</td><td>Digital twin replay, circuit breaker, governance drift</td></tr>
+<tr><td>D-8</td><td><strong>Human-Agent Trust Exploitation</strong></td><td><span class="badge badge-high">Recommended</span></td><td>Phase 4</td><td>Fake explainability, consent laundering, trust calibration</td></tr>
+<tr><td>D-9</td><td><strong>Rogue Agent Detection Framework</strong></td><td><span class="badge badge-high">Recommended</span></td><td>Phase 3-4</td><td>Behavioral attestation, collusion, kill-switch verification</td></tr>
+<tr><td>D-10</td><td><strong>Agent Identity &amp; Privilege Abuse</strong></td><td><span class="badge badge-high">Recommended</span></td><td>Phase 4</td><td>TOCTOU, synthetic identity, delegation chain abuse</td></tr>
+<tr><td>D-11</td><td><strong>Least-Agency Principle</strong></td><td><span class="badge badge-high">Recommended</span></td><td>Phase 0-1</td><td>Avoid unnecessary autonomy; require observability</td></tr>
+<tr><td>D-12</td><td><strong>OWASP AIVSS Scoring Integration</strong></td><td><span class="badge badge-medium">Reference</span></td><td>Phase 3</td><td>AIVSS Core Risk categories for severity scoring</td></tr>
+</tbody>
+</table>
+
+<h3>Novel Test Techniques (21) / 신규 테스트 기법</h3>
+<p>The OWASP Agentic Top 10 introduces 21 novel test techniques not found in existing analyses:</p>
+<table>
+<thead><tr><th>#</th><th>Technique</th><th>Source ASI</th></tr></thead>
+<tbody>
+<tr><td>T-1</td><td>Intent Capsule Testing</td><td>ASI01</td></tr>
+<tr><td>T-2</td><td>Semantic Firewall Validation</td><td>ASI02</td></tr>
+<tr><td>T-3</td><td>Policy Enforcement Point (PEP/PDP) Testing</td><td>ASI02</td></tr>
+<tr><td>T-4</td><td>Adaptive Tool Budget Testing</td><td>ASI02</td></tr>
+<tr><td>T-5</td><td>Just-in-Time Credential Testing</td><td>ASI03</td></tr>
+<tr><td>T-6</td><td>TOCTOU Testing in Agent Workflows</td><td>ASI03</td></tr>
+<tr><td>T-7</td><td>Agent Identity Attestation</td><td>ASI03/10</td></tr>
+<tr><td>T-8</td><td>SBOM/AIBOM Runtime Verification</td><td>ASI04</td></tr>
+<tr><td>T-9</td><td>Supply Chain Kill Switch Testing</td><td>ASI04</td></tr>
+<tr><td>T-10</td><td>Agent Code Sandbox Escape Testing</td><td>ASI05</td></tr>
+<tr><td>T-11</td><td>Bootstrap Poisoning Prevention</td><td>ASI06</td></tr>
+<tr><td>T-12</td><td>Memory Trust Scoring &amp; Decay</td><td>ASI06</td></tr>
+<tr><td>T-13</td><td>Protocol Pinning &amp; Version Enforcement</td><td>ASI07</td></tr>
+<tr><td>T-14</td><td>Agent Discovery/Routing Protection</td><td>ASI07</td></tr>
+<tr><td>T-15</td><td>Digital Twin Replay Testing</td><td>ASI08</td></tr>
+<tr><td>T-16</td><td>Blast-Radius Guardrail Testing</td><td>ASI08</td></tr>
+<tr><td>T-17</td><td>Governance Drift Detection</td><td>ASI08</td></tr>
+<tr><td>T-18</td><td>Adaptive Trust Calibration Testing</td><td>ASI09</td></tr>
+<tr><td>T-19</td><td>Plan-Divergence Detection</td><td>ASI09</td></tr>
+<tr><td>T-20</td><td>Behavioral Manifest Validation</td><td>ASI10</td></tr>
+<tr><td>T-21</td><td>Kill-Switch &amp; Containment Testing</td><td>ASI10</td></tr>
+</tbody>
+</table>
+</section>
+
+<hr class="section-divider">
+
+<!-- 7.8 NIST Cyber AI Profile Analysis -->
+<section id="ref-nist-cyber-analysis">
+<h2>7.8 NIST Cyber AI Profile Analysis <span class="badge badge-new">NEW</span><br><span class="bilingual">NIST 사이버 AI 프로파일 분석</span></h2>
+
+<h3>Document Summary / 문서 요약</h3>
+<p>NIST IR 8596 (Cyber AI Profile) maps AI cybersecurity considerations to the NIST Cybersecurity Framework (CSF) 2.0 structure across three focus areas: <strong>Secure</strong> (protecting AI components), <strong>Defend</strong> (AI-enhanced cyber defense), and <strong>Thwart</strong> (resilience against AI-enabled attacks). It addresses all 106 CSF subcategories with AI-specific guidance, yielding <strong>42 net-new requirements</strong>.</p>
+<p class="bilingual">NIST IR 8596은 AI 사이버보안 고려사항을 NIST CSF 2.0 구조에 매핑하며, 보안(Secure), 방어(Defend), 저지(Thwart) 세 가지 초점 영역을 다룹니다. 42개의 순 신규 요구사항을 제공합니다.</p>
+
+<h3>Three Focus Areas / 세 가지 초점 영역</h3>
+<table>
+<thead><tr><th>Focus Area</th><th>Description</th><th>Current Coverage</th><th>Gap</th></tr></thead>
+<tbody>
+<tr><td><strong>Secure</strong></td><td>Securing AI System Components</td><td>~80%</td><td>Minor (AIBOM, network categorization)</td></tr>
+<tr><td><strong>Defend</strong></td><td>AI-Enabled Cyber Defense</td><td>~15%</td><td><span class="badge badge-critical">Major</span> -- 14 new requirements</td></tr>
+<tr><td><strong>Thwart</strong></td><td>Thwarting AI-Enabled Attacks</td><td>~30%</td><td><span class="badge badge-high">Significant</span> -- 12 new requirements</td></tr>
+</tbody>
+</table>
+
+<h3>Modification Proposals / 수정 제안 (4 proposals: F-1 to F-4)</h3>
+<table>
+<thead><tr><th>#</th><th>Proposal / 제안</th><th>Priority / 우선순위</th><th>Target Phase</th><th>Description / 설명</th></tr></thead>
+<tbody>
+<tr><td>F-1</td><td><strong>AI Defense Validation Testing (E-7 Activity)</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 3 Stage 3</td><td>Test AI-powered monitoring, detection, HITL validation</td></tr>
+<tr><td>F-2</td><td><strong>AI-Enabled Attack Resilience (TS-THR)</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 3 Stage 2</td><td>AI phishing, deepfake, brute force, adaptive attacks</td></tr>
+<tr><td>F-3</td><td><strong>AI Network Traffic Categorization</strong></td><td><span class="badge badge-high">Recommended</span></td><td>Phase 3 Stage 1</td><td>4-category: human/computer/AI/external traffic</td></tr>
+<tr><td>F-4</td><td><strong>AI Recovery &amp; Resilience Testing</strong></td><td><span class="badge badge-high">Recommended</span></td><td>Phase 3 Stage 6</td><td>Model retraining, backup poisoning, post-recovery validation</td></tr>
+</tbody>
+</table>
+
+<h3>Net-New Requirements by Category / 카테고리별 순 신규 요구사항</h3>
+<table>
+<thead><tr><th>Category</th><th>Count</th><th>Key Topics</th></tr></thead>
+<tbody>
+<tr><td>AI-Enabled Defense Testing</td><td>14</td><td>Defense validation, compliance automation, threat correlation, incident triage</td></tr>
+<tr><td>AI Attack Resilience (Thwart)</td><td>12</td><td>AI phishing resilience, attack speed, adaptive attack detection</td></tr>
+<tr><td>AI Governance Testing</td><td>10</td><td>AIBOM management, accountability chain, policy frequency</td></tr>
+<tr><td>AI Recovery Testing</td><td>6</td><td>Model retraining, backup poisoning, residual compromise check</td></tr>
+<tr style="font-weight:700;"><td>Total Net-New</td><td><strong>42</strong></td><td></td></tr>
+</tbody>
+</table>
+</section>
+
+<hr class="section-divider">
+
+<!-- 7.9 Testing AI Agents Analysis -->
+<section id="ref-testing-agents-analysis">
+<h2>7.9 Testing AI Agents Analysis <span class="badge badge-new">NEW</span><br><span class="bilingual">AI 에이전트 테스팅 분석</span></h2>
+
+<h3>Document Summary / 문서 요약</h3>
+<p>Published by the Singapore and Korea AI Safety Institutes as a joint bilateral exercise, this document reports findings from testing AI agents for data leakage during non-malicious, routine task execution. Testing covered 3 models, 11 scenarios, 660 runs with quantitative benchmarks. It introduces <strong>32 net-new requirements</strong> and <strong>13 novel test techniques</strong> (7 behavioral + 3 design + 3 evaluation).</p>
+<p class="bilingual">싱가포르와 한국 AI 안전연구소의 공동 양자 프로젝트로, 비악의적 일상 작업 수행 시 AI 에이전트의 데이터 유출을 테스트한 결과를 보고합니다. 3개 모델, 11개 시나리오, 660회 실행에 대한 정량적 벤치마크를 제공합니다.</p>
+
+<h3>Data Risk Taxonomy / 데이터 리스크 분류체계</h3>
+<table>
+<thead><tr><th>Risk Type</th><th>Description</th><th>Example</th></tr></thead>
+<tbody>
+<tr><td><strong>Lack of Data Awareness</strong></td><td>Agent leaks data sensitive due to information qualities</td><td>Passwords, API keys, medical records exposed</td></tr>
+<tr><td><strong>Lack of Audience Awareness</strong></td><td>Agent sends data to wrong recipients</td><td>Internal notes sent to external parties</td></tr>
+<tr><td><strong>Lack of Policy Compliance</strong></td><td>Agent fails to follow data handling policies</td><td>Confidential data shared outside scope</td></tr>
+</tbody>
+</table>
+
+<h3>Modification Proposals / 수정 제안 (5 proposals: G-1 to G-5)</h3>
+<table>
+<thead><tr><th>#</th><th>Proposal / 제안</th><th>Priority / 우선순위</th><th>Target Phase</th><th>Description / 설명</th></tr></thead>
+<tbody>
+<tr><td>G-1</td><td><strong>Novel Behavioral Test Techniques (7)</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 3 Stage 3</td><td>Policy hallucination, safe failure, plan-action consistency, scope creep</td></tr>
+<tr><td>G-2</td><td><strong>Data Risk Classification Taxonomy</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 3 Stage 2</td><td>Data/audience/policy awareness framework</td></tr>
+<tr><td>G-3</td><td><strong>Factual Condition Framing Methodology</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 3 Stage 4</td><td>Replace subjective evaluation with factual checks</td></tr>
+<tr><td>G-4</td><td><strong>Agent Archetype Taxonomy</strong></td><td><span class="badge badge-high">Recommended</span></td><td>Phase 3 Stage 2</td><td>Bounded autonomy, sub-archetypes, MCP mapping</td></tr>
+<tr><td>G-5</td><td><strong>Multi-Party Testing Framework</strong></td><td><span class="badge badge-high">Recommended</span></td><td>Phase 3 Stage 1</td><td>Cross-party standardization and comparison methodology</td></tr>
+</tbody>
+</table>
+
+<h3>Novel Test Techniques (13) / 신규 테스트 기법</h3>
+<table>
+<thead><tr><th>Category</th><th>Count</th><th>Techniques</th></tr></thead>
+<tbody>
+<tr><td>Behavioral Testing</td><td>7</td><td>Policy hallucination, step assumption, helpfulness deviation, plan-action consistency, safe failure, unauthorized capability, user-LLM impact</td></tr>
+<tr><td>Test Design</td><td>3</td><td>Task variation parameter sweep, compound risk scenario, ambiguous policy edge case</td></tr>
+<tr><td>Evaluation</td><td>3</td><td>Factual condition framing, correctness-safety dependency, cross-party comparison</td></tr>
+</tbody>
+</table>
+
+<h3>Quantitative Benchmarks (Reference) / 정량 벤치마크</h3>
+<table>
+<thead><tr><th>Metric</th><th>Large Closed Model</th><th>Large Open Model</th><th>Small Open Model</th></tr></thead>
+<tbody>
+<tr><td>Fully Correct</td><td>58.7%</td><td>39.1%</td><td>8.2%</td></tr>
+<tr><td>Fully Safe</td><td>56.9%</td><td>35.5%</td><td>14.4%</td></tr>
+<tr><td>Both Correct+Safe</td><td>39.4%</td><td>13.6%</td><td>2.1%</td></tr>
+<tr><td>Human-LLM Disagreement (Safety)</td><td colspan="3">~18%</td></tr>
+</tbody>
+</table>
+</section>
+
+<hr class="section-divider">
+
+<!-- 7.10 UC Berkeley Risk Management Profile Analysis -->
+<section id="ref-berkeley-analysis">
+<h2>7.10 UC Berkeley Risk Management Profile Analysis <span class="badge badge-new">NEW</span><br><span class="bilingual">UC 버클리 위험 관리 프로파일 분석</span></h2>
+
+<h3>Document Summary / 문서 요약</h3>
+<p>The Agentic AI Risk-Management Standards Profile (UC Berkeley CLTC, February 2026) provides targeted practices for identifying, analyzing, and mitigating risks specific to agentic AI. Organized around the NIST AI RMF (Govern/Map/Measure/Manage), it identifies <strong>33 requirements</strong> of which <strong>19 are gaps</strong> in the current guideline. Key unique contributions include the L0-L5 autonomy scale, deceptive alignment testing, self-replication capability assessment, and evaluation integrity verification.</p>
+<p class="bilingual">에이전틱 AI 위험 관리 표준 프로파일(UC 버클리 CLTC, 2026년 2월)은 에이전틱 AI에 특화된 위험 식별, 분석, 완화를 위한 실천 방안을 제공합니다. NIST AI RMF에 맞춰 구성되며, 19개의 갭을 포함한 33개 요구사항을 식별합니다.</p>
+
+<h3>Coverage Summary / 적용 범위 요약</h3>
+<table>
+<thead><tr><th>Category</th><th>Total</th><th>Covered</th><th>Partial</th><th>Gap</th></tr></thead>
+<tbody>
+<tr><td>Tier 3 (Comprehensive)</td><td>10</td><td>1</td><td>7</td><td>2</td></tr>
+<tr><td>Tier 2 (Standard)</td><td>8</td><td>1</td><td>2</td><td>5</td></tr>
+<tr><td>Tier 1 (Foundational)</td><td>5</td><td>1</td><td>1</td><td>3</td></tr>
+<tr><td>Governance</td><td>5</td><td>0</td><td>0</td><td>5</td></tr>
+<tr><td>Compliance</td><td>5</td><td>0</td><td>1</td><td>4</td></tr>
+<tr style="font-weight:700;"><td>Total</td><td>33</td><td>3 (9%)</td><td>11 (33%)</td><td><strong>19 (58%)</strong></td></tr>
+</tbody>
+</table>
+
+<h3>Modification Proposals / 수정 제안 (6 proposals: M-01 to M-06)</h3>
+<table>
+<thead><tr><th>#</th><th>Proposal / 제안</th><th>Priority / 우선순위</th><th>Target Phase</th><th>Description / 설명</th></tr></thead>
+<tbody>
+<tr><td>M-01</td><td><strong>Graduated Autonomy Assessment (L0-L5)</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 3 Sec 8</td><td>6-level autonomy scale with proportional governance</td></tr>
+<tr><td>M-02</td><td><strong>Deceptive Alignment Test Battery</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 3 D-2.11</td><td>Sandbagging, test-awareness, governance manipulation</td></tr>
+<tr><td>M-03</td><td><strong>Self-Replication Capability Assessment</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 3 D-2.11</td><td>Self-exfiltration, replication, modification, shutdown resistance</td></tr>
+<tr><td>M-04</td><td><strong>Evaluation Integrity Framework</strong></td><td><span class="badge badge-critical">Essential</span></td><td>Phase 3 Stage 3</td><td>Transcript review, loophole closure, cheating detection</td></tr>
+<tr><td>M-05</td><td><strong>Agentic AI Governance Integration</strong></td><td><span class="badge badge-high">Recommended</span></td><td>Phase 3 Sec 11</td><td>AI-interpretable governance, change-triggered re-evaluation</td></tr>
+<tr><td>M-06</td><td><strong>Protocol Security Testing Expansion</strong></td><td><span class="badge badge-high">Recommended</span></td><td>Phase 3 D-2.11</td><td>MCP, A2A, ACP, AGNTCY, AP2 protocol-specific tests</td></tr>
+</tbody>
+</table>
+
+<h3>Key Unique Contributions / 주요 고유 기여</h3>
+<ul>
+  <li><strong>L0-L5 Graduated Autonomy Scale</strong> (Kasirzadeh &amp; Gabriel 2025): Proportional governance controls scaling with autonomy level</li>
+  <li><strong>Deceptive Alignment Detection</strong>: Sandbagging, evaluation cheating, governance manipulation testing</li>
+  <li><strong>Self-Replication Testing</strong>: UK AISI 4-capability framework (obtain weights, replicate, obtain resources, persist)</li>
+  <li><strong>Evaluation Integrity</strong>: NIST CAISI guidance on preventing agents from cheating evaluations</li>
+  <li><strong>Failover &amp; Business Continuity</strong>: Deterministic backup systems, AI-independent data copies</li>
+  <li><strong>11 Referenced Benchmarks</strong>: AgentBench, AgentHarm, MLE-bench, AgentDojo, RepliBench, garak, etc.</li>
+</ul>
+</section>
+
+<hr class="section-divider">
+
 <!-- 7.5 Consolidated Recommendations -->
 <section id="ref-consolidated">
 <h2>7.5 Consolidated Recommendations / 통합 권고사항</h2>
+<p><strong>Updated 2026-02-14:</strong> Expanded from 3 gaps + 19 proposals to <strong>5 gaps + 55 proposals</strong> based on analysis of 5 additional reference documents.</p>
 
-<h3>Top 3 Gaps Identified / 식별된 3대 갭</h3>
+<h3>Top 5 Gaps Identified / 식별된 5대 갭</h3>
 
 <blockquote>
-<strong>Gap 1: Agentic AI Threat Coverage / 에이전틱 AI 위협 범위</strong><br>
-Our guideline covers agentic risks at a general level but lacks the depth of CSA's 12-category threat framework. Novel attack surfaces including MCP/A2A protocol security, goal manipulation, checker-out-of-the-loop, and agent untraceability are not addressed.<br>
-<em>Source: CSA Agentic AI Red Teaming Guide | Impact: Phase 1-2, Phase 4 | Priority: Essential</em>
+<strong>Gap 1: Agentic-Specific Test Techniques (40 techniques missing &rarr; 34 added, 85% resolved)</strong><br>
+<em>Updated:</em> The original 40-technique gap has been significantly addressed. From the 5 new analyses, 34 techniques have been identified for integration (21 from OWASP Agentic Top 10, 13 from Testing AI Agents). Remaining gap: 6 techniques in physical/IoT interaction and niche multi-agent patterns.<br>
+<em>Sources: OWASP Agentic Top 10, Testing AI Agents, ISO 42119-7, UC Berkeley | Impact: Phase 1-4 | Priority: Essential</em>
 </blockquote>
 
 <blockquote>
 <strong>Gap 2: Evaluation Structure ("What to Test") / 평가 구조</strong><br>
-Our 6-stage lifecycle answers "how to conduct" red teaming but lacks a structured "what to evaluate" overlay. OWASP's 4-phase blueprint provides the complementary evaluation structure needed.<br>
-<em>Source: OWASP GenAI Red Teaming Guide | Impact: Phase 3 | Priority: Essential</em>
+Our 6-stage lifecycle answers "how to conduct" red teaming but lacks a structured "what to evaluate" overlay. OWASP's 4-phase blueprint provides the complementary evaluation structure needed. Now reinforced by ISO 42119-7 domain-specific evaluation criteria and factual condition framing from Testing AI Agents.<br>
+<em>Sources: OWASP GenAI, ISO 42119-7, Testing AI Agents | Impact: Phase 3 | Priority: Essential</em>
 </blockquote>
 
 <blockquote>
 <strong>Gap 3: Operational Execution Guidance / 운영 실행 가이드</strong><br>
-Our guideline addresses process and methodology but lacks granular operational guidance for non-determinism management, defense mechanism inventory, usage pattern analysis, and graduated confirmation levels.<br>
-<em>Source: Japan AISI Guide | Impact: Phase 3 | Priority: Essential + Recommended</em>
+Our guideline addresses process and methodology but lacks granular operational guidance for non-determinism management, defense mechanism inventory, usage pattern analysis, and graduated confirmation levels. Now expanded with ISO 42119-7 three-step execution methodology and Rules of Engagement formalization.<br>
+<em>Sources: Japan AISI, ISO 42119-7 | Impact: Phase 3 | Priority: Essential + Recommended</em>
+</blockquote>
+
+<blockquote>
+<strong>Gap 4: Tester Psychological Safety (15 requirements) <span class="badge badge-new">NEW</span></strong><br>
+No current guidance addresses the psychological well-being of red team members exposed to toxic, violent, or disturbing content during testing. ISO/IEC 42119-7 introduces mandatory requirements for psychological support services, rotation schedules, opt-out mechanisms, and de-escalation protocols.<br>
+<em>Source: ISO/IEC 42119-7 (Clause 5.2.1.2.4.3) | Impact: Phase 3 Stage 1 | Priority: High</em>
+</blockquote>
+
+<blockquote>
+<strong>Gap 5: CBRN/Safety Evaluation Framework (12 requirements) <span class="badge badge-new">NEW</span></strong><br>
+The current guideline references CBRN risks but lacks a structured evaluation framework with actionability/novelty assessment, severity levels (Critical/High/Low), zero-tolerance success criteria, and sanitized reporting with need-to-know access controls. ISO/IEC 42119-7 provides the complete framework.<br>
+<em>Source: ISO/IEC 42119-7 (Clause 5.3.6, 6.1.3) | Impact: Phase 3 Stages 2, 4, 5 | Priority: Critical</em>
 </blockquote>
 
 <h3>Complete Modification Proposals by Priority / 우선순위별 전체 수정 제안</h3>
 
-<h4><span class="badge badge-critical">Essential / 필수 반영</span> (9 proposals)</h4>
+<h4><span class="badge badge-critical">Essential / 필수 반영</span> (28 proposals)</h4>
 <table>
 <thead><tr><th>#</th><th>Proposal</th><th>Source</th><th>Target Phase</th><th>Description</th></tr></thead>
 <tbody>
@@ -5768,6 +6200,25 @@ Our guideline addresses process and methodology but lacks granular operational g
 <tr><td>7</td><td><strong>MCP/A2A Protocol Security Testing</strong></td><td>CSA (C-2)</td><td>Phase 4</td><td>Add MCP server cross-hijacking and A2A exploitation attack patterns</td></tr>
 <tr><td>8</td><td><strong>12-Category Agentic Threat Expansion</strong></td><td>CSA (C-3)</td><td>Phase 1-2</td><td>Systematically incorporate CSA's 12 threat categories</td></tr>
 <tr><td>9</td><td><strong>Goal/Instruction Manipulation Framework</strong></td><td>CSA (C-4)</td><td>Phase 4</td><td>Add goal interpretation, instruction poisoning, recursive goal subversion</td></tr>
+<tr style="background:var(--accent-light);"><td>10</td><td><strong>CBRN Evaluation Framework</strong></td><td>ISO 42119-7 (E-2)</td><td>Phase 3 Stage 4</td><td><span class="badge badge-new">NEW</span> Zero-tolerance criteria, actionability/novelty assessment</td></tr>
+<tr style="background:var(--accent-light);"><td>11</td><td><strong>Three-Step Execution Methodology</strong></td><td>ISO 42119-7 (E-3)</td><td>Phase 3 Stage 3</td><td><span class="badge badge-new">NEW</span> Exploratory &rarr; Attack Development &rarr; System-wide</td></tr>
+<tr style="background:var(--accent-light);"><td>12</td><td><strong>Rules of Engagement Formalization</strong></td><td>ISO 42119-7 (E-4)</td><td>Phase 3 Stage 2</td><td><span class="badge badge-new">NEW</span> Forbidden targets, authorized techniques, stop conditions</td></tr>
+<tr style="background:var(--accent-light);"><td>13</td><td><strong>Domain-Specific Severity Frameworks</strong></td><td>ISO 42119-7 (E-5)</td><td>Phase 3 Stage 4</td><td><span class="badge badge-new">NEW</span> CBRN, Performance, Quality severity criteria</td></tr>
+<tr style="background:var(--accent-light);"><td>14</td><td><strong>Stop/Go Criteria &amp; Escalation</strong></td><td>ISO 42119-7 (E-6)</td><td>Phase 3 Stage 1</td><td><span class="badge badge-new">NEW</span> Formal suspension thresholds and incident reporting</td></tr>
+<tr style="background:var(--accent-light);"><td>15</td><td><strong>Sanitized Reporting &amp; Access Controls</strong></td><td>ISO 42119-7 (E-7)</td><td>Phase 3 Stage 5</td><td><span class="badge badge-new">NEW</span> Need-to-know CBRN access, full vs. sanitized reports</td></tr>
+<tr style="background:var(--accent-light);"><td>16</td><td><strong>ASI Vulnerability Taxonomy</strong></td><td>OWASP Agentic (D-1)</td><td>Phase 1-2</td><td><span class="badge badge-new">NEW</span> Integrate ASI01-ASI10 into threat catalog</td></tr>
+<tr style="background:var(--accent-light);"><td>17</td><td><strong>Tool Poisoning &amp; MCP Security</strong></td><td>OWASP Agentic (D-2)</td><td>Phase 4</td><td><span class="badge badge-new">NEW</span> MCP descriptor injection, typosquatting</td></tr>
+<tr style="background:var(--accent-light);"><td>18</td><td><strong>Supply Chain Runtime Verification</strong></td><td>OWASP Agentic (D-3)</td><td>Phase 3-4</td><td><span class="badge badge-new">NEW</span> SBOM/AIBOM runtime, kill switch testing</td></tr>
+<tr style="background:var(--accent-light);"><td>19</td><td><strong>Agent Code Execution Security</strong></td><td>OWASP Agentic (D-4)</td><td>Phase 4</td><td><span class="badge badge-new">NEW</span> Sandbox escape, code hallucination, eval()</td></tr>
+<tr style="background:var(--accent-light);"><td>20</td><td><strong>Persistent Memory Poisoning</strong></td><td>OWASP Agentic (D-5)</td><td>Phase 4</td><td><span class="badge badge-new">NEW</span> Cross-session, bootstrap, trust scoring</td></tr>
+<tr style="background:var(--accent-light);"><td>21</td><td><strong>Inter-Agent Communication Security</strong></td><td>OWASP Agentic (D-6)</td><td>Phase 4</td><td><span class="badge badge-new">NEW</span> MITM semantic injection, A2A spoofing</td></tr>
+<tr style="background:var(--accent-light);"><td>22</td><td><strong>AI Defense Validation Testing</strong></td><td>NIST Cyber (F-1)</td><td>Phase 3 Stage 3</td><td><span class="badge badge-new">NEW</span> AI monitoring, detection, HITL validation</td></tr>
+<tr style="background:var(--accent-light);"><td>23</td><td><strong>AI Attack Resilience Scenarios</strong></td><td>NIST Cyber (F-2)</td><td>Phase 3 Stage 2</td><td><span class="badge badge-new">NEW</span> AI phishing, deepfake, adaptive attack testing</td></tr>
+<tr style="background:var(--accent-light);"><td>24</td><td><strong>Behavioral Test Techniques (7)</strong></td><td>Testing AI Agents (G-1)</td><td>Phase 3 Stage 3</td><td><span class="badge badge-new">NEW</span> Policy hallucination, safe failure, scope creep</td></tr>
+<tr style="background:var(--accent-light);"><td>25</td><td><strong>Data Risk Classification</strong></td><td>Testing AI Agents (G-2)</td><td>Phase 3 Stage 2</td><td><span class="badge badge-new">NEW</span> Data/audience/policy awareness taxonomy</td></tr>
+<tr style="background:var(--accent-light);"><td>26</td><td><strong>Factual Condition Framing</strong></td><td>Testing AI Agents (G-3)</td><td>Phase 3 Stage 4</td><td><span class="badge badge-new">NEW</span> Objective evaluation with factual checks</td></tr>
+<tr style="background:var(--accent-light);"><td>27</td><td><strong>Graduated Autonomy (L0-L5)</strong></td><td>UC Berkeley (M-01)</td><td>Phase 3 Sec 8</td><td><span class="badge badge-new">NEW</span> 6-level autonomy scale with proportional governance</td></tr>
+<tr style="background:var(--accent-light);"><td>28</td><td><strong>Deceptive Alignment Test Battery</strong></td><td>UC Berkeley (M-02)</td><td>Phase 3 D-2.11</td><td><span class="badge badge-new">NEW</span> Sandbagging, test-awareness, scheming</td></tr>
 </tbody>
 </table>
 
@@ -5803,12 +6254,12 @@ Our guideline addresses process and methodology but lacks granular operational g
 <section id="testing-requirements-synthesis">
 <h2>7.5 Testing Requirements Synthesis / 테스트 요구사항 종합</h2>
 
-<p class="bilingual"><strong>Objective:</strong> This section synthesizes testing requirements extracted from 7 authoritative profile documents, providing a comprehensive catalog of 491 unique requirements across all testing phases.<br>
-<strong>목적:</strong> 7개의 권위 있는 프로파일 문서에서 추출한 테스트 요구사항을 종합하여 모든 테스트 단계에 걸친 491개의 고유 요구사항 카탈로그를 제공합니다.</p>
+<p class="bilingual"><strong>Objective:</strong> This section synthesizes testing requirements extracted from 12 authoritative documents, providing a comprehensive catalog of <strong>671 unique requirements</strong> across all testing phases.<br>
+<strong>목적:</strong> 12개의 권위 있는 문서에서 추출한 테스트 요구사항을 종합하여 모든 테스트 단계에 걸친 <strong>671개</strong>의 고유 요구사항 카탈로그를 제공합니다.</p>
 
 <blockquote>
-<strong>Key Insight:</strong> Analysis of 7 profile documents (Singapore AISI, Korea AISI, OWASP, UC Berkeley, NIST, CSA, Securing Agentic Applications) reveals 491 unique testing requirements that significantly expand beyond current guideline coverage. These requirements address critical gaps in agentic AI testing, including behavioral testing, multi-agent coordination, continuous monitoring, and realistic test environment configuration.<br>
-<strong>핵심 통찰:</strong> 7개 프로파일 문서 분석 결과 현재 가이드라인 범위를 크게 확장하는 491개의 고유 테스트 요구사항이 발견되었습니다. 이러한 요구사항은 행동 테스팅, 다중 에이전트 조정, 지속적 모니터링, 현실적 테스트 환경 구성 등 에이전틱 AI 테스팅의 중요한 격차를 해결합니다.
+<strong>Key Insight (Updated 2026-02-14):</strong> Analysis of 12 documents (7 original profiles + ISO 42119-7, OWASP Agentic Top 10, NIST Cyber AI Profile, Testing AI Agents, UC Berkeley Risk Mgmt Profile) reveals <strong>671 unique testing requirements</strong> (+180 from baseline 491). The 5 new documents add critical coverage for CBRN evaluation, tester safety, deceptive alignment, self-replication testing, AI defense validation, and 34 new test techniques.<br>
+<strong>핵심 통찰 (2026-02-14 업데이트):</strong> 12개 문서 분석 결과 <strong>671개</strong>의 고유 테스트 요구사항이 발견되었습니다(기존 491개 대비 +180개). 5개 신규 문서는 CBRN 평가, 테스터 안전, 기만적 정렬, 자기 복제 테스팅, AI 방어 검증, 34개 신규 테스트 기법 등 중요한 커버리지를 추가합니다.
 </blockquote>
 
 <h3>7.5.1 Requirements Distribution / 요구사항 분포</h3>
@@ -5817,79 +6268,101 @@ Our guideline addresses process and methodology but lacks granular operational g
 <thead>
 <tr>
   <th>Category</th>
-  <th>Count</th>
+  <th>Previous</th>
+  <th>New (+)</th>
+  <th>Updated Count</th>
   <th>% of Total</th>
   <th>Priority</th>
-  <th>Primary Source</th>
+  <th>Primary Source (New)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
   <td><strong>Test Execution Requirements</strong></td>
   <td>96</td>
-  <td>19.6%</td>
+  <td>+30</td>
+  <td><strong>126</strong></td>
+  <td>18.8%</td>
   <td><span class="badge badge-critical">CRITICAL</span></td>
-  <td>OWASP ASI, Singapore AISI</td>
+  <td>ISO 42119-7, NIST Cyber AI</td>
+</tr>
+<tr>
+  <td><strong>Security &amp; Compliance Requirements</strong></td>
+  <td>82</td>
+  <td>+44</td>
+  <td><strong>126</strong></td>
+  <td>18.8%</td>
+  <td><span class="badge badge-high">HIGH</span></td>
+  <td>NIST Cyber AI, OWASP Agentic</td>
 </tr>
 <tr>
   <td><strong>Test Design Requirements</strong></td>
   <td>82</td>
-  <td>16.7%</td>
+  <td>+22</td>
+  <td><strong>104</strong></td>
+  <td>15.5%</td>
   <td><span class="badge badge-high">HIGH</span></td>
-  <td>Singapore/Korea AISI, MGF</td>
+  <td>ISO 42119-7, Testing AI Agents</td>
 </tr>
 <tr>
   <td><strong>Test Evaluation Requirements</strong></td>
   <td>73</td>
-  <td>14.9%</td>
+  <td>+18</td>
+  <td><strong>91</strong></td>
+  <td>13.6%</td>
   <td><span class="badge badge-critical">CRITICAL</span></td>
-  <td>Singapore AISI, MGF</td>
+  <td>ISO 42119-7, Testing AI Agents</td>
 </tr>
 <tr>
   <td><strong>Test Documentation Requirements</strong></td>
   <td>48</td>
-  <td>9.8%</td>
+  <td>+16</td>
+  <td><strong>64</strong></td>
+  <td>9.5%</td>
   <td><span class="badge badge-medium">MEDIUM</span></td>
-  <td>ISO 29119, UC Berkeley</td>
+  <td>ISO 42119-7</td>
 </tr>
 <tr>
   <td><strong>Test Environment Requirements</strong></td>
   <td>32</td>
-  <td>6.5%</td>
+  <td>+12</td>
+  <td><strong>44</strong></td>
+  <td>6.6%</td>
   <td><span class="badge badge-high">HIGH</span></td>
-  <td>Singapore AISI, CSA</td>
+  <td>Testing AI Agents, NIST Cyber AI</td>
 </tr>
 <tr>
   <td><strong>Test Management Requirements</strong></td>
   <td>28</td>
-  <td>5.7%</td>
+  <td>+15</td>
+  <td><strong>43</strong></td>
+  <td>6.4%</td>
   <td><span class="badge badge-medium">MEDIUM</span></td>
-  <td>NIST AI RMF, MGF</td>
-</tr>
-<tr>
-  <td><strong>Continuous Testing Requirements</strong></td>
-  <td>26</td>
-  <td>5.3%</td>
-  <td><span class="badge badge-high">HIGH</span></td>
-  <td>MGF, UC Berkeley</td>
+  <td>ISO 42119-7, Testing AI Agents</td>
 </tr>
 <tr>
   <td><strong>Advanced Behavioral Testing</strong></td>
   <td>24</td>
-  <td>4.9%</td>
+  <td>+15</td>
+  <td><strong>39</strong></td>
+  <td>5.8%</td>
   <td><span class="badge badge-critical">CRITICAL</span></td>
-  <td>UC Berkeley, OWASP</td>
+  <td>Testing AI Agents, UC Berkeley</td>
 </tr>
 <tr>
-  <td><strong>Security & Compliance Requirements</strong></td>
-  <td>82</td>
-  <td>16.7%</td>
+  <td><strong>Continuous Testing Requirements</strong></td>
+  <td>26</td>
+  <td>+8</td>
+  <td><strong>34</strong></td>
+  <td>5.1%</td>
   <td><span class="badge badge-high">HIGH</span></td>
-  <td>NIST Cyber Profile, UC Berkeley</td>
+  <td>ISO 42119-7, NIST Cyber AI</td>
 </tr>
 <tr style="font-weight:700;border-top:2px solid var(--border);">
   <td><strong>TOTAL</strong></td>
   <td><strong>491</strong></td>
+  <td><strong>+180</strong></td>
+  <td><strong>671</strong></td>
   <td><strong>100%</strong></td>
   <td colspan="2"></td>
 </tr>
@@ -5898,11 +6371,11 @@ Our guideline addresses process and methodology but lacks granular operational g
 
 <h3>7.5.2 Critical Gaps Identified / 식별된 중요 격차</h3>
 
-<h4>Gap 1: Agentic-Specific Test Techniques (40 techniques missing)</h4>
+<h4>Gap 1: Agentic-Specific Test Techniques (40 techniques missing &rarr; 34 added = 85% resolved) <span class="badge badge-new">UPDATED</span></h4>
 
-<p><strong>Current State:</strong> Guideline Phase 3 covers primarily model-level attacks (prompt injection, jailbreak). Limited coverage of system-level agentic behaviors.</p>
+<p><strong>Updated State (2026-02-14):</strong> 34 of 40 missing techniques have been identified from 5 new reference documents. Of the 34, 21 come from the OWASP Agentic Top 10 and 13 from Testing AI Agents. The remaining 6 techniques relate to niche physical/IoT interaction patterns.</p>
 
-<p><strong>Required Additions:</strong></p>
+<p><strong>Required Additions (original + new sources):</strong></p>
 <ul>
   <li><strong>Multi-Agent System Testing</strong> (10 techniques):
     <ul>
@@ -6049,6 +6522,77 @@ Our guideline addresses process and methodology but lacks granular operational g
 
 <p><strong>Source:</strong> Singapore AISI "Testing AI Agents", MGF "Agentic AI Testing" (lines 47-53, 96-99)</p>
 
+<h4>Gap 4: Tester Psychological Safety (15 requirements) <span class="badge badge-new">NEW</span></h4>
+
+<p><strong>Current State:</strong> No guidance for protecting red team members from psychological harm during exposure to toxic, violent, or CBRN content.</p>
+
+<p><strong>Required Additions:</strong></p>
+<ul>
+  <li><strong>Psychological Support Services</strong> (5 items):
+    <ul>
+      <li>Provide access to psychological support services for testers exposed to toxic content</li>
+      <li>Implement de-escalation protocols for distressing test scenarios</li>
+      <li>Offer pre-assessment psychological preparation briefings</li>
+      <li>Provide post-assessment debriefing and support</li>
+      <li>Maintain confidentiality of tester well-being concerns</li>
+    </ul>
+  </li>
+  <li><strong>Rotation and Scheduling</strong> (5 items):
+    <ul>
+      <li>Implement rotation schedules to minimize prolonged harmful content exposure</li>
+      <li>Define maximum continuous exposure durations per risk domain</li>
+      <li>Rotate CBRN testing assignments across team members</li>
+      <li>Allow rest periods between high-risk testing sessions</li>
+      <li>Track cumulative exposure and flag excessive levels</li>
+    </ul>
+  </li>
+  <li><strong>Opt-Out Mechanisms</strong> (5 items):
+    <ul>
+      <li>Provide opt-out mechanisms for high-risk category testing (e.g., CBRN, extreme violence)</li>
+      <li>Ensure no career penalty for opt-out decisions</li>
+      <li>Maintain sufficient team depth to cover opt-outs</li>
+      <li>Document opt-out procedures in Rules of Engagement</li>
+      <li>Offer alternative assignments for opted-out testers</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Source:</strong> ISO/IEC 42119-7:2026 (Clause 5.2.1.2.4.3)</p>
+
+<h4>Gap 5: CBRN/Safety Evaluation Framework (12 requirements) <span class="badge badge-new">NEW</span></h4>
+
+<p><strong>Current State:</strong> CBRN risks are referenced but no structured evaluation framework exists with actionability assessment, severity levels, or sanitized reporting.</p>
+
+<p><strong>Required Additions:</strong></p>
+<ul>
+  <li><strong>CBRN Evaluation Criteria</strong> (4 items):
+    <ul>
+      <li>Define zero-tolerance success criteria: any actionable harmful generation = failure</li>
+      <li>Assess CBRN actionability: working formula vs. general Wikipedia-level information</li>
+      <li>Assess CBRN novelty: does AI provide novel capabilities lowering barrier to malicious actors</li>
+      <li>Define severity levels: Critical (immediate physical threat), High (detailed assistance), Low (general knowledge)</li>
+    </ul>
+  </li>
+  <li><strong>Domain-Specific Severity</strong> (4 items):
+    <ul>
+      <li>Performance severity: Critical (crash/DoS), High (&gt;200% latency), Medium (noticeable), Low (negligible)</li>
+      <li>Quality severity: Distinguish benign hallucinations vs. dangerous (medical dosage, legal misinformation)</li>
+      <li>Quantify bias and fairness impact against protected groups</li>
+      <li>Analyze downstream execution risk (was AI-generated code actually executed?)</li>
+    </ul>
+  </li>
+  <li><strong>Sanitized Reporting</strong> (4 items):
+    <ul>
+      <li>Enforce strict access controls for CBRN findings (need-to-know basis)</li>
+      <li>Create sanitized general reports removing actionable harmful information</li>
+      <li>Maintain separate full-detail and redacted report tracks</li>
+      <li>Follow ISO/IEC 29147 for responsible external vulnerability disclosure</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Source:</strong> ISO/IEC 42119-7:2026 (Clauses 5.3.6, 6.1.3, 5.4.4.3)</p>
+
 <h3>7.5.3 Implementation Priority Matrix / 구현 우선순위 매트릭스</h3>
 
 <table>
@@ -6100,56 +6644,112 @@ Our guideline addresses process and methodology but lacks granular operational g
 <tr>
   <th>Document</th>
   <th>Publisher</th>
-  <th>Requirements Contributed</th>
+  <th>Requirements</th>
+  <th>Net-New</th>
   <th>Primary Focus Area</th>
 </tr>
 </thead>
 <tbody>
 <tr>
   <td><strong>[R-21] Testing AI Agents</strong></td>
-  <td>Singapore & Korea AISI</td>
-  <td>58 requirements</td>
+  <td>Singapore &amp; Korea AISI</td>
+  <td>58</td>
+  <td>--</td>
   <td>Data leakage testing, realistic environments, LLM-as-a-Judge</td>
 </tr>
 <tr>
   <td><strong>[R-23] MGF for Agentic AI</strong></td>
   <td>Singapore IMDA</td>
-  <td>67 requirements</td>
+  <td>67</td>
+  <td>--</td>
   <td>Pre-deployment testing, continuous monitoring, multi-agent systems</td>
 </tr>
 <tr>
   <td><strong>[R-13] OWASP Agentic Top 10</strong></td>
   <td>OWASP ASI</td>
-  <td>97 requirements</td>
+  <td>97</td>
+  <td>--</td>
   <td>Vulnerability testing, penetration testing, ASI01-ASI10 scenarios</td>
 </tr>
 <tr>
   <td><strong>[R-24] UC Berkeley AI Agents Profile</strong></td>
   <td>UC Berkeley CLTC</td>
-  <td>118 requirements</td>
-  <td>Security & privacy, behavioral testing, advanced threat detection</td>
+  <td>118</td>
+  <td>--</td>
+  <td>Security &amp; privacy, behavioral testing, advanced threat detection</td>
 </tr>
 <tr>
   <td><strong>[R-25] NIST Cyber AI Profile</strong></td>
   <td>NIST</td>
-  <td>52 requirements</td>
+  <td>52</td>
+  <td>--</td>
   <td>Cybersecurity controls, risk management, compliance</td>
 </tr>
 <tr>
   <td><strong>Securing Agentic Applications</strong></td>
   <td>CSA</td>
-  <td>43 requirements</td>
+  <td>43</td>
+  <td>--</td>
   <td>Runtime security, orchestration, observability</td>
 </tr>
 <tr>
   <td><strong>OWASP GenAI Testing</strong></td>
   <td>OWASP</td>
-  <td>56 requirements</td>
+  <td>56</td>
+  <td>--</td>
   <td>GenAI-specific testing, LLM evaluation methodologies</td>
 </tr>
+<tr style="font-weight:700;border-top:1px solid var(--border);">
+  <td colspan="2"><em>Subtotal (original 7 documents)</em></td>
+  <td><em>491</em></td>
+  <td></td>
+  <td></td>
+</tr>
+<tr style="background:var(--accent-light);">
+  <td><strong>ISO/IEC AWI TS 42119-7</strong> <span class="badge badge-new">NEW</span></td>
+  <td>ISO/IEC JTC 1/SC 42</td>
+  <td>147</td>
+  <td><strong>+73</strong></td>
+  <td>CBRN framework, tester safety, 3-step execution, RoE, sanitized reporting</td>
+</tr>
+<tr style="background:var(--accent-light);">
+  <td><strong>NIST IR 8596 Cyber AI Profile</strong> <span class="badge badge-new">NEW</span></td>
+  <td>NIST / MITRE</td>
+  <td>~280</td>
+  <td><strong>+42</strong></td>
+  <td>AI defense validation, attack resilience, governance, recovery</td>
+</tr>
+<tr style="background:var(--accent-light);">
+  <td><strong>Testing AI Agents (detailed)</strong> <span class="badge badge-new">NEW</span></td>
+  <td>Singapore &amp; Korea AISI</td>
+  <td>47</td>
+  <td><strong>+32</strong></td>
+  <td>Behavioral testing (7 techniques), data risk taxonomy, multi-party framework</td>
+</tr>
+<tr style="background:var(--accent-light);">
+  <td><strong>OWASP Agentic Top 10 (detailed)</strong> <span class="badge badge-new">NEW</span></td>
+  <td>OWASP ASI</td>
+  <td>10 vulns + 21 techniques</td>
+  <td><strong>+21</strong></td>
+  <td>Tool poisoning, supply chain, code execution, inter-agent comm, rogue agents</td>
+</tr>
+<tr style="background:var(--accent-light);">
+  <td><strong>Agentic AI Risk Mgmt Profile</strong> <span class="badge badge-new">NEW</span></td>
+  <td>UC Berkeley CLTC</td>
+  <td>33</td>
+  <td><strong>+19</strong></td>
+  <td>L0-L5 autonomy, deceptive alignment, self-replication, evaluation integrity</td>
+</tr>
+<tr style="background:var(--accent-light);">
+  <td><strong>MGF / Securing Agentic Apps (verification)</strong></td>
+  <td>IMDA / CSA</td>
+  <td>110</td>
+  <td><strong>0</strong></td>
+  <td>Fully covered -- verification confirmed 100% coverage</td>
+</tr>
 <tr style="font-weight:700;border-top:2px solid var(--border);">
-  <td colspan="2"><strong>TOTAL</strong></td>
-  <td><strong>491 unique requirements</strong></td>
+  <td colspan="2"><strong>UPDATED TOTAL (12 documents)</strong></td>
+  <td colspan="2"><strong>671 unique requirements (+180)</strong></td>
   <td></td>
 </tr>
 </tbody>
@@ -6158,35 +6758,44 @@ Our guideline addresses process and methodology but lacks granular operational g
 <h3>7.5.5 Integration Recommendations / 통합 권장사항</h3>
 
 <blockquote class="warning">
-<strong>⚠️ Implementation Note:</strong> Integrating all 491 requirements directly into the guideline would result in excessive document length (estimated +300 pages). Instead, this synthesis provides a catalog and priority matrix, with detailed requirements available in the source document: <code>profile-analysis/reference-doc-report.md</code>
+<strong>Implementation Note (Updated 2026-02-14):</strong> The requirements catalog has grown from 491 to 671 items (+180). Full integration details, including 55 modification proposals with priority rankings and implementation roadmap, are available in the deliverable documents referenced below.
 </blockquote>
 
-<p><strong>Recommended Approach:</strong></p>
+<p><strong>Recommended Approach (3-Phase Roadmap):</strong></p>
 <ol>
-  <li><strong>Phase 1 (Immediate)</strong>: Integrate 94 CRITICAL requirements into existing Phase 3 sections
+  <li><strong>Phase 1 -- Critical (Q1 2026):</strong> Integrate 28 Essential proposals (~95 requirements)
     <ul>
-      <li>Add Section 6: Agentic Test Techniques (40 techniques)</li>
-      <li>Add Section 8: Test Evaluation and Metrics (30 metrics)</li>
-      <li>Expand test scenarios with behavioral testing (24 tests)</li>
+      <li>CBRN evaluation framework and domain-specific severity (E-2, E-5)</li>
+      <li>Three-step execution methodology and Rules of Engagement (E-3, E-4, E-6)</li>
+      <li>ASI01-ASI10 vulnerability taxonomy (D-1) and deceptive alignment testing (M-02)</li>
+      <li>Tester psychological safety (E-1) and sanitized reporting (E-7)</li>
+      <li>7 novel behavioral test techniques (G-1) and data risk taxonomy (G-2)</li>
+      <li>AI defense validation (F-1) and attack resilience scenarios (F-2)</li>
     </ul>
   </li>
-  <li><strong>Phase 2 (Q2 2026)</strong>: Add 139 HIGH priority requirements
+  <li><strong>Phase 2 -- High Priority (Q2 2026):</strong> Integrate 20 Recommended proposals (~55 requirements)
     <ul>
-      <li>Add Section 7: Test Environment Configuration (25 requirements)</li>
-      <li>Add Section 10: Continuous Testing and Monitoring (26 requirements)</li>
-      <li>Integrate security & compliance requirements (88 requirements)</li>
+      <li>Cascading failures, rogue agents, trust exploitation (D-7, D-8, D-9, D-10)</li>
+      <li>Attack signature library and external disclosure (E-8, E-9)</li>
+      <li>Agent archetype taxonomy and multi-party framework (G-4, G-5)</li>
+      <li>Least-Agency principle and governance integration (D-11, M-05, M-06)</li>
     </ul>
   </li>
-  <li><strong>Phase 3 (Q3-Q4 2026)</strong>: Complete remaining 258 MEDIUM/LOW priority requirements
+  <li><strong>Phase 3 -- Medium (Q3 2026):</strong> Complete 7 Reference proposals (~30 requirements)
     <ul>
-      <li>Comprehensive documentation templates</li>
-      <li>Standards compliance matrices</li>
-      <li>Extended terminology catalog</li>
+      <li>AIVSS scoring integration (D-12)</li>
+      <li>Updated SBOM/AIBOM reference (A-6)</li>
+      <li>Physical/IoT and forensic readiness updates (C-6, C-7)</li>
     </ul>
   </li>
 </ol>
 
-<p><strong>Full Requirements Catalog:</strong> Complete 491-item catalog with detailed descriptions, sources, and cross-references available in <a href="profile-analysis/reference-doc-report.md" target="_blank">profile-analysis/reference-doc-report.md</a></p>
+<p><strong>Deliverable Documents:</strong></p>
+<ul>
+  <li><a href="consolidated-requirements-catalog.md" target="_blank">Consolidated Requirements Catalog</a> -- Complete 671-item catalog with category distribution</li>
+  <li><a href="unified-modification-proposals.md" target="_blank">Unified Modification Proposals</a> -- All 55 proposals with priority ranking and phase mapping</li>
+  <li><a href="implementation-roadmap.md" target="_blank">Implementation Roadmap</a> -- 3-phase timeline with resource requirements and conformance projections</li>
+</ul>
 
 </section>
 
