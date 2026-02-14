@@ -342,8 +342,8 @@ a { color: var(--accent); }
   <h1 style="border:none;color:#fff;margin:0;padding:0;">AI Red Team<br>International Guideline</h1>
   <div class="subtitle">AI 레드팀 국제 가이드라인</div>
   <div class="meta">
-    Document ID: AIRTG-v1.7-DRAFT<br>
-    Version: 1.7 Draft &nbsp;|&nbsp; Date: 2026-02-14<br>
+    Document ID: AIRTG-v1.9-DRAFT<br>
+    Version: 1.9 Draft &nbsp;|&nbsp; Date: 2026-02-14<br>
     Status: Draft for Public Review<br>
     Classification: Public<br>
     Author: Jonghong Jeon (hollobit@etri.re.kr)
@@ -387,7 +387,7 @@ a { color: var(--accent); }
   <li><strong>Reference document analysis</strong> (Part VII) synthesizing Japan AISI, OWASP GenAI, and CSA Agentic AI guides into 19 modification proposals (9 essential, 7 recommended, 3 reference), achieving <strong>100% OWASP Agentic AI Top 10 coverage</strong> (all ASI01-ASI10 security issues addressed in Phase 1-2 attack patterns).</li>
   <li><strong>Research &amp; risk trends</strong> (Part VIII) covering 35+ academic papers with 8 new attack techniques identified through pipeline integration and <strong>108 new AI incidents</strong> (IDs 1254-1361, Sept 2025 -- Feb 2026). <strong>13 new/escalated risks identified:</strong> 4 CRITICAL (Evaluation Context Detection, Supply Chain Compromise, LRM Jailbreak, Promptware Kill Chain), 6 HIGH (Healthcare AI Misuse, Cybersecurity Tool Exploitation, Autonomous Vehicle Failures, Multi-Agent Coordination Attacks, Reward Hacking, Deceptive Alignment), 3 MEDIUM-HIGH (Cross-lingual Safety Gaps, Chain-of-Thought Manipulation, Model Collapse). MIT AI Risk Repository updated to v4 (25 subdomains, up from 24). All 5 Annex D update triggers met.</li>
   <li><strong>Test scenarios &amp; validation</strong> (Part IX) providing <strong>35 ISO/IEC 29119-compliant test scenarios</strong> achieving <strong>100% attack pattern reference accuracy</strong> (improved from 35%), <strong>36+ detailed test cases</strong>, <strong>9 domain-specific scenarios</strong> (3 Healthcare: HIPAA/FDA, 3 Financial: PCI-DSS/GDPR/ECOA, 3 Automotive: ISO 26262/UN R155), coverage matrix, benchmark-aided testing guidance (2,375 benchmarks analyzed, 20 prioritized for Phase 1 execution), and gap analysis confirming 5/6 stages feasible (updated 2026-02-14).</li>
-  <li><strong>Collaboration pipeline validation</strong> (v1.7) demonstrating end-to-end agent collaboration: academic research → risk analysis + attack analysis → benchmark dataset matching → testing feasibility assessment, with 29119 conformance monitoring and <strong>5-Standard ISO Terminology Framework</strong> (179 unique terms from 5 ISO standards) <strong>plus Rosetta Stone cross-framework mapping</strong> (21 key terms mapped across 7 frameworks: ISO/IEC 42119-2, 29119-1, NIST AI RMF, OWASP/MITRE, EU AI Act, Academia/Industry).</li>
+  <li><strong>Collaboration pipeline validation</strong> (v1.7) demonstrating end-to-end agent collaboration: academic research → risk analysis + attack analysis → benchmark dataset matching → testing feasibility assessment, with 29119 conformance monitoring and <strong>5-Standard ISO Terminology Framework</strong> (199 unique terms from 5 ISO standards) <strong>plus Rosetta Stone cross-framework mapping</strong> (21 key terms mapped across 7 frameworks: ISO/IEC 42119-2, 29119-1, NIST AI RMF, OWASP/MITRE, EU AI Act, Academia/Industry).</li>
 </ul>
 
 <blockquote>
@@ -397,6 +397,17 @@ a { color: var(--accent); }
 </blockquote>
 
 <h3 style="margin-top: 2rem;">Recent Updates / 최근 업데이트</h3>
+<div style="background: var(--accent-light); padding: 1rem 1.25rem; border-radius: 6px; margin: 1rem 0;">
+  <p style="margin: 0;"><strong>Version 1.9 (2026-02-14):</strong></p>
+  <ul style="margin: 0.5rem 0 0 1.5rem;">
+    <li><strong>SQuaRE Standards Integration:</strong> Analyzed ISO/IEC 25059:2023 (AI Quality Model) and DTS 25058:2023 (AI Quality Evaluation). Added <strong>8 new quality terminology terms</strong> (robustness, user controllability, intervenability, functional adaptability, transparency, societal/ethical risk mitigation, software quality measure, risk treatment measure). Terminology baseline expanded from 191 to <strong>199 unique terms</strong> across <strong>7 ISO standards</strong>.</li>
+    <li><strong>Threat Intelligence Update (Feb 2026):</strong> Analyzed <strong>8 new security findings</strong> including OpenClaw exposure surge (135K+ instances, 512 vulnerabilities), MITRE ATLAS 2026 update with agentic AI TTP mapping, ClawHub supply chain attack, Chainlit framework CVEs, GitHub Copilot RCE vulnerabilities, and n8n platform high-critical CVEs.</li>
+    <li><strong>Automation Suite Deployed:</strong> Developed <strong>3 validation scripts</strong> with full documentation: cross-reference validator (AUTO-001, 99.3% → 100% valid references), Korean terminology consistency checker (AUTO-003, 93.7% consistency), and ISO conformance tracker (AUTO-002, multi-standard dashboard with trend analysis).</li>
+    <li><strong>Quality Assurance Complete:</strong> Fixed 4 broken cross-references (AP-SYS-011 → AP-SYS-010, AP-INJ/TOX/PII-001 replaced), corrected 4 Korean terminology inconsistencies, archived 5 backup files.</li>
+    <li><strong>Phase 0 Terminology:</strong> Updated to <strong>v0.6.0</strong> with 7-Standard Baseline (ISO/IEC 22989:2022, 22989 AMD 1:2025, DIS 27090, 29119-1:2022, TS 42119-2:2025, 25059:2023, DTS 25058:2023). New Section 3.14 "Software Quality Terminology (SQuaRE)" with integration guidance for red team testing activities.</li>
+  </ul>
+</div>
+
 <div style="background: var(--accent-light); padding: 1rem 1.25rem; border-radius: 6px; margin: 1rem 0;">
   <p style="margin: 0;"><strong>Version 1.8 (2026-02-14):</strong></p>
   <ul style="margin: 0.5rem 0 0 1.5rem;">
@@ -419,7 +430,7 @@ a { color: var(--accent); }
 <!-- Reference Inventory -->
 <section id="ref-inventory">
 <h2>1. Reference Inventory / 참고 문헌 목록</h2>
-<p>This guideline builds upon 20 key reference documents across international standards, government frameworks, industry publications, and company methodologies.</p>
+<p>This guideline builds upon 22 key reference documents across international standards, government frameworks, industry publications, and company methodologies.</p>
 
 <h3>1.1 International Standards / 국제 표준</h3>
 <table>
@@ -429,6 +440,8 @@ a { color: var(--accent); }
 <tr><td>R-02</td><td><a href="https://www.iso.org/standard/81291.html" target="_blank">ISO/IEC/IEEE 29119 Series - Software Testing</a></td><td>ISO/IEC/IEEE</td><td>2013/2022</td></tr>
 <tr><td>R-03</td><td><a href="https://www.iso.org/standard/79465.html" target="_blank">ISO/IEC TR 29119-11:2020 - Testing of AI-Based Systems</a></td><td>ISO/IEC</td><td>2020</td></tr>
 <tr><td>R-04</td><td><a href="https://www.iso.org/standard/44382.html" target="_blank">ISO/IEC TS 42119-2:2025 - Testing of AI Systems Overview</a></td><td>ISO/IEC</td><td>2025</td></tr>
+<tr><td>R-05</td><td><a href="https://www.iso.org/standard/78176.html" target="_blank">ISO/IEC 25059:2023 - SQuaRE Quality Model for AI Systems</a></td><td>ISO/IEC JTC 1/SC 7</td><td>2023</td></tr>
+<tr><td>R-06</td><td><a href="https://www.iso.org/standard/78177.html" target="_blank">ISO/IEC DTS 25058:2023 - SQuaRE Quality Evaluation of AI Systems</a></td><td>ISO/IEC JTC 1/SC 7</td><td>2023</td></tr>
 </tbody>
 </table>
 
@@ -608,7 +621,7 @@ While drafting a test report, if you need to introduce a new concept "adaptive a
 
 <div class="info-box" style="background: var(--accent-light); border-left: 4px solid var(--accent); padding: 1rem; margin: 1rem 0;">
 <p><strong>📚 Complete Terminology Document:</strong> <a href="phase-0-terminology.md" style="color: var(--accent); font-weight: 600;">phase-0-terminology.md</a> (v0.5.6) <span class="badge badge-new">5-STANDARD FRAMEWORK</span></p>
-<p class="bilingual"><strong>Total Terms Defined:</strong> 179 unique terms across 13 specialized sections (5-Standard ISO Framework)<br>
+<p class="bilingual"><strong>Total Terms Defined:</strong> 199 unique terms across 14 specialized sections (7-Standard ISO Framework)<br>
 <strong>정의된 총 용어 수:</strong> 13개 전문 섹션에 걸쳐 172개 고유 용어 (5개 ISO 표준 기반)</p>
 <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.9;">
 <strong>5-Standard ISO Terminology Framework:</strong> ISO/IEC TS 42119-2:2025 (AI Testing), 29119-1:2022 (Software Testing), DIS 27090 (AI Security), 22989:2022/AMD 1:2025 (GenAI Extensions), 22989:2022 (AI Concepts)<br>
@@ -708,7 +721,7 @@ While drafting a test report, if you need to introduce a new concept "adaptive a
 </tr>
 <tr style="font-weight:700;border-top:2px solid var(--border);">
   <td colspan="2"><strong>Total / 합계</strong></td>
-  <td><strong>196 terms extracted</strong><br><strong>179 unique terms</strong> (after deduplication)<br>196개 추출 → 179개 고유 (중복 제거)</td>
+  <td><strong>196 terms extracted</strong><br><strong>199 unique terms</strong> (after deduplication)<br>196개 추출 → 179개 고유 (중복 제거)</td>
   <td><span class="badge badge-new">100% ISO</span></td>
 </tr>
 </tbody>
@@ -2177,7 +2190,7 @@ Source: arXiv analysis by attack-researcher agent, cross-referenced with Phase 1
   <li>Cross-model transfer testing of profiling results</li>
 </ol>
 
-<p><strong>Benchmark Datasets:</strong> MLCommons AILuminate v1.0 (12 hazard categories); HarmBench; Custom Big Five profiling + manipulation prompt set</p>
+<p><strong>Benchmark Datasets:</strong> <a href="https://arxiv.org/abs/2503.05731" target="_blank" title="Ghosh et al., 2025">MLCommons AILuminate v1.0</a> (12 hazard categories); <a href="https://arxiv.org/abs/2402.04249" target="_blank" title="Mazeika et al., ICML 2024">HarmBench</a>; Custom Big Five profiling + manipulation prompt set</p>
 
 </div></div>
 </div>
@@ -2251,7 +2264,7 @@ Source: arXiv analysis by attack-researcher agent, cross-referenced with Phase 1
   <li>Evaluate cost-to-attack (time, compute, API cost)</li>
 </ol>
 
-<p><strong>Benchmark Datasets:</strong> HarmBench; FORTRESS (frontier model national security evaluation); Custom LRM-as-attacker benchmark with 9+ target models</p>
+<p><strong>Benchmark Datasets:</strong> <a href="https://arxiv.org/abs/2402.04249" target="_blank" title="Mazeika et al., ICML 2024">HarmBench</a>; FORTRESS (frontier model national security evaluation); Custom LRM-as-attacker benchmark with 9+ target models</p>
 
 </div></div>
 </div>
@@ -2323,7 +2336,7 @@ Source: arXiv analysis by attack-researcher agent, cross-referenced with Phase 1
   <li>Evaluate defense effectiveness of paraphrase-based deobfuscation</li>
 </ol>
 
-<p><strong>Benchmark Datasets:</strong> MLCommons AILuminate v1.0 (1,200 harmful prompts -- original test set); HarmBench; Custom poetry-wrapped MLCommons prompt set</p>
+<p><strong>Benchmark Datasets:</strong> <a href="https://arxiv.org/abs/2503.05731" target="_blank" title="Ghosh et al., 2025">MLCommons AILuminate v1.0</a> (1,200 harmful prompts -- original test set); <a href="https://arxiv.org/abs/2402.04249" target="_blank" title="Mazeika et al., ICML 2024">HarmBench</a>; Custom poetry-wrapped MLCommons prompt set</p>
 
 </div></div>
 </div>
@@ -2359,7 +2372,7 @@ Source: arXiv analysis by attack-researcher agent, cross-referenced with Phase 1
   <li>Test whether discovered strategies transfer across model families</li>
 </ol>
 
-<p><strong>Benchmark Datasets:</strong> HarmBench (ASR comparison baseline); StrongREJECT; Custom strategy-space fuzzing with knowledge repository</p>
+<p><strong>Benchmark Datasets:</strong> <a href="https://arxiv.org/abs/2402.04249" target="_blank" title="Mazeika et al., ICML 2024">HarmBench</a> (ASR comparison baseline); StrongREJECT; Custom strategy-space fuzzing with knowledge repository</p>
 
 </div></div>
 </div>
@@ -2395,7 +2408,7 @@ Source: arXiv analysis by attack-researcher agent, cross-referenced with Phase 1
   <li>Test whether causal features generalize across model versions</li>
 </ol>
 
-<p><strong>Benchmark Datasets:</strong> JailbreakBench (35k attempt replication); HarmBench; Custom causal feature-enhanced prompt sets</p>
+<p><strong>Benchmark Datasets:</strong> <a href="https://arxiv.org/abs/2404.01318" target="_blank" title="Chao et al., NeurIPS 2024">JailbreakBench</a> (35k attempt replication); <a href="https://arxiv.org/abs/2402.04249" target="_blank" title="Mazeika et al., ICML 2024">HarmBench</a>; Custom causal feature-enhanced prompt sets</p>
 
 </div></div>
 </div>
@@ -4090,7 +4103,7 @@ A: [Standard tier information]</code></pre>
 <tr>
 <td><strong>Jailbreak & Safety Bypass<br>탈옥 및 안전장치 우회</strong></td>
 <td><a href="#ap-mod-001">AP-MOD-001</a> (Jailbreak)</td>
-<td>HarmBench, AdvBench, JailbreakBench, StrongREJECT, ALERT, XSTest, RedBench, RICoTA, CoSafe, AIRTBench</td>
+<td><a href="https://arxiv.org/abs/2402.04249" target="_blank">HarmBench</a>, <a href="https://arxiv.org/abs/2307.15043" target="_blank">AdvBench</a>, <a href="https://arxiv.org/abs/2404.01318" target="_blank">JailbreakBench</a>, StrongREJECT, ALERT, XSTest, RedBench, RICoTA, CoSafe, AIRTBench</td>
 <td><span class="badge badge-high">HIGH</span></td>
 </tr>
 <tr>
@@ -4102,19 +4115,19 @@ A: [Standard tier information]</code></pre>
 <tr>
 <td><strong>Toxicity & Harmful Content<br>유해 콘텐츠</strong></td>
 <td><a href="#ap-mod-003">AP-MOD-003</a> (Data Exfiltration), <a href="#ap-soc-001">AP-SOC-001</a> (Social Engineering)</td>
-<td>SafetyBench, RealToxicityPrompts, ToxiGen, BeaverTails, Do Not Answer, HELM Safety, Forbidden Science</td>
+<td><a href="https://arxiv.org/abs/2309.07045" target="_blank">SafetyBench</a>, <a href="https://arxiv.org/abs/2009.11462" target="_blank">RealToxicityPrompts</a>, ToxiGen, BeaverTails, Do Not Answer, HELM Safety, Forbidden Science</td>
 <td><span class="badge badge-high">HIGH</span></td>
 </tr>
 <tr>
 <td><strong>Bias & Fairness<br>편향 및 공정성</strong></td>
 <td><a href="#ap-soc-002">AP-SOC-002</a> (Bias Exploitation)</td>
-<td>BBQ, KoBBQ, CBBQ, JBBQ, EsBBQ/CaBBQ, Open-BBQ, BBG, KoSBi, K-MHaS, HELM (Fairness)</td>
+<td><a href="https://arxiv.org/abs/2110.08193" target="_blank">BBQ</a>, KoBBQ, CBBQ, JBBQ, EsBBQ/CaBBQ, Open-BBQ, BBG, KoSBi, K-MHaS, HELM (Fairness)</td>
 <td><span class="badge badge-high">HIGH</span></td>
 </tr>
 <tr>
 <td><strong>Hallucination & Factuality<br>환각 및 사실성</strong></td>
 <td><a href="#ap-mod-006">AP-MOD-006</a> (Hallucination)</td>
-<td>TruthfulQA, HaluEval, HallusionBench, FaithDial, RAGTruth, DefAn, FactualityPrompts, SimpleQA, SimpleQA Verified, Head-to-Tail, PhD</td>
+<td><a href="https://arxiv.org/abs/2109.07958" target="_blank">TruthfulQA</a>, HaluEval, HallusionBench, FaithDial, RAGTruth, DefAn, FactualityPrompts, SimpleQA, SimpleQA Verified, Head-to-Tail, PhD</td>
 <td><span class="badge badge-high">HIGH</span></td>
 </tr>
 <tr>
@@ -11149,7 +11162,7 @@ Test Case ID(s) → Test Evidence → Findings → Residual Risk Assessment
 <hr class="section-divider">
 
 <footer style="text-align:center; padding: 2rem 0; color: var(--text-secondary); font-size: 0.82rem;">
-  <p><strong>AI Red Team International Guideline</strong> | AIRTG-v1.8-DRAFT</p>
+  <p><strong>AI Red Team International Guideline</strong> | AIRTG-v1.9-DRAFT</p>
   <p>Version 1.8 Draft | 2026-02-14 | Status: Draft for Public Review</p>
   <p style="margin-top:0.5rem;"><strong>Phase A/B/C Implementation (2026-02-13):</strong> ISO/IEC TS 42119-2:2025 conformance achieved <strong>79.7%</strong> (baseline 20.3% → Phase A 60.8% → Phase B 74.3% → Phase C 79.7%), 27 gaps resolved. <strong>Phase A:</strong> Data Quality Testing (D-2.8, 9 types), Model Testing (D-2.5.1, 6 types), Metamorphic Testing (D-2.5.2, 5 relations), Test Oracle Strategy (P-1, 5 types). <strong>Phase B:</strong> Risk Calculation (P-2 Section 7bis), Differential Testing (D-2.6), Deployment Testing (E-10, 7 types), AI Test Plan Requirements (P-1bis, 9 sections), Lifecycle Coverage. <strong>Phase C:</strong> Non-Determinism Statistical Methodology (P-1bis Section 4), High-Dimensional Partitioning Algorithm (P-1bis Section 5), Interpretability & Opacity Testing (P-1bis Section 9). 5-Standard Terminology Framework (179 ISO terms, v0.5.6). ISO 29119 conformance: 92% (Process 100%, Documentation 100%, Test Techniques 88%, Terminology 100%).</p>
   <p style="margin-top:0.5rem;">This document is designed as a living standard. Normative Core is stable; Living Annexes update quarterly.</p>
