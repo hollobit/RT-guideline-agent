@@ -342,8 +342,8 @@ a { color: var(--accent); }
   <h1 style="border:none;color:#fff;margin:0;padding:0;">AI Red Team<br>International Guideline</h1>
   <div class="subtitle">AI 레드팀 국제 가이드라인</div>
   <div class="meta">
-    Document ID: AIRTG-v1.9-DRAFT<br>
-    Version: 1.9 Draft &nbsp;|&nbsp; Date: 2026-02-14<br>
+    Document ID: AIRTG-v2.0-DRAFT<br>
+    Version: 2.0 Draft &nbsp;|&nbsp; Date: 2026-02-27<br>
     Status: Draft for Public Review<br>
     Classification: Public<br>
     Author: Jonghong Jeon (hollobit@etri.re.kr)
@@ -385,8 +385,8 @@ a { color: var(--accent); }
   <li><strong>Continuous operating model</strong> with three layers: automated monitoring, periodic assessment, and event-triggered deep engagements, including change-triggered re-evaluation protocols.</li>
   <li><strong>Standards alignment analysis</strong> (Part VI) with clause-by-clause comparison against ISO/IEC TS 42119-2:2025 (AI Testing) and ISO/IEC/IEEE 29119 (Software Testing), achieving <strong>79.7% ISO/IEC TS 42119-2:2025 conformance</strong> (baseline 20.3% → Phase A 60.8% → Phase B 74.3% → Phase C 79.7%, 27 gaps resolved) and <strong>84.1% ISO 29119 overall conformance</strong> across 63 checklist items (improved from 33%, updated 2026-02-15: +51pp improvement, all Critical/High/Medium priority gaps resolved, <strong>Test Techniques 75%</strong> with 6 ISO/IEC 29119-4 worked examples, <strong>Terminology 86%</strong> with 12 ISO/IEC 29119-1 terms).</li>
   <li><strong>Reference document analysis</strong> (Part VII) synthesizing Japan AISI, OWASP GenAI, and CSA Agentic AI guides into 19 modification proposals (9 essential, 7 recommended, 3 reference), achieving <strong>100% OWASP Agentic AI Top 10 coverage</strong> (all ASI01-ASI10 security issues addressed in Phase 1-2 attack patterns).</li>
-  <li><strong>Research &amp; risk trends</strong> (Part VIII) covering 35+ academic papers with 8 new attack techniques identified through pipeline integration and <strong>108 new AI incidents</strong> (IDs 1254-1361, Sept 2025 -- Feb 2026). <strong>13 new/escalated risks identified:</strong> 4 CRITICAL (Evaluation Context Detection, Supply Chain Compromise, LRM Jailbreak, Promptware Kill Chain), 6 HIGH (Healthcare AI Misuse, Cybersecurity Tool Exploitation, Autonomous Vehicle Failures, Multi-Agent Coordination Attacks, Reward Hacking, Deceptive Alignment), 3 MEDIUM-HIGH (Cross-lingual Safety Gaps, Chain-of-Thought Manipulation, Model Collapse). MIT AI Risk Repository updated to v4 (25 subdomains, up from 24). All 5 Annex D update triggers met.</li>
-  <li><strong>Test scenarios &amp; validation</strong> (Part IX) providing <strong>35 ISO/IEC 29119-compliant test scenarios</strong> achieving <strong>100% attack pattern reference accuracy</strong> (improved from 35%), <strong>36+ detailed test cases</strong>, <strong>9 domain-specific scenarios</strong> (3 Healthcare: HIPAA/FDA, 3 Financial: PCI-DSS/GDPR/ECOA, 3 Automotive: ISO 26262/UN R155), coverage matrix, benchmark-aided testing guidance (2,375 benchmarks analyzed, 20 prioritized for Phase 1 execution), and gap analysis confirming 5/6 stages feasible (updated 2026-02-14).</li>
+  <li><strong>Research &amp; risk trends</strong> (Part VIII) covering 35+ academic papers with 27 new attack techniques identified through pipeline integration (including 19 added in 2026 Q1 update) and <strong>108 new AI incidents</strong> (IDs 1254-1361, Sept 2025 -- Feb 2026). <strong>20 new/escalated risks identified (2026 Q1 update):</strong> 7 new CRITICAL (AI-Enhanced Cyberattack Infrastructure, AI-Generated NCII &amp; CSAM, Cascading Multi-Agent System Failure, Evaluation Evasion, R-028/R-037/R-039 escalations), 4 HIGH (Agent Goal Hijack, Shadow AI, AI-Enabled Identity Fraud), plus previous 13 escalated risks. MIT AI Risk Repository updated to v4 (25 subdomains). All 5 Annex D update triggers met.</li>
+  <li><strong>Test scenarios &amp; validation</strong> (Part IX) providing <strong>39 ISO/IEC 29119-compliant test scenarios</strong> achieving <strong>100% attack pattern reference accuracy</strong> (improved from 35%), <strong>36+ detailed test cases</strong>, <strong>9 domain-specific scenarios</strong> (3 Healthcare: HIPAA/FDA, 3 Financial: PCI-DSS/GDPR/ECOA, 3 Automotive: ISO 26262/UN R155), <strong>4 new agentic/evaluation scenarios</strong> (TS-AGT-001~003 agentic attacks, TS-EVAL-001 evaluation evasion detection), coverage matrix, benchmark-aided testing guidance (2,375 benchmarks analyzed, 20 prioritized for Phase 1 execution), and gap analysis confirming 5/6 stages feasible (updated 2026-02-27).</li>
   <li><strong>Collaboration pipeline validation</strong> (v1.7) demonstrating end-to-end agent collaboration: academic research → risk analysis + attack analysis → benchmark dataset matching → testing feasibility assessment, with 29119 conformance monitoring and <strong>5-Standard ISO Terminology Framework</strong> (199 unique terms from 5 ISO standards) <strong>plus Rosetta Stone cross-framework mapping</strong> (21 key terms mapped across 7 frameworks: ISO/IEC 42119-2, 29119-1, NIST AI RMF, OWASP/MITRE, EU AI Act, Academia/Industry).</li>
 </ul>
 
@@ -4009,8 +4009,8 @@ A: [Standard tier information]</code></pre>
 </table>
 
 <p class="info-box" style="background: var(--accent-light); border-left: 4px solid var(--accent); padding: 1rem; margin: 1rem 0;">
-<strong>Note:</strong> This Pattern Library Index contains a representative subset of attack patterns. For the complete catalog with detailed descriptions, see <a href="phase-12-attacks.md" target="_blank">phase-12-attacks.md v1.3</a> (81 patterns across model, system, and socio-technical layers, including 14 emergent capability threat patterns AP-EMG-001 through AP-EMG-014).<br>
-<strong>참고:</strong> 이 패턴 라이브러리 인덱스는 대표적인 공격 패턴의 하위 집합을 포함합니다. 상세한 설명이 포함된 전체 카탈로그는 <a href="phase-12-attacks.md" target="_blank">phase-12-attacks.md v1.3</a>을 참조하세요 (모델, 시스템, 사회기술적 계층의 81개 패턴, 14개 창발적 역량 위협 패턴 AP-EMG-001~AP-EMG-014 포함).
+<strong>Note:</strong> This Pattern Library Index contains a representative subset of attack patterns. For the complete catalog with detailed descriptions, see <a href="phase-12-attacks.md" target="_blank">phase-12-attacks.md v1.4</a> (100 patterns across model, system, and socio-technical layers, including 14 emergent capability threat patterns AP-EMG-001 through AP-EMG-014, and 19 new patterns added in 2026 Q1: AP-AGT-005~008, AP-MOD-022~026, AP-SYS-040~051, AP-SOC-007).<br>
+<strong>참고:</strong> 이 패턴 라이브러리 인덱스는 대표적인 공격 패턴의 하위 집합을 포함합니다. 상세한 설명이 포함된 전체 카탈로그는 <a href="phase-12-attacks.md" target="_blank">phase-12-attacks.md v1.4</a>를 참조하세요 (모델, 시스템, 사회기술적 계층의 100개 패턴, 2026 Q1 신규 19개: AP-AGT-005~008, AP-MOD-022~026, AP-SYS-040~051, AP-SOC-007 포함).
 </p>
 </section>
 
@@ -7396,7 +7396,7 @@ The current guideline references CBRN risks but lacks a structured evaluation fr
 
 <!-- 9.2 Test Scenarios -->
 <h2 id="test-scenarios">9.2 Test Scenarios / 테스트 시나리오</h2>
-<p><strong>Updated 2026-02-13:</strong> Twenty-six ISO/IEC 29119-compliant test scenarios organized across three layers: Model-Level (17 scenarios), System-Level (5 scenarios), and Socio-Technical (4 scenarios). All scenarios achieve <strong>100% attack pattern reference accuracy</strong> with full traceability to phase-12-attacks.md v1.2.</p>
+<p><strong>Updated 2026-02-27:</strong> Thirty-nine ISO/IEC 29119-compliant test scenarios organized across three layers: Model-Level (17 scenarios), System-Level (5 scenarios), Socio-Technical (4 scenarios), plus 9 domain-specific scenarios (Healthcare/Financial/Automotive) and 4 new agentic/evaluation scenarios (TS-AGT-001~003, TS-EVAL-001). All scenarios achieve <strong>100% attack pattern reference accuracy</strong> with full traceability to phase-12-attacks.md v1.4.</p>
 
 <h3>9.2.1 Model-Level Scenarios (<a href="#ts-mod-001">TS-MOD-001</a> ~ TS-MOD-017)</h3>
 <ul>
@@ -11162,9 +11162,9 @@ Test Case ID(s) → Test Evidence → Findings → Residual Risk Assessment
 <hr class="section-divider">
 
 <footer style="text-align:center; padding: 2rem 0; color: var(--text-secondary); font-size: 0.82rem;">
-  <p><strong>AI Red Team International Guideline</strong> | AIRTG-v1.9-DRAFT</p>
-  <p>Version 1.8 Draft | 2026-02-15 | Status: Draft for Public Review</p>
-  <p style="margin-top:0.5rem;"><strong>Phase A/B/C Implementation (2026-02-13) + Option C (2026-02-15):</strong> ISO/IEC TS 42119-2:2025 conformance achieved <strong>79.7%</strong> (baseline 20.3% → Phase A 60.8% → Phase B 74.3% → Phase C 79.7%), 27 gaps resolved. <strong>Phase A:</strong> Data Quality Testing (D-2.8, 9 types), Model Testing (D-2.5.1, 6 types), Metamorphic Testing (D-2.5.2, 5 relations), Test Oracle Strategy (P-1, 5 types). <strong>Phase B:</strong> Risk Calculation (P-2 Section 7bis), Differential Testing (D-2.6), Deployment Testing (E-10, 7 types), AI Test Plan Requirements (P-1bis, 9 sections), Lifecycle Coverage. <strong>Phase C:</strong> Non-Determinism Statistical Methodology (P-1bis Section 4), High-Dimensional Partitioning Algorithm (P-1bis Section 5), Interpretability & Opacity Testing (P-1bis Section 9). <strong>Option C:</strong> 6 ISO/IEC 29119-1:2022 terminology additions (Test Environment, Test Execution Schedule, Test Incident, Test Log, Test Oracle, Test Suite). 7-Standard Terminology Framework (205 ISO terms, v0.7.0). ISO 29119 conformance: 84.1% (53/63 items: Process 84%, Documentation 93%, Test Techniques 75%, Terminology 86%).</p>
+  <p><strong>AI Red Team International Guideline</strong> | AIRTG-v2.0-DRAFT</p>
+  <p>Version 2.0 Draft | 2026-02-27 | Status: Draft for Public Review</p>
+  <p style="margin-top:0.5rem;"><strong>2026 Q1 Emerging Threat Update (2026-02-27):</strong> 19 new attack patterns (AP-AGT-005~008, AP-MOD-022~026, AP-SYS-040~051, AP-SOC-007) from arXiv Jan-Feb 2026, MITRE ATLAS v5.4, Cisco/IBM threat intelligence. 7 new risks (R-039~R-045; R-045 Evaluation Evasion from International AI Safety Report 2026). R-028/R-037 escalated to CRITICAL. 4 new test scenarios (TS-AGT-001~003, TS-EVAL-001). <strong>Total: 100 attack patterns</strong> (phase-12-attacks.md v1.4), <strong>45 risk profiles / 15 CRITICAL</strong> (R-001~R-045), <strong>39 test scenarios</strong>. <strong>Phase A/B/C + Option C (2026-02-15):</strong> ISO/IEC TS 42119-2:2025 conformance <strong>79.7%</strong> (baseline 20.3% → Phase A 60.8% → Phase B 74.3% → Phase C 79.7%), 27 gaps resolved. ISO 29119 conformance: 84.1% (53/63: Process 84%, Documentation 93%, Test Techniques 75%, Terminology 86%). 7-Standard Terminology Framework (205 ISO terms, v0.7.0).</p>
   <p style="margin-top:0.5rem;">This document is designed as a living standard. Normative Core is stable; Living Annexes update quarterly.</p>
 </footer>
 
